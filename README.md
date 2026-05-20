@@ -125,13 +125,16 @@ Documentation is a first-class concern in this repo:
 
 ## Contributing
 
-See [AGENTS.md](./AGENTS.md) for agent-specific instructions. For human contributors:
+See [AGENTS.md](./AGENTS.md) for agent-specific instructions and [SOP.md](./SOP.md) for the full Standard Operating Procedures covering add, edit, remove, pull, deprecate, and discover skills.
+
+For human contributors:
 
 1. Fork the repo
-2. Create a feature branch (`feat/skill-name` or `docs/description`)
+2. Create a feature branch (`feat/skill-name`, `fix/skill-name-desc`, `docs/description`, or `chore/remove-skill-name`)
 3. Make your changes
-4. Open a PR against `main`
-5. Ensure CI passes and at least one review approves
+4. Validate using the checklist in [SOP.md § Validation Checklist](./SOP.md#validation-checklist)
+5. Open a PR against `main`
+6. Ensure CI passes and at least one review approves
 
 ## License
 

@@ -51,9 +51,28 @@ skills/skill-name/
 └── assets/             # Optional — static assets (images, diagrams)
 ```
 
+## Standard Operating Procedures
+
+**All agents must read and follow [SOP.md](./SOP.md) before interacting with this repo.** It defines the authoritative process for:
+
+- **Adding** a new skill (issue → branch → SKILL.md → validate → PR → merge)
+- **Editing** an existing skill (issue → version bump → validate → PR → merge)
+- **Removing** a skill (issue → check dependents → delete → PR → merge)
+- **Pulling** a skill for use (locate → read SKILL.md in full → execute → verify)
+- **Deprecating** a skill (add `deprecated: true` + `replaced_by` → PR → merge)
+- **Skill discovery** (by category, by trigger match, by search, by related skills)
+
+**Key rules:**
+
+1. **No direct commits to `main`** — always use a branch and PR
+2. **Every skill must have a `SKILL.md`** with complete frontmatter, triggers, steps, pitfalls, and verification
+3. **No secrets or local paths** in any skill file
+4. **Validate before merging** — use the checklist in SOP.md § Validation Checklist
+5. **Patch after use** — if you discover a gap while pulling a skill, open an issue and PR the fix after the session
+
 ## Conventions
 
-- **Branch naming**: `feat/<skill-name>` or `fix/<skill-name>`
+- **Branch naming**: `feat/<skill-name>`, `fix/<skill-name>-<short-desc>`, `docs/<skill-name>-<short-desc>`, `chore/remove-<skill-name>`
 - **Commit style**: Conventional commits (`feat:`, `fix:`, `docs:`, `chore:`)
 - **PRs**: Require 1 approval; stale reviews are dismissed
 - **Issues**: Use the YAML form templates; do not create blank issues
