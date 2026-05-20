@@ -23,7 +23,7 @@ outputs:
 metadata:
   hermes:
     tags: [material-design-3, m3, design-tokens, dark-theme, tailwind, css-custom-properties, component-library]
-    related_skills: [shadcn, linear-app, stripe, supabase]
+    related_skills: [pages-viz]
 ---
 
 # Kaleb One — Material Design 3 Theme System
@@ -108,8 +108,6 @@ border-radius: 12px;
 </div>
 ```
 
-See `references/component-patterns.md` for the full component catalog.
-
 ### 6. Use npm (for build-tool projects)
 
 ```bash
@@ -166,4 +164,3 @@ For Tailwind v4, import tokens as CSS and use arbitrary values: `bg-[var(--md-sy
 - **NPM package:** `@kaleb-one/theme`
 - **CDN:** `jsdelivr.net/gh/triursa/theme-kaleb-one@main/dist/`
 - **Showcase:** [theme.kaleb.one](https://theme.kaleb.one)
-- **Related skills in this repo:** None currently. Related design system skills in Hermes: `shadcn`, `linear-app`, `stripe`, `supabase`

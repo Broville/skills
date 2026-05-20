@@ -4,15 +4,16 @@ description: Poll RSS, JSON APIs, and GitHub with watermark dedup. Run watchers 
 version: 1.0.0
 author: Broville
 license: MIT
-platforms: [linux]
+platforms: [linux, macos]
 trigger:
   - User wants to watch an RSS/Atom feed and be notified of new entries
   - User wants to poll a JSON endpoint or GitHub repo for new items
   - User asks for "a watcher for X" or "notify me when X changes"
   - Setting up automated monitoring with cron-driven polling
-related_skills:
-  - deployment-procedures
-  - systematic-debugging
+metadata:
+  hermes:
+    tags: [rss, watcher, monitoring, cron, polling, dedup, github]
+    related_skills: [cloudflare-deploy]
 ---
 
 # Watchers
@@ -27,7 +28,7 @@ Poll external sources on an interval and react only to new items. Three ready-ma
 - The watcher scripts installed at `~/.local/share/skills/devops/watchers/scripts/` (or equivalent skill install path)
 
 Optional:
-- `GITHUB_TOKEN` environment variable for GitHub API rate limits (avoids the 60 req/hr anonymous cap)
+- `GITHUB_TOKEN` environment variable for GitHub API rate limits
 
 ## Steps
 
@@ -46,7 +47,7 @@ Optional:
 python3 ~/.local/share/skills/devops/watchers/scripts/watch_rss.py \
   --name hn --url https://news.ycombinator.com/rss --max 5
 
-# Watch a GitHub repo (set GITHUB_TOKEN for higher rate limits)
+# Watch a GitHub repo
 python3 ~/.local/share/skills/devops/watchers/scripts/watch_github.py \
   --name hermes-issues --repo NousResearch/hermes-agent --scope issues
 
@@ -58,12 +59,7 @@ python3 ~/.local/share/skills/devops/watchers/scripts/watch_http_json.py \
 
 ### Step 3: Wire into Cron
 
-Create a cron job that runs the watcher on schedule. If it prints nothing (no new items), stay silent. If it prints new items, process or forward them.
-
-```bash
-# Example cron entry: check Hacker News every 15 minutes
-*/15 * * * * python3 ~/.local/share/skills/devops/watchers/scripts/watch_rss.py --name hn --url https://news.ycombinator.com/rss
-```
+Create a Hermes cron job that runs the watcher on schedule. If it prints nothing (no new items), stay silent.
 
 ### Step 4: Inspect or Reset State Files
 
@@ -75,42 +71,15 @@ cat ~/.local/share/skills/devops/watchers/state/hn.json
 rm ~/.local/share/skills/devops/watchers/state/hn.json
 ```
 
-### Step 5: Write a Custom Watcher
-
-Use the shared `_watermark.py` helper for atomic writes, bounded ID sets, and first-run baseline:
-
-```python
-# Import the watermark helper from the scripts directory
-import sys
-sys.path.insert(0, os.path.expanduser("~/.local/share/skills/devops/watchers/scripts"))
-from _watermark import Watermark
-```
-
-Pattern: load watermark → fetch → diff → save → emit. See any of the three reference scripts for minimal boilerplate.
-
 ## Pitfalls
 
-1. **Printing "no new items" on every tick.** Callers rely on empty stdout meaning silence. If you print anything on an empty delta, you spam the channel. Custom watchers must respect this convention.
-2. **Expecting the first run to emit items.** The first run records a baseline — it never replays existing items. If you need an initial digest, delete the state file after the first run or add a `--prime-with-latest N` flag.
-3. **Unbounded watermark growth.** The shared helper caps at 500 IDs by default. Raise it for high-churn feeds; lower it on constrained filesystems. An unbounded watermark will eventually consume disk.
-4. **Putting state files where the agent sandbox cannot write.** Always use the standard state directory (`~/.local/share/skills/devops/watchers/state/`). Paths outside the user's home or skill directory may not be writable in containerized or sandboxed environments.
+1. **Printing "no new items" on every tick.** Callers rely on empty stdout meaning silence. Custom watchers must respect this convention.
+2. **Expecting the first run to emit items.** The first run records a baseline — it never replays existing items.
+3. **Unbounded watermark growth.** The shared helper caps at 500 IDs by default.
+4. **Putting state files where the agent sandbox cannot write.** Always use the standard state directory.
 
 ## Verification
 
-1. **Run a watcher for the first time and confirm silence (baseline recorded):**
-   ```bash
-   python3 ~/.local/share/skills/devops/watchers/scripts/watch_rss.py \
-     --name test-verify --url https://news.ycombinator.com/rss
-   # Should produce no output (baseline poll)
-   ```
-2. **Delete the state file and re-run — should emit items:**
-   ```bash
-   rm ~/.local/share/skills/devops/watchers/state/test-verify.json
-   python3 ~/.local/share/skills/devops/watchers/scripts/watch_rss.py \
-     --name test-verify --url https://news.ycombinator.com/rss --max 5
-   # Should print new items in "## <title>\n<url>" format
-   ```
-3. **Confirm state file was created:**
-   ```bash
-   ls ~/.local/share/skills/devops/watchers/state/test-verify.json
-   ```
+1. Run a watcher for the first time and confirm silence (baseline recorded)
+2. Delete the state file and re-run — should emit items
+3. Confirm state file was created
