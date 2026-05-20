@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="obsidian">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaleb One — M3 Theme Starter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/triursa/theme-kaleb-one@main/dist/theme-all.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/triursa/theme-kaleb-one@main/dist/components.css">
+</head>
+<body>
+  <nav class="nav-rail">
+    <a href="#" class="nav-rail-item nav-rail-item--active">
+      <div class="nav-rail-icon">🏠</div>
+      <span>Home</span>
+    </a>
+    <a href="#" class="nav-rail-item">
+      <div class="nav-rail-icon">📊</div>
+      <span>Dashboard</span>
+    </a>
+    <a href="#" class="nav-rail-item">
+      <div class="nav-rail-icon">⚙️</div>
+      <span>Settings</span>
+    </a>
+  </nav>
+
+  <header class="app-bar">
+    <h1>App Name</h1>
+    <div class="palette-switcher">
+      <button class="palette-btn palette-btn--active" onclick="setTheme('obsidian')">
+        <span class="palette-swatch" style="background:#7B8FA8"></span> Obsidian
+      </button>
+      <button class="palette-btn" onclick="setTheme('midnight-ocean')">
+        <span class="palette-swatch" style="background:#4A90D9"></span> Ocean
+      </button>
+      <button class="palette-btn" onclick="setTheme('volcanic')">
+        <span class="palette-swatch" style="background:#D4853A"></span> Volcanic
+      </button>
+      <button class="palette-btn" onclick="setTheme('frost')">
+        <span class="palette-swatch" style="background:#3B82F6"></span> Frost
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="section">
+      <h2 class="section-title">Buttons</h2>
+      <div class="button-row">
+        <button class="md-button md-button--filled">Filled</button>
+        <button class="md-button md-button--filled-secondary">Secondary</button>
+        <button class="md-button md-button--filled-tertiary">Tertiary</button>
+        <button class="md-button md-button--outlined">Outlined</button>
+        <button class="md-button md-button--tonal">Tonal</button>
+        <button class="md-button md-button--text">Text</button>
+        <button class="md-button md-button--icon">🔍</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Cards</h2>
+      <div class="component-grid">
+        <div class="md-card md-card--elevated">
+          <div class="md-card-title">Elevated Card</div>
+          <div class="md-card-subtitle">With shadow elevation</div>
+          <div class="md-card-body">This card uses surface-container-low background with a drop shadow.</div>
+        </div>
+        <div class="md-card md-card--filled">
+          <div class="md-card-title">Filled Card</div>
+          <div class="md-card-subtitle">Surface-container-highest</div>
+          <div class="md-card-body">This card uses the highest surface container color.</div>
+        </div>
+        <div class="md-card md-card--outlined">
+          <div class="md-card-title">Outlined Card</div>
+          <div class="md-card-subtitle">With border outline</div>
+          <div class="md-card-body">This card uses a subtle outline border.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Chips & Badges</h2>
+      <div class="button-row">
+        <span class="md-chip md-chip--assist">Assist</span>
+        <span class="md-chip md-chip--filter">Filter</span>
+        <span class="md-chip md-chip--suggestion">Suggestion</span>
+        <span style="background-color: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: var(--md-sys-spacing-1) var(--md-sys-spacing-3); border-radius: var(--md-sys-shape-corner-full); font-size: var(--md-sys-typescale-label-small-size);">Active</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Text Field</h2>
+      <div class="md-textfield">
+        <input type="text" id="demo-input" placeholder=" ">
+        <label for="demo-input">Enter text</label>
+      </div>
+      <div class="md-textfield">
+        <input type="email" id="demo-email" placeholder=" ">
+        <label for="demo-email">Email address</label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Progress</h2>
+      <div class="md-progress-linear">
+        <div class="md-progress-linear__bar" style="width: 75%;"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">List</h2>
+      <div class="md-list">
+        <div class="md-list-item">
+          <div class="md-list-item-icon">📥</div>
+          <div class="md-list-item-text">
+            <div class="md-list-item-headline">Inbox</div>
+            <div class="md-list-item-supporting">12 new messages</div>
+          </div>
+        </div>
+        <div class="md-list-item">
+          <div class="md-list-item-icon">📋</div>
+          <div class="md-list-item-text">
+            <div class="md-list-item-headline">Tasks</div>
+            <div class="md-list-item-supporting">3 remaining</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Tabs</h2>
+      <div class="md-tabs">
+        <button class="md-tab md-tab--active">Overview</button>
+        <button class="md-tab">Details</button>
+        <button class="md-tab">Settings</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Snackbar</h2>
+      <div class="md-snackbar">
+        Item archived successfully
+        <button class="md-button md-button--text">Undo</button>
+      </div>
+    </div>
+  </main>
+
+  <button class="md-fab">＋</button>
+
+  <script>
+    function setTheme(name) {
+      document.documentElement.setAttribute('data-theme', name);
+      document.querySelectorAll('.palette-btn').forEach(btn => {
+        btn.classList.toggle('palette-btn--active',
+          btn.textContent.trim().toLowerCase().includes(name.replace('-', ' ')));
+      });
+    }
+  </script>
+</body>
+</html>
