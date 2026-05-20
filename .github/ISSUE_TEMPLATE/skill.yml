@@ -1,0 +1,77 @@
+name: "Skill"
+description: Propose a new skill or update an existing skill definition.
+title: "[Skill] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Skill Proposal
+        Describe the skill you want to add or update.
+
+  - type: input
+    id: skill_name
+    attributes:
+      label: "Skill Name"
+      description: "Kebab-case name (e.g., systematic-debugging)"
+      placeholder: "my-new-skill"
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      description: "Which category does this skill belong to?"
+      options:
+        - devops
+        - software-dev
+        - mlops
+        - data
+        - research
+        - creative
+        - productivity
+        - monitoring
+
+  - type: textarea
+    id: trigger
+    attributes:
+      label: "Trigger Conditions"
+      description: "When should an agent activate this skill?"
+      placeholder: |
+        - When the user asks about X
+        - When a task involves Y
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "What does this skill do? Be specific."
+      placeholder: |
+        This skill provides...
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps Outline"
+      description: "High-level steps the skill should follow"
+      placeholder: |
+        1. Step one...
+        2. Step two...
+        3. Verification...
+
+  - type: textarea
+    id: pitfalls
+    attributes:
+      label: "Known Pitfalls"
+      description: "Common mistakes or edge cases to watch for"
+      placeholder: |
+        - Pitfall 1...
+        - Pitfall 2...
+
+  - type: checkboxes
+    id: type
+    attributes:
+      label: "Change Type"
+      options:
+        - label: "New skill"
+        - label: "Update existing skill"
+        - label: "Remove skill"
