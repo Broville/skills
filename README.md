@@ -4,7 +4,7 @@ A modular, documented repository of agent skills — designed for easy add/remov
 
 ## Purpose
 
-This repo stores **skill definitions** that autonomous agents (Hermes, Echo, Pixel, etc.) can pull, install, and execute. Each skill is self-contained with its own documentation, so agents can discover what's available and how to use it.
+This repo stores **skill definitions** that autonomous agents can pull, install, and execute. Each skill is self-contained with its own documentation, so agents can discover what's available and how to use it.
 
 ## Repository Structure
 
