@@ -1,0 +1,42 @@
+// Jenkinsfile.security snippet — append to an existing Jenkinsfile or save as a shared library step.
+
+stage('Security Scans') {
+    parallel {
+        stage('Secret Scan') {
+            steps {
+                sh 'gitleaks detect --source . --report-format sarif --report-path secrets.sarif'
+            }
+        }
+        stage('SCA Scan') {
+            steps {
+                sh 'trivy fs --scanners vuln --format sarif --output trivy-sca.sarif .'
+            }
+        }
+        stage('SAST Scan') {
+            steps {
+                sh 'semgrep --config p/security-audit --sarif --output sast.sarif .'
+            }
+        }
+        stage('IaC Scan') {
+            when {
+                anyOf {
+                    fileExists 'Dockerfile'
+                    fileExists 'main.tf'
+                }
+            }
+            steps {
+                sh 'checkov -d . -o sarif --output-file-path reports/checkov.sarif'
+            }
+        }
+    }
+}
+
+// Run DAST only on staging deployment
+stage('DAST Scan') {
+    when {
+        branch 'staging'
+    }
+    steps {
+        sh 'zap-baseline.py -t "${STAGING_URL}" -J dast-report.json'
+    }
+}

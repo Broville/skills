@@ -1,0 +1,63 @@
+stages:
+  - validate
+  - build
+  - test
+  - security
+  - deploy
+
+variables:
+  TRIVY_VERSION: "0.59.1"
+  SEMGREP_VERSION: "1.104.0"
+  CHECKOV_VERSION: "3.2.357"
+
+secret_scan:
+  stage: security
+  image: zricethezav/gitleaks:v8.23.3
+  script:
+    - gitleaks detect --source . --report-format sarif --report-path secrets.sarif
+  artifacts:
+    paths:
+      - secrets.sarif
+  allow_failure: ${{ env.SECRET_ADVISORY == "true" }}
+
+sca_scan:
+  stage: security
+  image: aquasec/trivy:${TRIVY_VERSION}
+  script:
+    - trivy fs --scanners vuln --format sarif --output trivy-sca.sarif .
+  artifacts:
+    paths:
+      - trivy-sca.sarif
+  allow_failure: ${{ env.SCA_ADVISORY == "true" }}
+
+sast_scan:
+  stage: security
+  image: returntocorp/semgrep:${SEMGREP_VERSION}
+  script:
+    - semgrep --config p/security-audit --config p/owasp-top-ten --sarif --output sast.sarif .
+  artifacts:
+    paths:
+      - sast.sarif
+  allow_failure: ${{ env.SAST_ADVISORY == "true" }}
+
+iac_scan:
+  stage: security
+  image: bridgecrew/checkov:${CHECKOV_VERSION}
+  script:
+    - checkov -d . -o sarif --output-file-path reports/checkov.sarif
+  artifacts:
+    paths:
+      - reports/checkov.sarif
+  allow_failure: ${{ env.IAC_ADVISORY == "true" }}
+
+dast_scan:
+  stage: security
+  image: zaproxy/zap-stable:2.16.0
+  rules:
+    - if: $CI_COMMIT_BRANCH == "staging"
+  script:
+    - zap-baseline.py -t "$STAGING_URL" -J dast-report.json
+  artifacts:
+    paths:
+      - dast-report.json
+  allow_failure: ${{ env.DAST_ADVISORY == "true" }}
