@@ -1,7 +1,7 @@
 ---
 name: cloudflare-deploy
 description: Deploy applications and infrastructure to Cloudflare using MCP tools (primary) or Wrangler CLI (fallback). Covers Workers, Pages, KV, D1, R2, Queues, Vectorize, and AI Gateway.
-version: 1.0.0
+version: 1.1.0
 author: Broville
 license: MIT
 platforms:
@@ -15,11 +15,14 @@ trigger:
   - User wants to manage Cloudflare account resources via API
 metadata:
   hermes:
+    aliases: [cloudflare]
     tags: [cloudflare, workers, pages, deployment, edge-computing, serverless, devops, mcp]
     related_skills: [kaleb-one-sites]
 ---
 
 # Cloudflare Deploy
+
+> This skill absorbs and supersedes the external skill 'cloudflare' from hoodini/ai-agents-skills. See the history in this repo's PR for the merge commit.
 
 Deploy applications and manage infrastructure on the Cloudflare platform. This skill supports two paths for interacting with Cloudflare:
 
@@ -100,6 +103,77 @@ npx wrangler queues create my-queue
 ### 8. Create a Vectorize index
 ```bash
 npx wrangler vectorize create my-vector-index --dimensions=768 --metric=cosine
+```
+
+## Advanced Services
+
+### Workers AI
+
+Use Workers AI to run machine-learning inference directly from a Worker.
+
+```bash
+# Add the Workers AI binding to wrangler.toml
+[[ai]]
+binding = "AI"
+```
+
+```typescript
+// Example: run an LLM inference in a Worker
+export default {
+  async fetch(request, env): Promise<Response> {
+    const response = await env.AI.run('@cf/meta/llama-3-8b-instruct', {
+      messages: [
+        { role: 'system', content: 'You are a helpful assistant.' },
+        { role: 'user', content: 'What can Workers AI do?' }
+      ]
+    });
+    return new Response(JSON.stringify(response));
+  }
+};
+```
+
+### Pages Functions
+
+Pages Functions let you add server-side code to a Pages project with per-request edge functions.
+
+```bash
+# Create a function file in your Pages project
+mkdir -p functions/api
+```
+
+```typescript
+// functions/api/hello.ts
+export const onRequest: PagesFunction = async (context) => {
+  return new Response(JSON.stringify({ hello: 'world' }), {
+    headers: { 'content-type': 'application/json' }
+  });
+};
+```
+
+### R2 examples
+
+R2 provides S3-compatible object storage. Common patterns include upload, download, and presigned URLs.
+
+```bash
+# Upload a local file to R2
+npx wrangler r2 object put my-bucket/my-file.txt --file=./local-file.txt
+
+# Download an object to a local file
+npx wrangler r2 object get my-bucket/my-file.txt --local=./downloaded-file.txt
+
+# List objects in a bucket
+npx wrangler r2 object list my-bucket
+```
+
+```typescript
+// Example: read an object from R2 inside a Worker
+export default {
+  async fetch(request, env): Promise<Response> {
+    const object = await env.MY_BUCKET.get('my-file.txt');
+    if (!object) return new Response('Not found', { status: 404 });
+    return new Response(object.body);
+  }
+};
 ```
 
 ## Pitfalls
