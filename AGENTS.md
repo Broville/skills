@@ -7,7 +7,6 @@ This file provides instructions for autonomous agents working on this repository
 - **Org**: Broville
 - **Repo**: skills
 - **Project**: Hermes
-- **Deploy Stage**: Not Deployed
 
 ## What This Repo Is
 
@@ -15,14 +14,16 @@ This is a **skill definition repository** — a library of modular, documented s
 
 ## Pipeline
 
-This repo is managed by the **broville-pipeline** skill. When an issue is assigned:
+All work in this repository follows the authoritative process documented in [SOP.md](./SOP.md). The canonical flow is:
 
-1. **Claim** the issue (apply `agent:working` label, set `claimed_at` to unix timestamp)
-2. **Work** locally in `$HOME/Documents/Github/skills/`
-3. **Push** a branch, open a PR against `main`
-4. **Mark** `agent:canary` when deployed to canary
-5. **Mark** `agent:awaiting-feedback` when ready for human review
-6. **Close** the issue after validation
+1. **Open** an issue using the YAML form templates.
+2. **Branch** from `main` (`feat/<skill-name>`, `fix/<skill-name>-<short-desc>`, `docs/<skill-name>-<short-desc>`, or `chore/remove-<skill-name>`).
+3. **Write or edit** the relevant `SKILL.md` and supporting files.
+4. **Validate** the change against the SOP.md § Validation Checklist before opening a PR.
+5. **Open a PR** against `main` and obtain at least 1 approval.
+6. **Merge** only after the PR is approved; stale reviews are dismissed on new pushes.
+
+> **GitHub-issues flow:** This repo does not use the `agent:canary` / `agent:awaiting-feedback` labels. Those are part of an external deployment-pipeline workflow and are not tracked here.
 
 ## Skill Authoring Rules
 
@@ -46,9 +47,9 @@ Every skill MUST have:
 skills/skill-name/
 ├── SKILL.md           # Required — the skill definition
 ├── references/        # Optional — supporting reference docs
-├── templates/          # Optional — template files the skill produces
-├── scripts/            # Optional — executable scripts the skill runs
-└── assets/             # Optional — static assets (images, diagrams)
+├── templates/         # Optional — template files the skill produces
+├── scripts/           # Optional — executable scripts the skill runs
+└── assets/            # Optional — static assets (images, diagrams)
 ```
 
 ## Standard Operating Procedures
@@ -80,22 +81,3 @@ skills/skill-name/
 ## Reports
 
 All briefs, reports, and status updates are published to **pages.eaglepass.io** using the Liquid Glass design system (dark mode, self-contained HTML).
-
-## Discord
-
-- **Channel**: #skills under Projects category
-- **Origin thread**: Used for autopilot issue tracking
-
-## Labels Reference
-
-| Label                   | Color   | Purpose                                    |
-|-------------------------|---------|--------------------------------------------|
-| `priority:critical`    | #B60205 | Blocks core functionality                  |
-| `priority:high`        | #D93F0B | Pick up before medium/low                  |
-| `priority:medium`      | #FBCA04 | Default priority                           |
-| `agent:working`        | #5319E7 | Agent claimed, actively working             |
-| `agent:canary`         | #1D76DB | Deployed to canary for validation          |
-| `agent:awaiting-feedback` | #0E8A16 | Waiting for human validation             |
-| `claimed_at`           | #6B6B6B | Unix timestamp when issue was claimed      |
-| `discord:thread`       | #8E44AD | Discord thread ID for this issue           |
-| `discord:last`          | #27AE60 | Last Discord message ID seen by agent      |
