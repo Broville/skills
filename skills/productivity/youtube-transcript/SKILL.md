@@ -1,7 +1,7 @@
 ---
 name: youtube-transcript
 description: Extract a YouTube video's transcript from a URL or video ID. Returns timestamped and plain-text formats. Model-agnostic.
-version: 1.0.0
+version: 1.0.0-rc.1
 author: Broville
 license: MIT
 platforms:
