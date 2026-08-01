@@ -47,9 +47,9 @@ Every skill MUST have:
 skills/skill-name/
 ├── SKILL.md           # Required — the skill definition
 ├── references/        # Optional — supporting reference docs
-├── templates/          # Optional — template files the skill produces
-├── scripts/            # Optional — executable scripts the skill runs
-└── assets/             # Optional — static assets (images, diagrams)
+├── templates/         # Optional — template files the skill produces
+├── scripts/           # Optional — executable scripts the skill runs
+└── assets/            # Optional — static assets (images, diagrams)
 ```
 
 ## Standard Operating Procedures
