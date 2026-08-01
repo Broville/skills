@@ -14,16 +14,16 @@ This is a **skill definition repository** — a library of modular, documented s
 
 ## Pipeline
 
-This repo follows the process defined in [SOP.md](./SOP.md). When a skill issue is assigned:
+All work in this repository follows the authoritative process documented in [SOP.md](./SOP.md). The canonical flow is:
 
-1. **Open or claim** the `[Skill]` issue.
-2. **Create a branch** from `main` (`feat/<skill-name>` for new skills, `fix/<skill-name>-<short-desc>` for edits).
-3. **Write or edit** the `SKILL.md` following [SKILL-SPEC.md](./SKILL-SPEC.md).
-4. **Validate locally** — run the checks in SOP.md § Validation Checklist.
-5. **Open a PR** against `main` and request 1 approval.
-6. **Merge** only after approval.
+1. **Open** an issue using the YAML form templates.
+2. **Branch** from `main` (`feat/<skill-name>`, `fix/<skill-name>-<short-desc>`, `docs/<skill-name>-<short-desc>`, or `chore/remove-<skill-name>`).
+3. **Write or edit** the relevant `SKILL.md` and supporting files.
+4. **Validate** the change against the SOP.md § Validation Checklist before opening a PR.
+5. **Open a PR** against `main` and obtain at least 1 approval.
+6. **Merge** only after the PR is approved; stale reviews are dismissed on new pushes.
 
-This repository is a documentation library, not a deployed service, so it does not use canary deployment or runtime feedback labels.
+> **GitHub-issues flow:** This repo does not use the `agent:canary` / `agent:awaiting-feedback` labels. Those are part of an external deployment-pipeline workflow and are not tracked here.
 
 ## Skill Authoring Rules
 
@@ -77,3 +77,7 @@ skills/skill-name/
 - **Commit style**: Conventional commits (`feat:`, `fix:`, `docs:`, `chore:`)
 - **PRs**: Require 1 approval; stale reviews are dismissed
 - **Issues**: Use the YAML form templates; do not create blank issues
+
+## Reports
+
+All briefs, reports, and status updates are published to **pages.eaglepass.io** using the Liquid Glass design system (dark mode, self-contained HTML).
