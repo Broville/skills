@@ -8,7 +8,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [Bible, exegesis, hermeneutics, SOAP, research]
-    related_skills: [bible-study-facilitation, bible-study-app-development]
+    related_skills: [helloao-bible-api, bible-study-facilitation, bible-study-app-development]
 trigger:
   - When a user asks to read, research, compare, or structure study of a biblical passage.
   - When an agent needs to prepare sourced Scripture-study notes or a personal study template.
@@ -39,7 +39,7 @@ Work in this order:
 
 1. **Establish scope and translation.** Confirm the passage, purpose (reading, research packet, group study, or personal template), and the user's preferred licensed translation. If no preference is given, use the placeholder `[bible-translation]` until the user or project chooses one. Completion: the study names its passage, translation, and purpose.
 2. **Read context before extracting details.** Read the whole unit, surrounding verses, book flow, and genre. Note speaker, audience, setting, argument, repeated terms, contrasts, and literary structure. Completion: observations distinguish what the text says from later inference.
-3. **Collect source material.** Retrieve text only from a source whose terms permit the intended use. Gather translation comparisons, cross-references, historical context, and original-language data where a reputable, licensed source makes it available. Record source title, URL or publication details, access date, and relevant license or attribution. Completion: every source can be independently located and checked.
+3. **Collect source material.** Retrieve text only from a source whose terms permit the intended use. When the Free Use Bible API meets the user's translation and license needs, load `helloao-bible-api` and use its discovery-first workflow for text, public-domain commentary, and datasets. Gather original-language data separately from a reputable, licensed corpus. Record source title, URL or publication details, access date, and relevant license or attribution. Completion: every source can be independently located and checked.
 4. **Perform word studies responsibly.** Start with the actual form and its immediate syntax, then lemma, morphology, lexical range, and other uses in the relevant corpus. Do not derive a passage meaning from an identifier, dictionary gloss, or etymology alone. Completion: each word-study claim identifies its evidence and limits.
 5. **Test interpretations.** Keep genre, historical setting, authorial intent, immediate context, canonical context, and progressive revelation in view. Preserve genuine ambiguity; do not force a conclusion simply because a user asked a question. Completion: conclusions, if supplied by the user, are clearly distinct from source evidence and unresolved alternatives.
 6. **Provide a study structure.** For a deep study, organize full text (within license limits), observations, key terms, source packet, cross-references, cultural context, translation notes, reflection questions, and sources. For a personal SOAP study, use the blank template below. Completion: the output is useful without claiming to be the final theological answer.

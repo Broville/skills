@@ -8,7 +8,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [Bible, group-study, facilitation, discussion]
-    related_skills: [scripture-study-method, bible-study-app-development]
+    related_skills: [helloao-bible-api, scripture-study-method, bible-study-app-development]
 trigger:
   - When a user asks for a leader-ready Bible study for a group.
   - When a facilitator needs discussion questions on a passage or theme.
@@ -30,7 +30,7 @@ Use this skill to prepare a flexible leader guide for a group studying a biblica
 ## Steps
 
 1. **Anchor the session.** Gather the passage or theme, available time, group makeup, setting, series context, and desired balance of reading and discussion. Default to a 35-minute guide only when no time is supplied. Completion: the guide states its audience, duration, and passage boundary.
-2. **Gather a resource packet.** Obtain the complete passage from a licensed source selected by the user or project; read its immediate context; identify structure, repeated terms, historical context, cross-references, and any licensed commentary or language resources. Separate direct source material from agent-generated organizational text. Completion: every non-obvious claim has a source citation.
+2. **Gather a resource packet.** Obtain the complete passage from a licensed source selected by the user or project; when the Free Use Bible API is suitable, load `helloao-bible-api` to discover and retrieve the text, commentary, or cross-reference dataset. Read immediate context; identify structure, repeated terms, historical context, cross-references, and any licensed commentary or language resources. Separate direct source material from agent-generated organizational text. Completion: every non-obvious claim has a source citation.
 3. **Build questions in order.** Start with observation, then interpretation, then response. Ask textual, open-ended, inclusive questions that a new participant can answer and an experienced participant can deepen. Do not insert answers into the guide. Completion: every question is tied to a textual observation or cited resource.
 4. **Structure modular blocks.** Use the following default arc and mark blocks as Core, Recommended, or Optional: opening; reading; observation; interpretation; canonical connections; God/Christ-focused reflection; response prompts; and closing. Add time estimates that total the session length. Completion: a leader can skip or extend a block without breaking the study.
 5. **Add leader notes carefully.** Provide citations, textual pointers, vocabulary to define, and common misreadings as prompts for the leader to evaluate. Do not write a sermon, prayer, theological verdict, or prescribed personal response. Completion: notes distinguish source material from facilitation guidance.

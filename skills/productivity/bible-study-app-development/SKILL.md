@@ -8,7 +8,7 @@ platforms: [linux, macos, windows]
 metadata:
   hermes:
     tags: [Bible, product-design, source-governance, local-first]
-    related_skills: [scripture-study-method, bible-study-facilitation]
+    related_skills: [helloao-bible-api, scripture-study-method, bible-study-facilitation]
 trigger:
   - When a user asks to plan, source, document, or build a Bible study application.
   - When a Bible-reading product needs source governance, AI boundaries, or offline content design.
@@ -42,7 +42,7 @@ Do not use this skill to write a sermon, devotional, or theological conclusion. 
 
 1. **Establish the product boundary.** Record target users, platforms, accessibility needs, account model, offline expectations, and the distinction between MVP and later work. Mark open questions rather than inventing answers.
 2. **Create the product-definition set.** Use `templates/product-definition-bundle.md` to create a product outline, source registry, translation evaluation record, and architecture decision log. Completion: every core decision is either recorded as `DECIDED` or explicitly `OPEN`.
-3. **Create and maintain a source registry.** For each translation, corpus, lexicon, commentary, cultural dataset, and remote source, record its status (`CANDIDATE`, `REVIEW`, `APPROVED`, or `REJECTED`), license, attribution, redistribution rights, data format, provenance, and access method. Completion: no product integration depends on an unapproved source.
+3. **Create and maintain a source registry.** For each translation, corpus, lexicon, commentary, cultural dataset, and remote source, record its status (`CANDIDATE`, `REVIEW`, `APPROVED`, or `REJECTED`), license, attribution, redistribution rights, data format, provenance, and access method. Evaluate the Free Use Bible API through `helloao-bible-api` as a candidate for text, public-domain commentary, and cross-reference data; it remains subject to the same source approval process. Completion: no product integration depends on an unapproved source.
 4. **Evaluate translation candidates.** Compare candidate translations for textual transparency, ambiguity preservation, consistency, and treatment of difficult passages. Perform representative passage-level checks across both Testaments using the actual source text. Completion: the chosen default is documented with evidence, or remains unset.
 5. **Design content packs.** Define minimal installable packs for Bible text and optional packs for original-language corpora, lexicons, commentaries, cultural data, and reading plans. Each pack needs an identifier, version, language, size, license, attribution, source URL, dependencies, and offline/remote status. Completion: a reader can identify what is required and what is optional without relying on network access.
 6. **Set AI boundaries.** Permit source retrieval, citation assembly, cross-reference discovery, language-data display, and blank study templates. Prohibit unsourced claims, automatic ingestion of remote-only sources, personal applications, prayers, sermons, devotionals, and doctrinal conclusions. Completion: each AI feature has a source and boundary statement.
