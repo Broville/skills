@@ -1,24 +1,17 @@
 ---
-name: bible-study-facilitation
-description: Build flexible, discussion-first group Bible studies.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
+name: "bible-study-facilitation"
+description: "Build flexible, discussion-first group Bible studies."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [Bible, group-study, facilitation, discussion]
-    related_skills: [helloao-bible-api, scripture-study-method, bible-study-app-development]
-trigger:
-  - When a user asks for a leader-ready Bible study for a group.
-  - When a facilitator needs discussion questions on a passage or theme.
-inputs:
-  - name: passage-and-setting
-    description: Passage or theme, group context, time available, and leader preferences.
-    required: true
-outputs:
-  - name: facilitation-guide
-    description: A timed, modular leader guide with sourced prompts and questions.
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"When a user asks for a leader-ready Bible study for a group.\",\"When a facilitator needs discussion questions on a passage or theme.\"]"
+  inputs: "[{\"name\":\"passage-and-setting\",\"description\":\"Passage or theme, group context, time available, and leader preferences.\",\"required\":true}]"
+  outputs: "[{\"name\":\"facilitation-guide\",\"description\":\"A timed, modular leader guide with sourced prompts and questions.\"}]"
+  tags: "[\"Bible\",\"group-study\",\"facilitation\",\"discussion\"]"
+  related-skills: "[\"helloao-bible-api\",\"scripture-study-method\",\"bible-study-app-development\"]"
 ---
 
 # Bible Study Facilitation

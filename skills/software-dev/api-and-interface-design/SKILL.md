@@ -1,29 +1,21 @@
 ---
-name: api-and-interface-design
-description: Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks to design a REST, GraphQL, or module API
-  - User asks to define public interfaces or boundaries
-  - User mentions API stability, contracts, or versioning
+name: "api-and-interface-design"
+description: "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/api-and-interface-design
-    tags:
-      - api
-      - design
-      - interfaces
-    related_skills:
-      - api-security-best-practices
-      - test-driven-development
-      - code-review-checklist
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to design a REST, GraphQL, or module API\",\"User asks to define public interfaces or boundaries\",\"User mentions API stability, contracts, or versioning\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"api\",\"design\",\"interfaces\"]"
+  related-skills: "[\"api-security-best-practices\",\"test-driven-development\",\"code-review-checklist\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/api-and-interface-design"
 ---
+
 # API and Interface Design
 
 ## Description

@@ -1,18 +1,17 @@
 ---
-name: memento-flashcards
-description: Spaced-repetition flashcard system — create cards from facts, review with adaptive scheduling, generate quizzes from YouTube transcripts, export/import as CSV. All data stored locally, no API keys required.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - Mention "flashcard", "memorize", "remember this", or "save this card"
-  - Want to review due flashcards or study with spaced repetition
-  - Send a YouTube URL and want a quiz generated from it
-  - Ask to export, import, or manage flashcard decks
-related_skills:
-  - concise-planning
-  - verification-before-completion
+name: "memento-flashcards"
+description: "Spaced-repetition flashcard system — create cards from facts, review with adaptive scheduling, generate quizzes from YouTube transcripts, export/import as CSV. All data stored locally, no API keys required."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"Mention \\\"flashcard\\\", \\\"memorize\\\", \\\"remember this\\\", or \\\"save this card\\\"\",\"Want to review due flashcards or study with spaced repetition\",\"Send a YouTube URL and want a quiz generated from it\",\"Ask to export, import, or manage flashcard decks\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"concise-planning\",\"verification-before-completion\"]"
 ---
 
 # Memento Flashcards
@@ -21,17 +20,20 @@ related_skills:
 
 A local, file-based flashcard system with spaced-repetition scheduling. Create Q/A cards from statements, review due cards with adaptive intervals, generate quizzes from YouTube transcripts, and manage decks with JSON storage and CSV import/export. No external API keys required — the agent generates flashcard content and quiz questions directly, using a Python script for card management and scheduling.
 
-All card data lives in a single JSON file at `~/.hermes/skills/productivity/memento-flashcards/data/cards.json`. The Python helper script handles atomic writes to prevent corruption.
+All card data lives in `data/cards.json` relative to the installed skill directory. The Python helper script handles atomic writes to prevent corruption.
 
 ## Prerequisites
 
 - Python 3.x available on the system
-- Helper scripts installed at `~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py`
+- Run commands from the installed `memento-flashcards` skill directory so relative `scripts/` and `data/` paths resolve consistently on every agent host
 - For YouTube quiz generation: `youtube-transcript-api` package (`pip install youtube-transcript-api`)
 
 ```bash
+# From the directory containing this SKILL.md
+cd "/path/to/installed/memento-flashcards"
+
 # Verify helper script is available
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py stats
+python3 scripts/memento_cards.py stats
 
 # Install YouTube transcript dependency (optional, for quiz generation)
 pip install youtube-transcript-api
@@ -51,7 +53,7 @@ When the user mentions a fact or wants to remember something:
 To create a card:
 
 ```bash
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py add \
+python3 scripts/memento_cards.py add \
   --question "What year did World War 2 end?" \
   --answer "1945" \
   --collection "History"
@@ -65,10 +67,10 @@ Fetch all due cards:
 
 ```bash
 # All due cards
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py due
+python3 scripts/memento_cards.py due
 
 # Filter by collection
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py due --collection "History"
+python3 scripts/memento_cards.py due --collection "History"
 ```
 
 Review flow (free-text grading):
@@ -81,7 +83,7 @@ Review flow (free-text grading):
 4. Rate the card:
 
 ```bash
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py rate \
+python3 scripts/memento_cards.py rate \
   --id CARD_ID --rating easy --user-answer "what the user said"
 ```
 
@@ -101,7 +103,7 @@ When the user sends a YouTube URL and wants a quiz:
 2. Fetch the transcript:
 
 ```bash
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/youtube_quiz.py fetch VIDEO_ID
+python3 scripts/youtube_quiz.py fetch VIDEO_ID
 ```
 
 3. Generate 5 quiz questions from the first 15,000 characters of the transcript (the agent generates these — not an API call)
@@ -109,7 +111,7 @@ python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/youtube_quiz.py
 5. Store quiz cards:
 
 ```bash
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py add-quiz \
+python3 scripts/memento_cards.py add-quiz \
   --video-id "VIDEO_ID" \
   --questions '[{"question":"...","answer":"..."},...]' \
   --collection "Quiz - Episode Title"
@@ -123,7 +125,7 @@ The script deduplicates by `video_id` — if cards for that video exist, it skip
 **Export:**
 
 ```bash
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py export \
+python3 scripts/memento_cards.py export \
   --output ~/flashcards.csv
 ```
 
@@ -132,7 +134,7 @@ Produces a 3-column CSV: `question,answer,collection` (no header row).
 **Import:**
 
 ```bash
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py import \
+python3 scripts/memento_cards.py import \
   --file ~/flashcards.csv \
   --collection "Imported"
 ```
@@ -142,7 +144,7 @@ Reads a CSV with columns: question, answer, and optionally collection (column 3)
 ### Step 5: Checking Statistics
 
 ```bash
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py stats
+python3 scripts/memento_cards.py stats
 ```
 
 Returns JSON with: `total`, `learning`, `retired`, `due_now`, and `collections` breakdown.
@@ -151,10 +153,10 @@ Returns JSON with: `total`, `learning`, `retired`, `due_now`, and `collections` 
 
 ```bash
 # Delete a specific card
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py delete --id CARD_ID
+python3 scripts/memento_cards.py delete --id CARD_ID
 
 # Delete an entire collection
-python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py delete-collection --collection "History"
+python3 scripts/memento_cards.py delete-collection --collection "History"
 ```
 
 ## Pitfalls
@@ -170,14 +172,14 @@ python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.p
 
 1. **Helper script works:**
    ```bash
-   python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py stats
+   python3 scripts/memento_cards.py stats
    ```
 2. **Card creation works:**
    ```bash
-   python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py add --question "Capital of France?" --answer "Paris" --collection "General"
+   python3 scripts/memento_cards.py add --question "Capital of France?" --answer "Paris" --collection "General"
    ```
 3. **Due cards can be fetched:**
    ```bash
-   python3 ~/.hermes/skills/productivity/memento-flashcards/scripts/memento_cards.py due
+   python3 scripts/memento_cards.py due
    ```
 4. **Review feedback includes correct answer** — After each card, the user sees the right answer and a brief assessment before the next question

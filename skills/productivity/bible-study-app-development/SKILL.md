@@ -1,24 +1,17 @@
 ---
-name: bible-study-app-development
-description: Design evidence-first, local-first Bible study apps.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
+name: "bible-study-app-development"
+description: "Design evidence-first, local-first Bible study apps."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [Bible, product-design, source-governance, local-first]
-    related_skills: [helloao-bible-api, scripture-study-method, bible-study-facilitation]
-trigger:
-  - When a user asks to plan, source, document, or build a Bible study application.
-  - When a Bible-reading product needs source governance, AI boundaries, or offline content design.
-inputs:
-  - name: product-context
-    description: Intended users, platforms, constraints, and existing project context.
-    required: true
-outputs:
-  - name: product-definition
-    description: Source-backed product documents and implementation constraints.
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"When a user asks to plan, source, document, or build a Bible study application.\",\"When a Bible-reading product needs source governance, AI boundaries, or offline content design.\"]"
+  inputs: "[{\"name\":\"product-context\",\"description\":\"Intended users, platforms, constraints, and existing project context.\",\"required\":true}]"
+  outputs: "[{\"name\":\"product-definition\",\"description\":\"Source-backed product documents and implementation constraints.\"}]"
+  tags: "[\"Bible\",\"product-design\",\"source-governance\",\"local-first\"]"
+  related-skills: "[\"helloao-bible-api\",\"scripture-study-method\",\"bible-study-facilitation\"]"
 ---
 
 # Bible Study App Development

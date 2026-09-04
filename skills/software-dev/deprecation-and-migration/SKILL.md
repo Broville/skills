@@ -1,28 +1,21 @@
 ---
-name: deprecation-and-migration
-description: Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from on...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks to remove or replace an old API or feature
-  - User asks to migrate users to a new implementation
-  - User mentions deprecation notices or sunsetting
+name: "deprecation-and-migration"
+description: "Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from on..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/deprecation-and-migration
-    tags:
-      - deprecation
-      - migration
-      - lifecycle
-    related_skills:
-      - api-and-interface-design
-      - documentation-and-adrs
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to remove or replace an old API or feature\",\"User asks to migrate users to a new implementation\",\"User mentions deprecation notices or sunsetting\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"deprecation\",\"migration\",\"lifecycle\"]"
+  related-skills: "[\"api-and-interface-design\",\"documentation-and-adrs\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/deprecation-and-migration"
 ---
+
 # Deprecation and Migration
 
 ## Description

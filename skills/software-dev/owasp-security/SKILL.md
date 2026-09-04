@@ -1,30 +1,19 @@
 ---
-name: owasp-security
-description: Implement secure coding practices following OWASP Top 10. Use when preventing
-  security vulnerabilities, implementing...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User asks about OWASP Top 10, secure coding, or vulnerability prevention
-- Code review focuses on authentication, authorization, injection, XSS, or SSRF
-- User is preparing a security review or hardening checklist
+name: "owasp-security"
+description: "Implement secure coding practices following OWASP Top 10. Use when preventing security vulnerabilities, implementing..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: hoodini/ai-agents-skills@master (MIT)
-    source_url: https://github.com/hoodini/ai-agents-skills/tree/master/skills/owasp-security
-    tags:
-    - security
-    - owasp
-    - vulnerabilities
-    - secure-coding
-    related_skills:
-    - security-best-practices
-    - security-threat-model
-    - api-security-best-practices
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks about OWASP Top 10, secure coding, or vulnerability prevention\",\"Code review focuses on authentication, authorization, injection, XSS, or SSRF\",\"User is preparing a security review or hardening checklist\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"security\",\"owasp\",\"vulnerabilities\",\"secure-coding\"]"
+  related-skills: "[\"security-best-practices\",\"security-threat-model\",\"api-security-best-practices\"]"
+  source: "hoodini/ai-agents-skills@master (MIT)"
+  source-url: "https://github.com/hoodini/ai-agents-skills/tree/master/skills/owasp-security"
 ---
 
 # Owasp Security
@@ -445,82 +434,11 @@ app.use(helmet.contentSecurityPolicy({
 
 ## A09: Logging & Monitoring
 
-```typescript
-import winston from 'winston';
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.json()
-  ),
-  transports: [
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' }),
-  ],
-});
-
-// ✅ Log security events
-function logSecurityEvent(event: string, details: object) {
-  logger.warn({
-    type: 'security',
-    event,
-    ...details,
-    timestamp: new Date().toISOString(),
-  });
-}
-
-// Usage
-logSecurityEvent('failed_login', { email, ip: req.ip, userAgent: req.headers['user-agent'] });
-logSecurityEvent('access_denied', { userId, resource, action });
-logSecurityEvent('suspicious_activity', { userId, pattern: 'rapid_requests' });
-```
+Record authentication failures, access denials, privilege changes, validation failures, and suspicious activity as structured events. Exclude secrets and sensitive request bodies, protect logs from tampering, and connect actionable events to monitored alerts. Load [the A09/A10 implementation reference](references/a09-a10-patterns.md) when concrete TypeScript patterns are needed.
 
 ## A10: SSRF Prevention
 
-```typescript
-import { URL } from 'url';
-
-// ✅ Validate URLs against allowlist
-const ALLOWED_HOSTS = ['api.example.com', 'cdn.example.com'];
-
-function isAllowedUrl(urlString: string): boolean {
-  try {
-    const url = new URL(urlString);
-    
-    // Block private IPs
-    const privatePatterns = [
-      /^localhost$/i,
-      /^127\./,
-      /^10\./,
-      /^172\.(1[6-9]|2[0-9]|3[01])\./,
-      /^192\.168\./,
-      /^0\./,
-      /^169\.254\./,  // Link-local
-    ];
-    
-    if (privatePatterns.some(p => p.test(url.hostname))) {
-      return false;
-    }
-    
-    // Check allowlist
-    return ALLOWED_HOSTS.includes(url.hostname);
-  } catch {
-    return false;
-  }
-}
-
-app.post('/api/fetch-url', async (req, res) => {
-  const { url } = req.body;
-  
-  if (!isAllowedUrl(url)) {
-    return res.status(400).json({ error: 'URL not allowed' });
-  }
-  
-  const response = await fetch(url);
-  // ...
-});
-```
+Prefer a strict destination allowlist and a dedicated outbound client. Resolve and validate every destination, reject loopback/private/link-local ranges for both IP families, restrict schemes and ports, disable unsafe redirects, and enforce egress controls. Revalidate each redirect and defend against DNS rebinding; string checks alone are insufficient. Load [the A09/A10 implementation reference](references/a09-a10-patterns.md) for an implementation starting point.
 
 ## Security Checklist
 
@@ -581,4 +499,3 @@ Follow the methodology and concrete checks laid out in the sections above.
 ## Cross-References
 
 See the related skills listed in the frontmatter.
-

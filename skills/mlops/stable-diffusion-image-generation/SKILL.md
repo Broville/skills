@@ -1,19 +1,17 @@
 ---
-name: stable-diffusion-image-generation
-description: Local text-to-image generation with Stable Diffusion models — text-to-image, image-to-image, inpainting, ControlNet, LoRA adapters, all running on local GPU inference
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to generate an image from a text description
-  - User wants image-to-image transformation or style transfer
-  - User needs inpainting or outpainting on an existing image
-  - User asks about running Stable Diffusion locally
-  - User wants to use ControlNet for spatial conditioning or LoRA style adapters
-related_skills:
-  - meme-generation
-  - chroma
+name: "stable-diffusion-image-generation"
+description: "Local text-to-image generation with Stable Diffusion models — text-to-image, image-to-image, inpainting, ControlNet, LoRA adapters, all running on local GPU inference"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to generate an image from a text description\",\"User wants image-to-image transformation or style transfer\",\"User needs inpainting or outpainting on an existing image\",\"User asks about running Stable Diffusion locally\",\"User wants to use ControlNet for spatial conditioning or LoRA style adapters\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"meme-generation\",\"chroma\"]"
 ---
 
 # Stable Diffusion Image Generation — Local Inference

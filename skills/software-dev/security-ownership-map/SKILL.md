@@ -1,44 +1,17 @@
 ---
-name: security-ownership-map
-description: Analyze git history to build a people-to-files ownership graph, compute bus factor for security-sensitive code, and export CSV/JSON for visualization and risk analysis.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks to analyze code ownership or who owns what code
-  - User asks to find the bus factor for a repository or code area
-  - User asks about orphaned security code or ownership hotspots
-  - User wants a security-oriented ownership analysis grounded in git history
-  - User mentions CODEOWNERS drift or hidden code owners
-inputs:
-  - name: repo_path
-    description: Absolute path to the git repository to analyze
-    required: true
-  - name: since
-    description: Start date for git history analysis (e.g., "12 months ago", "2024-01-01")
-    required: false
-  - name: until
-    description: End date for git history analysis
-    required: false
-  - name: sensitive_config
-    description: Path to a CSV file defining sensitive file patterns (auth, crypto, secrets)
-    required: false
-outputs:
-  - name: output_dir
-    description: Directory containing people.csv, files.csv, edges.csv, summary.json, and optional graph files
+name: "security-ownership-map"
+description: "Analyze git history to build a people-to-files ownership graph, compute bus factor for security-sensitive code, and export CSV/JSON for visualization and risk analysis."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - security
-      - git
-      - ownership
-      - bus-factor
-      - code-analysis
-    related_skills:
-      - security-threat-model
-      - security-best-practices
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to analyze code ownership or who owns what code\",\"User asks to find the bus factor for a repository or code area\",\"User asks about orphaned security code or ownership hotspots\",\"User wants a security-oriented ownership analysis grounded in git history\",\"User mentions CODEOWNERS drift or hidden code owners\"]"
+  inputs: "[{\"name\":\"repo_path\",\"description\":\"Absolute path to the git repository to analyze\",\"required\":true},{\"name\":\"since\",\"description\":\"Start date for git history analysis (e.g., \\\"12 months ago\\\", \\\"2024-01-01\\\")\",\"required\":false},{\"name\":\"until\",\"description\":\"End date for git history analysis\",\"required\":false},{\"name\":\"sensitive_config\",\"description\":\"Path to a CSV file defining sensitive file patterns (auth, crypto, secrets)\",\"required\":false}]"
+  outputs: "[{\"name\":\"output_dir\",\"description\":\"Directory containing people.csv, files.csv, edges.csv, summary.json, and optional graph files\"}]"
+  tags: "[\"security\",\"git\",\"ownership\",\"bus-factor\",\"code-analysis\"]"
+  related-skills: "[\"security-threat-model\",\"security-best-practices\"]"
 ---
 
 # Security Ownership Map

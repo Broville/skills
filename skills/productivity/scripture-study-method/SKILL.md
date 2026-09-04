@@ -1,24 +1,17 @@
 ---
-name: scripture-study-method
-description: Study Scripture with context, sources, and user ownership.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
+name: "scripture-study-method"
+description: "Study Scripture with context, sources, and user ownership."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [Bible, exegesis, hermeneutics, SOAP, research]
-    related_skills: [helloao-bible-api, bible-study-facilitation, bible-study-app-development]
-trigger:
-  - When a user asks to read, research, compare, or structure study of a biblical passage.
-  - When an agent needs to prepare sourced Scripture-study notes or a personal study template.
-inputs:
-  - name: passage-and-purpose
-    description: Biblical reference, chosen translation if known, and intended study format.
-    required: true
-outputs:
-  - name: source-packet-or-study-template
-    description: Cited study resources and prompts without generated theological conclusions.
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"When a user asks to read, research, compare, or structure study of a biblical passage.\",\"When an agent needs to prepare sourced Scripture-study notes or a personal study template.\"]"
+  inputs: "[{\"name\":\"passage-and-purpose\",\"description\":\"Biblical reference, chosen translation if known, and intended study format.\",\"required\":true}]"
+  outputs: "[{\"name\":\"source-packet-or-study-template\",\"description\":\"Cited study resources and prompts without generated theological conclusions.\"}]"
+  tags: "[\"Bible\",\"exegesis\",\"hermeneutics\",\"SOAP\",\"research\"]"
+  related-skills: "[\"helloao-bible-api\",\"bible-study-facilitation\",\"bible-study-app-development\"]"
 ---
 
 # Scripture Study Method

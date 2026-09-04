@@ -1,19 +1,17 @@
 ---
-name: whisper
-description: Local speech-to-text transcription using Whisper models — supports 99 languages, translation to English, CLI and Python API, GPU acceleration, and faster-whisper alternative
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to transcribe audio, recordings, podcasts, or meetings to text
-  - User wants speech-to-text conversion for any language
-  - User asks to translate audio content to English
-  - User needs subtitles or captions generated from video/audio
-  - User asks about local ASR or voice recognition tools
-related_skills:
-  - chroma
-  - searxng-search
+name: "whisper"
+description: "Local speech-to-text transcription using Whisper models — supports 99 languages, translation to English, CLI and Python API, GPU acceleration, and faster-whisper alternative"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to transcribe audio, recordings, podcasts, or meetings to text\",\"User wants speech-to-text conversion for any language\",\"User asks to translate audio content to English\",\"User needs subtitles or captions generated from video/audio\",\"User asks about local ASR or voice recognition tools\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"chroma\"]"
 ---
 
 # Whisper — Robust Speech Recognition (Local Inference)

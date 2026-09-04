@@ -1,19 +1,17 @@
 ---
-name: drug-discovery
-description: Pharmaceutical research assistant — search bioactive compounds on ChEMBL, calculate drug-likeness (Lipinski Ro5, QED, TPSA), look up drug interactions via OpenFDA, and interpret ADMET profiles
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks about drug molecules, bioactive compounds, or pharmaceutical research
-  - User wants to assess drug-likeness of a molecule (Lipinski Ro5, Veber rules, QED)
-  - User asks about drug-drug interactions or adverse events for a medication
-  - User needs target-disease associations or gene-disease literature
-  - User wants molecular property analysis, ADMET profiling, or lead optimization
-related_skills:
-  - fitness-nutrition
-  - searxng-search
+name: "drug-discovery"
+description: "Pharmaceutical research assistant — search bioactive compounds on ChEMBL, calculate drug-likeness (Lipinski Ro5, QED, TPSA), look up drug interactions via OpenFDA, and interpret ADMET profiles"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks about drug molecules, bioactive compounds, or pharmaceutical research\",\"User wants to assess drug-likeness of a molecule (Lipinski Ro5, Veber rules, QED)\",\"User asks about drug-drug interactions or adverse events for a medication\",\"User needs target-disease associations or gene-disease literature\",\"User wants molecular property analysis, ADMET profiling, or lead optimization\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"fitness-nutrition\"]"
 ---
 
 # Drug Discovery & Pharmaceutical Research

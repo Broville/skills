@@ -1,42 +1,17 @@
 ---
-name: cli-creator
-description: Build composable command-line tools from API docs, OpenAPI specs, curl examples, SDKs, or existing scripts. Produces durable, installable CLIs in Python, TypeScript, or Rust.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks to create a CLI or command-line tool
-  - User asks to wrap an API with a command-line interface
-  - User wants to build a tool from an OpenAPI spec, curl examples, or SDK
-  - User asks to make a script installable as a proper command
-  - User mentions argparse, typer, commander, clap, or CLI frameworks
-inputs:
-  - name: tool_name
-    description: Short binary name for the CLI (e.g., "ci-logs", "slack-cli")
-    required: true
-  - name: source
-    description: API docs, OpenAPI spec, curl examples, SDK, or existing script
-    required: true
-  - name: runtime
-    description: "Language choice: python, typescript, or rust (auto-detected if not specified)"
-    required: false
-outputs:
-  - name: cli_binary
-    description: Installable CLI tool available on PATH
-  - name: readme
-    description: README with usage examples and installation instructions
+name: "cli-creator"
+description: "Build composable command-line tools from API docs, OpenAPI specs, curl examples, SDKs, or existing scripts. Produces durable, installable CLIs in Python, TypeScript, or Rust."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - cli
-      - command-line
-      - api-wrapper
-      - tooling
-      - developer-tools
-    related_skills:
-      - jupyter-notebook
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to create a CLI or command-line tool\",\"User asks to wrap an API with a command-line interface\",\"User wants to build a tool from an OpenAPI spec, curl examples, or SDK\",\"User asks to make a script installable as a proper command\",\"User mentions argparse, typer, commander, clap, or CLI frameworks\"]"
+  inputs: "[{\"name\":\"tool_name\",\"description\":\"Short binary name for the CLI (e.g., \\\"ci-logs\\\", \\\"slack-cli\\\")\",\"required\":true},{\"name\":\"source\",\"description\":\"API docs, OpenAPI spec, curl examples, SDK, or existing script\",\"required\":true},{\"name\":\"runtime\",\"description\":\"Language choice: python, typescript, or rust (auto-detected if not specified)\",\"required\":false}]"
+  outputs: "[{\"name\":\"cli_binary\",\"description\":\"Installable CLI tool available on PATH\"},{\"name\":\"readme\",\"description\":\"README with usage examples and installation instructions\"}]"
+  tags: "[\"cli\",\"command-line\",\"api-wrapper\",\"tooling\",\"developer-tools\"]"
+  related-skills: "[\"jupyter-notebook\"]"
 ---
 
 # CLI Creator

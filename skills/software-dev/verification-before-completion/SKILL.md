@@ -1,18 +1,17 @@
 ---
-name: verification-before-completion
-description: Mandatory verify-before-claiming-done gate — run verification commands and confirm output before making any success claims
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - About to claim work is complete, fixed, or passing
-  - Ready to commit, push, or create a PR
-  - Expressing satisfaction or confidence about a task
+name: "verification-before-completion"
+description: "Mandatory verify-before-claiming-done gate — run verification commands and confirm output before making any success claims"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [verification, quality, testing, completion]
-    related_skills: [systematic-debugging, code-review-checklist]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"About to claim work is complete, fixed, or passing\",\"Ready to commit, push, or create a PR\",\"Expressing satisfaction or confidence about a task\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"verification\",\"quality\",\"testing\",\"completion\"]"
+  related-skills: "[\"systematic-debugging\",\"code-review-checklist\"]"
 ---
 
 # Verification Before Completion
@@ -93,3 +92,7 @@ npm run build  # Exit code 0 AND no errors
 2. **Partial verification** — Only running related tests misses regressions
 3. **Confusing "looks correct" with "is correct"** — Running it is verification
 4. **Skipping the red-green cycle** — A test that always passes proves nothing
+
+## Verification
+
+Before making a completion claim, record the exact command or observation that tests each claimed outcome, run it against the current state, and confirm its output and exit status. If any check is stale, partial, or failing, report that limitation instead of claiming completion.

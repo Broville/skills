@@ -1,50 +1,17 @@
 ---
-name: ci-security-pipeline
+name: "ci-security-pipeline"
 description: "Design and emit CI/CD security pipeline stages (pre-commit, PR, deploy gates) chaining SAST, SCA, secret, IaC, and DAST."
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User asks to set up security scanning in a CI/CD pipeline
-  - User mentions DevSecOps, shift-left security, or security gates
-  - User wants pre-commit or pre-push hooks for secret detection
-  - User wants to integrate security scanning into GitHub Actions, GitLab CI, or Jenkins
-inputs:
-  - name: pipeline_platform
-    description: github-actions, gitlab-ci, jenkins, or circleci
-    required: true
-  - name: scan_types
-    description: "Subset of [sast, sca, secret, iac, dast] to include (default: all except dast)"
-    required: false
-  - name: enforcement_level
-    description: "advisory (warn only) or blocking (fail PR)"
-    required: false
-  - name: repo_path
-    description: Path to the target repository
-    required: true
-  - name: compliance_framework
-    description: "Optional compliance target (cis, nist, pci-dss, hipaa)"
-    required: false
-outputs:
-  - name: pipeline_config
-    description: "CI/CD configuration file(s) written under .github/workflows/, .gitlab-ci.yml, etc."
-  - name: pre_commit_config
-    description: .pre-commit-config.yaml with secret-scan hook
-  - name: security_scanning_doc
-    description: security-scanning.md written into the repo root documenting the pipeline
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [security, ci-cd, devsecops, github-actions, gitlab, jenkins, pipeline, devops]
-    related_skills:
-      - sast-scan
-      - dast-scan
-      - sca-scan
-      - secret-scan
-      - iac-security-scan
-      - vulnerability-triage
-      - github-actions-templates
-      - deployment-procedures
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to set up security scanning in a CI/CD pipeline\",\"User mentions DevSecOps, shift-left security, or security gates\",\"User wants pre-commit or pre-push hooks for secret detection\",\"User wants to integrate security scanning into GitHub Actions, GitLab CI, or Jenkins\"]"
+  inputs: "[{\"name\":\"pipeline_platform\",\"description\":\"github-actions, gitlab-ci, jenkins, or circleci\",\"required\":true},{\"name\":\"scan_types\",\"description\":\"Subset of [sast, sca, secret, iac, dast] to include (default: all except dast)\",\"required\":false},{\"name\":\"enforcement_level\",\"description\":\"advisory (warn only) or blocking (fail PR)\",\"required\":false},{\"name\":\"repo_path\",\"description\":\"Path to the target repository\",\"required\":true},{\"name\":\"compliance_framework\",\"description\":\"Optional compliance target (cis, nist, pci-dss, hipaa)\",\"required\":false}]"
+  outputs: "[{\"name\":\"pipeline_config\",\"description\":\"CI/CD configuration file(s) written under .github/workflows/, .gitlab-ci.yml, etc.\"},{\"name\":\"pre_commit_config\",\"description\":\".pre-commit-config.yaml with secret-scan hook\"},{\"name\":\"security_scanning_doc\",\"description\":\"security-scanning.md written into the repo root documenting the pipeline\"}]"
+  tags: "[\"security\",\"ci-cd\",\"devsecops\",\"github-actions\",\"gitlab\",\"jenkins\",\"pipeline\",\"devops\"]"
+  related-skills: "[\"sast-scan\",\"dast-scan\",\"sca-scan\",\"secret-scan\",\"iac-security-scan\",\"vulnerability-triage\",\"github-actions-templates\",\"deployment-procedures\"]"
 ---
 
 # ci-security-pipeline

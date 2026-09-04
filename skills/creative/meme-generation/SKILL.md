@@ -1,19 +1,17 @@
 ---
-name: meme-generation
-description: Generate real meme images by picking a template and overlaying text with Pillow — produces actual .png meme files, no external API required
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to make or generate a meme
-  - User wants a meme about a specific topic, situation, or frustration
-  - User says "meme this" or similar
-  - User asks for a humorous image with text overlay
-  - User wants to combine an image with caption text
-related_skills:
-  - stable-diffusion-image-generation
-  - searxng-search
+name: "meme-generation"
+description: "Generate real meme images by picking a template and overlaying text with Pillow — produces actual .png meme files, no external API required"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to make or generate a meme\",\"User wants a meme about a specific topic, situation, or frustration\",\"User says \\\"meme this\\\" or similar\",\"User asks for a humorous image with text overlay\",\"User wants to combine an image with caption text\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"stable-diffusion-image-generation\"]"
 ---
 
 # Meme Generation

@@ -1,18 +1,17 @@
 ---
-name: pinggy-tunnel
-description: Expose local services to the public internet via Pinggy SSH tunnels. Zero-install — uses the system SSH client for HTTP/HTTPS/TCP tunnels with optional auth gates and CORS.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to expose a local port, share a dev server, or get a public URL
-  - User needs to receive webhook callbacks during local development
-  - User wants to tunnel a local service without installing cloudflared or ngrok
-  - User asks for a quick public URL for testing or demonstration
-related_skills:
-  - deployment-procedures
-  - watchers
+name: "pinggy-tunnel"
+description: "Expose local services to the public internet via Pinggy SSH tunnels. Zero-install — uses the system SSH client for HTTP/HTTPS/TCP tunnels with optional auth gates and CORS."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to expose a local port, share a dev server, or get a public URL\",\"User needs to receive webhook callbacks during local development\",\"User wants to tunnel a local service without installing cloudflared or ngrok\",\"User asks for a quick public URL for testing or demonstration\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"deployment-procedures\",\"watchers\"]"
 ---
 
 # Pinggy Tunnel

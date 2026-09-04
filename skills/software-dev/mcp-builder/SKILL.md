@@ -1,29 +1,19 @@
 ---
-name: mcp-builder
-description: Guide for creating high-quality MCP (Model Context Protocol) servers
-  that enable LLMs to interact with external...
-version: 1.0.0
-author: Broville
-license: Apache-2.0
-platforms:
-- linux
-- macos
-trigger:
-- User asks to build an MCP server for an external API or service
-- User wants to expose external data or tools to an agent via MCP
-- User mentions Model Context Protocol, FastMCP, or MCP SDK
+name: "mcp-builder"
+description: "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external..."
+license: "Apache-2.0"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: anthropics/skills@main (Apache-2.0)
-    source_url: https://github.com/anthropics/skills/tree/main/skills/mcp-builder
-    tags:
-    - mcp
-    - integration
-    - api
-    - tools
-    related_skills:
-    - api-security-best-practices
-    - cli-creator
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to build an MCP server for an external API or service\",\"User wants to expose external data or tools to an agent via MCP\",\"User mentions Model Context Protocol, FastMCP, or MCP SDK\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"mcp\",\"integration\",\"api\",\"tools\"]"
+  related-skills: "[\"api-security-best-practices\",\"cli-creator\"]"
+  source: "anthropics/skills@main (Apache-2.0)"
+  source-url: "https://github.com/anthropics/skills/tree/main/skills/mcp-builder"
 ---
 
 # Mcp Builder

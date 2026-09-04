@@ -1,29 +1,19 @@
 ---
-name: context-engineering
-description: Optimizes agent context setup. Use when starting a new session, when
-  agent output quality degrades, when switching...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User starts a new project or session and needs agent context set up
-- Agent output quality is degrading or ignoring project conventions
-- User asks about rules files, CLAUDE.md, AGENTS.md, or context hierarchy
+name: "context-engineering"
+description: "Optimizes agent context setup. Use when starting a new session, when agent output quality degrades, when switching..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/context-engineering
-    tags:
-    - context
-    - rules-files
-    - agent-quality
-    - conventions
-    related_skills:
-    - systematic-debugging
-    - code-review-checklist
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User starts a new project or session and needs agent context set up\",\"Agent output quality is degrading or ignoring project conventions\",\"User asks about rules files, CLAUDE.md, AGENTS.md, or context hierarchy\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"context\",\"rules-files\",\"agent-quality\",\"conventions\"]"
+  related-skills: "[\"systematic-debugging\",\"code-review-checklist\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/context-engineering"
 ---
 
 # Context Engineering
@@ -102,7 +92,7 @@ Create a rules file that persists across sessions. This is the highest-leverage 
 - `.cursorrules` or `.cursor/rules/*.md` (Cursor)
 - `.windsurfrules` (Windsurf)
 - `.github/copilot-instructions.md` (GitHub Copilot)
-- `AGENTS.md` (the provider Codex)
+- `AGENTS.md` (cross-agent project instructions used by Codex and other compatible hosts)
 
 ### Level 2: Specs and Architecture
 
@@ -334,4 +324,3 @@ Follow the methodology and concrete checks laid out in the sections above.
 ## Cross-References
 
 See the related skills listed in the frontmatter.
-

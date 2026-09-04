@@ -29,7 +29,7 @@ All work in this repository follows the authoritative process documented in [SOP
 
 Every skill MUST have:
 
-1. **SKILL.md** with complete YAML frontmatter (name, description, version, triggers, inputs, outputs)
+1. **SKILL.md** with open-standard YAML frontmatter and complete string-valued repository metadata (version, triggers, inputs, outputs, tags, related skills)
 2. **Trigger conditions** — explicit list of when an agent should load this skill
 3. **Pitfalls section** — common mistakes and how to avoid them
 4. **Verification steps** — how to confirm the skill produced correct results
@@ -38,13 +38,13 @@ Every skill MUST have:
 ### Naming Conventions
 
 - **Directory names**: kebab-case (e.g., `systematic-debugging/`)
-- **Categories**: one of `devops`, `software-dev`, `mlops`, `data`, `research`, `creative`, `productivity`, `monitoring`
+- **Categories**: one of `creative`, `data`, `data-science`, `devops`, `finance`, `health`, `mlops`, `monitoring`, `productivity`, `research`, `software-dev`
 - **SKILL.md**: always exactly `SKILL.md` (uppercase)
 
 ### File Structure
 
 ```
-skills/skill-name/
+skills/category/skill-name/
 ├── SKILL.md           # Required — the skill definition
 ├── references/        # Optional — supporting reference docs
 ├── templates/         # Optional — template files the skill produces
@@ -60,16 +60,17 @@ skills/skill-name/
 - **Editing** an existing skill (issue → version bump → validate → PR → merge)
 - **Removing** a skill (issue → check dependents → delete → PR → merge)
 - **Pulling** a skill for use (locate → read SKILL.md in full → execute → verify)
-- **Deprecating** a skill (add `deprecated: true` + `replaced_by` → PR → merge)
+- **Deprecating** a skill (add string-valued `metadata.deprecated` + `metadata.replaced-by` → PR → merge)
 - **Skill discovery** (by category, by trigger match, by search, by related skills)
 
 **Key rules:**
 
 1. **No direct commits to `main`** — always use a branch and PR
-2. **Every skill must have a `SKILL.md`** with complete frontmatter, triggers, steps, pitfalls, and verification
+2. **Every skill must have a `SKILL.md`** conforming to [SKILL-SPEC.md](./SKILL-SPEC.md), with triggers, steps, pitfalls, and verification
 3. **No secrets or local paths** in any skill file
-4. **Validate before merging** — use the checklist in SOP.md § Validation Checklist
+4. **Validate before merging** — run `python scripts/validate_skills.py` and `python scripts/test_install_skills.py`, then use the checklist in SOP.md § Validation Checklist
 5. **Patch after use** — if you discover a gap while pulling a skill, open an issue and PR the fix after the session
+6. **One canonical package** — never fork skill content by agent provider; use the installer for discovery-path adapters
 
 ## Conventions
 

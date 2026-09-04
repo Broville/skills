@@ -1,28 +1,29 @@
 # Broville Skills
 
-A modular, documented repository of agent skills — designed for easy add/remove lifecycle and agent-pullable consumption.
+A modular, documented repository of portable [Agent Skills](https://agentskills.io/) for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and other standards-compatible hosts.
 
 ## Purpose
 
-This repo stores **skill definitions** that autonomous agents can pull, install, and execute. Each skill is self-contained with its own documentation, so agents can discover what's available and how to use it.
+This repo stores **skill packages** that autonomous agents can discover, install, and execute. Each package has one provider-neutral `SKILL.md` plus any relative scripts, references, templates, or assets it needs. Agent-specific discovery paths are handled at installation time; the skill itself is not forked per provider.
 
 ## Repository Structure
 
 ```
-skills/
+Broville/skills/
 ├── README.md              → This file
 ├── AGENTS.md              → Agent instructions for working in this repo
 ├── SKILL-SPEC.md          → Skill specification format and conventions
+├── scripts/                → Cross-agent validation and installation
 ├── skills/
-│   ├── category/
-│   │   └── skill-name/
-│   │       ├── SKILL.md       → Skill definition (required)
-│   │       ├── references/    → Supporting reference docs
-│   │       ├── templates/     → Template files the skill produces
-│   │       ├── scripts/       → Executable scripts the skill runs
-│   │       └── assets/        → Static assets (images, diagrams)
+│   └── category/skill-name/
+│       ├── SKILL.md        → Skill entrypoint (required)
+│       ├── references/     → Supporting reference docs
+│       ├── templates/      → Template files the skill produces
+│       ├── scripts/        → Executable scripts the skill runs
+│       └── assets/         → Static assets (images, diagrams)
 └── .github/
-    └── ISSUE_TEMPLATE/    → Issue templates for this repo
+    ├── ISSUE_TEMPLATE/     → Issue templates for this repo
+    └── workflows/          → Linux, macOS, and Windows validation
 ```
 
 ## Skill Categories
@@ -33,6 +34,9 @@ skills/
 | `software-dev`| Software development, testing, review                |
 | `mlops`       | ML ops, model training, serving                      |
 | `data`        | Data engineering, ETL, pipelines                    |
+| `data-science`| Notebooks, experiments, and analytical workflows     |
+| `finance`     | Financial analysis and modeling                      |
+| `health`      | Health and fitness workflows                         |
 | `research`   | Research, discovery, literature review               |
 | `creative`    | Content generation, design, writing                 |
 | `productivity`| Productivity, docs, automation                       |
@@ -49,30 +53,23 @@ skills/
 
 ## SKILL.md Format
 
-Every skill must have a `SKILL.md` with YAML frontmatter:
+Every skill uses only standard root fields. Broville's version, trigger, input, output, and relationship data live in the standard's string-to-string `metadata` map; structured values are JSON strings.
 
 ```yaml
 ---
 name: skill-name
-description: One-line description of what this skill does.
-version: 1.0.0
-author: Broville
+description: What this skill does and when an agent should load it.
 license: MIT
-platforms: [linux, macos, windows]
+compatibility: Open Agent Skills format. Runtime requirements are listed in Prerequisites.
 metadata:
-  hermes:
-    tags: [tag1, tag2]
-    related_skills: [other-skill]
-trigger:
-  - when the user asks about X
-  - when task involves Y
-inputs:
-  - name: input_name
-    description: What this input provides
-    required: true
-outputs:
-  - name: output_name
-    description: What this skill produces
+  author: Broville
+  version: "1.0.0"
+  platforms: '["linux","macos","windows"]'
+  triggers: '["User asks about X","Task involves Y"]'
+  inputs: '[{"name":"input_name","description":"What this input provides","required":true}]'
+  outputs: '[{"name":"output_name","description":"What this skill produces"}]'
+  tags: '["tag1","tag2"]'
+  related-skills: '["other-skill"]'
 ---
 
 # Skill Title
@@ -98,11 +95,36 @@ How to confirm the skill worked correctly.
 
 See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
+## Install for an Agent
+
+Install one or more complete packages into a project using the host's supported discovery path:
+
+```bash
+python scripts/install_skills.py --agent codex --workspace /path/to/project --skill frontend-ui-engineering
+python scripts/install_skills.py --agent claude --workspace /path/to/project --skill frontend-ui-engineering
+python scripts/install_skills.py --agent gemini --workspace /path/to/project --skill frontend-ui-engineering
+python scripts/install_skills.py --agent cursor --workspace /path/to/project --skill frontend-ui-engineering
+python scripts/install_skills.py --agent opencode --workspace /path/to/project --skill frontend-ui-engineering
+python scripts/install_skills.py --agent copilot --workspace /path/to/project --skill frontend-ui-engineering
+```
+
+Omit `--skill` to install the full catalog. Use `--target /path/to/skills` for another compatible host. Existing targets are preserved unless `--force` is explicit.
+
+## Validate
+
+```bash
+python -m pip install PyYAML skills-ref
+python scripts/validate_skills.py
+python scripts/test_install_skills.py
+```
+
+The checks combine the official Agent Skills validator with repository policy and run on Linux, macOS, and Windows in CI.
+
 ## Adding a New Skill
 
 1. Pick the right category directory under `skills/`
 2. Create a directory named after the skill (kebab-case, e.g., `my-new-skill/`)
-3. Add `SKILL.md` with full frontmatter and documentation
+3. Add a standard-compatible `SKILL.md` with complete repository metadata and documentation
 4. Add any supporting files in `references/`, `templates/`, `scripts/`, or `assets/`
 5. Open a PR against `main`
 
@@ -110,7 +132,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
 1. Open a `[Skill Removal]` issue listing the skill and reason
 2. Delete the skill directory
-3. Update any `related_skills` references in other skills
+3. Update any `metadata.related-skills` references in other skills
 4. Merge the PR
 
 ## Documentation Priority
@@ -118,7 +140,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 Documentation is a first-class concern in this repo:
 
 - Every skill must have a complete `SKILL.md`
-- Every skill must list **triggers** (when an agent should load it)
+- Every skill must encode **triggers** in `metadata.triggers` (when an agent should load it)
 - Every skill must list **pitfalls** (common mistakes)
 - Every skill must include a **verification** section
 - Cross-references between related skills must be maintained

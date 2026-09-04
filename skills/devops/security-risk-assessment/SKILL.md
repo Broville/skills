@@ -1,49 +1,17 @@
 ---
-name: security-risk-assessment
-description: Conduct a structured risk assessment combining scans, threat models, business impact, and compliance for execs.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User asks for a security risk assessment or risk report
-  - User wants to evaluate business impact of vulnerabilities
-  - User asks about regulatory compliance for security (PCI-DSS, HIPAA, SOC 2, ISO 27001)
-  - User wants to combine scan results with business context for prioritization
-inputs:
-  - name: scan_reports
-    description: "List of paths to scan outputs (SARIF/JSON/CSV) — optional"
-    required: false
-  - name: repo_path
-    description: "Path to the codebase for threat modeling (optional but recommended)"
-    required: false
-  - name: compliance_frameworks
-    description: "List of frameworks to assess against (pci-dss, hipaa, soc2, iso27001)"
-    required: false
-  - name: risk_tolerance
-    description: conservative, moderate, or aggressive — used to adjust gates
-    required: false
-  - name: business_context
-    description: Data classification, regulatory scope, exposure, blast radius
-    required: false
-outputs:
-  - name: risk_assessment_report
-    description: Markdown risk assessment with risk matrix, executive summary, and remediation roadmap
-  - name: risk_register
-    description: Structured risk register in JSON/CSV for tracking
+name: "security-risk-assessment"
+description: "Conduct a structured risk assessment combining scans, threat models, business impact, and compliance for execs."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [security, risk-assessment, compliance, fair, nist-800-30, executive-report, devops]
-    related_skills:
-      - vulnerability-triage
-      - security-threat-model
-      - security-best-practices
-      - ci-security-pipeline
-      - sast-scan
-      - dast-scan
-      - sca-scan
-      - secret-scan
-      - iac-security-scan
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks for a security risk assessment or risk report\",\"User wants to evaluate business impact of vulnerabilities\",\"User asks about regulatory compliance for security (PCI-DSS, HIPAA, SOC 2, ISO 27001)\",\"User wants to combine scan results with business context for prioritization\"]"
+  inputs: "[{\"name\":\"scan_reports\",\"description\":\"List of paths to scan outputs (SARIF/JSON/CSV) — optional\",\"required\":false},{\"name\":\"repo_path\",\"description\":\"Path to the codebase for threat modeling (optional but recommended)\",\"required\":false},{\"name\":\"compliance_frameworks\",\"description\":\"List of frameworks to assess against (pci-dss, hipaa, soc2, iso27001)\",\"required\":false},{\"name\":\"risk_tolerance\",\"description\":\"conservative, moderate, or aggressive — used to adjust gates\",\"required\":false},{\"name\":\"business_context\",\"description\":\"Data classification, regulatory scope, exposure, blast radius\",\"required\":false}]"
+  outputs: "[{\"name\":\"risk_assessment_report\",\"description\":\"Markdown risk assessment with risk matrix, executive summary, and remediation roadmap\"},{\"name\":\"risk_register\",\"description\":\"Structured risk register in JSON/CSV for tracking\"}]"
+  tags: "[\"security\",\"risk-assessment\",\"compliance\",\"fair\",\"nist-800-30\",\"executive-report\",\"devops\"]"
+  related-skills: "[\"vulnerability-triage\",\"security-threat-model\",\"security-best-practices\",\"ci-security-pipeline\",\"sast-scan\",\"dast-scan\",\"sca-scan\",\"secret-scan\",\"iac-security-scan\"]"
 ---
 
 # security-risk-assessment

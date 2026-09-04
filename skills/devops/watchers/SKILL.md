@@ -1,19 +1,17 @@
 ---
-name: watchers
-description: Poll RSS, JSON APIs, and GitHub with watermark dedup. Run watchers on a cron schedule or ad-hoc and react only to new items.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User wants to watch an RSS/Atom feed and be notified of new entries
-  - User wants to poll a JSON endpoint or GitHub repo for new items
-  - User asks for "a watcher for X" or "notify me when X changes"
-  - Setting up automated monitoring with cron-driven polling
+name: "watchers"
+description: "Poll RSS, JSON APIs, and GitHub with watermark dedup. Run watchers on a cron schedule or ad-hoc and react only to new items."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [rss, watcher, monitoring, cron, polling, dedup, github]
-    related_skills: [cloudflare-deploy]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User wants to watch an RSS/Atom feed and be notified of new entries\",\"User wants to poll a JSON endpoint or GitHub repo for new items\",\"User asks for \\\"a watcher for X\\\" or \\\"notify me when X changes\\\"\",\"Setting up automated monitoring with cron-driven polling\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"rss\",\"watcher\",\"monitoring\",\"cron\",\"polling\",\"dedup\",\"github\"]"
+  related-skills: "[\"cloudflare-deploy\"]"
 ---
 
 # Watchers
@@ -59,7 +57,7 @@ python3 ~/.local/share/skills/devops/watchers/scripts/watch_http_json.py \
 
 ### Step 3: Wire into Cron
 
-Create a Hermes cron job that runs the watcher on schedule. If it prints nothing (no new items), stay silent.
+Use the current agent host's scheduler or automation feature when one is available. Otherwise, configure the operating system's cron-equivalent scheduler. If the watcher prints nothing (no new items), do not emit a notification.
 
 ### Step 4: Inspect or Reset State Files
 

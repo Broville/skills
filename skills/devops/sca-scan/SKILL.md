@@ -1,52 +1,17 @@
 ---
-name: sca-scan
-description: Run Software Composition Analysis on project dependencies to surface CVEs, outdated packages, and optional SBOM output.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User asks to check dependencies for known vulnerabilities
-  - User mentions SCA, dependency scanning, npm audit, pip audit, CVE, or SBOM
-  - CI pipeline needs a dependency vulnerability scan stage
-  - User wants to know if any third-party packages have security issues
-inputs:
-  - name: scan_path
-    description: Path to the project root containing package manifests
-    required: true
-  - name: ecosystem
-    description: "Force a specific ecosystem (python, node, go, java, rust); auto-detected if omitted"
-    required: false
-  - name: include_transitive
-    description: "Include transitive dependencies in the scan (default: true)"
-    required: false
-  - name: severity_threshold
-    description: "Minimum severity to report (critical, high, medium, low)"
-    required: false
-  - name: generate_sbom
-    description: "Emit SBOM in CycloneDX or SPDX format (default: false)"
-    required: false
-  - name: output_format
-    description: "Report format (sarif, json, markdown)"
-    required: false
-outputs:
-  - name: vulnerability_report
-    description: SARIF/JSON/Markdown report of dependency vulnerabilities
-  - name: sbom_file
-    description: "SBOM file (CycloneDX or SPDX) when generate_sbom is true"
-  - name: remediation_plan
-    description: Prioritized list of safe upgrades
+name: "sca-scan"
+description: "Run Software Composition Analysis on project dependencies to surface CVEs, outdated packages, and optional SBOM output."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [security, sca, dependencies, cve, sbom, devops]
-    related_skills:
-      - sast-scan
-      - dast-scan
-      - secret-scan
-      - iac-security-scan
-      - vulnerability-triage
-      - ci-security-pipeline
-      - security-best-practices
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to check dependencies for known vulnerabilities\",\"User mentions SCA, dependency scanning, npm audit, pip audit, CVE, or SBOM\",\"CI pipeline needs a dependency vulnerability scan stage\",\"User wants to know if any third-party packages have security issues\"]"
+  inputs: "[{\"name\":\"scan_path\",\"description\":\"Path to the project root containing package manifests\",\"required\":true},{\"name\":\"ecosystem\",\"description\":\"Force a specific ecosystem (python, node, go, java, rust); auto-detected if omitted\",\"required\":false},{\"name\":\"include_transitive\",\"description\":\"Include transitive dependencies in the scan (default: true)\",\"required\":false},{\"name\":\"severity_threshold\",\"description\":\"Minimum severity to report (critical, high, medium, low)\",\"required\":false},{\"name\":\"generate_sbom\",\"description\":\"Emit SBOM in CycloneDX or SPDX format (default: false)\",\"required\":false},{\"name\":\"output_format\",\"description\":\"Report format (sarif, json, markdown)\",\"required\":false}]"
+  outputs: "[{\"name\":\"vulnerability_report\",\"description\":\"SARIF/JSON/Markdown report of dependency vulnerabilities\"},{\"name\":\"sbom_file\",\"description\":\"SBOM file (CycloneDX or SPDX) when generate_sbom is true\"},{\"name\":\"remediation_plan\",\"description\":\"Prioritized list of safe upgrades\"}]"
+  tags: "[\"security\",\"sca\",\"dependencies\",\"cve\",\"sbom\",\"devops\"]"
+  related-skills: "[\"sast-scan\",\"dast-scan\",\"secret-scan\",\"iac-security-scan\",\"vulnerability-triage\",\"ci-security-pipeline\",\"security-best-practices\"]"
 ---
 
 # sca-scan

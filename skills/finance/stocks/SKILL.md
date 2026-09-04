@@ -1,19 +1,17 @@
 ---
-name: stocks
-description: Read-only stock market data via Yahoo Finance — quote, search, history, compare, and crypto prices with no API key required
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks for a current stock price or ticker quote
-  - User wants to look up a ticker symbol by company name
-  - User requests OHLCV history or performance over a date range
-  - User wants to compare several tickers side by side
-  - User asks for cryptocurrency prices (BTC, ETH, SOL, etc.)
-related_skills:
-  - dcf-model
-  - 3-statement-model
+name: "stocks"
+description: "Read-only stock market data via Yahoo Finance — quote, search, history, compare, and crypto prices with no API key required"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks for a current stock price or ticker quote\",\"User wants to look up a ticker symbol by company name\",\"User requests OHLCV history or performance over a date range\",\"User wants to compare several tickers side by side\",\"User asks for cryptocurrency prices (BTC, ETH, SOL, etc.)\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"dcf-model\",\"3-statement-model\"]"
 ---
 
 # Stocks
@@ -33,7 +31,8 @@ Read-only market data via Yahoo Finance. Five commands: quote, search, history, 
 ### 1. Install and run the stocks client
 
 ```bash
-SCRIPT=~/.hermes/skills/finance/stocks/scripts/stocks_client.py
+cd "/path/to/installed/stocks"
+SCRIPT=scripts/stocks_client.py
 python3 $SCRIPT quote AAPL
 ```
 
@@ -90,7 +89,7 @@ Pass the base symbol (e.g., `BTC`); the script appends `-USD` automatically.
 
 ## Verification
 
-1. **Quote returns valid JSON**: Run `python3 ~/.hermes/skills/finance/stocks/scripts/stocks_client.py quote AAPL` and confirm the output is valid JSON containing `symbol: "AAPL"` and a numeric `price` field.
+1. **Quote returns valid JSON**: From the installed skill directory, run `python3 scripts/stocks_client.py quote AAPL` and confirm the output is valid JSON containing `symbol: "AAPL"` and a numeric `price` field.
 
 ## Cross-References
 

@@ -1,28 +1,21 @@
 ---
-name: source-driven-development
-description: Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code f...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks for code that follows current framework documentation
-  - User asks to verify a pattern against official docs
-  - User mentions citing sources for implementation decisions
+name: "source-driven-development"
+description: "Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code f..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/source-driven-development
-    tags:
-      - research
-      - documentation
-      - methodology
-    related_skills:
-      - spec-driven-development
-      - test-driven-development
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks for code that follows current framework documentation\",\"User asks to verify a pattern against official docs\",\"User mentions citing sources for implementation decisions\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"research\",\"documentation\",\"methodology\"]"
+  related-skills: "[\"spec-driven-development\",\"test-driven-development\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/source-driven-development"
 ---
+
 # Source-Driven Development
 
 ## Description

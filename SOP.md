@@ -1,6 +1,6 @@
 # Standard Operating Procedures — Agent Skill Management
 
-This document defines the **authoritative process** for all agents (Hermes, Echo, Pixel, etc.) interacting with the skills repository. Follow these procedures exactly. Deviations cause skill drift, broken cross-references, and agent confusion.
+This document defines the **authoritative process** for every agent host interacting with the skills repository, including Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and standards-compatible successors. Follow these procedures exactly. Deviations cause skill drift, broken cross-references, and agent confusion.
 
 ---
 
@@ -22,7 +22,7 @@ This document defines the **authoritative process** for all agents (Hermes, Echo
 
 ## Overview
 
-This repo is the **single source of truth** for agent skill definitions. Skills are not code — they are structured markdown documents that tell agents how to accomplish specific tasks. Every skill must be **discoverable**, **documented**, **versioned**, and **verifiable**.
+This repo is the **single source of truth** for agent skill packages. A package has a structured Markdown entrypoint and may include scripts or supporting resources. Every skill must be **portable**, **discoverable**, **documented**, **versioned**, and **verifiable**.
 
 **Key principle**: If a skill isn't in this repo, it doesn't exist for agent purposes. Local-only skills are development drafts; they must be published here before they are considered authoritative.
 
@@ -35,9 +35,9 @@ This repo is the **single source of truth** for agent skill definitions. Skills 
 | **Skill** | A self-contained `SKILL.md` plus optional supporting files in a named directory |
 | **Category** | A top-level grouping directory under `skills/` (e.g., `devops/`, `research/`) |
 | **Skill directory** | The folder containing a skill's `SKILL.md` and supporting files |
-| **Frontmatter** | YAML metadata at the top of `SKILL.md` (name, version, triggers, inputs, outputs) |
-| **Related skill** | Another skill listed in the `related_skills` frontmatter field |
-| **Agent** | Any autonomous system (Hermes, Echo, Pixel, Cadence) that reads or writes skills |
+| **Frontmatter** | Open Agent Skills YAML at the top of `SKILL.md`; repository data is string-valued `metadata` |
+| **Related skill** | Another skill listed in the JSON string stored at `metadata.related-skills` |
+| **Agent** | Any autonomous system that discovers and reads Agent Skills packages |
 | **Pull** | The act of reading a skill from this repo into an agent's context for execution |
 | **Publish** | The act of merging a skill into `main` via PR, making it available for pull |
 
@@ -63,7 +63,7 @@ skills/
             └── assets/            → Optional — static assets
 ```
 
-The eight categories are:
+The categories are:
 
 | Category | Purpose |
 |----------|---------|
@@ -71,6 +71,9 @@ The eight categories are:
 | `software-dev` | Software development, testing, review |
 | `mlops` | ML ops, model training, serving |
 | `data` | Data engineering, ETL, pipelines |
+| `data-science` | Notebooks, experiments, analytical workflows |
+| `finance` | Financial analysis and modeling |
+| `health` | Health and fitness workflows |
 | `research` | Research, discovery, literature review |
 | `creative` | Content generation, design, writing |
 | `productivity` | Productivity, docs, automation |
@@ -109,12 +112,12 @@ The eight categories are:
    ```
 
 4. **Write `SKILL.md`** following the [SKILL-SPEC.md](./SKILL-SPEC.md) format. Every `SKILL.md` must include:
-   - YAML frontmatter with **all required fields** (`name`, `description`, `version`, `author`, `license`)
-   - `trigger` — explicit conditions for when an agent should load this skill
+   - Open-standard YAML frontmatter (`name`, `description`, `license`, `compatibility`, `metadata`)
+   - `metadata.triggers` — a JSON string array of explicit conditions for when an agent should load this skill
    - Numbered **steps** with exact commands and expected output
    - **Pitfalls** section documenting known failure modes
    - **Verification** section with at least one concrete check
-   - `related_skills` — cross-references to existing skills in this repo
+   - `metadata.related-skills` — a JSON string array of cross-references to existing skills in this repo
 
 5. **Add supporting files** (if needed):
    - `references/` — Documentation the skill cites
@@ -123,8 +126,10 @@ The eight categories are:
    - `assets/` — Static assets (images, diagrams)
 
 6. **Validate locally**:
+   - Install dependencies and run `python scripts/validate_skills.py`
+   - Run `python scripts/test_install_skills.py`
    - Read through `SKILL.md` — can an agent follow these steps without asking clarifying questions?
-   - Check that `related_skills` entries point to skills that **actually exist** in this repo
+   - Check that `metadata.related-skills` entries point to skills that **actually exist** in this repo
    - Verify all file references in `SKILL.md` point to files that exist in the skill directory
    - Check that the `name` field matches the directory name exactly (kebab-case)
 
@@ -141,7 +146,7 @@ The eight categories are:
    - Category justification
    - Confirmation that validation checklist passes
 
-9. **After merge**: Update the issue status to `agent:awaiting-feedback`. The skill is now published and available for pull.
+9. **After merge**: Confirm the linked issue closed and the merged package is discoverable from `main`.
 
 ### What NOT to do
 
@@ -167,7 +172,7 @@ The eight categories are:
 
 1. **Open an issue** describing what needs to change and why. Use the `[Docs]` template for documentation fixes or `[Enhancement]` for behavioral changes.
 
-2. **Bump the version** in `SKILL.md` frontmatter:
+2. **Bump `metadata.version`** in `SKILL.md` frontmatter:
    - **Patch** (`1.0.1`): Fix a step, add a pitfall, correct a typo
    - **Minor** (`1.1.0`): Add a new step, new input/output, new reference
    - **Major** (`2.0.0`): Breaking change — renamed skill, removed step, changed triggers
@@ -181,7 +186,7 @@ The eight categories are:
    git checkout -b docs/<skill-name>-<short-description>
    ```
 
-4. **Update `related_skills`** in other skills if this edit changes the relationship graph (e.g., if you renamed a skill that others reference).
+4. **Update `metadata.related-skills`** in other skills if this edit changes the relationship graph (e.g., if you renamed a skill that others reference).
 
 5. **Validate** using the same checklist as adding a new skill (see [Validation Checklist](#validation-checklist)).
 
@@ -196,7 +201,7 @@ If you discover a pitfall or fix while **using** a skill (during an active agent
 3. Create a PR with the patch — **do not skip the PR process**
 4. If the fix is urgent and blocking, self-approve and merge, but still open the PR for the audit trail
 
-This applies to Hermes local skills stored in `~/.hermes/profiles/neo/skills/` too — after patching locally, the corresponding skill in this repo should also be updated to keep the canonical version in sync.
+This applies to every agent-specific installation too. Patch the canonical package in this repository, then reinstall an ordinary copy through `scripts/install_skills.py`; do not maintain provider-specific forks or symlinks.
 
 ---
 
@@ -217,9 +222,9 @@ This applies to Hermes local skills stored in `~/.hermes/profiles/neo/skills/` t
 
 2. **Check for dependents**: Search the entire repo for references to this skill:
    ```
-   grep -r "skill-name" skills/ --include="*.md"
+   rg "skill-name" skills --glob "*.md"
    ```
-   If other skills list this skill in their `related_skills`, update them to remove the reference (or point to the absorber skill if merging).
+   If other skills list this skill in `metadata.related-skills`, update them to remove the reference (or point to the absorber skill if merging).
 
 3. **Create a branch**:
    ```
@@ -243,7 +248,7 @@ This applies to Hermes local skills stored in `~/.hermes/profiles/neo/skills/` t
 
 - Remove a skill without checking for dependents first
 - Remove a skill without an issue documenting the reason
-- Leave dangling `related_skills` references to the removed skill
+- Leave dangling `metadata.related-skills` references to the removed skill
 
 ---
 
@@ -263,7 +268,7 @@ This applies to Hermes local skills stored in `~/.hermes/profiles/neo/skills/` t
    ```
 
 3. **Read `SKILL.md`** in full. Pay special attention to:
-   - **Frontmatter** — `trigger` conditions confirm this is the right skill
+   - **Frontmatter** — decoded `metadata.triggers` conditions confirm this is the right skill
    - **Prerequisites** — ensure all required tools and access are available
    - **Steps** — follow them exactly in order
    - **Pitfalls** — review before starting to avoid known failure modes
@@ -293,8 +298,8 @@ This applies to Hermes local skills stored in `~/.hermes/profiles/neo/skills/` t
 
 When a skill should no longer be used but is kept for reference:
 
-1. Add a `deprecated: true` field to the frontmatter
-2. Add a `replaced_by` field pointing to the successor skill (if one exists)
+1. Add `deprecated: "true"` inside the string-valued `metadata` map
+2. Add `replaced-by: "successor-skill"` inside `metadata` when a successor exists
 3. Add a deprecation notice at the top of the `SKILL.md` body:
 
    ```markdown
@@ -330,30 +335,30 @@ skills/monitoring/    → Observability, alerting, health
 
 ### By trigger match
 
-The `trigger` field in each `SKILL.md` defines when an agent should load that skill. When deciding which skill to pull:
+The JSON string stored in `metadata.triggers` defines when an agent should load that skill. When deciding which skill to pull:
 
 1. Read `README.md` for the category overview
-2. For each candidate skill, check if the `trigger` conditions match the current task
+2. For each candidate skill, check if the decoded `metadata.triggers` conditions match the current task
 3. Prefer the most specific skill over a general one
 
 ### By search
 
-Use GitHub search or local grep:
+Use GitHub search or local ripgrep:
 
 ```bash
 # Search skill names and descriptions
-grep -r "description:" skills/ --include="SKILL.md"
+rg "^description:" skills --glob "SKILL.md"
 
 # Search trigger conditions
-grep -r "trigger:" skills/ -A3 --include="SKILL.md"
+rg "^  triggers:" skills --glob "SKILL.md"
 
 # Search for a specific topic
-grep -r "docker" skills/ --include="SKILL.md"
+rg "docker" skills --glob "SKILL.md"
 ```
 
 ### By related skills
 
-When you load one skill, check its `related_skills` field. These are intentionally cross-referenced — loading a related skill in the same session is often the right move.
+When you load one skill, decode its `metadata.related-skills` field. These are intentionally cross-referenced — loading a related skill in the same session is often the right move.
 
 ---
 
@@ -364,13 +369,15 @@ Before merging any skill PR, verify **every** item:
 ### Frontmatter
 
 - [ ] `name` matches the directory name exactly (kebab-case)
-- [ ] `description` is a single line, under 120 characters
-- [ ] `version` is valid semver (`MAJOR.MINOR.PATCH`)
-- [ ] `author` is set
+- [ ] `description` is a single line of 1-1024 characters and includes activation context
+- [ ] Only open-standard root fields are present
+- [ ] `metadata.version` is valid SemVer
+- [ ] `metadata.author` is set
 - [ ] `license` is set (typically `MIT`)
-- [ ] `trigger` lists at least one condition
-- [ ] `related_skills` references only skills that exist in the repo
-- [ ] `inputs` and `outputs` are documented if the skill accepts/produces them
+- [ ] `metadata.triggers` decodes to at least one condition
+- [ ] `metadata.related-skills` decodes to names that exist in the repo
+- [ ] `metadata.inputs` and `metadata.outputs` are JSON arrays and document the skill contract
+- [ ] `python scripts/validate_skills.py` passes, including official `skills-ref` validation
 
 ### Content
 
@@ -391,8 +398,8 @@ Before merging any skill PR, verify **every** item:
 
 ### Cross-references
 
-- [ ] `related_skills` entries point to skills that exist
-- [ ] If this skill replaces an old one, the old skill is deprecated with `replaced_by`
+- [ ] `metadata.related-skills` entries point to skills that exist
+- [ ] If this skill replaces an old one, the old skill is deprecated with `metadata.replaced-by`
 - [ ] If other skills reference this skill, their frontmatter is updated
 
 ---
@@ -404,7 +411,7 @@ Before merging any skill PR, verify **every** item:
 If you can't find a skill for your task:
 1. Check all categories — the skill may be in a different category than expected
 2. Search `SKILL.md` descriptions and triggers
-3. Check `related_skills` of the closest-matching skill
+3. Check `metadata.related-skills` of the closest-matching skill
 4. If nothing matches, open a `[Skill]` issue proposing a new one
 
 ### Skill steps fail
@@ -419,12 +426,12 @@ If a skill's steps don't work:
 
 If two skills have overlapping triggers:
 1. Prefer the **more specific** skill (e.g., `k8s-debug` over `container-debug`)
-2. Check `related_skills` — one may explicitly reference the other
+2. Check `metadata.related-skills` — one may explicitly reference the other
 3. If truly conflicting, open an `[Enhancement]` issue to clarify trigger conditions
 
 ### Skill references broken link
 
-If a `related_skills` entry points to a skill that doesn't exist:
+If a `metadata.related-skills` entry points to a skill that doesn't exist:
 1. The referenced skill may have been removed — check closed issues and PRs
 2. It may be a typo — search for similar names
 3. Open a `[Docs]` issue to fix the reference

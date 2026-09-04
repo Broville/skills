@@ -1,29 +1,21 @@
 ---
-name: incremental-implementation
-description: Delivers changes incrementally. Use when implementing any feature or change that touches more than one file. Use when...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks to deliver a large change safely
-  - User asks to split a feature into smaller increments
-  - User mentions avoiding big-bang rewrites
+name: "incremental-implementation"
+description: "Delivers changes incrementally. Use when implementing any feature or change that touches more than one file. Use when..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/incremental-implementation
-    tags:
-      - delivery
-      - refactoring
-      - methodology
-    related_skills:
-      - spec-driven-development
-      - test-driven-development
-      - concise-planning
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to deliver a large change safely\",\"User asks to split a feature into smaller increments\",\"User mentions avoiding big-bang rewrites\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"delivery\",\"refactoring\",\"methodology\"]"
+  related-skills: "[\"spec-driven-development\",\"test-driven-development\",\"concise-planning\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/incremental-implementation"
 ---
+
 # Incremental Implementation
 
 ## Description

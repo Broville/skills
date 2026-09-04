@@ -1,28 +1,19 @@
 ---
-name: mermaid-diagrams
-description: Create diagrams and visualizations using Mermaid syntax. Use when generating
-  flowcharts, sequence diagrams, class...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User asks to create a diagram, flowchart, sequence diagram, or ER diagram
-- User mentions Mermaid syntax or visual documentation
-- User needs a diagram to explain architecture or a workflow
+name: "mermaid-diagrams"
+description: "Create diagrams and visualizations using Mermaid syntax. Use when generating flowcharts, sequence diagrams, class..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: hoodini/ai-agents-skills@master (MIT)
-    source_url: https://github.com/hoodini/ai-agents-skills/tree/master/skills/mermaid-diagrams
-    tags:
-    - diagrams
-    - mermaid
-    - documentation
-    - visualization
-    related_skills:
-    - verification-before-completion
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to create a diagram, flowchart, sequence diagram, or ER diagram\",\"User mentions Mermaid syntax or visual documentation\",\"User needs a diagram to explain architecture or a workflow\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"diagrams\",\"mermaid\",\"documentation\",\"visualization\"]"
+  related-skills: "[\"verification-before-completion\"]"
+  source: "hoodini/ai-agents-skills@master (MIT)"
+  source-url: "https://github.com/hoodini/ai-agents-skills/tree/master/skills/mermaid-diagrams"
 ---
 
 # Mermaid Diagrams

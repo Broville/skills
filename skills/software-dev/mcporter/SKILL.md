@@ -1,18 +1,17 @@
 ---
-name: mcporter
-description: Discover, call, and manage MCP (Model Context Protocol) servers and tools from the CLI. List servers, call tools, manage auth, and generate CLI wrappers — all via npx.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User wants to list or call MCP server tools from the command line
-  - User needs to connect to an MCP server ad-hoc without configuration
-  - User wants to generate a CLI wrapper or TypeScript types for an MCP server
-  - User needs to manage MCP server auth (OAuth login, config edits)
-related_skills:
-  - fastmcp
-  - deployment-procedures
+name: "mcporter"
+description: "Discover, call, and manage MCP (Model Context Protocol) servers and tools from the CLI. List servers, call tools, manage auth, and generate CLI wrappers — all via npx."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User wants to list or call MCP server tools from the command line\",\"User needs to connect to an MCP server ad-hoc without configuration\",\"User wants to generate a CLI wrapper or TypeScript types for an MCP server\",\"User needs to manage MCP server auth (OAuth login, config edits)\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"mcp-builder\",\"deployment-procedures\"]"
 ---
 
 # mcporter

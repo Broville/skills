@@ -1,43 +1,22 @@
 ---
-name: screenshot
-description: Capture desktop screenshots on Linux (X11 and Wayland) for visual verification, debugging, and documentation.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks to take a screenshot or capture the screen
-  - User asks to verify what is displayed on screen
-  - Visual verification of a GUI application is needed
-  - User asks to document or record the current desktop state
-inputs:
-  - name: path
-    description: Output file path for the screenshot (defaults to auto-generated in ~/Pictures/Screenshots or /tmp)
-    required: false
-  - name: region
-    description: Crop region as x,y,width,height in pixels
-    required: false
-  - name: active_window
-    description: Capture only the currently focused window
-    required: false
-outputs:
-  - name: screenshot_path
-    description: Absolute path to the saved screenshot file
+name: "screenshot"
+description: "Capture desktop screenshots on Linux (X11 and Wayland) for visual verification, debugging, and documentation."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - screenshot
-      - capture
-      - desktop
-      - x11
-      - wayland
-      - visual-verification
-    related_skills:
-      - pdf
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to take a screenshot or capture the screen\",\"User asks to verify what is displayed on screen\",\"Visual verification of a GUI application is needed\",\"User asks to document or record the current desktop state\"]"
+  inputs: "[{\"name\":\"path\",\"description\":\"Output file path for the screenshot (defaults to auto-generated in ~/Pictures/Screenshots or /tmp)\",\"required\":false},{\"name\":\"region\",\"description\":\"Crop region as x,y,width,height in pixels\",\"required\":false},{\"name\":\"active_window\",\"description\":\"Capture only the currently focused window\",\"required\":false}]"
+  outputs: "[{\"name\":\"screenshot_path\",\"description\":\"Absolute path to the saved screenshot file\"}]"
+  tags: "[\"screenshot\",\"capture\",\"desktop\",\"x11\",\"wayland\",\"visual-verification\"]"
+  related-skills: "[\"pdf\"]"
 ---
 
 # Screenshot Capture
+
+## Description
 
 Capture desktop screenshots on Linux systems. Automatically detects whether the session runs on X11 or Wayland and selects the appropriate tool.
 

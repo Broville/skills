@@ -1,23 +1,24 @@
 ---
-name: github-actions-templates
-description: Production-ready GitHub Actions workflow patterns for CI/CD — testing, Docker, K8s deploy, security scanning, and reusable workflows
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - Setting up CI/CD with GitHub Actions
-  - Creating automated testing workflows
-  - Building and pushing Docker images
-  - Deploying from GitHub Actions
-  - Running security scans in CI pipelines
+name: "github-actions-templates"
+description: "Production-ready GitHub Actions workflow patterns for CI/CD — testing, Docker, K8s deploy, security scanning, and reusable workflows"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [github-actions, ci-cd, workflow, testing, docker, security]
-    related_skills: [deployment-procedures, code-review-checklist]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"Setting up CI/CD with GitHub Actions\",\"Creating automated testing workflows\",\"Building and pushing Docker images\",\"Deploying from GitHub Actions\",\"Running security scans in CI pipelines\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"github-actions\",\"ci-cd\",\"workflow\",\"testing\",\"docker\",\"security\"]"
+  related-skills: "[\"deployment-procedures\",\"code-review-checklist\"]"
 ---
 
 # GitHub Actions Templates
+
+## Description
+
+Create secure, reusable GitHub Actions workflows for testing, building, scanning, and deployment. Start from the repository's bundled templates, then adapt them to the project's languages, permissions, environments, and release controls.
 
 ## Security Note: Pin Action Versions
 

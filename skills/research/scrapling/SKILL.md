@@ -1,19 +1,17 @@
 ---
-name: scrapling
-description: Web scraping with anti-bot bypass via Scrapling — HTTP fetching, stealth browser automation, Cloudflare bypass, and spider crawling via CLI and Python
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to scrape a website or extract data from web pages
-  - Built-in web_extract tool returns insufficient or blocked data
-  - User needs to bypass Cloudflare or bot detection on a target site
-  - User wants to crawl multiple pages with link following (spider mode)
-  - User asks to scrape JS-rendered or dynamic content that static fetchers miss
-related_skills:
-  - searxng-search
-  - domain-intel
+name: "scrapling"
+description: "Web scraping with anti-bot bypass via Scrapling — HTTP fetching, stealth browser automation, Cloudflare bypass, and spider crawling via CLI and Python"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to scrape a website or extract data from web pages\",\"Built-in web_extract tool returns insufficient or blocked data\",\"User needs to bypass Cloudflare or bot detection on a target site\",\"User wants to crawl multiple pages with link following (spider mode)\",\"User asks to scrape JS-rendered or dynamic content that static fetchers miss\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"domain-intel\"]"
 ---
 
 # Scrapling — Web Scraping with Anti-Bot Bypass

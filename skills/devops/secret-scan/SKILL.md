@@ -1,41 +1,17 @@
 ---
-name: secret-scan
-description: Detect hardcoded secrets, API keys, tokens, and credentials in source and git history using pattern + entropy analysis.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User asks to scan for leaked secrets, API keys, or credentials
-  - User mentions gitleaks, trufflehog, secret scanning, or credential detection
-  - CI pipeline needs pre-commit or pre-push secret detection
-  - User wants to audit git history for accidentally committed secrets
-inputs:
-  - name: scan_path
-    description: Path to the repository root to scan
-    required: true
-  - name: scan_depth
-    description: "full-history (default) or diff-only (against main)"
-    required: false
-  - name: custom_rules
-    description: Path to a custom Gitleaks/Trufflehog rules file
-    required: false
-  - name: output_format
-    description: "Report format (sarif, json, markdown)"
-    required: false
-outputs:
-  - name: findings
-    description: List of detected secrets with file, line, rule, and redacted sample
-  - name: report_file
-    description: Path to the written report
+name: "secret-scan"
+description: "Detect hardcoded secrets, API keys, tokens, and credentials in source and git history using pattern + entropy analysis."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [security, secrets, credentials, gitleaks, devops]
-    related_skills:
-      - sast-scan
-      - sca-scan
-      - ci-security-pipeline
-      - security-best-practices
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to scan for leaked secrets, API keys, or credentials\",\"User mentions gitleaks, trufflehog, secret scanning, or credential detection\",\"CI pipeline needs pre-commit or pre-push secret detection\",\"User wants to audit git history for accidentally committed secrets\"]"
+  inputs: "[{\"name\":\"scan_path\",\"description\":\"Path to the repository root to scan\",\"required\":true},{\"name\":\"scan_depth\",\"description\":\"full-history (default) or diff-only (against main)\",\"required\":false},{\"name\":\"custom_rules\",\"description\":\"Path to a custom Gitleaks/Trufflehog rules file\",\"required\":false},{\"name\":\"output_format\",\"description\":\"Report format (sarif, json, markdown)\",\"required\":false}]"
+  outputs: "[{\"name\":\"findings\",\"description\":\"List of detected secrets with file, line, rule, and redacted sample\"},{\"name\":\"report_file\",\"description\":\"Path to the written report\"}]"
+  tags: "[\"security\",\"secrets\",\"credentials\",\"gitleaks\",\"devops\"]"
+  related-skills: "[\"sast-scan\",\"sca-scan\",\"ci-security-pipeline\",\"security-best-practices\"]"
 ---
 
 # secret-scan

@@ -1,55 +1,17 @@
 ---
-name: youtube-transcript
-description: Extract a YouTube video's transcript from a URL or video ID. Returns timestamped and plain-text formats. Model-agnostic.
-version: 1.0.0-rc.1
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User shares a `youtube.com` or `youtu.be` URL and asks for a transcript, summary, captions, or quotes
-  - User pastes a raw 10–11 character YouTube video ID
-  - User asks "what does this video say" or "summarize this YouTube video"
-  - User provides a YouTube Shorts, embed, or mobile URL and wants its text
-inputs:
-  - name: url_or_video_id
-    description: A YouTube URL (watch, youtu.be, embed, Shorts, mobile) or raw 10–11 char video ID
-    required: true
-  - name: languages
-    description: Comma-separated, priority-ordered ISO 639-1 language codes (default: en)
-    required: false
-  - name: format
-    description: '`json` (structured envelope), `text` (plain or timestamped), or `both` (default)'
-    required: false
-  - name: list
-    description: If true, list available transcripts for the video and exit (do not return content)
-    required: false
-outputs:
-  - name: transcript
-    description: 'Array of {start, duration, text} objects — one per caption segment'
-  - name: transcript_plain
-    description: 'Continuous string of all segment text, space-joined, no timestamps'
-  - name: video_id
-    description: The 10–11 character canonical video ID extracted from the input
-  - name: language
-    description: 'Human-readable language name (e.g., `English`)'
-  - name: language_code
-    description: 'ISO 639-1 code of the returned transcript (e.g., `en`)'
-  - name: is_generated
-    description: '`true` if YouTube auto-generated the captions, `false` if uploaded by the creator'
-  - name: available_languages
-    description: 'All language codes YouTube exposes for this video'
+name: "youtube-transcript"
+description: "Extract a YouTube video's transcript from a URL or video ID. Returns timestamped and plain-text formats. Model-agnostic."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - youtube
-      - transcript
-      - captions
-      - video
-    related_skills:
-      - mcp-builder
-      - systematic-debugging
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User shares a `youtube.com` or `youtu.be` URL and asks for a transcript, summary, captions, or quotes\",\"User pastes a raw 10–11 character YouTube video ID\",\"User asks \\\"what does this video say\\\" or \\\"summarize this YouTube video\\\"\",\"User provides a YouTube Shorts, embed, or mobile URL and wants its text\"]"
+  inputs: "[{\"name\":\"url_or_video_id\",\"description\":\"A YouTube URL (watch, youtu.be, embed, Shorts, mobile) or raw 10–11 char video ID\",\"required\":true},{\"name\":\"languages\",\"description\":\"Comma-separated, priority-ordered ISO 639-1 language codes (default: en)\",\"required\":false},{\"name\":\"format\",\"description\":\"`json` (structured envelope), `text` (plain or timestamped), or `both` (default)\",\"required\":false},{\"name\":\"list\",\"description\":\"If true, list available transcripts for the video and exit (do not return content)\",\"required\":false}]"
+  outputs: "[{\"name\":\"transcript\",\"description\":\"Array of {start, duration, text} objects — one per caption segment\"},{\"name\":\"transcript_plain\",\"description\":\"Continuous string of all segment text, space-joined, no timestamps\"},{\"name\":\"video_id\",\"description\":\"The 10–11 character canonical video ID extracted from the input\"},{\"name\":\"language\",\"description\":\"Human-readable language name (e.g., `English`)\"},{\"name\":\"language_code\",\"description\":\"ISO 639-1 code of the returned transcript (e.g., `en`)\"},{\"name\":\"is_generated\",\"description\":\"`true` if YouTube auto-generated the captions, `false` if uploaded by the creator\"},{\"name\":\"available_languages\",\"description\":\"All language codes YouTube exposes for this video\"}]"
+  tags: "[\"youtube\",\"transcript\",\"captions\",\"video\"]"
+  related-skills: "[\"mcp-builder\",\"systematic-debugging\"]"
 ---
 
 # Youtube Transcript

@@ -1,35 +1,17 @@
 ---
-name: gh-fix-ci
-description: Inspect failing GitHub Actions PR checks, summarize failure context, draft a fix plan, and implement after approval.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - user says CI is failing
-  - user asks to fix failing checks
-  - user says a PR has red checks
-  - user mentions build failure or test failure on a PR
-inputs:
-  - name: pr
-    description: PR number or URL (optional; defaults to current branch PR)
-    required: false
-  - name: repo
-    description: Path inside the repository (default: current directory)
-    required: false
-outputs:
-  - name: fix_plan
-    description: Summary of failures and proposed fix steps
-  - name: changes_applied
-    description: List of files modified to fix the failures
+name: "gh-fix-ci"
+description: "Inspect failing GitHub Actions PR checks, summarize failure context, draft a fix plan, and implement after approval."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [github, ci, actions, debugging, pr]
-    related_skills:
-      - gh-address-comments
-      - yeet
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"user says CI is failing\",\"user asks to fix failing checks\",\"user says a PR has red checks\",\"user mentions build failure or test failure on a PR\"]"
+  inputs: "[{\"name\":\"pr\",\"description\":\"PR number or URL (optional; defaults to current branch PR)\",\"required\":false},{\"name\":\"repo\",\"description\":\"Path inside the repository (default: current directory)\",\"required\":false}]"
+  outputs: "[{\"name\":\"fix_plan\",\"description\":\"Summary of failures and proposed fix steps\"},{\"name\":\"changes_applied\",\"description\":\"List of files modified to fix the failures\"}]"
+  tags: "[\"github\",\"ci\",\"actions\",\"debugging\",\"pr\"]"
+  related-skills: "[\"gh-address-comments\",\"yeet\"]"
 ---
 
 # gh-fix-ci

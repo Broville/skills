@@ -1,29 +1,19 @@
 ---
-name: shipping-and-launch
-description: Prepares production launches. Use when preparing to deploy to production.
-  Use when you need a pre-launch checklist,...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User asks to deploy a feature to production
-- User needs a pre-launch checklist or rollback plan
-- User mentions staged rollout, canary, feature flags, or production monitoring
+name: "shipping-and-launch"
+description: "Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist,..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/shipping-and-launch
-    tags:
-    - deployment
-    - launch
-    - observability
-    - production
-    related_skills:
-    - deployment-procedures
-    - verification-before-completion
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to deploy a feature to production\",\"User needs a pre-launch checklist or rollback plan\",\"User mentions staged rollout, canary, feature flags, or production monitoring\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"deployment\",\"launch\",\"observability\",\"production\"]"
+  related-skills: "[\"deployment-procedures\",\"verification-before-completion\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/shipping-and-launch"
 ---
 
 # Shipping And Launch
