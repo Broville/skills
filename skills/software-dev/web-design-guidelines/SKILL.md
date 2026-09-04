@@ -1,7 +1,7 @@
 ---
 name: web-design-guidelines
 description: Audit web interfaces against a pinned accessibility, interaction, content, and performance checklist.
-version: 1.0.0
+version: 1.1.0
 author: Broville contributors
 license: MIT
 platforms: [linux, macos, windows]
@@ -24,7 +24,7 @@ metadata:
     source: vercel-labs/web-interface-guidelines@e3d624baaf29dc1fc645aff3e38f03e564d2d6b1 (MIT)
     source_url: https://github.com/vercel-labs/web-interface-guidelines
     tags: [web-design, accessibility, usability, audit, frontend]
-    related_skills: [frontend-ui-engineering, mobile-responsiveness, playwright-cli, web-accessibility]
+    related_skills: [frontend-ui-engineering, mobile-responsiveness, playwright-cli, web-accessibility, design-system-engineering]
 ---
 
 # Web Design Guidelines
@@ -105,6 +105,7 @@ Review web UI source and rendered behavior against a concrete, locally pinned ch
 - `mobile-responsiveness` — deeper responsive and device-state review.
 - `playwright-cli` — rendered interaction, screenshot, console, and network verification.
 - `web-accessibility` — deeper WCAG-oriented assessment.
+- `design-system-engineering` — governed tokens, component contracts, states, and regression gates.
 - `references/web-interface-guidelines.md` — pinned audit checklist.
 - `references/PROVENANCE.md` — source pin and adaptation details.
 - `references/UPSTREAM-LICENSE.txt` — upstream MIT license.

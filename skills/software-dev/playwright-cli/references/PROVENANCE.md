@@ -9,4 +9,4 @@
 
 The upstream `SKILL.md` and its nine Markdown references are vendored under `references/`. The Broville entrypoint removes tool-specific `allowed-tools` frontmatter, pins the fallback invocation, distinguishes this CLI-specific workflow from the existing environment-neutral `playwright` skill, and adds authorization, sensitive-state, session-ownership, and artifact-handling boundaries.
 
-The vendored files are unmodified copies from the pinned source. The new Broville entrypoint is an adaptation and is prominently identified as such here.
+The command content remains pinned to the upstream source. The primary reference has one packaging-only adaptation: links to sibling references are made relative to their vendored location, and a transient snapshot example is rendered as a code path instead of a broken local hyperlink. The new Broville entrypoint is an adaptation and is prominently identified as such here.

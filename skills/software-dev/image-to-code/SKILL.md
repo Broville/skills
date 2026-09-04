@@ -1,7 +1,7 @@
 ---
 name: image-to-code
 description: Recreate a selected screenshot or mockup as faithful, responsive, interactive frontend code.
-version: 1.0.0
+version: 1.1.0
 author: Broville contributors
 license: MIT
 platforms: [linux, macos, windows]
@@ -26,7 +26,7 @@ metadata:
     source: openai/role-specific-plugins@fe5608d2512a7d6a7b9821ce8a88c48464ecd6e4 (MIT)
     source_url: https://github.com/openai/role-specific-plugins/tree/main/plugins/product-design/skills/image-to-code
     tags: [image-to-code, screenshot, mockup, frontend, visual-qa]
-    related_skills: [awesome-design, design-taste-frontend, frontend-ui-engineering, playwright-cli, web-design-guidelines]
+    related_skills: [awesome-design, design-taste-frontend, design-system-engineering, frontend-ui-engineering, playwright-cli, web-design-guidelines]
 ---
 
 # Image to Code
@@ -123,6 +123,7 @@ Use `design-taste-frontend` instead when the input is only a written brief. Use 
 
 - `awesome-design` — supporting design vocabulary when the target leaves a detail unspecified.
 - `design-taste-frontend` — brief-led aesthetic direction when no image is authoritative.
+- `design-system-engineering` — promote repeated visual decisions into governed tokens and reusable contracts.
 - `frontend-ui-engineering` — production component and state implementation.
 - `playwright-cli` — same-viewport capture and interaction inspection.
 - `web-design-guidelines` — blocking standards audit before handoff.

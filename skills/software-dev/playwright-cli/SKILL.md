@@ -1,7 +1,7 @@
 ---
 name: playwright-cli
 description: Inspect and automate web interfaces with Microsoft's Playwright CLI using revision-pinned, safe workflows.
-version: 1.0.0
+version: 1.1.0
 author: Broville contributors
 license: Apache-2.0
 platforms: [linux, macos, windows]
@@ -24,7 +24,7 @@ metadata:
     source: microsoft/playwright-cli@v0.1.19 (Apache-2.0)
     source_url: https://github.com/microsoft/playwright-cli/tree/v0.1.19/skills/playwright-cli
     tags: [playwright, browser, cli, testing, visual-qa]
-    related_skills: [adversarial-ux-test, image-to-code, playwright, web-design-guidelines]
+    related_skills: [adversarial-ux-test, image-to-code, playwright, web-design-guidelines, web-accessibility, design-system-engineering]
 ---
 
 # Playwright CLI
@@ -145,6 +145,8 @@ The command and workflow references are vendored from v0.1.19. Keep actions with
 - `image-to-code` — same-viewport implementation comparison.
 - `playwright` — environment-neutral browser automation that prefers native tools.
 - `web-design-guidelines` — standards checklist to apply to the inspected UI.
+- `web-accessibility` — interaction and accessibility-tree evidence without automated-conformance claims.
+- `design-system-engineering` — component-state exercises and deterministic visual comparisons.
 - `references/official-cli-reference.md` — complete pinned CLI reference.
 - `references/element-attributes.md`, `references/playwright-tests.md`, `references/request-mocking.md`, `references/running-code.md`, `references/session-management.md`, `references/storage-state.md`, `references/test-generation.md`, `references/tracing.md`, and `references/video-recording.md` — workflow-specific official references.
 - `references/PROVENANCE.md` — version pin and standalone adaptation notes.
