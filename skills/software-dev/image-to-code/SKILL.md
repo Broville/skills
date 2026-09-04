@@ -1,32 +1,19 @@
 ---
-name: image-to-code
-description: Recreate a selected screenshot or mockup as faithful, responsive, interactive frontend code.
-version: 1.1.0
-author: Broville contributors
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - A concrete screenshot, mockup, generated image, or design frame must be implemented as code
-  - A frontend must visually match a selected reference at one or more known viewports
-  - An existing image-based prototype needs responsive behavior and working interactions
-inputs:
-  - name: target_image
-    description: Exact selected image, screenshot, mockup, or design frame to reproduce
-    required: true
-  - name: target_repository
-    description: Existing frontend repository or explicitly authorized new prototype location
-    required: true
-outputs:
-  - name: implemented_interface
-    description: Responsive frontend code matching the selected visual target
-  - name: comparison_evidence
-    description: Same-viewport captures and a final discrepancy assessment
+name: "image-to-code"
+description: "Recreate a selected screenshot or mockup as faithful, responsive, interactive frontend code."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: openai/role-specific-plugins@fe5608d2512a7d6a7b9821ce8a88c48464ecd6e4 (MIT)
-    source_url: https://github.com/openai/role-specific-plugins/tree/main/plugins/product-design/skills/image-to-code
-    tags: [image-to-code, screenshot, mockup, frontend, visual-qa]
-    related_skills: [awesome-design, design-taste-frontend, design-system-engineering, frontend-ui-engineering, playwright-cli, web-design-guidelines]
+  author: "Broville contributors"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"A concrete screenshot, mockup, generated image, or design frame must be implemented as code\",\"A frontend must visually match a selected reference at one or more known viewports\",\"An existing image-based prototype needs responsive behavior and working interactions\"]"
+  inputs: "[{\"name\":\"target_image\",\"description\":\"Exact selected image, screenshot, mockup, or design frame to reproduce\",\"required\":true},{\"name\":\"target_repository\",\"description\":\"Existing frontend repository or explicitly authorized new prototype location\",\"required\":true}]"
+  outputs: "[{\"name\":\"implemented_interface\",\"description\":\"Responsive frontend code matching the selected visual target\"},{\"name\":\"comparison_evidence\",\"description\":\"Same-viewport captures and a final discrepancy assessment\"}]"
+  tags: "[\"image-to-code\",\"screenshot\",\"mockup\",\"frontend\",\"visual-qa\"]"
+  related-skills: "[\"awesome-design\",\"design-taste-frontend\",\"design-system-engineering\",\"frontend-ui-engineering\",\"playwright-cli\",\"web-design-guidelines\"]"
+  source: "openai/role-specific-plugins@fe5608d2512a7d6a7b9821ce8a88c48464ecd6e4 (MIT)"
+  source-url: "https://github.com/openai/role-specific-plugins/tree/main/plugins/product-design/skills/image-to-code"
 ---
 
 # Image to Code

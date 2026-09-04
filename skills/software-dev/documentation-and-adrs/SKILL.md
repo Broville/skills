@@ -1,28 +1,21 @@
 ---
-name: documentation-and-adrs
-description: Records decisions and documentation. Use when making architectural decisions, changing public APIs, shipping features...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks to record an architectural decision
-  - User asks to write or update project documentation
-  - User mentions ADRs, changelogs, or READMEs
+name: "documentation-and-adrs"
+description: "Records decisions and documentation. Use when making architectural decisions, changing public APIs, shipping features..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/documentation-and-adrs
-    tags:
-      - docs
-      - adr
-      - decisions
-    related_skills:
-      - spec-driven-development
-      - api-and-interface-design
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to record an architectural decision\",\"User asks to write or update project documentation\",\"User mentions ADRs, changelogs, or READMEs\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"docs\",\"adr\",\"decisions\"]"
+  related-skills: "[\"spec-driven-development\",\"api-and-interface-design\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/documentation-and-adrs"
 ---
+
 # Documentation and ADRs
 
 ## Description

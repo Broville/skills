@@ -1,41 +1,17 @@
 ---
-name: dast-scan
-description: Run Dynamic Application Security Testing on a running app to find runtime issues like XSS, SQLi, and bad headers.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User asks to scan a running application for security vulnerabilities
-  - User mentions DAST, dynamic scanning, OWASP ZAP, or Nuclei
-  - CI pipeline needs dynamic security testing
-  - User wants to test authentication, session management, or input validation of a live endpoint
-inputs:
-  - name: target_url
-    description: "URL of the running application (must be staging or test)"
-    required: true
-  - name: scan_type
-    description: baseline, full, or api
-    required: false
-  - name: auth_config
-    description: "Path to authentication config (form, bearer, cookie) for authenticated scans"
-    required: false
-  - name: output_format
-    description: "Report format (sarif, json, markdown)"
-    required: false
-outputs:
-  - name: scan_results
-    description: SARIF/JSON/Markdown report of dynamic findings
-  - name: report_file
-    description: Path to the written report
+name: "dast-scan"
+description: "Run Dynamic Application Security Testing on a running app to find runtime issues like XSS, SQLi, and bad headers."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [security, dast, dynamic-analysis, owasp-zap, nuclei, devops]
-    related_skills:
-      - sast-scan
-      - api-security-best-practices
-      - vulnerability-triage
-      - ci-security-pipeline
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to scan a running application for security vulnerabilities\",\"User mentions DAST, dynamic scanning, OWASP ZAP, or Nuclei\",\"CI pipeline needs dynamic security testing\",\"User wants to test authentication, session management, or input validation of a live endpoint\"]"
+  inputs: "[{\"name\":\"target_url\",\"description\":\"URL of the running application (must be staging or test)\",\"required\":true},{\"name\":\"scan_type\",\"description\":\"baseline, full, or api\",\"required\":false},{\"name\":\"auth_config\",\"description\":\"Path to authentication config (form, bearer, cookie) for authenticated scans\",\"required\":false},{\"name\":\"output_format\",\"description\":\"Report format (sarif, json, markdown)\",\"required\":false}]"
+  outputs: "[{\"name\":\"scan_results\",\"description\":\"SARIF/JSON/Markdown report of dynamic findings\"},{\"name\":\"report_file\",\"description\":\"Path to the written report\"}]"
+  tags: "[\"security\",\"dast\",\"dynamic-analysis\",\"owasp-zap\",\"nuclei\",\"devops\"]"
+  related-skills: "[\"sast-scan\",\"api-security-best-practices\",\"vulnerability-triage\",\"ci-security-pipeline\"]"
 ---
 
 # dast-scan

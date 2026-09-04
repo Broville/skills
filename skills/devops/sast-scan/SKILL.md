@@ -1,47 +1,17 @@
 ---
-name: sast-scan
-description: Run Static Application Security Testing on source code to detect injection, deserialization, and other code-level flaws.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User asks to scan source code for security vulnerabilities
-  - User mentions SAST, static analysis, Semgrep, Bandit, or CodeQL
-  - CI pipeline needs a static security scan step
-  - User wants to find injection flaws, XSS patterns, or insecure deserialization
-inputs:
-  - name: language
-    description: "Force a language (python, javascript, typescript, go, java); auto-detected if omitted"
-    required: false
-  - name: scan_path
-    description: "Path to scan (file or directory)"
-    required: true
-  - name: ruleset
-    description: "Semgrep ruleset (p/security-audit, p/owasp-top-ten) or Bandit/CodeQL config"
-    required: false
-  - name: severity_threshold
-    description: "Minimum severity to report (critical, high, medium, low)"
-    required: false
-  - name: output_format
-    description: "Report format (sarif, json, markdown)"
-    required: false
-outputs:
-  - name: scan_results
-    description: SARIF/JSON/Markdown report of static findings
-  - name: report_file
-    description: Path to the written report
+name: "sast-scan"
+description: "Run Static Application Security Testing on source code to detect injection, deserialization, and other code-level flaws."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [security, sast, static-analysis, semgrep, bandit, codeql, devops]
-    related_skills:
-      - dast-scan
-      - sca-scan
-      - secret-scan
-      - iac-security-scan
-      - vulnerability-triage
-      - ci-security-pipeline
-      - security-best-practices
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to scan source code for security vulnerabilities\",\"User mentions SAST, static analysis, Semgrep, Bandit, or CodeQL\",\"CI pipeline needs a static security scan step\",\"User wants to find injection flaws, XSS patterns, or insecure deserialization\"]"
+  inputs: "[{\"name\":\"language\",\"description\":\"Force a language (python, javascript, typescript, go, java); auto-detected if omitted\",\"required\":false},{\"name\":\"scan_path\",\"description\":\"Path to scan (file or directory)\",\"required\":true},{\"name\":\"ruleset\",\"description\":\"Semgrep ruleset (p/security-audit, p/owasp-top-ten) or Bandit/CodeQL config\",\"required\":false},{\"name\":\"severity_threshold\",\"description\":\"Minimum severity to report (critical, high, medium, low)\",\"required\":false},{\"name\":\"output_format\",\"description\":\"Report format (sarif, json, markdown)\",\"required\":false}]"
+  outputs: "[{\"name\":\"scan_results\",\"description\":\"SARIF/JSON/Markdown report of static findings\"},{\"name\":\"report_file\",\"description\":\"Path to the written report\"}]"
+  tags: "[\"security\",\"sast\",\"static-analysis\",\"semgrep\",\"bandit\",\"codeql\",\"devops\"]"
+  related-skills: "[\"dast-scan\",\"sca-scan\",\"secret-scan\",\"iac-security-scan\",\"vulnerability-triage\",\"ci-security-pipeline\",\"security-best-practices\"]"
 ---
 
 # sast-scan

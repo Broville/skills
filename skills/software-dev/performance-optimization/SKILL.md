@@ -1,28 +1,19 @@
 ---
-name: performance-optimization
-description: Optimizes application performance across frontend, backend, queries,
-  and databases. Use when performance...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User reports slow behavior or Core Web Vitals issues
-- User asks to optimize performance or reduce bundle size
-- Profiling or monitoring reveals a bottleneck
+name: "performance-optimization"
+description: "Optimizes application performance across frontend, backend, queries, and databases. Use when performance..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/performance-optimization
-    tags:
-    - performance
-    - profiling
-    - web-vitals
-    - optimization
-    related_skills:
-    - verification-before-completion
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User reports slow behavior or Core Web Vitals issues\",\"User asks to optimize performance or reduce bundle size\",\"Profiling or monitoring reveals a bottleneck\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"performance\",\"profiling\",\"web-vitals\",\"optimization\"]"
+  related-skills: "[\"verification-before-completion\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/performance-optimization"
 ---
 
 # Performance Optimization

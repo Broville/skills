@@ -1,29 +1,21 @@
 ---
-name: spec-driven-development
-description: Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exi...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks to start a new feature or project without a written spec
-  - User asks to clarify ambiguous requirements
-  - User mentions documenting requirements before coding
+name: "spec-driven-development"
+description: "Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exi..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/spec-driven-development
-    tags:
-      - spec
-      - planning
-      - methodology
-    related_skills:
-      - concise-planning
-      - incremental-implementation
-      - test-driven-development
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to start a new feature or project without a written spec\",\"User asks to clarify ambiguous requirements\",\"User mentions documenting requirements before coding\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"spec\",\"planning\",\"methodology\"]"
+  related-skills: "[\"concise-planning\",\"incremental-implementation\",\"test-driven-development\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/spec-driven-development"
 ---
+
 # Spec-Driven Development
 
 ## Description

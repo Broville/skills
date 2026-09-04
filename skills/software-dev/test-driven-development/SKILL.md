@@ -1,29 +1,21 @@
 ---
-name: test-driven-development
-description: Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when yo...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks to implement logic, fix a bug, or change behavior
-  - User asks to prove that code works with a test
-  - User mentions writing tests before implementation
+name: "test-driven-development"
+description: "Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when yo..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/test-driven-development
-    tags:
-      - testing
-      - tdd
-      - methodology
-    related_skills:
-      - verification-before-completion
-      - code-review-checklist
-      - systematic-debugging
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to implement logic, fix a bug, or change behavior\",\"User asks to prove that code works with a test\",\"User mentions writing tests before implementation\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"testing\",\"tdd\",\"methodology\"]"
+  related-skills: "[\"verification-before-completion\",\"code-review-checklist\",\"systematic-debugging\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/test-driven-development"
 ---
+
 # Test-Driven Development
 
 ## Description

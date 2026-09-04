@@ -1,30 +1,19 @@
 ---
-name: playwright-cli
-description: Inspect and automate web interfaces with Microsoft's Playwright CLI using revision-pinned, safe workflows.
-version: 1.1.0
-author: Broville contributors
-license: Apache-2.0
-platforms: [linux, macos, windows]
-trigger:
-  - The user explicitly asks to use Playwright CLI
-  - A local web interface needs CLI-driven snapshots, screenshots, console inspection, or interaction testing
-  - A Playwright test needs interactive CLI debugging, generation, healing, tracing, or request mocking
-inputs:
-  - name: target_url
-    description: Authorized local or remote URL to inspect
-    required: true
-  - name: workflow
-    description: Inspection, interaction, debugging, generation, tracing, video, storage, or request-mocking goal
-    required: true
-outputs:
-  - name: browser_evidence
-    description: Snapshots, screenshots, traces, logs, or test results relevant to the requested workflow
+name: "playwright-cli"
+description: "Inspect and automate web interfaces with Microsoft's Playwright CLI using revision-pinned, safe workflows."
+license: "Apache-2.0"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: microsoft/playwright-cli@v0.1.19 (Apache-2.0)
-    source_url: https://github.com/microsoft/playwright-cli/tree/v0.1.19/skills/playwright-cli
-    tags: [playwright, browser, cli, testing, visual-qa]
-    related_skills: [adversarial-ux-test, image-to-code, playwright, web-design-guidelines, web-accessibility, design-system-engineering]
+  author: "Broville contributors"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"The user explicitly asks to use Playwright CLI\",\"A local web interface needs CLI-driven snapshots, screenshots, console inspection, or interaction testing\",\"A Playwright test needs interactive CLI debugging, generation, healing, tracing, or request mocking\"]"
+  inputs: "[{\"name\":\"target_url\",\"description\":\"Authorized local or remote URL to inspect\",\"required\":true},{\"name\":\"workflow\",\"description\":\"Inspection, interaction, debugging, generation, tracing, video, storage, or request-mocking goal\",\"required\":true}]"
+  outputs: "[{\"name\":\"browser_evidence\",\"description\":\"Snapshots, screenshots, traces, logs, or test results relevant to the requested workflow\"}]"
+  tags: "[\"playwright\",\"browser\",\"cli\",\"testing\",\"visual-qa\"]"
+  related-skills: "[\"adversarial-ux-test\",\"image-to-code\",\"playwright\",\"web-design-guidelines\",\"web-accessibility\",\"design-system-engineering\"]"
+  source: "microsoft/playwright-cli@v0.1.19 (Apache-2.0)"
+  source-url: "https://github.com/microsoft/playwright-cli/tree/v0.1.19/skills/playwright-cli"
 ---
 
 # Playwright CLI

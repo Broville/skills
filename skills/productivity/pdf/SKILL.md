@@ -1,45 +1,22 @@
 ---
-name: pdf
-description: Create, extract text from, render, and review PDF files using open-source tools (reportlab, pdfplumber, pypdf, Poppler).
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks to create, generate, or produce a PDF document
-  - User asks to read, extract text, or extract data from a PDF
-  - User asks to review, verify, or visually inspect a PDF
-  - User asks to render PDF pages to images for layout checking
-  - Rendering or layout quality of a document matters
-inputs:
-  - name: pdf_path
-    description: Path to an existing PDF file (for extraction or rendering)
-    required: false
-  - name: output_dir
-    description: Directory for generated or rendered files (defaults to output/pdf/)
-    required: false
-outputs:
-  - name: generated_pdf
-    description: Path to the newly created PDF file
-  - name: rendered_pages
-    description: Paths to PNG images of each rendered PDF page
-  - name: extracted_text
-    description: Extracted text content from a PDF
+name: "pdf"
+description: "Create, extract text from, render, and review PDF files using open-source tools (reportlab, pdfplumber, pypdf, Poppler)."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - pdf
-      - document-generation
-      - text-extraction
-      - visual-review
-      - reportlab
-      - pdfplumber
-    related_skills:
-      - screenshot
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to create, generate, or produce a PDF document\",\"User asks to read, extract text, or extract data from a PDF\",\"User asks to review, verify, or visually inspect a PDF\",\"User asks to render PDF pages to images for layout checking\",\"Rendering or layout quality of a document matters\"]"
+  inputs: "[{\"name\":\"pdf_path\",\"description\":\"Path to an existing PDF file (for extraction or rendering)\",\"required\":false},{\"name\":\"output_dir\",\"description\":\"Directory for generated or rendered files (defaults to output/pdf/)\",\"required\":false}]"
+  outputs: "[{\"name\":\"generated_pdf\",\"description\":\"Path to the newly created PDF file\"},{\"name\":\"rendered_pages\",\"description\":\"Paths to PNG images of each rendered PDF page\"},{\"name\":\"extracted_text\",\"description\":\"Extracted text content from a PDF\"}]"
+  tags: "[\"pdf\",\"document-generation\",\"text-extraction\",\"visual-review\",\"reportlab\",\"pdfplumber\"]"
+  related-skills: "[\"screenshot\"]"
 ---
 
 # PDF
+
+## Description
 
 Create, extract, render, and review PDF documents. Uses open-source Python libraries and system tools — no proprietary dependencies, no API keys, no cloud services required.
 

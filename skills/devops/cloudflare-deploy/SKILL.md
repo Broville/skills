@@ -1,32 +1,29 @@
 ---
-name: cloudflare-deploy
-description: Deploy applications and infrastructure to Cloudflare using MCP tools (primary) or Wrangler CLI (fallback). Covers Workers, Pages, KV, D1, R2, Queues, Vectorize, and AI Gateway.
-version: 1.1.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks to deploy to Cloudflare or set up Cloudflare infrastructure
-  - User asks to create, update, or manage Cloudflare Workers, Pages, KV, D1, R2, Queues, Vectorize, or AI Gateway
-  - User mentions Cloudflare Workers, Pages Functions, or edge deployment
-  - User asks to configure Cloudflare routing, CORS, environment variables, or bindings
-  - User wants to manage Cloudflare account resources via API
+name: "cloudflare-deploy"
+description: "Deploy applications and infrastructure to Cloudflare using MCP tools (primary) or Wrangler CLI (fallback). Covers Workers, Pages, KV, D1, R2, Queues, Vectorize, and AI Gateway."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    aliases: [cloudflare]
-    tags: [cloudflare, workers, pages, deployment, edge-computing, serverless, devops, mcp]
-    related_skills: [kaleb-one-sites]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to deploy to Cloudflare or set up Cloudflare infrastructure\",\"User asks to create, update, or manage Cloudflare Workers, Pages, KV, D1, R2, Queues, Vectorize, or AI Gateway\",\"User mentions Cloudflare Workers, Pages Functions, or edge deployment\",\"User asks to configure Cloudflare routing, CORS, environment variables, or bindings\",\"User wants to manage Cloudflare account resources via API\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"cloudflare\",\"workers\",\"pages\",\"deployment\",\"edge-computing\",\"serverless\",\"devops\",\"mcp\"]"
+  related-skills: "[\"deployment-procedures\",\"frontend-ui-engineering\"]"
+  aliases: "[\"cloudflare\"]"
 ---
 
 # Cloudflare Deploy
 
 > This skill absorbs and supersedes the external skill 'cloudflare' from hoodini/ai-agents-skills. See the history in this repo's PR for the merge commit.
 
+## Description
+
 Deploy applications and manage infrastructure on the Cloudflare platform. This skill supports two paths for interacting with Cloudflare:
 
-1. **MCP Tools (Primary)** — Use `mcp_cloudflare_api_search` and `mcp_cloudflare_api_execute` when available. These tools provide direct API access with pre-configured authentication. No additional setup required.
+1. **Connected Cloudflare Tools (Primary)** — Use a connected Cloudflare integration when the current host exposes resource search and execution capabilities. Inspect the host's tool descriptions and argument schemas; names differ across agents and plugins.
 
 2. **Wrangler CLI (Fallback)** — Use `npx wrangler` when MCP tools are not available. Requires `CLOUDFLARE_API_TOKEN` or `wrangler login`.
 
@@ -53,7 +50,7 @@ Deploy applications and manage infrastructure on the Cloudflare platform. This s
 
 ### 1. Choose your interaction path
 
-**If MCP tools are available** (check for `mcp_cloudflare_api_search` and `mcp_cloudflare_api_execute` in your tool list):
+**If connected Cloudflare tools are available** and expose the required operation:
 - Proceed with **MCP path**
 
 **If MCP tools are NOT available**:

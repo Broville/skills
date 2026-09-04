@@ -1,19 +1,17 @@
 ---
-name: 3-statement-model
-description: Build fully-integrated 3-statement financial models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, and debt schedules using openpyxl
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to build a financial model with income statement, balance sheet, and cash flow
-  - User wants an integrated 3-statement model in Excel
-  - User provides historical financials and wants projections with proper linkages
-  - User needs working capital schedules, depreciation roll-forwards, or debt schedules
-related_skills:
-  - excel-author
-  - dcf-model
-  - stocks
+name: "3-statement-model"
+description: "Build fully-integrated 3-statement financial models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, and debt schedules using openpyxl"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to build a financial model with income statement, balance sheet, and cash flow\",\"User wants an integrated 3-statement model in Excel\",\"User provides historical financials and wants projections with proper linkages\",\"User needs working capital schedules, depreciation roll-forwards, or debt schedules\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"dcf-model\",\"stocks\"]"
 ---
 
 # 3-Statement Financial Model

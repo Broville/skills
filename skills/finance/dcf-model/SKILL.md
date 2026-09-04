@@ -1,19 +1,17 @@
 ---
-name: dcf-model
-description: Build institutional-quality DCF valuation models in Excel with revenue projections, FCF build, WACC, terminal value, scenario analysis, and sensitivity tables using openpyxl
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to value a company using DCF (discounted cash flow) analysis
-  - User wants intrinsic-value equity analysis with sensitivity tables
-  - User needs WACC calculation, terminal value, or equity value bridge
-  - User requests scenario analysis (Bear/Base/Bull) for a company valuation
-related_skills:
-  - excel-author
-  - 3-statement-model
-  - stocks
+name: "dcf-model"
+description: "Build institutional-quality DCF valuation models in Excel with revenue projections, FCF build, WACC, terminal value, scenario analysis, and sensitivity tables using openpyxl"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to value a company using DCF (discounted cash flow) analysis\",\"User wants intrinsic-value equity analysis with sensitivity tables\",\"User needs WACC calculation, terminal value, or equity value bridge\",\"User requests scenario analysis (Bear/Base/Bull) for a company valuation\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"3-statement-model\",\"stocks\"]"
 ---
 
 # DCF Model Builder

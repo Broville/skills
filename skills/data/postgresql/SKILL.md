@@ -1,19 +1,17 @@
 ---
-name: postgresql
-description: PostgreSQL schema design — data types, constraints, indexing, partitioning, JSONB, generated columns, extensions, and safe schema evolution
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - Designing a schema for PostgreSQL
-  - Selecting data types and constraints
-  - Planning indexes, partitions, or RLS policies
-  - Reviewing tables for scale and maintainability
-  - Migrating or evolving a PostgreSQL schema
-related_skills:
-  - api-security-best-practices
-  - deployment-procedures
+name: "postgresql"
+description: "PostgreSQL schema design — data types, constraints, indexing, partitioning, JSONB, generated columns, extensions, and safe schema evolution"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"Designing a schema for PostgreSQL\",\"Selecting data types and constraints\",\"Planning indexes, partitions, or RLS policies\",\"Reviewing tables for scale and maintainability\",\"Migrating or evolving a PostgreSQL schema\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"api-security-best-practices\",\"deployment-procedures\"]"
 ---
 
 # PostgreSQL
@@ -35,6 +33,10 @@ A comprehensive reference for PostgreSQL-specific schema design. Covers data typ
 - Targeting a non-PostgreSQL database
 - Only needing query tuning without schema changes
 - Needing a database-agnostic modeling guide
+
+## Steps
+
+Identify the operation and risk first, then apply the relevant rules below for connections, schema, queries, indexes, and evolution. Validate the resulting SQL against a disposable or approved non-production database before production use.
 
 ## Connection Security
 

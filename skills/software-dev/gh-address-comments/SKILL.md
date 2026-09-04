@@ -1,32 +1,17 @@
 ---
-name: gh-address-comments
-description: Fetch and address review comments on the open PR for the current branch; present a numbered summary, apply selected fixes, and push.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - user asks to address PR review comments
-  - user asks to fix review feedback
-  - user asks to respond to PR comments
-  - user mentions "address comments" in context of a GitHub PR
-inputs:
-  - name: pr
-    description: PR number or URL (optional; defaults to current branch PR)
-    required: false
-outputs:
-  - name: applied_fixes
-    description: List of comment IDs that were addressed with code changes
-  - name: push_result
-    description: Confirmation that changes were pushed to the PR branch
+name: "gh-address-comments"
+description: "Fetch and address review comments on the open PR for the current branch; present a numbered summary, apply selected fixes, and push."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [github, pr, review, comments, feedback]
-    related_skills:
-      - yeet
-      - gh-fix-ci
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"user asks to address PR review comments\",\"user asks to fix review feedback\",\"user asks to respond to PR comments\",\"user mentions \\\"address comments\\\" in context of a GitHub PR\"]"
+  inputs: "[{\"name\":\"pr\",\"description\":\"PR number or URL (optional; defaults to current branch PR)\",\"required\":false}]"
+  outputs: "[{\"name\":\"applied_fixes\",\"description\":\"List of comment IDs that were addressed with code changes\"},{\"name\":\"push_result\",\"description\":\"Confirmation that changes were pushed to the PR branch\"}]"
+  tags: "[\"github\",\"pr\",\"review\",\"comments\",\"feedback\"]"
+  related-skills: "[\"yeet\",\"gh-fix-ci\"]"
 ---
 
 # gh-address-comments

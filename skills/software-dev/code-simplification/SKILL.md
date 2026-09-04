@@ -1,29 +1,19 @@
 ---
-name: code-simplification
-description: Simplifies code for clarity. Use when refactoring code for clarity without
-  changing behavior. Use when code works...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User asks to refactor or simplify code without changing behavior
-- Code review flags readability or complexity issues
-- User mentions technical debt, deep nesting, or long functions
+name: "code-simplification"
+description: "Simplifies code for clarity. Use when refactoring code for clarity without changing behavior. Use when code works..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/code-simplification
-    tags:
-    - refactoring
-    - readability
-    - complexity
-    - code-quality
-    related_skills:
-    - code-review-checklist
-    - verification-before-completion
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to refactor or simplify code without changing behavior\",\"Code review flags readability or complexity issues\",\"User mentions technical debt, deep nesting, or long functions\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"refactoring\",\"readability\",\"complexity\",\"code-quality\"]"
+  related-skills: "[\"code-review-checklist\",\"verification-before-completion\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/code-simplification"
 ---
 
 # Code Simplification

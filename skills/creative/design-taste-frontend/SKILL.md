@@ -1,32 +1,19 @@
 ---
-name: design-taste-frontend
-description: Choose distinctive frontend aesthetics from a brief while respecting the product's existing design system.
-version: 1.0.0
-author: Broville contributors
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - A written brief needs a strong visual direction before frontend implementation
-  - A landing page, portfolio, editorial page, or marketing surface looks generic or templated
-  - A redesign needs an intentional hierarchy, palette, typography, spacing, or motion language
-inputs:
-  - name: design_brief
-    description: Product, audience, brand, constraints, and desired visual character
-    required: true
-  - name: existing_interface
-    description: Existing code, screenshots, tokens, or design system to preserve when applicable
-    required: false
-outputs:
-  - name: design_read
-    description: A concise interpretation of audience, page type, visual language, and design foundation
-  - name: implemented_interface
-    description: A responsive interface with a coherent and non-generic visual system
+name: "design-taste-frontend"
+description: "Choose distinctive frontend aesthetics from a brief while respecting the product's existing design system."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: Leonxlnx/taste-skill@ccbc15639c97057cbfcf32ecebc38ef716e4bb37 (MIT)
-    source_url: https://github.com/Leonxlnx/taste-skill
-    tags: [design, frontend, visual-direction, typography, motion]
-    related_skills: [awesome-design, frontend-ui-engineering, image-to-code, web-design-guidelines]
+  author: "Broville contributors"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"A written brief needs a strong visual direction before frontend implementation\",\"A landing page, portfolio, editorial page, or marketing surface looks generic or templated\",\"A redesign needs an intentional hierarchy, palette, typography, spacing, or motion language\"]"
+  inputs: "[{\"name\":\"design_brief\",\"description\":\"Product, audience, brand, constraints, and desired visual character\",\"required\":true},{\"name\":\"existing_interface\",\"description\":\"Existing code, screenshots, tokens, or design system to preserve when applicable\",\"required\":false}]"
+  outputs: "[{\"name\":\"design_read\",\"description\":\"A concise interpretation of audience, page type, visual language, and design foundation\"},{\"name\":\"implemented_interface\",\"description\":\"A responsive interface with a coherent and non-generic visual system\"}]"
+  tags: "[\"design\",\"frontend\",\"visual-direction\",\"typography\",\"motion\"]"
+  related-skills: "[\"awesome-design\",\"frontend-ui-engineering\",\"image-to-code\",\"web-design-guidelines\"]"
+  source: "Leonxlnx/taste-skill@ccbc15639c97057cbfcf32ecebc38ef716e4bb37 (MIT)"
+  source-url: "https://github.com/Leonxlnx/taste-skill"
 ---
 
 # Design Taste for Frontends

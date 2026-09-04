@@ -1,28 +1,19 @@
 ---
-name: mobile-responsiveness
-description: Build responsive, mobile-first web applications. Use when implementing
-  responsive layouts, touch interactions,...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User asks to make a web app responsive or mobile-first
-- User mentions breakpoints, viewport, touch interactions, or safe areas
-- User needs mobile navigation or fluid typography
+name: "mobile-responsiveness"
+description: "Build responsive, mobile-first web applications. Use when implementing responsive layouts, touch interactions,..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: hoodini/ai-agents-skills@master (MIT)
-    source_url: https://github.com/hoodini/ai-agents-skills/tree/master/skills/mobile-responsiveness
-    tags:
-    - responsive
-    - mobile
-    - css
-    - frontend
-    related_skills:
-    - verification-before-completion
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to make a web app responsive or mobile-first\",\"User mentions breakpoints, viewport, touch interactions, or safe areas\",\"User needs mobile navigation or fluid typography\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"responsive\",\"mobile\",\"css\",\"frontend\"]"
+  related-skills: "[\"verification-before-completion\"]"
+  source: "hoodini/ai-agents-skills@master (MIT)"
+  source-url: "https://github.com/hoodini/ai-agents-skills/tree/master/skills/mobile-responsiveness"
 ---
 
 # Mobile Responsiveness

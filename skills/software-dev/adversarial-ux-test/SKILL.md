@@ -1,19 +1,17 @@
 ---
-name: adversarial-ux-test
-description: Roleplay the worst-case user for your product — browse the app as a hostile persona, find every UX pain point, then filter through a pragmatism layer to separate real problems from noise. Creates actionable tickets from genuine issues only.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - Asked to run a UX review or adversarial test on an app
-  - Want to dogfood a product by simulating a hostile user persona
-  - Need to identify UX friction points before a launch or demo
-  - Request to find usability problems in a deployed or staging application
+name: "adversarial-ux-test"
+description: "Roleplay the worst-case user for your product — browse the app as a hostile persona, find every UX pain point, then filter through a pragmatism layer to separate real problems from noise. Creates actionable tickets from genuine issues only."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [ux, testing, review, usability, friction, dogfooding]
-    related_skills: [systematic-debugging, concise-planning, verification-before-completion]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"Asked to run a UX review or adversarial test on an app\",\"Want to dogfood a product by simulating a hostile user persona\",\"Need to identify UX friction points before a launch or demo\",\"Request to find usability problems in a deployed or staging application\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"ux\",\"testing\",\"review\",\"usability\",\"friction\",\"dogfooding\"]"
+  related-skills: "[\"systematic-debugging\",\"concise-planning\",\"verification-before-completion\"]"
 ---
 
 # Adversarial UX Test
@@ -44,7 +42,7 @@ If no persona is provided, generate one by answering:
 
 Write a specific persona (name, age, role, constraints, voice). Must be specific enough to stay in character for 20 minutes.
 
-Save to `.hermes/ux-reviews/persona.md`.
+Save to `.agent-artifacts/ux-reviews/persona.md`.
 
 ### Step 2: Browse as the Persona
 
@@ -88,7 +86,7 @@ SPECIFIC COMPLAINTS:
 VERDICT: "[one-line persona quote summarizing their experience]"
 ```
 
-Save to `.hermes/ux-reviews/rant.md`.
+Save to `.agent-artifacts/ux-reviews/rant.md`.
 
 ### Step 4: Apply the Pragmatism Filter
 
@@ -109,7 +107,7 @@ Filter criteria:
 
 **This filter is MANDATORY.** Never ship raw persona complaints as tickets.
 
-Save to `.hermes/ux-reviews/assessment.md`.
+Save to `.agent-artifacts/ux-reviews/assessment.md`.
 
 ### Step 5: Create Actionable Tickets
 
@@ -126,7 +124,7 @@ For **YELLOW** items: one catch-all ticket with all notes.
 
 **Max 10 tickets per session** — focus on the worst issues.
 
-Save to `.hermes/ux-reviews/tickets.md`.
+Save to `.agent-artifacts/ux-reviews/tickets.md`.
 
 ### Step 6: Compile the Report
 
@@ -136,7 +134,7 @@ Deliver a complete report combining all artifacts:
 3. Tickets created (Step 5) — with specific recommendations
 4. Screenshots of key issues
 
-Save to `.hermes/ux-reviews/report.md`.
+Save to `.agent-artifacts/ux-reviews/report.md`.
 
 ## Pitfalls
 
@@ -148,7 +146,7 @@ Save to `.hermes/ux-reviews/report.md`.
 
 ## Verification
 
-1. Report file exists at `.hermes/ux-reviews/report.md`
+1. Report file exists at `.agent-artifacts/ux-reviews/report.md`
 2. Report contains all sections: Persona, Rant, Assessment, Tickets, Screenshots
 3. Pragmatism filter applied: every complaint classified RED/YELLOW/WHITE/GREEN
 4. At most 10 tickets — more indicates insufficient filtering

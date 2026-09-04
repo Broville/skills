@@ -1,30 +1,17 @@
 ---
-name: design-system-engineering
-description: Build or evolve governed web design systems with semantic tokens, reusable components, documented states, and tests.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - User asks to create, extend, audit, or migrate a web design system
-  - Work involves design tokens, theming, component libraries, Storybook, or reusable UI primitives
-  - A product has inconsistent styling or duplicated components that need governed consolidation
-inputs:
-  - name: target
-    description: Repository, package, theme, token set, or component family in scope
-    required: true
-  - name: consumers
-    description: Applications, themes, platforms, or packages that consume the system
-    required: false
-outputs:
-  - name: system_contract
-    description: Token layers, component APIs, supported states, and compatibility boundaries
-  - name: migration_and_evidence
-    description: Incremental adoption plan plus rendered, behavioral, accessibility, and regression evidence
+name: "design-system-engineering"
+description: "Build or evolve governed web design systems with semantic tokens, reusable components, documented states, and tests."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [design-system, tokens, components, storybook, accessibility]
-    related_skills: [frontend-ui-engineering, react-composition-patterns, web-accessibility, web-design-guidelines]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"User asks to create, extend, audit, or migrate a web design system\",\"Work involves design tokens, theming, component libraries, Storybook, or reusable UI primitives\",\"A product has inconsistent styling or duplicated components that need governed consolidation\"]"
+  inputs: "[{\"name\":\"target\",\"description\":\"Repository, package, theme, token set, or component family in scope\",\"required\":true},{\"name\":\"consumers\",\"description\":\"Applications, themes, platforms, or packages that consume the system\",\"required\":false}]"
+  outputs: "[{\"name\":\"system_contract\",\"description\":\"Token layers, component APIs, supported states, and compatibility boundaries\"},{\"name\":\"migration_and_evidence\",\"description\":\"Incremental adoption plan plus rendered, behavioral, accessibility, and regression evidence\"}]"
+  tags: "[\"design-system\",\"tokens\",\"components\",\"storybook\",\"accessibility\"]"
+  related-skills: "[\"frontend-ui-engineering\",\"react-composition-patterns\",\"web-accessibility\",\"web-design-guidelines\"]"
 ---
 
 # Design System Engineering

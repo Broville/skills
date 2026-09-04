@@ -1,42 +1,17 @@
 ---
-name: iac-security-scan
+name: "iac-security-scan"
 description: "Scan IaC definitions (Terraform, CloudFormation, K8s, Dockerfiles) for misconfigurations and compliance violations."
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - User asks to scan Terraform, CloudFormation, Kubernetes, or Docker configs for security issues
-  - User mentions IaC scanning, Checkov, tfsec, KICS, or infrastructure misconfiguration
-  - CI pipeline needs IaC security scanning
-  - User wants to check cloud resource definitions for compliance violations
-inputs:
-  - name: scan_path
-    description: Path to the IaC files
-    required: true
-  - name: iac_type
-    description: "terraform, cloudformation, kubernetes, dockerfile, or all (default: all)"
-    required: false
-  - name: severity_threshold
-    description: Minimum severity to report
-    required: false
-  - name: compliance_framework
-    description: cis, nist, pci-dss, or hipaa — applied when the tool supports it
-    required: false
-outputs:
-  - name: findings
-    description: Misconfigurations with severity, resource, and remediation
-  - name: report_file
-    description: "Path to the written report (SARIF/JSON/Markdown)"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [security, iac, terraform, kubernetes, dockerfile, checkov, misconfiguration, compliance, devops]
-    related_skills:
-      - sca-scan
-      - sast-scan
-      - secret-scan
-      - vulnerability-triage
-      - ci-security-pipeline
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks to scan Terraform, CloudFormation, Kubernetes, or Docker configs for security issues\",\"User mentions IaC scanning, Checkov, tfsec, KICS, or infrastructure misconfiguration\",\"CI pipeline needs IaC security scanning\",\"User wants to check cloud resource definitions for compliance violations\"]"
+  inputs: "[{\"name\":\"scan_path\",\"description\":\"Path to the IaC files\",\"required\":true},{\"name\":\"iac_type\",\"description\":\"terraform, cloudformation, kubernetes, dockerfile, or all (default: all)\",\"required\":false},{\"name\":\"severity_threshold\",\"description\":\"Minimum severity to report\",\"required\":false},{\"name\":\"compliance_framework\",\"description\":\"cis, nist, pci-dss, or hipaa — applied when the tool supports it\",\"required\":false}]"
+  outputs: "[{\"name\":\"findings\",\"description\":\"Misconfigurations with severity, resource, and remediation\"},{\"name\":\"report_file\",\"description\":\"Path to the written report (SARIF/JSON/Markdown)\"}]"
+  tags: "[\"security\",\"iac\",\"terraform\",\"kubernetes\",\"dockerfile\",\"checkov\",\"misconfiguration\",\"compliance\",\"devops\"]"
+  related-skills: "[\"sca-scan\",\"sast-scan\",\"secret-scan\",\"vulnerability-triage\",\"ci-security-pipeline\"]"
 ---
 
 # iac-security-scan

@@ -1,28 +1,19 @@
 ---
-name: interview-me
-description: Extracts what the user actually wants instead of what they think they
-  should want. Achieves this through...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User asks is underspecified ("build me X" without who/why/success)
-- User explicitly invokes "interview me", "grill me", or "are we sure?"
-- The agent notices itself filling in ambiguous requirements before planning
+name: "interview-me"
+description: "Extracts what the user actually wants instead of what they think they should want. Achieves this through..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/interview-me
-    tags:
-    - requirements
-    - discovery
-    - user-intent
-    - clarification
-    related_skills:
-    - concise-planning
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks is underspecified (\\\"build me X\\\" without who/why/success)\",\"User explicitly invokes \\\"interview me\\\", \\\"grill me\\\", or \\\"are we sure?\\\"\",\"The agent notices itself filling in ambiguous requirements before planning\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"requirements\",\"discovery\",\"user-intent\",\"clarification\"]"
+  related-skills: "[\"concise-planning\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/interview-me"
 ---
 
 # Interview Me

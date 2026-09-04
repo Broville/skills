@@ -1,30 +1,19 @@
 ---
-name: web-design-guidelines
-description: Audit web interfaces against a pinned accessibility, interaction, content, and performance checklist.
-version: 1.1.0
-author: Broville contributors
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - An existing web interface needs a focused design or usability audit
-  - Frontend code needs review for accessibility, focus, forms, motion, layout, content, or performance
-  - A web UI is about to ship and needs concise file-and-line findings
-inputs:
-  - name: target
-    description: Files, glob, component, route, or rendered interface to review
-    required: true
-  - name: fix_authorization
-    description: Whether the user requested findings only or also authorized remediation
-    required: false
-outputs:
-  - name: audit_findings
-    description: Concise actionable findings grouped by file with precise locations
+name: "web-design-guidelines"
+description: "Audit web interfaces against a pinned accessibility, interaction, content, and performance checklist."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: vercel-labs/web-interface-guidelines@e3d624baaf29dc1fc645aff3e38f03e564d2d6b1 (MIT)
-    source_url: https://github.com/vercel-labs/web-interface-guidelines
-    tags: [web-design, accessibility, usability, audit, frontend]
-    related_skills: [frontend-ui-engineering, mobile-responsiveness, playwright-cli, web-accessibility, design-system-engineering]
+  author: "Broville contributors"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"An existing web interface needs a focused design or usability audit\",\"Frontend code needs review for accessibility, focus, forms, motion, layout, content, or performance\",\"A web UI is about to ship and needs concise file-and-line findings\"]"
+  inputs: "[{\"name\":\"target\",\"description\":\"Files, glob, component, route, or rendered interface to review\",\"required\":true},{\"name\":\"fix_authorization\",\"description\":\"Whether the user requested findings only or also authorized remediation\",\"required\":false}]"
+  outputs: "[{\"name\":\"audit_findings\",\"description\":\"Concise actionable findings grouped by file with precise locations\"}]"
+  tags: "[\"web-design\",\"accessibility\",\"usability\",\"audit\",\"frontend\"]"
+  related-skills: "[\"frontend-ui-engineering\",\"mobile-responsiveness\",\"playwright-cli\",\"web-accessibility\",\"design-system-engineering\"]"
+  source: "vercel-labs/web-interface-guidelines@e3d624baaf29dc1fc645aff3e38f03e564d2d6b1 (MIT)"
+  source-url: "https://github.com/vercel-labs/web-interface-guidelines"
 ---
 
 # Web Design Guidelines

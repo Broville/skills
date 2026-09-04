@@ -1,29 +1,19 @@
 ---
-name: react-composition-patterns
-description: Design scalable React component APIs with composition, explicit variants, clear state ownership, and React 19 awareness.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - User asks to design or refactor reusable React component APIs
-  - React components have boolean-prop proliferation or tangled state ownership
-  - Work involves compound components, providers, variants, render props, or React 19 ref APIs
-inputs:
-  - name: target
-    description: Components or component-library API to design, review, or refactor
-    required: true
-outputs:
-  - name: component_contract
-    description: Explicit public API, ownership model, and supported variants
-  - name: verified_refactor
-    description: Behavior-preserving implementation and tests when changes are requested
+name: "react-composition-patterns"
+description: "Design scalable React component APIs with composition, explicit variants, clear state ownership, and React 19 awareness."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: vercel-labs/agent-skills@063bee94c3f4df8453406c830b0a7df0f2860278 (MIT)
-    source_url: https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns
-    tags: [react, components, composition, context, api-design]
-    related_skills: [react-best-practices, frontend-ui-engineering, design-system-engineering, test-driven-development]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"User asks to design or refactor reusable React component APIs\",\"React components have boolean-prop proliferation or tangled state ownership\",\"Work involves compound components, providers, variants, render props, or React 19 ref APIs\"]"
+  inputs: "[{\"name\":\"target\",\"description\":\"Components or component-library API to design, review, or refactor\",\"required\":true}]"
+  outputs: "[{\"name\":\"component_contract\",\"description\":\"Explicit public API, ownership model, and supported variants\"},{\"name\":\"verified_refactor\",\"description\":\"Behavior-preserving implementation and tests when changes are requested\"}]"
+  tags: "[\"react\",\"components\",\"composition\",\"context\",\"api-design\"]"
+  related-skills: "[\"react-best-practices\",\"frontend-ui-engineering\",\"design-system-engineering\",\"test-driven-development\"]"
+  source: "vercel-labs/agent-skills@063bee94c3f4df8453406c830b0a7df0f2860278 (MIT)"
+  source-url: "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns"
 ---
 
 # React Composition Patterns

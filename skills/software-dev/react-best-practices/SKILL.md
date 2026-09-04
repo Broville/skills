@@ -1,32 +1,19 @@
 ---
-name: react-best-practices
-description: Apply impact-ranked React and Next.js performance rules when writing, reviewing, or optimizing applications.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - User asks to write, review, or optimize React or Next.js code
-  - React code has waterfalls, bundle growth, slow rendering, or excessive rerenders
-  - A React or Next.js performance change needs prioritized, source-backed guidance
-inputs:
-  - name: target
-    description: Repository, route, component, or change set to inspect
-    required: true
-  - name: observed_problem
-    description: Measured symptom, failing budget, or user-visible performance concern
-    required: false
-outputs:
-  - name: prioritized_findings
-    description: Evidence-backed findings ordered by expected impact
-  - name: verified_changes
-    description: Implemented improvements with before-and-after evidence when fixes are requested
+name: "react-best-practices"
+description: "Apply impact-ranked React and Next.js performance rules when writing, reviewing, or optimizing applications."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: vercel-labs/agent-skills@063bee94c3f4df8453406c830b0a7df0f2860278 (MIT)
-    source_url: https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices
-    tags: [react, nextjs, performance, bundles, rendering]
-    related_skills: [performance-optimization, react-composition-patterns, frontend-ui-engineering, verification-before-completion]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"User asks to write, review, or optimize React or Next.js code\",\"React code has waterfalls, bundle growth, slow rendering, or excessive rerenders\",\"A React or Next.js performance change needs prioritized, source-backed guidance\"]"
+  inputs: "[{\"name\":\"target\",\"description\":\"Repository, route, component, or change set to inspect\",\"required\":true},{\"name\":\"observed_problem\",\"description\":\"Measured symptom, failing budget, or user-visible performance concern\",\"required\":false}]"
+  outputs: "[{\"name\":\"prioritized_findings\",\"description\":\"Evidence-backed findings ordered by expected impact\"},{\"name\":\"verified_changes\",\"description\":\"Implemented improvements with before-and-after evidence when fixes are requested\"}]"
+  tags: "[\"react\",\"nextjs\",\"performance\",\"bundles\",\"rendering\"]"
+  related-skills: "[\"performance-optimization\",\"react-composition-patterns\",\"frontend-ui-engineering\",\"verification-before-completion\"]"
+  source: "vercel-labs/agent-skills@063bee94c3f4df8453406c830b0a7df0f2860278 (MIT)"
+  source-url: "https://github.com/vercel-labs/agent-skills/tree/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices"
 ---
 
 # React Best Practices

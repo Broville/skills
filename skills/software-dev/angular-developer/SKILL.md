@@ -1,32 +1,19 @@
 ---
-name: angular-developer
-description: Build, review, test, and modernize Angular applications using version-aware official framework guidance.
-version: 1.0.0
-author: Broville contributors
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - User asks to create, review, debug, test, or modernize an Angular application
-  - Work involves Angular components, Signals, forms, dependency injection, routing, SSR, styling, or CLI tooling
-  - An Angular change needs current framework-specific architecture or API guidance
-inputs:
-  - name: target
-    description: Angular workspace, application, library, route, component, or change set in scope
-    required: true
-  - name: requested_outcome
-    description: Feature, defect, migration, review, or architecture outcome to deliver
-    required: true
-outputs:
-  - name: angular_change
-    description: Version-compatible implementation or evidence-backed guidance
-  - name: verification_evidence
-    description: Focused tests, build results, and applicable browser evidence
+name: "angular-developer"
+description: "Build, review, test, and modernize Angular applications using version-aware official framework guidance."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: angular/angular@81c3f3a6aab30a0e9ca3a8b511100afea4d07003 (MIT)
-    source_url: https://github.com/angular/angular/tree/81c3f3a6aab30a0e9ca3a8b511100afea4d07003/skills/dev-skills/angular-developer
-    tags: [angular, typescript, signals, routing, forms]
-    related_skills: [frontend-ui-engineering, web-accessibility, performance-optimization, test-driven-development, verification-before-completion]
+  author: "Broville contributors"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"User asks to create, review, debug, test, or modernize an Angular application\",\"Work involves Angular components, Signals, forms, dependency injection, routing, SSR, styling, or CLI tooling\",\"An Angular change needs current framework-specific architecture or API guidance\"]"
+  inputs: "[{\"name\":\"target\",\"description\":\"Angular workspace, application, library, route, component, or change set in scope\",\"required\":true},{\"name\":\"requested_outcome\",\"description\":\"Feature, defect, migration, review, or architecture outcome to deliver\",\"required\":true}]"
+  outputs: "[{\"name\":\"angular_change\",\"description\":\"Version-compatible implementation or evidence-backed guidance\"},{\"name\":\"verification_evidence\",\"description\":\"Focused tests, build results, and applicable browser evidence\"}]"
+  tags: "[\"angular\",\"typescript\",\"signals\",\"routing\",\"forms\"]"
+  related-skills: "[\"frontend-ui-engineering\",\"web-accessibility\",\"performance-optimization\",\"test-driven-development\",\"verification-before-completion\"]"
+  source: "angular/angular@81c3f3a6aab30a0e9ca3a8b511100afea4d07003 (MIT)"
+  source-url: "https://github.com/angular/angular/tree/81c3f3a6aab30a0e9ca3a8b511100afea4d07003/skills/dev-skills/angular-developer"
 ---
 
 # Angular Developer

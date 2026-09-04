@@ -1,21 +1,17 @@
 ---
-name: rest-graphql-debug
-description: Debug REST and GraphQL APIs through layered diagnosis — connectivity, timeouts, TLS, auth, request format, response parsing, and semantics. Isolate the failing layer before guessing at the fix.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - API returns unexpected status code or response body
-  - Authentication failing (401/403) after token refresh
-  - Works in one tool but fails in code
-  - Need to debug webhook or callback integrations
-  - Building or reviewing API integration tests
-  - Rate limiting or pagination issues
-related_skills:
-  - systematic-debugging
-  - verification-before-completion
-  - concise-planning
+name: "rest-graphql-debug"
+description: "Debug REST and GraphQL APIs through layered diagnosis — connectivity, timeouts, TLS, auth, request format, response parsing, and semantics. Isolate the failing layer before guessing at the fix."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"API returns unexpected status code or response body\",\"Authentication failing (401/403) after token refresh\",\"Works in one tool but fails in code\",\"Need to debug webhook or callback integrations\",\"Building or reviewing API integration tests\",\"Rate limiting or pagination issues\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"systematic-debugging\",\"verification-before-completion\",\"concise-planning\"]"
 ---
 
 # REST/GraphQL Debug
@@ -252,7 +248,7 @@ def redact_auth(headers: dict) -> dict:
 2. **Repro command works** — the `curl` repro in the report reproduces the issue
 3. **Report saved with standard format:**
    ```bash
-   ls .hermes/debug/api-*.md
+   ls .agent-artifacts/debug/api-*.md
    ```
 4. **Auth token redacted** — no full tokens in the report
 5. **Correlation ID captured** — report includes X-Request-Id or equivalent

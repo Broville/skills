@@ -1,32 +1,19 @@
 ---
-name: awesome-design
-description: Select and adapt a local design reference without copying brand identity, protected assets, or trade dress.
-version: 1.0.0
-author: Broville contributors
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - A frontend brief would benefit from concrete design-system references before implementation
-  - The user asks for a visual language inspired by a known product, publication, or brand category
-  - An agent needs comparative references for color, typography, spacing, components, or responsive behavior
-inputs:
-  - name: design_goal
-    description: Desired audience, product type, visual character, and practical constraints
-    required: true
-  - name: named_reference
-    description: Optional reference name from the bundled design corpus
-    required: false
-outputs:
-  - name: reference_selection
-    description: Primary reference and any narrowly justified secondary reference
-  - name: adapted_design_system
-    description: Original project-specific principles derived from the selected references
+name: "awesome-design"
+description: "Select and adapt a local design reference without copying brand identity, protected assets, or trade dress."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: VoltAgent/awesome-design-md@8147538b4226ae41e2487a9179e3bcc1f68e8554 (MIT)
-    source_url: https://github.com/VoltAgent/awesome-design-md
-    tags: [design-systems, references, visual-language, tokens, creative]
-    related_skills: [design-taste-frontend, frontend-ui-engineering, image-to-code, web-design-guidelines]
+  author: "Broville contributors"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"A frontend brief would benefit from concrete design-system references before implementation\",\"The user asks for a visual language inspired by a known product, publication, or brand category\",\"An agent needs comparative references for color, typography, spacing, components, or responsive behavior\"]"
+  inputs: "[{\"name\":\"design_goal\",\"description\":\"Desired audience, product type, visual character, and practical constraints\",\"required\":true},{\"name\":\"named_reference\",\"description\":\"Optional reference name from the bundled design corpus\",\"required\":false}]"
+  outputs: "[{\"name\":\"reference_selection\",\"description\":\"Primary reference and any narrowly justified secondary reference\"},{\"name\":\"adapted_design_system\",\"description\":\"Original project-specific principles derived from the selected references\"}]"
+  tags: "[\"design-systems\",\"references\",\"visual-language\",\"tokens\",\"creative\"]"
+  related-skills: "[\"design-taste-frontend\",\"frontend-ui-engineering\",\"image-to-code\",\"web-design-guidelines\"]"
+  source: "VoltAgent/awesome-design-md@8147538b4226ae41e2487a9179e3bcc1f68e8554 (MIT)"
+  source-url: "https://github.com/VoltAgent/awesome-design-md"
 ---
 
 # Awesome Design References

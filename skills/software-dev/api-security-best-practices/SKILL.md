@@ -1,21 +1,17 @@
 ---
-name: api-security-best-practices
-description: OWASP-aligned API security patterns — authentication, input validation, rate limiting, CORS, security headers, and error handling
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - Designing new API endpoints
-  - Securing existing APIs
-  - Implementing authentication and authorization
-  - Protecting against API attacks (injection, DDoS)
-  - Conducting API security reviews
-  - Setting up rate limiting or CORS policies
-related_skills:
-  - code-review-checklist
-  - systematic-debugging
-  - postgresql
+name: "api-security-best-practices"
+description: "OWASP-aligned API security patterns — authentication, input validation, rate limiting, CORS, security headers, and error handling"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"Designing new API endpoints\",\"Securing existing APIs\",\"Implementing authentication and authorization\",\"Protecting against API attacks (injection, DDoS)\",\"Conducting API security reviews\",\"Setting up rate limiting or CORS policies\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"code-review-checklist\",\"systematic-debugging\",\"postgresql\"]"
 ---
 
 # API Security Best Practices
@@ -32,6 +28,10 @@ OWASP-aligned API security patterns for building secure APIs. Covers authenticat
 - Protecting against injection, DDoS, and other API attacks
 - Conducting API security reviews
 - Setting up rate limiting or CORS policies
+
+## Steps
+
+Apply sections 1 through 7 as an ordered review. For every applicable control, inspect the implementation, add or update tests, and retain evidence for the final verification checklist.
 
 ## 1. Authentication and Authorization
 

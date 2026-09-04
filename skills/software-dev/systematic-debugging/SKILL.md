@@ -1,23 +1,20 @@
 ---
-name: systematic-debugging
-description: 5-phase debugging methodology — understand, isolate, fix, verify, recover — root cause first, then prevent regression
-version: 1.1.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - Encountering any bug, test failure, or unexpected behavior
-  - Needing to debug production issues, build failures, or integration problems
-  - About to propose a fix without understanding root cause
-  - Multiple fix attempts have failed
-  - Wanting a structured triage process after a bug fix to prevent regression
+name: "systematic-debugging"
+description: "5-phase debugging methodology — understand, isolate, fix, verify, recover — root cause first, then prevent regression"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [debugging, root-cause, methodology, troubleshooting, error-recovery]
-    related_skills: [verification-before-completion, git-advanced-workflows, code-review-checklist]
-    aliases: [debugging-and-error-recovery]
-    source: addyosmani/agent-skills (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/debugging-and-error-recovery
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"Encountering any bug, test failure, or unexpected behavior\",\"Needing to debug production issues, build failures, or integration problems\",\"About to propose a fix without understanding root cause\",\"Multiple fix attempts have failed\",\"Wanting a structured triage process after a bug fix to prevent regression\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"debugging\",\"root-cause\",\"methodology\",\"troubleshooting\",\"error-recovery\"]"
+  related-skills: "[\"verification-before-completion\",\"git-advanced-workflows\",\"code-review-checklist\"]"
+  aliases: "[\"debugging-and-error-recovery\"]"
+  source: "addyosmani/agent-skills (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/debugging-and-error-recovery"
 ---
 
 # Systematic Debugging
@@ -37,6 +34,10 @@ NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST
 ```
 
 If you haven't completed Phase 1, you cannot propose fixes.
+
+## Steps
+
+Run the five phases below in order. Preserve the evidence from each phase so later hypotheses can be traced back to observed behavior.
 
 ## The Five Phases
 

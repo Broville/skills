@@ -1,50 +1,17 @@
 ---
-name: sentry
-description: Inspect Sentry issues and events, summarize production errors, and pull Sentry health data using the read-only Sentry CLI. Focus on understanding, not writing, production incidents.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks about production errors or error monitoring
-  - User asks to inspect Sentry issues, events, or projects
-  - User mentions Sentry, error tracking, or production incidents
-  - User asks to summarize recent errors or health data from Sentry
-  - User wants to understand what went wrong in production
-inputs:
-  - name: org
-    description: Sentry organization slug (auto-detected from DSN or config if not specified)
-    required: false
-  - name: project
-    description: Sentry project slug (auto-detected from DSN or config if not specified)
-    required: false
-  - name: time_range
-    description: "Time window for queries (default: 24h)"
-    required: false
-  - name: environment
-    description: "Environment filter (default: production)"
-    required: false
-  - name: query
-    description: 'Sentry search query (e.g., "is:unresolved level:error")'
-    required: false
-outputs:
-  - name: issue_list
-    description: List of Sentry issues matching the query
-  - name: issue_detail
-    description: Detailed information about a specific issue
-  - name: event_data
-    description: Event details including stack trace context
+name: "sentry"
+description: "Inspect Sentry issues and events, summarize production errors, and pull Sentry health data using the read-only Sentry CLI. Focus on understanding, not writing, production incidents."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - sentry
-      - monitoring
-      - error-tracking
-      - observability
-      - production
-    related_skills:
-      - security-best-practices
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks about production errors or error monitoring\",\"User asks to inspect Sentry issues, events, or projects\",\"User mentions Sentry, error tracking, or production incidents\",\"User asks to summarize recent errors or health data from Sentry\",\"User wants to understand what went wrong in production\"]"
+  inputs: "[{\"name\":\"org\",\"description\":\"Sentry organization slug (auto-detected from DSN or config if not specified)\",\"required\":false},{\"name\":\"project\",\"description\":\"Sentry project slug (auto-detected from DSN or config if not specified)\",\"required\":false},{\"name\":\"time_range\",\"description\":\"Time window for queries (default: 24h)\",\"required\":false},{\"name\":\"environment\",\"description\":\"Environment filter (default: production)\",\"required\":false},{\"name\":\"query\",\"description\":\"Sentry search query (e.g., \\\"is:unresolved level:error\\\")\",\"required\":false}]"
+  outputs: "[{\"name\":\"issue_list\",\"description\":\"List of Sentry issues matching the query\"},{\"name\":\"issue_detail\",\"description\":\"Detailed information about a specific issue\"},{\"name\":\"event_data\",\"description\":\"Event details including stack trace context\"}]"
+  tags: "[\"sentry\",\"monitoring\",\"error-tracking\",\"observability\",\"production\"]"
+  related-skills: "[\"security-best-practices\"]"
 ---
 
 # Sentry (Read-only Observability)

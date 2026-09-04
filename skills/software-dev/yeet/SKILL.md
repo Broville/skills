@@ -1,20 +1,17 @@
 ---
-name: yeet
-description: Stage, commit, push, and open or update a GitHub pull request in one flow.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - user says "ship it"
-  - user asks to commit and push
-  - user asks to create a PR
-  - user asks to open a pull request
-  - user asks to push changes
+name: "yeet"
+description: "Stage, commit, push, and open or update a GitHub pull request in one flow."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [git, github, pr, commit, push, ship]
-    related_skills: [git-advanced-workflows, code-review-checklist]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"user says \\\"ship it\\\"\",\"user asks to commit and push\",\"user asks to create a PR\",\"user asks to open a pull request\",\"user asks to push changes\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"git\",\"github\",\"pr\",\"commit\",\"push\",\"ship\"]"
+  related-skills: "[\"git-advanced-workflows\",\"code-review-checklist\"]"
 ---
 
 # yeet

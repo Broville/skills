@@ -1,19 +1,17 @@
 ---
-name: chroma
-description: Self-hosted open-source embedding database for semantic search, RAG, and document retrieval — store embeddings and metadata, perform vector and full-text search, filter by metadata
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to store document embeddings for semantic search
-  - User wants to build a RAG (retrieval-augmented generation) system
-  - User needs a local vector database with metadata filtering
-  - User asks about persistent storage for embeddings
-  - User wants to query documents by similarity or metadata filters
-related_skills:
-  - whisper
-  - searxng-search
+name: "chroma"
+description: "Self-hosted open-source embedding database for semantic search, RAG, and document retrieval — store embeddings and metadata, perform vector and full-text search, filter by metadata"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to store document embeddings for semantic search\",\"User wants to build a RAG (retrieval-augmented generation) system\",\"User needs a local vector database with metadata filtering\",\"User asks about persistent storage for embeddings\",\"User wants to query documents by similarity or metadata filters\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"whisper\"]"
 ---
 
 # Chroma — Open-Source Embedding Database

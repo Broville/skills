@@ -1,29 +1,21 @@
 ---
-name: doubt-driven-development
-description: Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matt...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-trigger:
-  - User asks for an adversarial review of a plan or implementation
-  - User asks to challenge assumptions before proceeding
-  - User mentions correctness review or fresh-context critique
+name: "doubt-driven-development"
+description: "Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matt..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/doubt-driven-development
-    tags:
-      - review
-      - quality
-      - methodology
-    related_skills:
-      - code-review-checklist
-      - adversarial-ux-test
-      - systematic-debugging
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User asks for an adversarial review of a plan or implementation\",\"User asks to challenge assumptions before proceeding\",\"User mentions correctness review or fresh-context critique\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"review\",\"quality\",\"methodology\"]"
+  related-skills: "[\"code-review-checklist\",\"adversarial-ux-test\",\"systematic-debugging\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/doubt-driven-development"
 ---
+
 # Doubt-Driven Development
 
 ## Description
@@ -147,14 +139,14 @@ A single-model reviewer shares blind spots with the original author — a colder
 
 After the single-model review in Step 3 above, but before RECONCILE, pause and ask:
 
-> *"Single-model review complete. Want a cross-model second opinion? Options: the model CLI, Codex CLI, manual external review (the agent paste it elsewhere), or skip."*
+> *"Single-model review complete. Want a cross-model second opinion? Options: another installed model CLI, manual external review, or skip."*
 
 This question is mandatory in every interactive doubt cycle — even on artifacts that feel low-stakes. The user — not the agent — decides whether the cost is worth it. The agent's job is to surface the choice.
 
 **Step 2: If the user picks a CLI — verify, then invoke**
 
-1. Check the tool is in PATH (`which the model`, `which codex`).
-2. Test it works (`the model --version` or equivalent) before passing the full prompt — a stale or broken binary may pass `which` but fail on real input.
+1. Check the selected model CLI is in PATH (`command -v <model-cli>`).
+2. Test it works (`<model-cli> --version` or equivalent) before passing the full prompt — a stale or broken binary may be discoverable but fail on real input.
 3. Confirm the exact invocation with the user, including required flags, auth, and env vars (e.g., API keys). Implementations vary; never assume.
 4. Pass ARTIFACT + CONTRACT + the adversarial prompt **only**. No session context, no CLAIM.
 5. Mind shell escaping. If the artifact contains quotes, `$(...)`, or backticks, prefer stdin (`echo … | the model`) or a heredoc over inline `-p "…"`. When in doubt, ask the user to confirm the invocation before running it.

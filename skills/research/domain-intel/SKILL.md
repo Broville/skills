@@ -1,19 +1,17 @@
 ---
-name: domain-intel
-description: Passive domain reconnaissance using Python stdlib — subdomain discovery, SSL inspection, WHOIS lookup, DNS records, and availability checks with no API keys required
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks about subdomains of a domain
-  - User wants to check SSL certificate details, expiry, or SANs
-  - User asks who registered a domain or when it expires
-  - User wants DNS records (A, AAAA, MX, NS, TXT, CNAME) for a domain
-  - User asks if a domain name is available for registration
-related_skills:
-  - searxng-search
-  - security-best-practices
+name: "domain-intel"
+description: "Passive domain reconnaissance using Python stdlib — subdomain discovery, SSL inspection, WHOIS lookup, DNS records, and availability checks with no API keys required"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks about subdomains of a domain\",\"User wants to check SSL certificate details, expiry, or SANs\",\"User asks who registered a domain or when it expires\",\"User wants DNS records (A, AAAA, MX, NS, TXT, CNAME) for a domain\",\"User asks if a domain name is available for registration\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"osint-investigation\",\"security-best-practices\"]"
 ---
 
 # Domain Intelligence — Passive OSINT

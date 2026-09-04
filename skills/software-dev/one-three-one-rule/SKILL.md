@@ -1,19 +1,17 @@
 ---
-name: one-three-one-rule
-description: Structured decision-making framework for technical proposals and trade-off analysis — one problem statement, three options with pros/cons, and one recommendation with definition of done and implementation plan.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - Asked for a "1-3-1" analysis or response
-  - Said "give me options" or "what are my choices" for a technical decision
-  - Facing multiple viable approaches with meaningful trade-offs
-  - Need a decision proposal to share with a team or stakeholder
-related_skills:
-  - concise-planning
-  - systematic-debugging
-  - verification-before-completion
+name: "one-three-one-rule"
+description: "Structured decision-making framework for technical proposals and trade-off analysis — one problem statement, three options with pros/cons, and one recommendation with definition of done and implementation plan."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"Asked for a \\\"1-3-1\\\" analysis or response\",\"Said \\\"give me options\\\" or \\\"what are my choices\\\" for a technical decision\",\"Facing multiple viable approaches with meaningful trade-offs\",\"Need a decision proposal to share with a team or stakeholder\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"concise-planning\",\"systematic-debugging\",\"verification-before-completion\"]"
 ---
 
 # 1-3-1 Rule
@@ -118,8 +116,8 @@ If the user picks a different option, revise this section to match.
 Save the complete 1-3-1 to a file for reference and sharing.
 
 ```bash
-mkdir -p .hermes/decisions
-cat > .hermes/decisions/131-$(date +%Y%m%d)-[topic].md << 'EOF'
+mkdir -p .agent-artifacts/decisions
+cat > .agent-artifacts/decisions/131-$(date +%Y%m%d)-[topic].md << 'EOF'
 # 1-3-1: [title]
 
 **Problem:** [one sentence]
@@ -156,7 +154,7 @@ EOF
 3. **Single recommendation** that picks one option with clear reasoning
 4. **Definition of Done** lists concrete, verifiable criteria
 5. **Implementation Plan** includes specific steps, not just goals
-6. **Document saved** to `.hermes/decisions/`:
+6. **Document saved** to `.agent-artifacts/decisions/`:
    ```bash
-   ls .hermes/decisions/131-*.md
+   ls .agent-artifacts/decisions/131-*.md
    ```

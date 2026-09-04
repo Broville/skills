@@ -1,35 +1,21 @@
 ---
-name: frontend-ui-engineering
-description: Build production-quality, accessible, responsive interfaces while preserving the project's stack and design system.
-version: 1.1.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-  - windows
-trigger:
-  - User asks to build or modify a user interface
-  - User mentions components, design systems, responsive layouts, or accessibility
-  - User asks to implement a page or frontend feature
+name: "frontend-ui-engineering"
+description: "Build production-quality, accessible, responsive interfaces while preserving the project's stack and design system."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@1c760d643497e9da289300e5eb2f5aca861503f7 (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/1c760d643497e9da289300e5eb2f5aca861503f7/skills/frontend-ui-engineering
-    tags:
-      - frontend
-      - ui
-      - accessibility
-    related_skills:
-      - playwright
-      - adversarial-ux-test
-      - design-taste-frontend
-      - design-system-engineering
-      - web-accessibility
-      - web-design-guidelines
-      - react-composition-patterns
-      - react-best-practices
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"User asks to build or modify a user interface\",\"User mentions components, design systems, responsive layouts, or accessibility\",\"User asks to implement a page or frontend feature\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"frontend\",\"ui\",\"accessibility\"]"
+  related-skills: "[\"playwright\",\"adversarial-ux-test\",\"design-taste-frontend\",\"design-system-engineering\",\"web-accessibility\",\"web-design-guidelines\",\"react-composition-patterns\",\"react-best-practices\"]"
+  source: "addyosmani/agent-skills@1c760d643497e9da289300e5eb2f5aca861503f7 (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/1c760d643497e9da289300e5eb2f5aca861503f7/skills/frontend-ui-engineering"
 ---
+
 # Frontend UI Engineering
 
 ## Description

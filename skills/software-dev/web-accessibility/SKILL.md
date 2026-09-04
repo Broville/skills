@@ -1,30 +1,17 @@
 ---
-name: web-accessibility
-description: Build and audit web interfaces against WCAG 2.2 with native semantics, manual checks, and assistive-technology evidence.
-version: 2.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
-trigger:
-  - User asks to build, remediate, or audit an accessible web interface
-  - Work involves WCAG, ARIA, keyboard access, focus, screen readers, contrast, zoom, or reduced motion
-  - Accessibility findings or conformance claims need implementation and verification
-inputs:
-  - name: target
-    description: Route, component, workflow, or change set to build or audit
-    required: true
-  - name: conformance_target
-    description: Required standard and level, defaulting to WCAG 2.2 AA when none is specified
-    required: false
-outputs:
-  - name: accessibility_evidence
-    description: Criterion-mapped automated and manual results with explicit unverified areas
-  - name: remediated_interface
-    description: Project-consistent fixes and regression coverage when changes are requested
+name: "web-accessibility"
+description: "Build and audit web interfaces against WCAG 2.2 with native semantics, manual checks, and assistive-technology evidence."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [accessibility, wcag-2-2, aria, keyboard, assistive-technology]
-    related_skills: [web-design-guidelines, playwright-cli, frontend-ui-engineering, verification-before-completion]
+  author: "Broville"
+  version: "3.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"User asks to build, remediate, or audit an accessible web interface\",\"Work involves WCAG, ARIA, keyboard access, focus, screen readers, contrast, zoom, or reduced motion\",\"Accessibility findings or conformance claims need implementation and verification\"]"
+  inputs: "[{\"name\":\"target\",\"description\":\"Route, component, workflow, or change set to build or audit\",\"required\":true},{\"name\":\"conformance_target\",\"description\":\"Required standard and level, defaulting to WCAG 2.2 AA when none is specified\",\"required\":false}]"
+  outputs: "[{\"name\":\"accessibility_evidence\",\"description\":\"Criterion-mapped automated and manual results with explicit unverified areas\"},{\"name\":\"remediated_interface\",\"description\":\"Project-consistent fixes and regression coverage when changes are requested\"}]"
+  tags: "[\"accessibility\",\"wcag-2-2\",\"aria\",\"keyboard\",\"assistive-technology\"]"
+  related-skills: "[\"web-design-guidelines\",\"playwright-cli\",\"frontend-ui-engineering\",\"verification-before-completion\"]"
 ---
 
 # Web Accessibility

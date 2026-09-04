@@ -1,29 +1,19 @@
 ---
-name: planning-and-task-breakdown
-description: Breaks work into ordered tasks. Use when you have a spec or clear requirements
-  and need to break work into...
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-- linux
-- macos
-trigger:
-- User has a spec and needs it broken into implementable tasks
-- User asks to estimate scope or parallelize work
-- A task feels too large or vague to start
+name: "planning-and-task-breakdown"
+description: "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into..."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    source: addyosmani/agent-skills@main (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/planning-and-task-breakdown
-    tags:
-    - planning
-    - estimation
-    - work-decomposition
-    - methodology
-    related_skills:
-    - concise-planning
-    - verification-before-completion
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"User has a spec and needs it broken into implementable tasks\",\"User asks to estimate scope or parallelize work\",\"A task feels too large or vague to start\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"planning\",\"estimation\",\"work-decomposition\",\"methodology\"]"
+  related-skills: "[\"concise-planning\",\"verification-before-completion\"]"
+  source: "addyosmani/agent-skills@main (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/planning-and-task-breakdown"
 ---
 
 # Planning And Task Breakdown

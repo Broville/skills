@@ -1,18 +1,17 @@
 ---
-name: fitness-nutrition
-description: Gym workout planner and nutrition tracker using wger exercise database and USDA FoodData Central, plus offline calculators for BMI, TDEE, 1RM, macros, and body fat
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks about exercises, workouts, gym routines, muscle groups, or workout splits
-  - User asks about food macros, calories, protein content, meal planning, or calorie counting
-  - User asks about body composition metrics (BMI, body fat, TDEE, caloric surplus/deficit)
-  - User asks about one-rep max estimates or training percentages
-  - User asks about macro ratios for cutting, bulking, or maintenance
-related_skills:
-  - drug-discovery
+name: "fitness-nutrition"
+description: "Gym workout planner and nutrition tracker using wger exercise database and USDA FoodData Central, plus offline calculators for BMI, TDEE, 1RM, macros, and body fat"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks about exercises, workouts, gym routines, muscle groups, or workout splits\",\"User asks about food macros, calories, protein content, meal planning, or calorie counting\",\"User asks about body composition metrics (BMI, body fat, TDEE, caloric surplus/deficit)\",\"User asks about one-rep max estimates or training percentages\",\"User asks about macro ratios for cutting, bulking, or maintenance\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"drug-discovery\"]"
 ---
 
 # Fitness & Nutrition

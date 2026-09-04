@@ -1,118 +1,118 @@
 # Skill Specification
 
-This document defines the canonical format for all skills in this repository.
+This repository follows the open [Agent Skills specification](https://agentskills.io/specification). One canonical package must remain usable by every standards-compatible agent; provider-specific discovery paths are installation concerns, not separate skill definitions.
 
 ## SKILL.md Frontmatter
 
-Every `SKILL.md` must begin with YAML frontmatter enclosed in `---`. All fields listed as **required** must be present.
+Every `SKILL.md` begins with YAML frontmatter enclosed in `---`. The root schema is intentionally limited to fields recognized by the open specification.
 
-### Required Fields
+### Standard Root Fields
 
-| Field          | Type          | Description                                         |
-|---------------|---------------|-----------------------------------------------------|
-| `name`        | string        | Kebab-case skill name (must match directory name)  |
-| `description` | string        | One-line summary of what the skill does              |
-| `version`     | semver string | Current version (e.g., `1.0.0`)                     |
-| `author`      | string        | Author name or org                                   |
-| `license`     | string        | License identifier (e.g., `MIT`)                    |
+| Field | Required | Type | Repository rule |
+|---|---:|---|---|
+| `name` | Yes | string | 1-64 lowercase kebab-case characters; matches the skill directory |
+| `description` | Yes | string | 1-1024 characters; says what the skill does and when to use it |
+| `license` | Yes | string | SPDX identifier or bundled license reference |
+| `compatibility` | Yes | string | 1-500 characters; names environment or runtime requirements |
+| `metadata` | Yes | map of string to string | Stores the repository fields described below |
+| `allowed-tools` | No | string | Prohibited here because support and syntax vary by agent host |
 
-### Optional Fields
+Do not add provider-specific root fields. Unknown root fields fail the official `skills-ref` validator or are silently ignored by some hosts.
 
-| Field          | Type          | Description                                         |
-|---------------|---------------|-----------------------------------------------------|
-| `platforms`   | string[]      | Supported platforms: `linux`, `macos`, `windows`     |
-| `metadata`    | object        | Extended metadata (see below)                       |
-| `trigger`     | string[]      | When an agent should activate this skill             |
-| `inputs`      | object[]      | Named inputs the skill accepts                       |
-| `outputs`     | object[]      | Named outputs the skill produces                     |
+### Repository Metadata
 
-### Metadata Object
+The open standard requires every `metadata` value to be a string. Scalar values are plain strings; structured values are compact JSON encoded as YAML strings.
 
-The `metadata` field supports nested objects. The `hermes` key is reserved for Hermes agent metadata:
+| Metadata key | Required | Encoded value |
+|---|---:|---|
+| `author` | Yes | string |
+| `version` | Yes | Semantic Version string |
+| `platforms` | Yes | JSON string array |
+| `triggers` | Yes | non-empty JSON string array |
+| `inputs` | Yes | JSON string array of objects; use `[]` when absent |
+| `outputs` | Yes | JSON string array of objects; use `[]` when absent |
+| `tags` | Yes | JSON string array |
+| `related-skills` | Yes | JSON string array of names present in this repository |
+| `aliases` | No | JSON string array |
+| `source` | No | provenance string |
+| `source-url` | No | source URL string |
+| `deprecated` | No | string `"true"` or `"false"` |
+| `replaced-by` | No | successor skill name |
+
+Example:
 
 ```yaml
+---
+name: example-skill
+description: Perform a repeatable example workflow. Use when the user requests an example outcome.
+license: MIT
+compatibility: Open Agent Skills format. Requires Python 3.10 or newer for the bundled script.
 metadata:
-  hermes:
-    tags: [tag1, tag2]           # Searchable tags
-    related_skills: [skill-x]    # Cross-references to other skills
+  author: Broville
+  version: "1.0.0"
+  platforms: '["linux","macos","windows"]'
+  triggers: '["User asks for an example outcome"]'
+  inputs: '[{"name":"source","description":"Source artifact","required":true}]'
+  outputs: '[{"name":"result","description":"Verified result artifact"}]'
+  tags: '["example"]'
+  related-skills: '[]'
+---
 ```
 
-### Inputs and Outputs
+## Portability Contract
 
-Each input/output entry has this structure:
-
-```yaml
-inputs:
-  - name: repo_path
-    description: Absolute path to the git repository
-    required: true
-
-outputs:
-  - name: report_url
-    description: Published report URL on pages.eaglepass.io
-```
+- Describe required capabilities in plain language. Do not assume a provider-specific tool name, argument schema, model, permission flow, or scheduler.
+- When a provider integration is optional, inspect the current host's available capabilities and use its documented schema. Include a CLI or standards-based fallback when practical.
+- Use paths relative to the skill directory for bundled scripts, references, templates, and assets.
+- Do not include absolute user paths, secrets, generated bytecode, operating-system metadata, or symlinks.
+- State runtime and operating-system requirements in `compatibility` and `Prerequisites`; cross-agent compatibility does not imply every runtime exists on every machine.
+- Keep `SKILL.md` under 500 lines when practical. Move detailed material into directly referenced files for progressive disclosure.
 
 ## SKILL.md Body Structure
 
-After frontmatter, the body should follow this outline (sections marked with ★ are required):
+The body must include:
 
-### ★ Title (H1)
+1. An H1 title.
+2. `## Description` with precise activation guidance.
+3. An ordered `## Steps` workflow or equivalently explicit ordered procedural sections.
+4. `## Pitfalls` covering known failure modes.
+5. `## Verification` with observable acceptance evidence.
+6. `## Cross-References` when supporting files, related skills, or authoritative external sources apply.
 
-Skill name as an H1 heading.
+## Discovery and Installation
 
-### ★ Description
+The canonical package can be copied to any standards-compatible discovery directory:
 
-2-3 sentences explaining what the skill does and when to use it. Write for an agent audience — be precise about trigger conditions and expected outcomes.
+| Agent host | Project discovery path used by the installer |
+|---|---|
+| Codex | `.agents/skills/` |
+| Claude Code | `.claude/skills/` |
+| Gemini CLI | `.agents/skills/` (official alias for `.gemini/skills/`) |
+| Cursor | `.cursor/skills/` |
+| OpenCode | `.agents/skills/` (official compatibility path) |
+| GitHub Copilot | `.agents/skills/` (also supports `.github/skills/`) |
+| Other compatible hosts | pass their skill root with `--target` |
 
-### Prerequisites
-
-Tools, access, or environment the skill requires. If this section is missing, the skill has no external prerequisites.
-
-### ★ Steps
-
-Numbered steps with exact commands and expected output. Each step should be independently verifiable.
-
-### Pitfalls
-
-Common mistakes, edge cases, and gotchas. Every known failure mode should have an entry here.
-
-### ★ Verification
-
-How to confirm the skill worked correctly. Must include at least one concrete check (command exit code, file existence, URL response, etc.).
-
-### Cross-References
-
-Links to related skills, external docs, or internal resources. Use `related_skills` in frontmatter for automated cross-referencing.
-
-## Directory Conventions
-
-- **`references/`** — Supporting documentation that the skill references (API docs, architecture notes, etc.)
-- **`templates/`** — Template files the skill produces or uses (config files, boilerplate)
-- **`scripts/`** — Executable scripts the skill runs (shell, Python, etc.)
-- **`assets/`** — Static assets (images, diagrams, SVGs)
-
-All files in these directories should be referenced from `SKILL.md` so agents know they exist and how to use them.
+Install ordinary directory copies, not symlinks, so packages work in Git worktrees, archives, containers, Windows, and remote agents. The installer always copies the complete skill directory so relative resources remain intact.
 
 ## Versioning
 
 Skills follow [Semantic Versioning](https://semver.org/):
 
-- **Patch** (`1.0.1`): Fix a step, add a pitfall, correct a typo
-- **Minor** (`1.1.0`): Add a new step, new input/output, new reference
-- **Major** (`2.0.0`): Breaking change — renamed skill, removed step, changed trigger conditions
+- Patch: correct or clarify behavior without changing the contract.
+- Minor: add backward-compatible workflow, inputs, outputs, or resources.
+- Major: change triggers, required inputs, output contracts, or metadata layout incompatibly.
 
-When updating a skill, update the `version` field in frontmatter.
+Store the version in `metadata.version`.
 
-## Validation Checklist
+## Validation
 
-Before merging a skill PR, verify:
+Install the validators and run both repository and official checks:
 
-- [ ] `SKILL.md` frontmatter has all required fields
-- [ ] `name` matches the directory name
-- [ ] `version` is valid semver
-- [ ] Steps include exact commands with expected output
-- [ ] Pitfalls section documents known failure modes
-- [ ] Verification section has at least one concrete check
-- [ ] `related_skills` entries point to skills that actually exist
-- [ ] Supporting files are referenced from `SKILL.md`
-- [ ] No hardcoded secrets, tokens, or credentials
+```bash
+python -m pip install PyYAML skills-ref
+python scripts/validate_skills.py
+python scripts/test_install_skills.py
+```
+
+The repository validator checks the shared schema, metadata encoding, names, SemVer, triggers, cross-references, required sections, portable paths, package artifacts, and every package with the official `skills-ref` validator. CI runs the same checks on Linux, macOS, and Windows.

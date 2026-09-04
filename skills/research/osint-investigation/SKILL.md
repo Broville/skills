@@ -1,20 +1,17 @@
 ---
-name: osint-investigation
-description: Public-records OSINT investigation framework — SEC EDGAR, USAspending, Senate lobbying, OFAC sanctions, ICIJ offshore leaks, NYC ACRIS property, OpenCorporates, CourtListener, Wayback Machine, GDELT news — entity resolution, cross-link analysis, timing correlation, evidence chains
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux]
-trigger:
-  - User asks to "follow the money" or investigate government contracts, lobbying, or sanctions
-  - User wants corporate due diligence — who controls a company, where it is incorporated, board members, filings
-  - User asks about sanctions screening, offshore leaks, or pay-to-play patterns
-  - User wants to find property records, court records, or web archives for an entity
-  - User requests multi-source entity resolution with confidence scoring
-  - User asks "what's been said about X" in news or Wikipedia
-related_skills:
-  - sherlock
-  - searxng-search
+name: "osint-investigation"
+description: "Public-records OSINT investigation framework — SEC EDGAR, USAspending, Senate lobbying, OFAC sanctions, ICIJ offshore leaks, NYC ACRIS property, OpenCorporates, CourtListener, Wayback Machine, GDELT news — entity resolution, cross-link analysis, timing correlation, evidence chains"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
+metadata:
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to \\\"follow the money\\\" or investigate government contracts, lobbying, or sanctions\",\"User wants corporate due diligence — who controls a company, where it is incorporated, board members, filings\",\"User asks about sanctions screening, offshore leaks, or pay-to-play patterns\",\"User wants to find property records, court records, or web archives for an entity\",\"User requests multi-source entity resolution with confidence scoring\",\"User asks \\\"what's been said about X\\\" in news or Wikipedia\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[]"
+  related-skills: "[\"domain-intel\"]"
 ---
 
 # OSINT Investigation — Public Records Cross-Reference

@@ -1,40 +1,17 @@
 ---
-name: jupyter-notebook
-description: Create, scaffold, and edit Jupyter notebooks (.ipynb) for experiments, explorations, or tutorials using standardized templates and structure patterns.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks to create a Jupyter notebook or .ipynb file
-  - User asks to scaffold a notebook for an experiment or analysis
-  - User asks to set up a tutorial or teaching notebook
-  - User asks to convert scripts or notes into a structured notebook
-  - User mentions Jupyter, ipynb, or notebook in the context of creating one
-inputs:
-  - name: title
-    description: Notebook title (used in the first markdown cell)
-    required: true
-  - name: kind
-    description: "Notebook type: experiment or tutorial"
-    required: true
-  - name: out_path
-    description: Output file path for the .ipynb file
-    required: true
-outputs:
-  - name: notebook
-    description: A structured .ipynb file following the appropriate template
+name: "jupyter-notebook"
+description: "Create, scaffold, and edit Jupyter notebooks (.ipynb) for experiments, explorations, or tutorials using standardized templates and structure patterns."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - jupyter
-      - notebook
-      - data-science
-      - experimentation
-      - tutorial
-    related_skills:
-      - cli-creator
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to create a Jupyter notebook or .ipynb file\",\"User asks to scaffold a notebook for an experiment or analysis\",\"User asks to set up a tutorial or teaching notebook\",\"User asks to convert scripts or notes into a structured notebook\",\"User mentions Jupyter, ipynb, or notebook in the context of creating one\"]"
+  inputs: "[{\"name\":\"title\",\"description\":\"Notebook title (used in the first markdown cell)\",\"required\":true},{\"name\":\"kind\",\"description\":\"Notebook type: experiment or tutorial\",\"required\":true},{\"name\":\"out_path\",\"description\":\"Output file path for the .ipynb file\",\"required\":true}]"
+  outputs: "[{\"name\":\"notebook\",\"description\":\"A structured .ipynb file following the appropriate template\"}]"
+  tags: "[\"jupyter\",\"notebook\",\"data-science\",\"experimentation\",\"tutorial\"]"
+  related-skills: "[\"cli-creator\"]"
 ---
 
 # Jupyter Notebook

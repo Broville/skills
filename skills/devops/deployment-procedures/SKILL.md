@@ -1,19 +1,17 @@
 ---
-name: deployment-procedures
-description: Platform-agnostic deployment framework — pre-deploy checks, deployment strategies, rollback, and verification principles
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - About to deploy code to any environment
-  - Setting up deployment pipelines or processes
-  - Planning rollback strategies
-  - Recovering from a failed deployment
+name: "deployment-procedures"
+description: "Platform-agnostic deployment framework — pre-deploy checks, deployment strategies, rollback, and verification principles"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [deployment, devops, rollback, verification]
-    related_skills: [github-actions-templates, verification-before-completion]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"About to deploy code to any environment\",\"Setting up deployment pipelines or processes\",\"Planning rollback strategies\",\"Recovering from a failed deployment\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"deployment\",\"devops\",\"rollback\",\"verification\"]"
+  related-skills: "[\"github-actions-templates\",\"verification-before-completion\"]"
 ---
 
 # Deployment Procedures
@@ -21,6 +19,10 @@ metadata:
 ## Description
 
 Deployment principles and decision-making for safe production releases. This skill teaches how to **think** about deployment, not memorize scripts.
+
+## Steps
+
+Use the platform selection and five-phase process below in order. Treat every checkpoint as a gate and stop when its evidence does not pass.
 
 ## Platform Selection
 
@@ -104,3 +106,10 @@ curl -s -o /dev/null -w "%{http_code}" https://app.example.com/api/status
 3. **Deploying multiple changes simultaneously** — One change at a time.
 4. **Walking away after deploying** — Monitor for 15+ minutes.
 5. **Compounding errors during rollback** — Don't make additional fixes during rollback.
+
+## Verification
+
+1. Confirm the deployed revision or image digest matches the approved candidate.
+2. Run the service health check and one representative user flow.
+3. Review fresh application and platform logs for errors introduced after deployment.
+4. Confirm rollback remains available until the observation window closes.

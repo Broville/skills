@@ -1,41 +1,17 @@
 ---
-name: security-threat-model
-description: Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model report.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks to threat-model a repository or codebase
-  - User asks to enumerate threats, abuse paths, or attack surface
-  - User asks for AppSec threat modeling or security architecture analysis
-  - User mentions STRIDE, trust boundaries, or threat modeling
-  - User asks to analyze security risks in a system design
-inputs:
-  - name: repo_path
-    description: Absolute path to the repository or directory to model
-    required: true
-  - name: scope_paths
-    description: Specific subdirectories or files to include (comma-separated)
-    required: false
-  - name: deployment_context
-    description: Known deployment details (internet-facing, internal, cloud provider)
-    required: false
-outputs:
-  - name: report
-    description: Markdown threat model file written to <repo-name>-threat-model.md
+name: "security-threat-model"
+description: "Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model report."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - security
-      - threat-modeling
-      - appsec
-      - trust-boundaries
-      - attack-surface
-    related_skills:
-      - security-best-practices
-      - security-ownership-map
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to threat-model a repository or codebase\",\"User asks to enumerate threats, abuse paths, or attack surface\",\"User asks for AppSec threat modeling or security architecture analysis\",\"User mentions STRIDE, trust boundaries, or threat modeling\",\"User asks to analyze security risks in a system design\"]"
+  inputs: "[{\"name\":\"repo_path\",\"description\":\"Absolute path to the repository or directory to model\",\"required\":true},{\"name\":\"scope_paths\",\"description\":\"Specific subdirectories or files to include (comma-separated)\",\"required\":false},{\"name\":\"deployment_context\",\"description\":\"Known deployment details (internet-facing, internal, cloud provider)\",\"required\":false}]"
+  outputs: "[{\"name\":\"report\",\"description\":\"Markdown threat model file written to <repo-name>-threat-model.md\"}]"
+  tags: "[\"security\",\"threat-modeling\",\"appsec\",\"trust-boundaries\",\"attack-surface\"]"
+  related-skills: "[\"security-best-practices\",\"security-ownership-map\"]"
 ---
 
 # Security Threat Model

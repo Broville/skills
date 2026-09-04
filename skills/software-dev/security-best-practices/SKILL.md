@@ -1,54 +1,20 @@
 ---
-name: security-best-practices
-description: Security best-practice reviews, vulnerability detection, and secure-by-default code with hardening defaults
-version: 1.1.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-trigger:
-  - User asks to review code for security vulnerabilities or weaknesses
-  - User asks to check for security issues in existing code
-  - User asks to write secure code or apply security best practices
-  - User requests a security report or vulnerability audit
-  - User mentions OWASP, injection, XSS, CSRF, auth bypass, SSRF, secrets, or similar security terms
-  - User is building a feature that accepts untrusted data, manages sessions, or integrates with third-party services
-inputs:
-  - name: language
-    description: Primary programming language of the project (python, javascript/typescript, go)
-    required: false
-  - name: framework
-    description: Web framework in use (e.g., flask, django, express, fastapi, gin)
-    required: false
-  - name: scope
-    description: File paths or directories to review (defaults to the whole project)
-    required: false
-  - name: report_path
-    description: Where to write the security report (defaults to security_best_practices_report.md)
-    required: false
-outputs:
-  - name: report
-    description: Markdown security report with findings ranked by severity
-  - name: fixes
-    description: Code changes that address identified vulnerabilities
+name: "security-best-practices"
+description: "Security best-practice reviews, vulnerability detection, and secure-by-default code with hardening defaults"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - security
-      - code-review
-      - vulnerability
-      - owasp
-      - hardening
-      - python
-      - javascript
-      - go
-    related_skills:
-      - security-threat-model
-      - security-ownership-map
-      - owasp-security
-    aliases: [security-and-hardening]
-    source: addyosmani/agent-skills (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/security-and-hardening
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\"]"
+  triggers: "[\"User asks to review code for security vulnerabilities or weaknesses\",\"User asks to check for security issues in existing code\",\"User asks to write secure code or apply security best practices\",\"User requests a security report or vulnerability audit\",\"User mentions OWASP, injection, XSS, CSRF, auth bypass, SSRF, secrets, or similar security terms\",\"User is building a feature that accepts untrusted data, manages sessions, or integrates with third-party services\"]"
+  inputs: "[{\"name\":\"language\",\"description\":\"Primary programming language of the project (python, javascript/typescript, go)\",\"required\":false},{\"name\":\"framework\",\"description\":\"Web framework in use (e.g., flask, django, express, fastapi, gin)\",\"required\":false},{\"name\":\"scope\",\"description\":\"File paths or directories to review (defaults to the whole project)\",\"required\":false},{\"name\":\"report_path\",\"description\":\"Where to write the security report (defaults to security_best_practices_report.md)\",\"required\":false}]"
+  outputs: "[{\"name\":\"report\",\"description\":\"Markdown security report with findings ranked by severity\"},{\"name\":\"fixes\",\"description\":\"Code changes that address identified vulnerabilities\"}]"
+  tags: "[\"security\",\"code-review\",\"vulnerability\",\"owasp\",\"hardening\",\"python\",\"javascript\",\"go\"]"
+  related-skills: "[\"security-threat-model\",\"security-ownership-map\",\"owasp-security\"]"
+  aliases: "[\"security-and-hardening\"]"
+  source: "addyosmani/agent-skills (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/security-and-hardening"
 ---
 
 # Security Best Practices

@@ -1,26 +1,20 @@
 ---
-name: git-advanced-workflows
-description: Advanced Git workflows — branching strategies, versioning, rebase, cherry-pick, bisect, worktrees, reflog, recovery
-version: 1.1.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - Cleaning up commit history before merging
-  - Applying specific commits across branches
-  - Finding commits that introduced bugs
-  - Working on multiple features simultaneously with worktrees
-  - Recovering from Git mistakes or lost commits
-  - Preparing clean PRs for review
-  - Choosing a branching strategy or release workflow
-  - Cutting a release, choosing a semantic version bump, or writing a changelog
+name: "git-advanced-workflows"
+description: "Advanced Git workflows — branching strategies, versioning, rebase, cherry-pick, bisect, worktrees, reflog, recovery"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [git, rebase, cherry-pick, bisect, worktree, reflog, recovery, branching, versioning, conventional-commits]
-    related_skills: [systematic-debugging, yeet, code-review-checklist, shipping-and-launch]
-    aliases: [git-workflow-and-versioning]
-    source: addyosmani/agent-skills (MIT)
-    source_url: https://github.com/addyosmani/agent-skills/tree/main/skills/git-workflow-and-versioning
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"Cleaning up commit history before merging\",\"Applying specific commits across branches\",\"Finding commits that introduced bugs\",\"Working on multiple features simultaneously with worktrees\",\"Recovering from Git mistakes or lost commits\",\"Preparing clean PRs for review\",\"Choosing a branching strategy or release workflow\",\"Cutting a release, choosing a semantic version bump, or writing a changelog\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"git\",\"rebase\",\"cherry-pick\",\"bisect\",\"worktree\",\"reflog\",\"recovery\",\"branching\",\"versioning\",\"conventional-commits\"]"
+  related-skills: "[\"systematic-debugging\",\"yeet\",\"code-review-checklist\",\"shipping-and-launch\"]"
+  aliases: "[\"git-workflow-and-versioning\"]"
+  source: "addyosmani/agent-skills (MIT)"
+  source-url: "https://github.com/addyosmani/agent-skills/tree/main/skills/git-workflow-and-versioning"
 ---
 
 # Git Advanced Workflows

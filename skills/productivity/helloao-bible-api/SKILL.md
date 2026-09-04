@@ -1,24 +1,17 @@
 ---
-name: helloao-bible-api
-description: Retrieve licensed Bible resources from the Free Use Bible API.
-version: 1.0.0
-author: Broville
-license: MIT
-platforms: [linux, macos, windows]
+name: "helloao-bible-api"
+description: "Retrieve licensed Bible resources from the Free Use Bible API."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [Bible, API, translations, commentaries, cross-references]
-    related_skills: [scripture-study-method, bible-study-facilitation, bible-study-app-development]
-trigger:
-  - When an agent needs Bible text, public-domain commentary, or cross-reference data from bible.helloao.org.
-  - When a Bible-study workflow needs to verify a translation ID or retrieve a complete chapter.
-inputs:
-  - name: request
-    description: Resource type and identifiers such as translation, commentary, dataset, book, and chapter.
-    required: true
-outputs:
-  - name: cited-json-resource
-    description: Validated JSON data with source and license metadata retained.
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"When an agent needs Bible text, public-domain commentary, or cross-reference data from bible.helloao.org.\",\"When a Bible-study workflow needs to verify a translation ID or retrieve a complete chapter.\"]"
+  inputs: "[{\"name\":\"request\",\"description\":\"Resource type and identifiers such as translation, commentary, dataset, book, and chapter.\",\"required\":true}]"
+  outputs: "[{\"name\":\"cited-json-resource\",\"description\":\"Validated JSON data with source and license metadata retained.\"}]"
+  tags: "[\"Bible\",\"API\",\"translations\",\"commentaries\",\"cross-references\"]"
+  related-skills: "[\"scripture-study-method\",\"bible-study-facilitation\",\"bible-study-app-development\"]"
 ---
 
 # HelloAO Bible API

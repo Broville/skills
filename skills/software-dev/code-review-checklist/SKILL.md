@@ -1,20 +1,18 @@
 ---
-name: code-review-checklist
-description: Multi-axis code review checklist with severity classification for functionality, security, quality, and tests
-version: 1.1.0
-author: Broville
-license: MIT
-platforms: [linux, macos]
-trigger:
-  - Reviewing pull requests or code changes
-  - Conducting code audits
-  - Establishing code review standards
-  - Wanting to ensure nothing is missed in reviews
+name: "code-review-checklist"
+description: "Multi-axis code review checklist with severity classification for functionality, security, quality, and tests"
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [code-review, checklist, security, quality]
-    related_skills: [systematic-debugging, verification-before-completion]
-    aliases: [code-review-and-quality]
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\"]"
+  triggers: "[\"Reviewing pull requests or code changes\",\"Conducting code audits\",\"Establishing code review standards\",\"Wanting to ensure nothing is missed in reviews\"]"
+  inputs: "[]"
+  outputs: "[]"
+  tags: "[\"code-review\",\"checklist\",\"security\",\"quality\"]"
+  related-skills: "[\"systematic-debugging\",\"verification-before-completion\"]"
+  aliases: "[\"code-review-and-quality\"]"
 ---
 
 # Code Review Checklist

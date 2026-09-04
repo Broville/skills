@@ -1,69 +1,43 @@
 ---
-name: playwright
-description: Automate browser interactions with native tools first, using the standalone Playwright CLI skill as a fallback.
-version: 1.1.0
-author: Broville
-license: MIT
-platforms:
-  - linux
-  - macos
-  - windows
-trigger:
-  - User asks to automate browser interactions or web flows
-  - User asks to test a web application flow end-to-end
-  - User asks to fill forms programmatically or extract data from web pages
-  - User asks to capture screenshots of web pages
-  - User mentions browser automation, browser testing, or UI flow debugging
-inputs:
-  - name: url
-    description: Starting URL for browser navigation
-    required: true
-  - name: action
-    description: Browser action to perform (navigate, click, type, fill, screenshot, snapshot)
-    required: true
-outputs:
-  - name: page_state
-    description: Current page state (DOM snapshot, accessibility tree, or screenshot)
-  - name: extracted_data
-    description: Data extracted from the page
+name: "playwright"
+description: "Automate browser interactions with native tools first, using the standalone Playwright CLI skill as a fallback."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags:
-      - browser
-      - automation
-      - testing
-      - playwright
-      - web
-    related_skills:
-      - screenshot
-      - playwright-cli
+  author: "Broville"
+  version: "2.0.0"
+  platforms: "[\"linux\",\"macos\",\"windows\"]"
+  triggers: "[\"User asks to automate browser interactions or web flows\",\"User asks to test a web application flow end-to-end\",\"User asks to fill forms programmatically or extract data from web pages\",\"User asks to capture screenshots of web pages\",\"User mentions browser automation, browser testing, or UI flow debugging\"]"
+  inputs: "[{\"name\":\"url\",\"description\":\"Starting URL for browser navigation\",\"required\":true},{\"name\":\"action\",\"description\":\"Browser action to perform (navigate, click, type, fill, screenshot, snapshot)\",\"required\":true}]"
+  outputs: "[{\"name\":\"page_state\",\"description\":\"Current page state (DOM snapshot, accessibility tree, or screenshot)\"},{\"name\":\"extracted_data\",\"description\":\"Data extracted from the page\"}]"
+  tags: "[\"browser\",\"automation\",\"testing\",\"playwright\",\"web\"]"
+  related-skills: "[\"screenshot\",\"playwright-cli\"]"
 ---
 
 # Playwright
 
 ## Description
 
-Automate browser interactions for testing web flows, filling forms, extracting data, and capturing page state. This skill supports two approaches:
+Automate browser interactions for testing web flows, filling forms, extracting data, and capturing page state. This skill supports two capability-based approaches:
 
-1. **Native Browser Tools (Primary)** — Use `browser_navigate`, `browser_click`, `browser_snapshot`, `browser_vision`, and similar tools when available in the agent's environment. These provide direct browser control without external dependencies.
+1. **Host Browser Controls (Primary)** — Use the browser navigation, inspection, interaction, and screenshot capabilities exposed by the current agent host. Tool names differ between Codex, Claude, Gemini, Cursor, OpenCode, and other hosts, so discover capabilities instead of assuming identifiers.
 
 2. **Playwright CLI (Fallback)** — Load the standalone `playwright-cli` skill when native browser tools are unavailable or the user explicitly requests the CLI. It pins the executable version and owns CLI-specific safety, command, session, tracing, and test-debugging guidance.
 
-Always prefer native browser tools when they are available. Fall back to the Playwright CLI only when needed.
+Prefer host browser controls when they are available. Fall back to the Playwright CLI only when needed.
 
 ## Prerequisites
 
-### Path 1: Native Browser Tools (Primary)
+### Path 1: Host Browser Controls (Primary)
 
-Check if native browser tools are available in your environment:
+Inspect the current host's available tools and confirm that it provides all capabilities needed by the workflow:
 
-- `browser_navigate` — Navigate to a URL
-- `browser_click` — Click an element
-- `browser_snapshot` — Capture accessibility tree or DOM snapshot
-- `browser_vision` — Capture a visual screenshot
-- Additional tools: `browser_type`, `browser_fill`, `browser_scroll`, etc.
+- navigate to a URL
+- inspect the DOM or accessibility tree
+- click, type, fill, select, and scroll as required
+- capture a visual screenshot when layout evidence matters
 
-If these tools are available, no additional setup is required. Proceed to the native flow.
+If the required capabilities are available, no additional setup is required. Use the host's documented argument schema; never infer tool names or parameters from another agent.
 
 ### Path 2: Playwright CLI (Fallback)
 
@@ -84,19 +58,19 @@ Expected result: `0.1.19`. Do not use the former wrapper path; this skill has no
 
 ## Steps
 
-### Path 1: Native Browser Tools
+### Path 1: Host Browser Controls
 
 #### 1. Navigate to the starting page
 
-Use the `browser_navigate` tool with the target URL.
+Use the host's navigation capability with the target URL.
 
 #### 2. Capture page state
 
-Use `browser_snapshot` to get the accessibility tree or DOM structure. This provides stable element identifiers for interaction.
+Use the host's semantic page-inspection capability to get the accessibility tree or DOM structure. This provides stable element identifiers for interaction.
 
 #### 3. Interact with elements
 
-Use `browser_click` to click buttons, links, or other interactive elements. Use `browser_type` or `browser_fill` to enter text into form fields.
+Use the host's interaction capabilities to click buttons or links and enter text into form fields.
 
 #### 4. Re-snapshot after navigation
 
@@ -104,7 +78,7 @@ After any action that changes the page significantly (navigation, form submissio
 
 #### 5. Verify results
 
-Use `browser_snapshot` or `browser_vision` to confirm the expected state of the page after interactions.
+Use semantic inspection or a visual screenshot to confirm the expected state after interactions.
 
 ### Path 2: Playwright CLI
 
@@ -154,11 +128,11 @@ npx --yes @playwright/cli@0.1.19 tracing-stop
 
 #### Form fill and submit
 
-**Native:**
+**Host controls:**
 1. Navigate to form URL
 2. Snapshot the page
-3. Fill each form field using `browser_fill`
-4. Click the submit button using `browser_click`
+3. Fill each form field using the host's form interaction capability
+4. Click the submit button
 5. Snapshot the result page
 
 **CLI:**
@@ -181,7 +155,7 @@ npx --yes @playwright/cli@0.1.19 snapshot
 
 #### Debugging with screenshots
 
-Use `browser_vision` (native) or the pinned `playwright-cli screenshot` workflow to capture visual state when text-based snapshots are insufficient for understanding page layout.
+Use the host's screenshot capability or the pinned `playwright-cli screenshot` workflow when text-based snapshots are insufficient for understanding page layout.
 
 ## Pitfalls
 

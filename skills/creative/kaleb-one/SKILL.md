@@ -1,29 +1,17 @@
 ---
-name: kaleb-one
-description: Material Design 3 design system from the kaleb.one ecosystem — 4 palettes (Obsidian, Midnight Ocean, Volcanic, Frost), full token system, pre-built M3 components, and Tailwind preset.
-version: 1.0.0
-author: triursa
-license: MIT
-trigger:
-  - User asks to build or update UI/UX with Kaleb One theme
-  - User mentions "kaleb", "kaleb.one", "theme-kaleb-one", "obsidian palette", or "M3 design tokens"
-  - User wants Material Design 3 theming with CSS custom properties
-  - User requests dark-mode-first design with pre-built component styles
-  - User asks for a Tailwind CSS preset with M3 tokens
-inputs:
-  - name: palette
-    description: "Which palette to use: obsidian (default), midnight-ocean, volcanic, or frost"
-    required: false
-  - name: framework
-    description: "Target framework: vanilla-html, tailwind, or npm"
-    required: false
-outputs:
-  - name: styled_page
-    description: HTML/CSS output using kaleb-one design tokens and components
+name: "kaleb-one"
+description: "Material Design 3 design system from the kaleb.one ecosystem — 4 palettes (Obsidian, Midnight Ocean, Volcanic, Frost), full token system, pre-built M3 components, and Tailwind preset."
+license: "MIT"
+compatibility: "Open Agent Skills format for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts. Runtime tools are listed in Prerequisites."
 metadata:
-  hermes:
-    tags: [material-design-3, m3, design-tokens, dark-theme, tailwind, css-custom-properties, component-library]
-    related_skills: [pages-viz]
+  author: "triursa"
+  version: "2.0.0"
+  platforms: "[]"
+  triggers: "[\"User asks to build or update UI/UX with Kaleb One theme\",\"User mentions \\\"kaleb\\\", \\\"kaleb.one\\\", \\\"theme-kaleb-one\\\", \\\"obsidian palette\\\", or \\\"M3 design tokens\\\"\",\"User wants Material Design 3 theming with CSS custom properties\",\"User requests dark-mode-first design with pre-built component styles\",\"User asks for a Tailwind CSS preset with M3 tokens\"]"
+  inputs: "[{\"name\":\"palette\",\"description\":\"Which palette to use: obsidian (default), midnight-ocean, volcanic, or frost\",\"required\":false},{\"name\":\"framework\",\"description\":\"Target framework: vanilla-html, tailwind, or npm\",\"required\":false}]"
+  outputs: "[{\"name\":\"styled_page\",\"description\":\"HTML/CSS output using kaleb-one design tokens and components\"}]"
+  tags: "[\"material-design-3\",\"m3\",\"design-tokens\",\"dark-theme\",\"tailwind\",\"css-custom-properties\",\"component-library\"]"
+  related-skills: "[\"design-system-engineering\",\"frontend-ui-engineering\"]"
 ---
 
 # Kaleb One — Material Design 3 Theme System
