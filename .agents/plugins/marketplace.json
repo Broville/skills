@@ -1229,6 +1229,18 @@
       "category": "Software Development"
     },
     {
+      "name": "broville-skill-agent-skill-quality-audit",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/agent-skill-quality-audit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
       "name": "broville-skill-angular-developer",
       "source": {
         "source": "local",
@@ -1349,6 +1361,30 @@
       "category": "Software Development"
     },
     {
+      "name": "broville-skill-desktop-filesystem-safety",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/desktop-filesystem-safety"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-desktop-media-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/desktop-media-pipeline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
       "name": "broville-skill-documentation-and-adrs",
       "source": {
         "source": "local",
@@ -1445,6 +1481,18 @@
       "category": "Software Development"
     },
     {
+      "name": "broville-skill-macos-desktop-distribution",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/macos-desktop-distribution"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
       "name": "broville-skill-mcp-builder",
       "source": {
         "source": "local",
@@ -1485,6 +1533,18 @@
       "source": {
         "source": "local",
         "path": "./skills/software-dev/mobile-responsiveness"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-native-desktop-accessibility",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/native-desktop-accessibility"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -1557,6 +1617,30 @@
       "source": {
         "source": "local",
         "path": "./skills/software-dev/playwright-cli"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-pyinstaller-desktop-release",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/pyinstaller-desktop-release"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-pyside6-desktop-engineering",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/pyside6-desktop-engineering"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -1725,6 +1809,18 @@
       "source": {
         "source": "local",
         "path": "./skills/software-dev/web-design-guidelines"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-windows-desktop-ui-testing",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/windows-desktop-ui-testing"
       },
       "policy": {
         "installation": "AVAILABLE",

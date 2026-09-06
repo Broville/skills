@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-desktop-filesystem-safety",
+  "version": "1.0.0",
+  "description": "Design and verify safe cross-platform desktop file workflows across local, removable, network, and cloud-backed storage.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "desktop-filesystem-safety",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Desktop Filesystem Safety",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only desktop-filesystem-safety. Design and verify safe cross-platform desktop file workflows across local, removable, network, and cloud-backed storage. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

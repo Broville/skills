@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-macos-desktop-distribution",
+  "version": "1.0.0",
+  "description": "Sign, notarize, staple, and verify macOS desktop application artifacts distributed outside the Mac App Store.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "macos-desktop-distribution",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Macos Desktop Distribution",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only macos-desktop-distribution. Sign, notarize, staple, and verify macOS desktop application artifacts distributed outside the Mac App Store. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

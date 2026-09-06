@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-agent-skill-quality-audit",
+  "version": "1.0.0",
+  "description": "Audit public or local agent skills for validity, safety, provenance, portability, trigger quality, and demonstrated usefulness before adoption.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "agent-skill-quality-audit",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Agent Skill Quality Audit",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only agent-skill-quality-audit. Audit public or local agent skills for validity, safety, provenance, portability, trigger quality, and demonstrated usefulness before adoption. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}
