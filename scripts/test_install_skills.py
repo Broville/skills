@@ -10,6 +10,9 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 INSTALLER = REPO_ROOT / "scripts" / "install_skills.py"
+EXPECTED_SKILL_NAMES = {
+    skill_file.parent.name for skill_file in (REPO_ROOT / "skills").glob("*/*/SKILL.md")
+}
 EXPECTED_PATHS = {
     "codex": Path(".agents/skills"),
     "claude": Path(".claude/skills"),
@@ -44,7 +47,10 @@ def main() -> int:
             workspace = temp_root / agent
             run("--agent", agent, "--workspace", str(workspace))
             installed = workspace / relative_root
-            assert len(list(installed.glob("*/SKILL.md"))) == 85
+            installed_skill_names = {
+                skill_file.parent.name for skill_file in installed.glob("*/SKILL.md")
+            }
+            assert installed_skill_names == EXPECTED_SKILL_NAMES
             assert (installed / "playwright" / "SKILL.md").is_file()
             assert (installed / "playwright" / "references" / "cli.md").is_file()
             assert (installed / "web-accessibility" / "SKILL.md").is_file()
