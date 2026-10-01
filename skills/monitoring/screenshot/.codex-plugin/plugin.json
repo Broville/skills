@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-screenshot",
+  "version": "2.0.0",
+  "description": "Capture desktop screenshots on Linux (X11 and Wayland) for visual verification, debugging, and documentation.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "monitoring",
+    "Monitoring",
+    "screenshot",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Screenshot",
+    "shortDescription": "Monitoring · single skill",
+    "longDescription": "Monitoring: install only screenshot. Capture desktop screenshots on Linux (X11 and Wayland) for visual verification, debugging, and documentation. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Monitoring",
+    "capabilities": []
+  }
+}

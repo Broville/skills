@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-3-statement-model",
+  "version": "2.0.0",
+  "description": "Build fully-integrated 3-statement financial models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, and debt schedules using openpyxl",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "finance",
+    "Finance",
+    "3-statement-model",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "3 Statement Model",
+    "shortDescription": "Finance · single skill",
+    "longDescription": "Finance: install only 3-statement-model. Build fully-integrated 3-statement financial models (IS, BS, CF) in Excel with working capital schedules, D&A roll-forwards, and debt schedules using openpyxl Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Finance",
+    "capabilities": []
+  }
+}

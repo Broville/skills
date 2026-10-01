@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-gh-fix-ci",
+  "version": "2.0.0",
+  "description": "Inspect failing GitHub Actions PR checks, summarize failure context, draft a fix plan, and implement after approval.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "gh-fix-ci",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Gh Fix Ci",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only gh-fix-ci. Inspect failing GitHub Actions PR checks, summarize failure context, draft a fix plan, and implement after approval. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

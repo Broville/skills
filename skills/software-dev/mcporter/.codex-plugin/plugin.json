@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-mcporter",
+  "version": "2.0.0",
+  "description": "Discover, call, and manage MCP (Model Context Protocol) servers and tools from the CLI. List servers, call tools, manage auth, and generate CLI wrappers — all via npx.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "mcporter",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Mcporter",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only mcporter. Discover, call, and manage MCP (Model Context Protocol) servers and tools from the CLI. List servers, call tools, manage auth, and generate CLI wrappers — all via npx. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-fitness-nutrition",
+  "version": "2.0.0",
+  "description": "Gym workout planner and nutrition tracker using wger exercise database and USDA FoodData Central, plus offline calculators for BMI, TDEE, 1RM, macros, and body fat",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "health",
+    "Health",
+    "fitness-nutrition",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Fitness Nutrition",
+    "shortDescription": "Health · single skill",
+    "longDescription": "Health: install only fitness-nutrition. Gym workout planner and nutrition tracker using wger exercise database and USDA FoodData Central, plus offline calculators for BMI, TDEE, 1RM, macros, and body fat Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Health",
+    "capabilities": []
+  }
+}

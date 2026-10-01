@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-iac-security-scan",
+  "version": "2.0.0",
+  "description": "Scan IaC definitions (Terraform, CloudFormation, K8s, Dockerfiles) for misconfigurations and compliance violations.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "iac-security-scan",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Iac Security Scan",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only iac-security-scan. Scan IaC definitions (Terraform, CloudFormation, K8s, Dockerfiles) for misconfigurations and compliance violations. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

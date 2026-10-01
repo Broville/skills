@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-one-three-one-rule",
+  "version": "2.0.0",
+  "description": "Structured decision-making framework for technical proposals and trade-off analysis — one problem statement, three options with pros/cons, and one recommendation with definition of done and implementation plan.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "one-three-one-rule",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "One Three One Rule",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only one-three-one-rule. Structured decision-making framework for technical proposals and trade-off analysis — one problem statement, three options with pros/cons, and one recommendation with definition of done and implementation plan. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

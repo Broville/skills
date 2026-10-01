@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-meme-generation",
+  "version": "2.0.0",
+  "description": "Generate real meme images by picking a template and overlaying text with Pillow — produces actual .png meme files, no external API required",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "meme-generation",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Meme Generation",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only meme-generation. Generate real meme images by picking a template and overlaying text with Pillow — produces actual .png meme files, no external API required Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

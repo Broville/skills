@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-scrapling",
+  "version": "2.0.0",
+  "description": "Web scraping with anti-bot bypass via Scrapling — HTTP fetching, stealth browser automation, Cloudflare bypass, and spider crawling via CLI and Python",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "Research",
+    "scrapling",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Scrapling",
+    "shortDescription": "Research · single skill",
+    "longDescription": "Research: install only scrapling. Web scraping with anti-bot bypass via Scrapling — HTTP fetching, stealth browser automation, Cloudflare bypass, and spider crawling via CLI and Python Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Research",
+    "capabilities": []
+  }
+}

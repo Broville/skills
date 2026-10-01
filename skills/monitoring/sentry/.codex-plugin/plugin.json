@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-sentry",
+  "version": "2.0.0",
+  "description": "Inspect Sentry issues and events, summarize production errors, and pull Sentry health data using the read-only Sentry CLI. Focus on understanding, not writing, production incidents.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "monitoring",
+    "Monitoring",
+    "sentry",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Sentry",
+    "shortDescription": "Monitoring · single skill",
+    "longDescription": "Monitoring: install only sentry. Inspect Sentry issues and events, summarize production errors, and pull Sentry health data using the read-only Sentry CLI. Focus on understanding, not writing, production incidents. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Monitoring",
+    "capabilities": []
+  }
+}

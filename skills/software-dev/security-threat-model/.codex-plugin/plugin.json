@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-security-threat-model",
+  "version": "2.0.0",
+  "description": "Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model report.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "security-threat-model",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Security Threat Model",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only security-threat-model. Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model report. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

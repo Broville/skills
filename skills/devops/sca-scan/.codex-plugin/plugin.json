@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-sca-scan",
+  "version": "2.0.0",
+  "description": "Run Software Composition Analysis on project dependencies to surface CVEs, outdated packages, and optional SBOM output.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "sca-scan",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Sca Scan",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only sca-scan. Run Software Composition Analysis on project dependencies to surface CVEs, outdated packages, and optional SBOM output. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

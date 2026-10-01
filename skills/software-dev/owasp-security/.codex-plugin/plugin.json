@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-owasp-security",
+  "version": "2.0.0",
+  "description": "Implement secure coding practices following OWASP Top 10. Use when preventing security vulnerabilities, implementing...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "owasp-security",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Owasp Security",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only owasp-security. Implement secure coding practices following OWASP Top 10. Use when preventing security vulnerabilities, implementing... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

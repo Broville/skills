@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-ci-security-pipeline",
+  "version": "2.0.0",
+  "description": "Design and emit CI/CD security pipeline stages (pre-commit, PR, deploy gates) chaining SAST, SCA, secret, IaC, and DAST.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "ci-security-pipeline",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Ci Security Pipeline",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only ci-security-pipeline. Design and emit CI/CD security pipeline stages (pre-commit, PR, deploy gates) chaining SAST, SCA, secret, IaC, and DAST. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

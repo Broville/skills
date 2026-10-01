@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-angular-developer",
+  "version": "2.0.0",
+  "description": "Build, review, test, and modernize Angular applications using version-aware official framework guidance.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "angular-developer",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Angular Developer",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only angular-developer. Build, review, test, and modernize Angular applications using version-aware official framework guidance. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-frontend-ui-engineering",
+  "version": "2.0.0",
+  "description": "Build production-quality, accessible, responsive interfaces while preserving the project's stack and design system.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "frontend-ui-engineering",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Frontend Ui Engineering",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only frontend-ui-engineering. Build production-quality, accessible, responsive interfaces while preserving the project's stack and design system. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

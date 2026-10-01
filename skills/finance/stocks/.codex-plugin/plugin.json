@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-stocks",
+  "version": "2.0.0",
+  "description": "Read-only stock market data via Yahoo Finance — quote, search, history, compare, and crypto prices with no API key required",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "finance",
+    "Finance",
+    "stocks",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Stocks",
+    "shortDescription": "Finance · single skill",
+    "longDescription": "Finance: install only stocks. Read-only stock market data via Yahoo Finance — quote, search, history, compare, and crypto prices with no API key required Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Finance",
+    "capabilities": []
+  }
+}

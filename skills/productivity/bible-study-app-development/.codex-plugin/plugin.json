@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-bible-study-app-development",
+  "version": "2.0.0",
+  "description": "Design evidence-first, local-first Bible study apps.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "bible-study-app-development",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Bible Study App Development",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only bible-study-app-development. Design evidence-first, local-first Bible study apps. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

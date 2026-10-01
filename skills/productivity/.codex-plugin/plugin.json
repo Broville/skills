@@ -1,6 +1,6 @@
 {
   "name": "broville-productivity",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Documents, transcripts, flashcards, interviews, and Bible study workflows.",
   "author": {
     "name": "Broville",
@@ -12,9 +12,14 @@
   "interface": {
     "displayName": "Broville Productivity",
     "shortDescription": "Study and productivity",
-    "longDescription": "Documents, transcripts, flashcards, interviews, and Bible study workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "longDescription": "Documents, transcripts, flashcards, interviews, and Bible study workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin. Installs the complete category. Choose the bundle or individual skills to avoid overlapping copies.",
     "developerName": "Broville",
     "category": "Productivity",
     "capabilities": []
-  }
+  },
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "category-bundle"
+  ]
 }

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-whisper",
+  "version": "2.0.0",
+  "description": "Local speech-to-text transcription using Whisper models — supports 99 languages, translation to English, CLI and Python API, GPU acceleration, and faster-whisper alternative",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "ML Ops",
+    "whisper",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Whisper",
+    "shortDescription": "ML Ops · single skill",
+    "longDescription": "ML Ops: install only whisper. Local speech-to-text transcription using Whisper models — supports 99 languages, translation to English, CLI and Python API, GPU acceleration, and faster-whisper alternative Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "ML Ops",
+    "capabilities": []
+  }
+}

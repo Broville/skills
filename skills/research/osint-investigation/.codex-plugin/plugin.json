@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-osint-investigation",
+  "version": "2.0.0",
+  "description": "Public-records OSINT investigation framework — SEC EDGAR, USAspending, Senate lobbying, OFAC sanctions, ICIJ offshore leaks, NYC ACRIS property, OpenCorporates, CourtListener, Wayback Machine, GDELT news — entity resolution, cross-link analysis, timing correlation, evidence chains",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "Research",
+    "osint-investigation",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Osint Investigation",
+    "shortDescription": "Research · single skill",
+    "longDescription": "Research: install only osint-investigation. Public-records OSINT investigation framework — SEC EDGAR, USAspending, Senate lobbying, OFAC sanctions, ICIJ offshore leaks, NYC ACRIS property, OpenCorporates, CourtListener, Wayback Machine, GDELT news — entity resolution, cross-link analysis, timing correlation, evidence chains Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Research",
+    "capabilities": []
+  }
+}

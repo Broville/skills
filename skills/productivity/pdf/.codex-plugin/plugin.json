@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-pdf",
+  "version": "2.0.0",
+  "description": "Create, extract text from, render, and review PDF files using open-source tools (reportlab, pdfplumber, pypdf, Poppler).",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "pdf",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Pdf",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only pdf. Create, extract text from, render, and review PDF files using open-source tools (reportlab, pdfplumber, pypdf, Poppler). Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

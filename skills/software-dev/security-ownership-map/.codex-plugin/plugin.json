@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-security-ownership-map",
+  "version": "2.0.0",
+  "description": "Analyze git history to build a people-to-files ownership graph, compute bus factor for security-sensitive code, and export CSV/JSON for visualization and risk analysis.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "security-ownership-map",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Security Ownership Map",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only security-ownership-map. Analyze git history to build a people-to-files ownership graph, compute bus factor for security-sensitive code, and export CSV/JSON for visualization and risk analysis. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-memento-flashcards",
+  "version": "2.0.0",
+  "description": "Spaced-repetition flashcard system — create cards from facts, review with adaptive scheduling, generate quizzes from YouTube transcripts, export/import as CSV. All data stored locally, no API keys required.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "memento-flashcards",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Memento Flashcards",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only memento-flashcards. Spaced-repetition flashcard system — create cards from facts, review with adaptive scheduling, generate quizzes from YouTube transcripts, export/import as CSV. All data stored locally, no API keys required. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

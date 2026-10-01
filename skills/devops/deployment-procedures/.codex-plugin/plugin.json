@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-deployment-procedures",
+  "version": "2.0.0",
+  "description": "Platform-agnostic deployment framework — pre-deploy checks, deployment strategies, rollback, and verification principles",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "deployment-procedures",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Deployment Procedures",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only deployment-procedures. Platform-agnostic deployment framework — pre-deploy checks, deployment strategies, rollback, and verification principles Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

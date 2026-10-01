@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-gh-address-comments",
+  "version": "2.0.0",
+  "description": "Fetch and address review comments on the open PR for the current branch; present a numbered summary, apply selected fixes, and push.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "gh-address-comments",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Gh Address Comments",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only gh-address-comments. Fetch and address review comments on the open PR for the current branch; present a numbered summary, apply selected fixes, and push. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

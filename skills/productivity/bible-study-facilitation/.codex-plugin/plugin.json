@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-bible-study-facilitation",
+  "version": "2.0.0",
+  "description": "Build flexible, discussion-first group Bible studies.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "bible-study-facilitation",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Bible Study Facilitation",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only bible-study-facilitation. Build flexible, discussion-first group Bible studies. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

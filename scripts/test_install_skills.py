@@ -48,6 +48,7 @@ def main() -> int:
             assert (installed / "playwright" / "SKILL.md").is_file()
             assert (installed / "playwright" / "references" / "cli.md").is_file()
             assert (installed / "web-accessibility" / "SKILL.md").is_file()
+            assert not list(installed.glob("*/.codex-plugin"))
 
         explicit = temp_root / "explicit"
         run("--target", str(explicit), "--skill", "playwright")

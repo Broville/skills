@@ -1,6 +1,6 @@
 {
   "name": "broville-software-dev",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Software planning, implementation, testing, review, and web development workflows.",
   "author": {
     "name": "Broville",
@@ -12,9 +12,14 @@
   "interface": {
     "displayName": "Broville Software Development",
     "shortDescription": "Software development",
-    "longDescription": "Software planning, implementation, testing, review, and web development workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "longDescription": "Software planning, implementation, testing, review, and web development workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin. Installs the complete category. Choose the bundle or individual skills to avoid overlapping copies.",
     "developerName": "Broville",
-    "category": "Developer Tools",
+    "category": "Software Development",
     "capabilities": []
-  }
+  },
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "category-bundle"
+  ]
 }

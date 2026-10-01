@@ -1,6 +1,6 @@
 {
   "name": "broville-health",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Fitness and nutrition planning workflows.",
   "author": {
     "name": "Broville",
@@ -12,9 +12,14 @@
   "interface": {
     "displayName": "Broville Health",
     "shortDescription": "Fitness and nutrition",
-    "longDescription": "Fitness and nutrition planning workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "longDescription": "Fitness and nutrition planning workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin. Installs the complete category. Choose the bundle or individual skills to avoid overlapping copies.",
     "developerName": "Broville",
-    "category": "Productivity",
+    "category": "Health",
     "capabilities": []
-  }
+  },
+  "keywords": [
+    "health",
+    "Health",
+    "category-bundle"
+  ]
 }

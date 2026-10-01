@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-test-driven-development",
+  "version": "2.0.0",
+  "description": "Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when yo...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "test-driven-development",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Test Driven Development",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only test-driven-development. Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when yo... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

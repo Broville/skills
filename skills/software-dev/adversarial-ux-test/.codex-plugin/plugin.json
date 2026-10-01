@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-adversarial-ux-test",
+  "version": "2.0.0",
+  "description": "Roleplay the worst-case user for your product — browse the app as a hostile persona, find every UX pain point, then filter through a pragmatism layer to separate real problems from noise. Creates actionable tickets from genuine issues only.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "adversarial-ux-test",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Adversarial Ux Test",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only adversarial-ux-test. Roleplay the worst-case user for your product — browse the app as a hostile persona, find every UX pain point, then filter through a pragmatism layer to separate real problems from noise. Creates actionable tickets from genuine issues only. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

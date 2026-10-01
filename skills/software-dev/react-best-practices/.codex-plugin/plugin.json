@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-react-best-practices",
+  "version": "2.0.0",
+  "description": "Apply impact-ranked React and Next.js performance rules when writing, reviewing, or optimizing applications.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "react-best-practices",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "React Best Practices",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only react-best-practices. Apply impact-ranked React and Next.js performance rules when writing, reviewing, or optimizing applications. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}
