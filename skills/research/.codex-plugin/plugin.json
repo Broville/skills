@@ -1,0 +1,20 @@
+{
+  "name": "broville-research",
+  "version": "1.0.0",
+  "description": "Research, web extraction, and investigation workflows.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "skills": "./",
+  "interface": {
+    "displayName": "Broville Research",
+    "shortDescription": "Research workflows",
+    "longDescription": "Research, web extraction, and investigation workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

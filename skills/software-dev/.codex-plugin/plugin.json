@@ -1,0 +1,20 @@
+{
+  "name": "broville-software-dev",
+  "version": "1.0.0",
+  "description": "Software planning, implementation, testing, review, and web development workflows.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "skills": "./",
+  "interface": {
+    "displayName": "Broville Software Development",
+    "shortDescription": "Software development",
+    "longDescription": "Software planning, implementation, testing, review, and web development workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "developerName": "Broville",
+    "category": "Developer Tools",
+    "capabilities": []
+  }
+}

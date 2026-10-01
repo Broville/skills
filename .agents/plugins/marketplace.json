@@ -1,0 +1,140 @@
+{
+  "name": "broville-skills",
+  "interface": {
+    "displayName": "Broville Skills"
+  },
+  "plugins": [
+    {
+      "name": "broville-creative",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-data",
+      "source": {
+        "source": "local",
+        "path": "./skills/data"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "broville-data-science",
+      "source": {
+        "source": "local",
+        "path": "./skills/data-science"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "broville-devops",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "broville-finance",
+      "source": {
+        "source": "local",
+        "path": "./skills/finance"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-health",
+      "source": {
+        "source": "local",
+        "path": "./skills/health"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-mlops",
+      "source": {
+        "source": "local",
+        "path": "./skills/mlops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "broville-monitoring",
+      "source": {
+        "source": "local",
+        "path": "./skills/monitoring"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "broville-productivity",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-research",
+      "source": {
+        "source": "local",
+        "path": "./skills/research"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-software-dev",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
