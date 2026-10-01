@@ -38,3 +38,6 @@ jobs:
 
       - name: Test discovery-path installer
         run: python scripts/test_install_skills.py
+
+      - name: Validate plugin marketplace
+        run: python scripts/validate_marketplace.py

@@ -1,0 +1,20 @@
+{
+  "name": "broville-health",
+  "version": "1.0.0",
+  "description": "Fitness and nutrition planning workflows.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "skills": "./",
+  "interface": {
+    "displayName": "Broville Health",
+    "shortDescription": "Fitness and nutrition",
+    "longDescription": "Fitness and nutrition planning workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

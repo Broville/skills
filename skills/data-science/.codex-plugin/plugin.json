@@ -1,0 +1,20 @@
+{
+  "name": "broville-data-science",
+  "version": "1.0.0",
+  "description": "Jupyter notebooks, experiments, and analytical workflows.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "skills": "./",
+  "interface": {
+    "displayName": "Broville Data Science",
+    "shortDescription": "Notebook workflows",
+    "longDescription": "Jupyter notebooks, experiments, and analytical workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "developerName": "Broville",
+    "category": "Developer Tools",
+    "capabilities": []
+  }
+}

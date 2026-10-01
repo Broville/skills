@@ -1,0 +1,20 @@
+{
+  "name": "broville-creative",
+  "version": "1.0.0",
+  "description": "Content generation, frontend design, and visual style workflows.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "skills": "./",
+  "interface": {
+    "displayName": "Broville Creative",
+    "shortDescription": "Design and content workflows",
+    "longDescription": "Content generation, frontend design, and visual style workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}
