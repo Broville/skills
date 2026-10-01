@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-planning-and-task-breakdown",
+  "version": "2.0.0",
+  "description": "Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "planning-and-task-breakdown",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Planning And Task Breakdown",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only planning-and-task-breakdown. Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-pinggy-tunnel",
+  "version": "2.0.0",
+  "description": "Expose local services to the public internet via Pinggy SSH tunnels. Zero-install — uses the system SSH client for HTTP/HTTPS/TCP tunnels with optional auth gates and CORS.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "pinggy-tunnel",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Pinggy Tunnel",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only pinggy-tunnel. Expose local services to the public internet via Pinggy SSH tunnels. Zero-install — uses the system SSH client for HTTP/HTTPS/TCP tunnels with optional auth gates and CORS. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

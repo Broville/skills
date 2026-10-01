@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-chroma",
+  "version": "2.0.0",
+  "description": "Self-hosted open-source embedding database for semantic search, RAG, and document retrieval — store embeddings and metadata, perform vector and full-text search, filter by metadata",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "ML Ops",
+    "chroma",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Chroma",
+    "shortDescription": "ML Ops · single skill",
+    "longDescription": "ML Ops: install only chroma. Self-hosted open-source embedding database for semantic search, RAG, and document retrieval — store embeddings and metadata, perform vector and full-text search, filter by metadata Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "ML Ops",
+    "capabilities": []
+  }
+}

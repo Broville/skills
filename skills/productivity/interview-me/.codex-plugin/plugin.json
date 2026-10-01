@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-interview-me",
+  "version": "2.0.0",
+  "description": "Extracts what the user actually wants instead of what they think they should want. Achieves this through...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "interview-me",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Interview Me",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only interview-me. Extracts what the user actually wants instead of what they think they should want. Achieves this through... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

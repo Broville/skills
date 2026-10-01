@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-yeet",
+  "version": "2.0.0",
+  "description": "Stage, commit, push, and open or update a GitHub pull request in one flow.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "yeet",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Yeet",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only yeet. Stage, commit, push, and open or update a GitHub pull request in one flow. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

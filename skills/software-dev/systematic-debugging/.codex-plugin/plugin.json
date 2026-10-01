@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-systematic-debugging",
+  "version": "2.0.0",
+  "description": "5-phase debugging methodology — understand, isolate, fix, verify, recover — root cause first, then prevent regression",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "systematic-debugging",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Systematic Debugging",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only systematic-debugging. 5-phase debugging methodology — understand, isolate, fix, verify, recover — root cause first, then prevent regression Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

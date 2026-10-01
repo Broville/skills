@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-mermaid-diagrams",
+  "version": "2.0.0",
+  "description": "Create diagrams and visualizations using Mermaid syntax. Use when generating flowcharts, sequence diagrams, class...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "mermaid-diagrams",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Mermaid Diagrams",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only mermaid-diagrams. Create diagrams and visualizations using Mermaid syntax. Use when generating flowcharts, sequence diagrams, class... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-dcf-model",
+  "version": "2.0.0",
+  "description": "Build institutional-quality DCF valuation models in Excel with revenue projections, FCF build, WACC, terminal value, scenario analysis, and sensitivity tables using openpyxl",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "finance",
+    "Finance",
+    "dcf-model",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Dcf Model",
+    "shortDescription": "Finance · single skill",
+    "longDescription": "Finance: install only dcf-model. Build institutional-quality DCF valuation models in Excel with revenue projections, FCF build, WACC, terminal value, scenario analysis, and sensitivity tables using openpyxl Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Finance",
+    "capabilities": []
+  }
+}

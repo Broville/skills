@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-domain-intel",
+  "version": "2.0.0",
+  "description": "Passive domain reconnaissance using Python stdlib — subdomain discovery, SSL inspection, WHOIS lookup, DNS records, and availability checks with no API keys required",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "Research",
+    "domain-intel",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Domain Intel",
+    "shortDescription": "Research · single skill",
+    "longDescription": "Research: install only domain-intel. Passive domain reconnaissance using Python stdlib — subdomain discovery, SSL inspection, WHOIS lookup, DNS records, and availability checks with no API keys required Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Research",
+    "capabilities": []
+  }
+}

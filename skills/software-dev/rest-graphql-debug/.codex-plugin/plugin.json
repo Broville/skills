@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-rest-graphql-debug",
+  "version": "2.0.0",
+  "description": "Debug REST and GraphQL APIs through layered diagnosis — connectivity, timeouts, TLS, auth, request format, response parsing, and semantics. Isolate the failing layer before guessing at the fix.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "rest-graphql-debug",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Rest Graphql Debug",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only rest-graphql-debug. Debug REST and GraphQL APIs through layered diagnosis — connectivity, timeouts, TLS, auth, request format, response parsing, and semantics. Isolate the failing layer before guessing at the fix. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

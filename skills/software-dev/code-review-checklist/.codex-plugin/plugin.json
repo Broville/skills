@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-code-review-checklist",
+  "version": "2.0.0",
+  "description": "Multi-axis code review checklist with severity classification for functionality, security, quality, and tests",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "code-review-checklist",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Code Review Checklist",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only code-review-checklist. Multi-axis code review checklist with severity classification for functionality, security, quality, and tests Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

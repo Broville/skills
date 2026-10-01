@@ -41,3 +41,9 @@ jobs:
 
       - name: Validate plugin marketplace
         run: python scripts/validate_marketplace.py
+
+      - name: Check generated individual plugin metadata
+        run: python scripts/build_marketplace.py --check
+
+      - name: Test bundle and individual package composition
+        run: python scripts/test_marketplace.py

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-idea-refine",
+  "version": "2.0.0",
+  "description": "Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "idea-refine",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Idea Refine",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only idea-refine. Refines raw ideas into sharp, actionable concepts through structured divergent and convergent thinking. Use when an... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

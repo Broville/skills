@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-doubt-driven-development",
+  "version": "2.0.0",
+  "description": "Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matt...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "doubt-driven-development",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Doubt Driven Development",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only doubt-driven-development. Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matt... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

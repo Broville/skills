@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-playwright-cli",
+  "version": "2.0.0",
+  "description": "Inspect and automate web interfaces with Microsoft's Playwright CLI using revision-pinned, safe workflows.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "playwright-cli",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Playwright Cli",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only playwright-cli. Inspect and automate web interfaces with Microsoft's Playwright CLI using revision-pinned, safe workflows. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

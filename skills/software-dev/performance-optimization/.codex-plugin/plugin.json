@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-performance-optimization",
+  "version": "2.0.0",
+  "description": "Optimizes application performance across frontend, backend, queries, and databases. Use when performance...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "performance-optimization",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Performance Optimization",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only performance-optimization. Optimizes application performance across frontend, backend, queries, and databases. Use when performance... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

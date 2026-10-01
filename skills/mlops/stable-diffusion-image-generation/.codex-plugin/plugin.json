@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-stable-diffusion-image-generation",
+  "version": "2.0.0",
+  "description": "Local text-to-image generation with Stable Diffusion models — text-to-image, image-to-image, inpainting, ControlNet, LoRA adapters, all running on local GPU inference",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "mlops",
+    "ML Ops",
+    "stable-diffusion-image-generation",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Stable Diffusion Images",
+    "shortDescription": "ML Ops · single skill",
+    "longDescription": "ML Ops: install only stable-diffusion-image-generation. Local text-to-image generation with Stable Diffusion models — text-to-image, image-to-image, inpainting, ControlNet, LoRA adapters, all running on local GPU inference Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "ML Ops",
+    "capabilities": []
+  }
+}

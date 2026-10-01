@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-verification-before-completion",
+  "version": "2.0.0",
+  "description": "Mandatory verify-before-claiming-done gate — run verification commands and confirm output before making any success claims",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "verification-before-completion",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Verification Before Completion",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only verification-before-completion. Mandatory verify-before-claiming-done gate — run verification commands and confirm output before making any success claims Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

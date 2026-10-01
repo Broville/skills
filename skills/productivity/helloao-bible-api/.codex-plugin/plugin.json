@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-helloao-bible-api",
+  "version": "2.0.0",
+  "description": "Retrieve licensed Bible resources from the Free Use Bible API.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "helloao-bible-api",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Helloao Bible Api",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only helloao-bible-api. Retrieve licensed Bible resources from the Free Use Bible API. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-scripture-study-method",
+  "version": "2.0.0",
+  "description": "Study Scripture with context, sources, and user ownership.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "scripture-study-method",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Scripture Study Method",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only scripture-study-method. Study Scripture with context, sources, and user ownership. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

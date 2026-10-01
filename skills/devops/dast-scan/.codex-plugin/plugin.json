@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-dast-scan",
+  "version": "2.0.0",
+  "description": "Run Dynamic Application Security Testing on a running app to find runtime issues like XSS, SQLi, and bad headers.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "dast-scan",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Dast Scan",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only dast-scan. Run Dynamic Application Security Testing on a running app to find runtime issues like XSS, SQLi, and bad headers. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-mobile-responsiveness",
+  "version": "2.0.0",
+  "description": "Build responsive, mobile-first web applications. Use when implementing responsive layouts, touch interactions,...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "mobile-responsiveness",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Mobile Responsiveness",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only mobile-responsiveness. Build responsive, mobile-first web applications. Use when implementing responsive layouts, touch interactions,... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

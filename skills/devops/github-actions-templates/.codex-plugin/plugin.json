@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-github-actions-templates",
+  "version": "2.0.0",
+  "description": "Production-ready GitHub Actions workflow patterns for CI/CD — testing, Docker, K8s deploy, security scanning, and reusable workflows",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "github-actions-templates",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Github Actions Templates",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only github-actions-templates. Production-ready GitHub Actions workflow patterns for CI/CD — testing, Docker, K8s deploy, security scanning, and reusable workflows Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

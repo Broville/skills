@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-jupyter-notebook",
+  "version": "2.0.0",
+  "description": "Create, scaffold, and edit Jupyter notebooks (.ipynb) for experiments, explorations, or tutorials using standardized templates and structure patterns.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "data-science",
+    "Data Science",
+    "jupyter-notebook",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Jupyter Notebook",
+    "shortDescription": "Data Science · single skill",
+    "longDescription": "Data Science: install only jupyter-notebook. Create, scaffold, and edit Jupyter notebooks (.ipynb) for experiments, explorations, or tutorials using standardized templates and structure patterns. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Data Science",
+    "capabilities": []
+  }
+}

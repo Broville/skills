@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check Broville's category marketplace without installing or executing plugins."""
+"""Check category bundles and individual plugins without installing or executing them."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from validate_skills import NAME_PATTERN, SEMVER_PATTERN, Validation, parse_frontmatter
+from build_marketplace import CATEGORY_LABELS
 
 
 def contained_directory(root: Path, value: object) -> Path:
@@ -35,16 +36,25 @@ def validate(repo_root: Path) -> tuple[int, int]:
         raise ValueError("marketplace must contain plugin entries")
 
     canonical = {path.resolve() for path in repo_root.glob("skills/*/*/SKILL.md")}
-    discovered: set[Path] = set()
+    bundles: dict[str, set[Path]] = {}
+    individuals: set[Path] = set()
     names: set[str] = set()
     for entry in entries:
         name = entry["name"]
-        if not NAME_PATTERN.fullmatch(name) or len(name) > 64 or name in names:
+        if not isinstance(name, str) or not NAME_PATTERN.fullmatch(name) or len(name) > 64 or name in names:
             raise ValueError(f"invalid or duplicate plugin name: {name}")
         names.add(name)
         if entry["source"]["source"] != "local":
-            raise ValueError(f"{name}: category plugins must use local sources")
+            raise ValueError(f"{name}: skill plugins must use local sources")
         root = contained_directory(repo_root, entry["source"]["path"])
+        relative = root.relative_to(repo_root).parts
+        if len(relative) not in (2, 3) or relative[0] != "skills" or relative[1] not in CATEGORY_LABELS:
+            raise ValueError(f"{name}: source must be a canonical category or skill directory")
+        category = relative[1]
+        is_bundle = len(relative) == 2
+        expected_name = f"broville-{category}" if is_bundle else f"broville-skill-{relative[2]}"
+        if name != expected_name:
+            raise ValueError(f"{name}: expected plugin identity {expected_name}")
         manifest = json.loads((root / ".codex-plugin/plugin.json").read_text())
         if manifest["name"] != name:
             raise ValueError(f"{name}: catalog and manifest identities differ")
@@ -61,6 +71,10 @@ def validate(repo_root: Path) -> tuple[int, int]:
                 raise ValueError(f"{name}: interface.{field} exceeds 30 characters")
         if interface["category"] != entry["category"]:
             raise ValueError(f"{name}: catalog and listing categories differ")
+        if entry["category"] != CATEGORY_LABELS[category]:
+            raise ValueError(f"{name}: category label does not match its canonical category")
+        if category not in manifest.get("keywords", []):
+            raise ValueError(f"{name}: category must be searchable through keywords")
         if not isinstance(interface["capabilities"], list):
             raise ValueError(f"{name}: capabilities must be an array")
         if entry["policy"] != {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}:
@@ -68,26 +82,38 @@ def validate(repo_root: Path) -> tuple[int, int]:
         if any(field in manifest for field in ("apps", "hooks", "mcpServers")):
             raise ValueError(f"{name}: this catalog only wraps existing skill packages")
         skills_root = contained_directory(root, manifest["skills"])
-        skills = sorted(skills_root.glob("*/SKILL.md"))
+        if skills_root != root:
+            raise ValueError(f"{name}: discovery must stay at the canonical plugin root")
+        # Codex compatibility manifests use recursive discovery, including a root SKILL.md.
+        skills = sorted(skills_root.rglob("SKILL.md"))
         if not skills:
-            raise ValueError(f"{name}: no directly discoverable skill packages")
+            raise ValueError(f"{name}: no discoverable skill packages")
+        expected = {path for path in canonical if path.parent.parent.name == category} if is_bundle else {root / "SKILL.md"}
+        actual = {skill.resolve() for skill in skills}
+        if actual != expected:
+            raise ValueError(f"{name}: unexpected skill inventory for {'bundle' if is_bundle else 'individual'} plugin")
+        if is_bundle:
+            if category in bundles:
+                raise ValueError(f"{name}: category bundle is packaged more than once")
+            bundles[category] = actual
         for skill in skills:
             path = skill.resolve()
-            if path not in canonical or path in discovered:
-                raise ValueError(f"{name}: non-canonical or multiply packaged skill: {skill}")
+            if path not in canonical or (not is_bundle and path in individuals):
+                raise ValueError(f"{name}: non-canonical or duplicate individual skill: {skill}")
             result = Validation()
             parsed = parse_frontmatter(skill, result)
             if parsed is None or parsed[0].get("name") != skill.parent.name:
                 raise ValueError(f"{name}: invalid skill discovery metadata: {skill}")
-            discovered.add(path)
+            if not is_bundle:
+                individuals.add(path)
         for path in root.rglob("*"):
             if path.is_symlink():
                 raise ValueError(f"{name}: symlinks must not be packaged: {path}")
         print(f"{name}: {len(skills)} skills, version {manifest['version']}")
-    if discovered != canonical:
-        missing = sorted(str(path.relative_to(repo_root)) for path in canonical - discovered)
-        raise ValueError(f"marketplace omits canonical skills: {missing}")
-    return len(entries), len(discovered)
+    if set(bundles) != set(CATEGORY_LABELS) or individuals != canonical:
+        missing = sorted(str(path.relative_to(repo_root)) for path in canonical - individuals)
+        raise ValueError(f"marketplace needs every category bundle and individual skill; missing individuals: {missing}")
+    return len(entries), len(individuals)
 
 
 def main() -> int:
@@ -98,7 +124,7 @@ def main() -> int:
         plugins, skills = validate(args.repo_root.resolve())
     except (OSError, ValueError, KeyError, TypeError) as exc:
         parser.exit(1, f"Marketplace validation failed: {exc}\n")
-    print(f"Validated {plugins} category plugins covering all {skills} canonical skills.")
+    print(f"Validated {plugins} plugins: {len(CATEGORY_LABELS)} category bundles and {skills} individual skills.")
     return 0
 
 

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-kaleb-one",
+  "version": "2.0.0",
+  "description": "Material Design 3 design system from the kaleb.one ecosystem — 4 palettes (Obsidian, Midnight Ocean, Volcanic, Frost), full token system, pre-built M3 components, and Tailwind preset.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "kaleb-one",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Kaleb One",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only kaleb-one. Material Design 3 design system from the kaleb.one ecosystem — 4 palettes (Obsidian, Midnight Ocean, Volcanic, Frost), full token system, pre-built M3 components, and Tailwind preset. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

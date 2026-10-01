@@ -14,7 +14,55 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Productivity"
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-awesome-design",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/awesome-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-design-taste-frontend",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/design-taste-frontend"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-kaleb-one",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/kaleb-one"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-meme-generation",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/meme-generation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
     },
     {
       "name": "broville-data",
@@ -26,7 +74,19 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Developer Tools"
+      "category": "Data"
+    },
+    {
+      "name": "broville-skill-postgresql",
+      "source": {
+        "source": "local",
+        "path": "./skills/data/postgresql"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Data"
     },
     {
       "name": "broville-data-science",
@@ -38,7 +98,19 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Developer Tools"
+      "category": "Data Science"
+    },
+    {
+      "name": "broville-skill-jupyter-notebook",
+      "source": {
+        "source": "local",
+        "path": "./skills/data-science/jupyter-notebook"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Data Science"
     },
     {
       "name": "broville-devops",
@@ -50,7 +122,163 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Developer Tools"
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-ci-security-pipeline",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/ci-security-pipeline"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-cloudflare-deploy",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/cloudflare-deploy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-dast-scan",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/dast-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-deployment-procedures",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/deployment-procedures"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-github-actions-templates",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/github-actions-templates"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-iac-security-scan",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/iac-security-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-pinggy-tunnel",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/pinggy-tunnel"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-sast-scan",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/sast-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-sca-scan",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/sca-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-secret-scan",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/secret-scan"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-security-risk-assessment",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/security-risk-assessment"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-vulnerability-triage",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/vulnerability-triage"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
+    },
+    {
+      "name": "broville-skill-watchers",
+      "source": {
+        "source": "local",
+        "path": "./skills/devops/watchers"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DevOps"
     },
     {
       "name": "broville-finance",
@@ -62,7 +290,43 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Productivity"
+      "category": "Finance"
+    },
+    {
+      "name": "broville-skill-3-statement-model",
+      "source": {
+        "source": "local",
+        "path": "./skills/finance/3-statement-model"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Finance"
+    },
+    {
+      "name": "broville-skill-dcf-model",
+      "source": {
+        "source": "local",
+        "path": "./skills/finance/dcf-model"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Finance"
+    },
+    {
+      "name": "broville-skill-stocks",
+      "source": {
+        "source": "local",
+        "path": "./skills/finance/stocks"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Finance"
     },
     {
       "name": "broville-health",
@@ -74,7 +338,19 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Productivity"
+      "category": "Health"
+    },
+    {
+      "name": "broville-skill-fitness-nutrition",
+      "source": {
+        "source": "local",
+        "path": "./skills/health/fitness-nutrition"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Health"
     },
     {
       "name": "broville-mlops",
@@ -86,7 +362,43 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Developer Tools"
+      "category": "ML Ops"
+    },
+    {
+      "name": "broville-skill-chroma",
+      "source": {
+        "source": "local",
+        "path": "./skills/mlops/chroma"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "ML Ops"
+    },
+    {
+      "name": "broville-skill-stable-diffusion-image-generation",
+      "source": {
+        "source": "local",
+        "path": "./skills/mlops/stable-diffusion-image-generation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "ML Ops"
+    },
+    {
+      "name": "broville-skill-whisper",
+      "source": {
+        "source": "local",
+        "path": "./skills/mlops/whisper"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "ML Ops"
     },
     {
       "name": "broville-monitoring",
@@ -98,13 +410,145 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Developer Tools"
+      "category": "Monitoring"
+    },
+    {
+      "name": "broville-skill-screenshot",
+      "source": {
+        "source": "local",
+        "path": "./skills/monitoring/screenshot"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Monitoring"
+    },
+    {
+      "name": "broville-skill-sentry",
+      "source": {
+        "source": "local",
+        "path": "./skills/monitoring/sentry"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Monitoring"
     },
     {
       "name": "broville-productivity",
       "source": {
         "source": "local",
         "path": "./skills/productivity"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-bible-study-app-development",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/bible-study-app-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-bible-study-facilitation",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/bible-study-facilitation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-helloao-bible-api",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/helloao-bible-api"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-idea-refine",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/idea-refine"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-interview-me",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/interview-me"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-memento-flashcards",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/memento-flashcards"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-pdf",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/pdf"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-scripture-study-method",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/scripture-study-method"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-youtube-transcript",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/youtube-transcript"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -122,7 +566,55 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Productivity"
+      "category": "Research"
+    },
+    {
+      "name": "broville-skill-domain-intel",
+      "source": {
+        "source": "local",
+        "path": "./skills/research/domain-intel"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    },
+    {
+      "name": "broville-skill-drug-discovery",
+      "source": {
+        "source": "local",
+        "path": "./skills/research/drug-discovery"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    },
+    {
+      "name": "broville-skill-osint-investigation",
+      "source": {
+        "source": "local",
+        "path": "./skills/research/osint-investigation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    },
+    {
+      "name": "broville-skill-scrapling",
+      "source": {
+        "source": "local",
+        "path": "./skills/research/scrapling"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
     },
     {
       "name": "broville-software-dev",
@@ -134,7 +626,535 @@
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Developer Tools"
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-adversarial-ux-test",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/adversarial-ux-test"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-angular-developer",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/angular-developer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-api-and-interface-design",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/api-and-interface-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-api-security-best-practices",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/api-security-best-practices"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-cli-creator",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/cli-creator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-code-review-checklist",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/code-review-checklist"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-code-simplification",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/code-simplification"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-concise-planning",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/concise-planning"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-context-engineering",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/context-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-deprecation-and-migration",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/deprecation-and-migration"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-design-system-engineering",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/design-system-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-documentation-and-adrs",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/documentation-and-adrs"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-doubt-driven-development",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/doubt-driven-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-frontend-ui-engineering",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/frontend-ui-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-gh-address-comments",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/gh-address-comments"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-gh-fix-ci",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/gh-fix-ci"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-git-advanced-workflows",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/git-advanced-workflows"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-image-to-code",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/image-to-code"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-incremental-implementation",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/incremental-implementation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-mcp-builder",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/mcp-builder"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-mcporter",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/mcporter"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-mermaid-diagrams",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/mermaid-diagrams"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-mobile-responsiveness",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/mobile-responsiveness"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-one-three-one-rule",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/one-three-one-rule"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-owasp-security",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/owasp-security"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-performance-optimization",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/performance-optimization"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-planning-and-task-breakdown",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/planning-and-task-breakdown"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-playwright",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/playwright"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-playwright-cli",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/playwright-cli"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-react-best-practices",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/react-best-practices"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-react-composition-patterns",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/react-composition-patterns"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-rest-graphql-debug",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/rest-graphql-debug"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-security-best-practices",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/security-best-practices"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-security-ownership-map",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/security-ownership-map"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-security-threat-model",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/security-threat-model"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-shipping-and-launch",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/shipping-and-launch"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-source-driven-development",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/source-driven-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-spec-driven-development",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/spec-driven-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-systematic-debugging",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/systematic-debugging"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-test-driven-development",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/test-driven-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-verification-before-completion",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/verification-before-completion"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-web-accessibility",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/web-accessibility"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-web-design-guidelines",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/web-design-guidelines"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-yeet",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/yeet"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
     }
   ]
 }

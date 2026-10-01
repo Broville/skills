@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-awesome-design",
+  "version": "2.0.0",
+  "description": "Select and adapt a local design reference without copying brand identity, protected assets, or trade dress.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "awesome-design",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Awesome Design",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only awesome-design. Select and adapt a local design reference without copying brand identity, protected assets, or trade dress. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

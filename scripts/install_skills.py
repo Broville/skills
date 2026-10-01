@@ -95,7 +95,12 @@ def main() -> int:
                 shutil.rmtree(target)
             else:
                 target.unlink()
-        shutil.copytree(source, target, symlinks=False)
+        # Plugin identity is packaging metadata, not part of raw skill discovery.
+        # Copying it would namespace an ordinary Codex skill as an individual plugin.
+        def ignore_plugin_metadata(directory: str, names: list[str]) -> set[str]:
+            return {".codex-plugin"} if Path(directory) == source else set()
+
+        shutil.copytree(source, target, symlinks=False, ignore=ignore_plugin_metadata)
 
     mode = "Would install" if args.dry_run else "Installed"
     print(f"{mode} {len(actions)} skill(s) for {args.agent} in {target_root}")

@@ -1,6 +1,6 @@
 {
   "name": "broville-devops",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Deployment, infrastructure, operations, and security scanning workflows.",
   "author": {
     "name": "Broville",
@@ -12,9 +12,14 @@
   "interface": {
     "displayName": "Broville DevOps",
     "shortDescription": "Operations and security",
-    "longDescription": "Deployment, infrastructure, operations, and security scanning workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "longDescription": "Deployment, infrastructure, operations, and security scanning workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin. Installs the complete category. Choose the bundle or individual skills to avoid overlapping copies.",
     "developerName": "Broville",
-    "category": "Developer Tools",
+    "category": "DevOps",
     "capabilities": []
-  }
+  },
+  "keywords": [
+    "devops",
+    "DevOps",
+    "category-bundle"
+  ]
 }

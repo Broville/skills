@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-watchers",
+  "version": "2.0.0",
+  "description": "Poll RSS, JSON APIs, and GitHub with watermark dedup. Run watchers on a cron schedule or ad-hoc and react only to new items.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "watchers",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Watchers",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only watchers. Poll RSS, JSON APIs, and GitHub with watermark dedup. Run watchers on a cron schedule or ad-hoc and react only to new items. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

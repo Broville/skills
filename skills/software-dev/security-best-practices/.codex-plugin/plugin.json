@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-security-best-practices",
+  "version": "2.0.0",
+  "description": "Security best-practice reviews, vulnerability detection, and secure-by-default code with hardening defaults",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "security-best-practices",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Security Best Practices",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only security-best-practices. Security best-practice reviews, vulnerability detection, and secure-by-default code with hardening defaults Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

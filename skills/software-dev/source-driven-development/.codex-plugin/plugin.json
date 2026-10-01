@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-source-driven-development",
+  "version": "2.0.0",
+  "description": "Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code f...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "source-driven-development",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Source Driven Development",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only source-driven-development. Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code f... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

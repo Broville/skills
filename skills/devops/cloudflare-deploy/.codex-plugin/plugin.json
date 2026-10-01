@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-cloudflare-deploy",
+  "version": "2.0.0",
+  "description": "Deploy applications and infrastructure to Cloudflare using MCP tools (primary) or Wrangler CLI (fallback). Covers Workers, Pages, KV, D1, R2, Queues, Vectorize, and AI Gateway.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "cloudflare-deploy",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Cloudflare Deploy",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only cloudflare-deploy. Deploy applications and infrastructure to Cloudflare using MCP tools (primary) or Wrangler CLI (fallback). Covers Workers, Pages, KV, D1, R2, Queues, Vectorize, and AI Gateway. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

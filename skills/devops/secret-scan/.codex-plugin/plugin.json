@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-secret-scan",
+  "version": "2.0.0",
+  "description": "Detect hardcoded secrets, API keys, tokens, and credentials in source and git history using pattern + entropy analysis.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "secret-scan",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Secret Scan",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only secret-scan. Detect hardcoded secrets, API keys, tokens, and credentials in source and git history using pattern + entropy analysis. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

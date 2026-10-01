@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-design-taste-frontend",
+  "version": "2.0.0",
+  "description": "Choose distinctive frontend aesthetics from a brief while respecting the product's existing design system.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "design-taste-frontend",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Design Taste Frontend",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only design-taste-frontend. Choose distinctive frontend aesthetics from a brief while respecting the product's existing design system. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-sast-scan",
+  "version": "2.0.0",
+  "description": "Run Static Application Security Testing on source code to detect injection, deserialization, and other code-level flaws.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "sast-scan",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Sast Scan",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only sast-scan. Run Static Application Security Testing on source code to detect injection, deserialization, and other code-level flaws. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}

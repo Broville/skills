@@ -1,6 +1,6 @@
 {
   "name": "broville-research",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Research, web extraction, and investigation workflows.",
   "author": {
     "name": "Broville",
@@ -12,9 +12,14 @@
   "interface": {
     "displayName": "Broville Research",
     "shortDescription": "Research workflows",
-    "longDescription": "Research, web extraction, and investigation workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin.",
+    "longDescription": "Research, web extraction, and investigation workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin. Installs the complete category. Choose the bundle or individual skills to avoid overlapping copies.",
     "developerName": "Broville",
-    "category": "Productivity",
+    "category": "Research",
     "capabilities": []
-  }
+  },
+  "keywords": [
+    "research",
+    "Research",
+    "category-bundle"
+  ]
 }

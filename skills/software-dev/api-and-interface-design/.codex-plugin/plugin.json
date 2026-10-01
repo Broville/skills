@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-api-and-interface-design",
+  "version": "2.0.0",
+  "description": "Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "api-and-interface-design",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Api And Interface Design",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only api-and-interface-design. Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

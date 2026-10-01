@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-deprecation-and-migration",
+  "version": "2.0.0",
+  "description": "Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from on...",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "deprecation-and-migration",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Deprecation And Migration",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only deprecation-and-migration. Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from on... Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}
