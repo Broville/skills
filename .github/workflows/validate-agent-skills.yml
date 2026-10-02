@@ -47,3 +47,6 @@ jobs:
 
       - name: Test bundle and individual package composition
         run: python scripts/test_marketplace.py
+
+      - name: Test P2S offline security boundaries
+        run: python -B skills/monitoring/bambu-p2s/scripts/test_plugin.py
