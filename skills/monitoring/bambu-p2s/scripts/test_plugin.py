@@ -230,5 +230,105 @@ class FakeTLSPrinterTests(unittest.TestCase):
             with self.subTest(kwargs=kwargs),self.assertRaises(Refused):self.exchange(**kwargs)
 
 
+class ProtocolContractTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.fixtures=json.loads((HERE.parent/'templates/protocol-fixtures.json').read_text())
+
+    def test_vendor_request_shapes_have_no_arbitrary_commands(self):
+        from protocol_contracts import task_request
+        for action,expected in self.fixtures['requests'].items():
+            self.assertEqual(task_request(action,17,'101'),expected)
+        for args in (('heat',17,'101'),('gcode',17,'101'),('resume',True,'101'),('cancel',17,'0'),('cancel',17,'101\nM104 S300')):
+            with self.subTest(args=args),self.assertRaises(Refused):task_request(*args)
+
+    def test_ack_is_correlated_and_never_completion_or_retry_permission(self):
+        from protocol_contracts import acknowledgement
+        reply={'print':{'command':'stop','sequence_id':'17','job_id':'101','result':'success','message':'SECRET'}}
+        result=acknowledgement(json.dumps(reply),'cancel',17,'101')
+        self.assertFalse(result['completed']);self.assertFalse(result['retry_allowed'])
+        self.assertNotIn('SECRET',json.dumps(result))
+        for key,value in (('command','resume'),('sequence_id','18'),('job_id','102')):
+            changed=json.loads(json.dumps(reply));changed['print'][key]=value
+            with self.subTest(key=key),self.assertRaises(Refused):acknowledgement(json.dumps(changed),'cancel',17,'101')
+        reply['print']['result']='FAIL'
+        self.assertEqual(acknowledgement(json.dumps(reply),'cancel',17,'101')['outcome'],'rejected')
+
+    def test_job_and_camera_hints_are_whitelisted(self):
+        report=normalize_status(json.dumps(self.fixtures['status']['running']))
+        self.assertEqual(report['job_state'],'RUNNING')
+        self.assertEqual(report['camera_protocol'],'rtsps')
+        self.assertNotIn('job_id',report)
+        self.assertNotIn('DO-NOT-RETURN',json.dumps(report))
+        self.assertRegex(report['job_binding'],r'^[0-9a-f]{64}$')
+        other=normalize_status('{"print":{"job_id":"101\\nPROMPT","job":{"job_state":true}}}')
+        self.assertNotIn('job_binding',other);self.assertNotIn('job_state',other)
+        idle=normalize_status(json.dumps(self.fixtures['status']['idle']))
+        self.assertNotIn('job_binding',idle)
+
+    def test_fresh_job_state_and_transition_gates(self):
+        from protocol_contracts import state_gate
+        running=normalize_status(json.dumps(self.fixtures['status']['running']))
+        paused=normalize_status(json.dumps(self.fixtures['status']['paused']))
+        pausing=normalize_status(json.dumps(self.fixtures['status']['pausing']))
+        self.assertTrue(state_gate('pause',running,10,now=11)['ready'])
+        self.assertTrue(state_gate('resume',paused,10,now=11)['ready'])
+        for action,report,observed,now in (('resume',running,10,11),('cancel',pausing,10,11),('pause',running,10,21),('pause',running,10,9),('pause',None,None,11)):
+            with self.subTest(action=action,observed=observed,now=now):self.assertFalse(state_gate(action,report,observed,now=now)['ready'])
+        conflict=dict(running,state='PAUSE')
+        self.assertFalse(state_gate('pause',conflict,10,now=11)['ready'])
+        missing_job=normalize_status('{"print":{"gcode_state":"RUNNING","job_id":0}}')
+        self.assertFalse(state_gate('pause',missing_job,10,now=11)['ready'])
+
+    def test_failed_status_invalidates_earlier_job_evidence(self):
+        device=Device('printer-a','SYNTHETICA','192.168.10.50','printer.test',Path('/synthetic.crt'),'a'*64,'BAMBUP2S_SECRET_A','01.02.00.00',True)
+        service=Service({'printer-a':device})
+        running=normalize_status(json.dumps(self.fixtures['status']['running']))
+        with patch('core.monitor',return_value=running):service.status('printer-a')
+        self.assertTrue(service.preview('printer-a','pause')['plan']['state_precondition']['ready'])
+        with patch('core.monitor',side_effect=Refused('Synthetic failure.')),self.assertRaises(Refused):service.status('printer-a')
+        self.assertFalse(service.preview('printer-a','pause')['plan']['state_precondition']['ready'])
+
+    def test_preview_uses_internal_status_and_stays_nonexecutable(self):
+        service=Service(demo=True)
+        before=service.preview('demo-p2s-a','pause')
+        self.assertFalse(before['plan']['state_precondition']['ready'])
+        with patch('core.socket.create_connection',side_effect=AssertionError('network forbidden')):
+            service.status('demo-p2s-a')
+            after=service.preview('demo-p2s-a','pause')
+        self.assertTrue(after['plan']['state_precondition']['ready'])
+        self.assertFalse(after['executable']);self.assertTrue(after['approval_required'])
+        self.assertNotEqual(before['plan_sha256'],after['plan_sha256'])
+        service.snapshots['demo-p2s-a']=(service.snapshots['demo-p2s-a'][0],time.monotonic()-11)
+        self.assertFalse(service.preview('demo-p2s-a','pause')['plan']['state_precondition']['ready'])
+
+    def test_upload_contract_is_snapshot_bound_and_cannot_overwrite(self):
+        from protocol_contracts import upload_contract
+        result=upload_contract('a'*64,4096,'3mf')
+        self.assertEqual(result['candidate_basename'],'a'*64+'.gcode.3mf')
+        self.assertTrue(result['data_tls_required'])
+        self.assertFalse(result['resume_or_overwrite_allowed'])
+        self.assertFalse(result['executable'])
+        for args in (('not-a-digest',4096,'3mf'),('a'*64,True,'3mf'),('a'*64,0,'3mf'),('a'*64,4096,'shell')):
+            with self.assertRaises(Refused):upload_contract(*args)
+
+    def test_passive_data_endpoint_cannot_redirect_credentials_or_content(self):
+        from protocol_contracts import passive_target
+        for reply in self.fixtures['passive'].values():
+            result=passive_target(reply,'192.168.10.50')
+            self.assertEqual(result['address'],'192.168.10.50');self.assertEqual(result['port'],50000)
+            self.assertTrue(result['independent_identity_check_required'])
+        for reply in ('227 Passive (8,8,8,8,195,80)','227 Passive (192,168,10,51,195,80)','229 Passive (|||22|)','229 Passive (|||50101|)','227 Passive (999,168,10,50,195,80)','229 Passive (|||50000|)\nSECRET'):
+            with self.subTest(reply=reply),self.assertRaises(Refused):passive_target(reply,'192.168.10.50')
+
+    def test_camera_hint_is_not_authority_and_never_contains_credentials(self):
+        from protocol_contracts import camera_endpoint
+        value=self.fixtures['camera'];good=value['candidate'];path=value['approved_path']
+        result=camera_endpoint(good,'192.168.10.50',path)
+        self.assertFalse(result['executable']);self.assertTrue(result['stream_approval_required'])
+        for candidate in (good.replace('rtsps','rtsp'),good.replace('192.168.10.50','8.8.8.8'),good.replace(':322',':554'),good+'?token=SECRET',good+'#SECRET',good.replace('://','://user:SECRET@'),good.replace('://','://@'),good.replace(path,'/other'),good+'\nSECRET'):
+            with self.subTest(candidate=candidate),self.assertRaises(Refused):camera_endpoint(candidate,'192.168.10.50',path)
+
+
 if __name__=='__main__':
     unittest.main(verbosity=2)

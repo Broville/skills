@@ -98,7 +98,7 @@ def validate(repo_root: Path) -> tuple[int, int]:
             server = next(iter(servers.values()))
             if (server.get("type") != "stdio" or server.get("command") != "python3"
                     or server.get("cwd") != "${PLUGIN_ROOT}"
-                    or server.get("args") != ["${PLUGIN_ROOT}/scripts/server.py"]
+                    or server.get("args") != ["-B", "${PLUGIN_ROOT}/scripts/server.py"]
                     or set(server) != {"type", "command", "args", "cwd"}
                     or not (root / "scripts/server.py").is_file()):
                 raise ValueError(f"{name}: unsupported or nonportable local MCP entrypoint")

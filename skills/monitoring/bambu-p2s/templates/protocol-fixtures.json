@@ -1,0 +1,23 @@
+{
+  "provenance": "Original synthetic protocol fixtures; field shapes checked against public Bambu Studio revision da8b44ee34dd349f2ae0df3f1cbae366df482354. Not captured printer traffic and not a P2S firmware qualification.",
+  "requests": {
+    "pause": {"print": {"command": "pause", "param": "", "sequence_id": "17"}},
+    "resume": {"print": {"command": "resume", "param": "", "sequence_id": "17"}},
+    "cancel": {"print": {"command": "stop", "param": "", "sequence_id": "17", "job_id": "101"}}
+  },
+  "status": {
+    "running": {"print": {"gcode_state": "RUNNING", "job_id": 101, "job": {"job_state": 4}, "ipcam": {"liveview": {"local": "rtsps"}, "rtsp_url": "DO-NOT-RETURN-THIS-HINT"}}},
+    "paused": {"print": {"gcode_state": "PAUSE", "job_id": 101, "job": {"job_state": 5}}},
+    "pausing": {"print": {"gcode_state": "RUNNING", "job_id": 101, "job": {"job_state": 6}}},
+    "idle": {"print": {"gcode_state": "IDLE", "job_id": 0, "job": {"job_state": 0}}}
+  },
+  "passive": {
+    "epsv": "229 Entering Extended Passive Mode (|||50000|)",
+    "pasv": "227 Entering Passive Mode (192,168,10,50,195,80)"
+  },
+  "camera": {
+    "candidate": "rtsps://192.168.10.50:322/approved/camera/path",
+    "approved_path": "/approved/camera/path",
+    "note": "Synthetic operator-selected path; no printer-specific stream path or credential scheme is asserted."
+  }
+}

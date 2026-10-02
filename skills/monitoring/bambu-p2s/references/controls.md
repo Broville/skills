@@ -17,10 +17,10 @@ listener or arbitrary command dispatcher exists.
 | Requested operation | Implemented behavior | Additional gate |
 |---|---|---|
 | Status, errors, progress, temperatures | Whitelisted partial MQTT report fields; numeric error/HMS codes | Actual P2S firmware/status topic/auth/TLS qualification |
-| Camera | Privacy-sensitive blocked preview | Documented P2S stream protocol, per-service TLS identity, explicit stream approval |
-| File/3MF upload | Bounded local inspection + blocked upload preview | Qualified FTPS/other vendor path, data-channel authentication/identity, digest reconciliation |
+| Camera | Privacy-sensitive blocked preview; pure exact-endpoint validator | Documented P2S stream protocol, per-service TLS identity, explicit stream approval |
+| File/3MF upload | Bounded local inspection + snapshot transfer plan; pure passive endpoint validation | Qualified FTPS/other vendor path, data-channel authentication/identity, digest reconciliation |
 | Start print | File/identity/settings-bound blocked preview | Qualified vendor command + enforced exact-action owner approval |
-| Pause/resume/cancel | Named blocked previews | Qualified command/state/ack/idempotency contract and owner approval |
+| Pause/resume/cancel | Named blocked previews plus fresh job-state gates; pure vendor-shape fixtures and conservative ack correlation | Live command/state/ack qualification, native physical checks and owner approval |
 | Preparation settings | Validate intent for plate and Boolean leveling/flow/vibration/timelapse/AMS toggles | P2S/firmware-specific supported settings; no inferred device changes |
 | AMS 2 Pro four-slot mapping | Up to four intent slot indices 0–3, requires `use_ams: true` | Verify actual AMS, loaded materials, mapping semantics and firmware support |
 | Device enrollment/multiple P2S | Validate explicit local records and select unique approved aliases | Owner checks physical identity, legitimate cert provenance and access mode |
@@ -50,3 +50,29 @@ start or upload after an ambiguous connection/ack; query state and reconcile fir
 Fail closed on identity, file, setting, job or firmware changes. Preserve native
 printer physical safety interlocks. The current release has **no execution tool**,
 so it grants no authorization token and cannot perform these operations.
+
+## Offline protocol contracts
+
+`protocol_contracts.py` is pure validation: it has no sockets, publisher, SDK,
+subprocess or MCP execution endpoint. Public Studio source supports the tested
+pause/resume/stop field shapes; it does not establish the installed P2S firmware's
+acceptance. Synthetic fixtures are original facts-based examples, not captured
+printer packets. Cancel fixtures bind a numeric job ID; pause/resume fixture
+shapes have no job field, so any future sender must revalidate the exact job
+independently immediately before execution.
+
+Previews use only an internal status observation received within ten seconds,
+not caller-supplied status. Unknown job identity, conflicting states, stale or
+future timestamps, and incompatible/transitional states fail the precondition.
+An attempted status read invalidates earlier evidence even when the read fails.
+A precondition marked ready is only eligibility for review; it cannot verify
+physical safety, permit a command, or substitute for native printer interlocks.
+The opaque job digest is a binding, not anonymization or a secret.
+
+Even a correlated success acknowledgement returns `completed: false` and
+`retry_allowed: false`; reported job state must be reconciled separately.
+Upload plans forbid overwrite/resume and require independent remote digest
+reconciliation. A passive reply may only select the enrolled IP and documented
+50000–50100 ports, with separately verified TLS on the data channel. Camera hints
+must match an independently approved RTSPS endpoint exactly; authentication,
+real stream path and service identity are still unqualified.
