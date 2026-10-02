@@ -75,3 +75,37 @@ regressions use the host OpenSSL executable; generated certificates/keys are
 synthetic, temporary and never packaged. Marketplace validation uses the
 repository's existing PyYAML and skills-ref developer dependencies. No community
 printer plugin was installed, vendored, copied or granted credentials.
+
+## Pinned vendor facts for the offline contracts
+
+Studio source reviewed at revision
+`da8b44ee34dd349f2ae0df3f1cbae366df482354`:
+
+- [DeviceManager task controls](https://github.com/bambulab/BambuStudio/blob/da8b44ee34dd349f2ae0df3f1cbae366df482354/src/slic3r/GUI/DeviceManager.cpp)
+  uses `print.command` pause/resume/stop, empty param and decimal sequence IDs;
+  its cancel method can include a numeric job ID. Its resume guard also restricts
+  tasks that require physical-printer operation. These field facts support
+  original offline fixtures, not guaranteed P2S acceptance or bypass of guards.
+- [DevStatus state definitions](https://github.com/bambulab/BambuStudio/blob/da8b44ee34dd349f2ae0df3f1cbae366df482354/src/slic3r/GUI/DeviceCore/DevStatus.h)
+  and [parser](https://github.com/bambulab/BambuStudio/blob/da8b44ee34dd349f2ae0df3f1cbae366df482354/src/slic3r/GUI/DeviceCore/DevStatus.cpp)
+  define/parse numeric `print.job.job_state`, including transitional states.
+  Numeric job identity and whitelisted camera protocol hints are normalized
+  without returning raw job IDs or following reported camera URLs.
+- [Network library interface](https://github.com/bambulab/BambuStudio/blob/da8b44ee34dd349f2ae0df3f1cbae366df482354/src/slic3r/Utils/bambu_networking.hpp)
+  declares print preparation fields and TLS flags.
+  [NetworkAgent](https://github.com/bambulab/BambuStudio/blob/da8b44ee34dd349f2ae0df3f1cbae366df482354/src/slic3r/Utils/NetworkAgent.cpp)
+  delegates transfers/printing to a dynamically loaded library. Those signatures
+  do not establish wire framing, remote directory, secure data-channel identity,
+  command authorization or installed-firmware setting support.
+- [Vendor network ports](https://wiki.bambulab.com/en/general/printer-network-ports)
+  lists LAN MQTT 8883, FTP control 990, passive 50000–50100 and video 322/6000.
+  Official indexed material was accessible; full wiki fetch was blocked.
+- [Bambu Farm 3.0.0 notes](https://wiki.bambulab.com/en/software/bambu-farm-release-notes/3-0-0)
+  identifies RTSPS for P2S in indexed official material. This does not supply
+  the exact path, authentication contract or legitimately enrolled service identity.
+
+The original synthetic fixtures deliberately use a fictional camera path. No
+production URI, username/password assumption, upload directory, start schema or
+vendor library is embedded. Control acknowledgements are conservative correlation
+fixtures: even a matching success result requires separate state reconciliation
+and never authorizes retry. No AGPL source or non-free networking code is copied.

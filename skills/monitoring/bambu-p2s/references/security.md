@@ -34,6 +34,8 @@ This plugin cannot isolate itself from its own process owner.
 - **Physical actions:** no publish/write/camera adapter exists. Named previews
   require an enrolled ID and exact bounded input; a model cannot self-approve.
   No heater, motion, firmware, private cloud API, or G-code passthrough tool.
+  Previews bind internally observed fresh job state; failed refreshes invalidate
+  old evidence. A ready preview never grants physical-action permission.
 - **Files:** operator-chosen root; directory-descriptor traversal, no symlinks,
   nonblocking regular-file check. Snapshot is bounded before hash/inspection.
   128 MiB compressed/file limit; 2048 archive entries; 2 MiB central-directory
@@ -71,3 +73,14 @@ against debugger access. Do not let an agent read the secret-manager source or
 launcher configuration. Public artifacts must exclude enrollment records, model
 files, images, access codes and device-specific evidence. Camera and FTPS would
 introduce distinct privacy/data-channel trust boundaries and are not implemented.
+
+## Prospective transfer and camera boundaries
+
+The offline contracts reject FTP passive redirects, out-of-range ports, camera
+userinfo/query credentials, plaintext stream hints, and changed paths/hosts.
+They are regression fixtures for a future adapter, not active transports. Every
+credential-bearing service requires its own legitimate trust/name/pin checks;
+verified MQTT does not establish FTPS control, FTPS data or camera identity.
+A correlated acknowledgement, transfer byte count or remote filename does not
+prove completion or remote contents. Unknown/ambiguous results never authorize
+retry. No stream frames or remote content are retrieved during these tests.

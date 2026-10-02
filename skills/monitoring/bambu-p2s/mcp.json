@@ -4,7 +4,7 @@
     "bambu-p2s": {
       "type": "stdio",
       "command": "python3",
-      "args": ["${PLUGIN_ROOT}/scripts/server.py"],
+      "args": ["-B", "${PLUGIN_ROOT}/scripts/server.py"],
       "cwd": "${PLUGIN_ROOT}"
     }
   }
