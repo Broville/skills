@@ -1,6 +1,6 @@
 {
   "name": "broville-skill-bambu-p2s",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Prepare and inspect Bambu Lab P2S jobs, validate explicit printer enrollment, report capabilities, and preview operator-approved actions with a local MCP server; use when a user asks about P2S monitoring, printing, or secure printer integration. Live controls are blocked in this draft.",
   "author": {
     "name": "Broville",

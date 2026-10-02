@@ -5,7 +5,7 @@ license: MIT
 compatibility: Python 3.12+ stdlib; stdio MCP host. Secure artifact inspection requires macOS or Linux. Experimental LAN status needs separately approved enrollment and verified TLS identity. No startup network access.
 metadata:
   author: Broville
-  version: "0.1.0"
+  version: "0.2.0"
   platforms: '["linux","macos","windows"]'
   triggers: '["User asks to prepare, monitor, or operate a Bambu Lab P2S", "Task involves P2S enrollment or printer control feasibility"]'
   inputs: '[{"name":"device_id","description":"Explicit local enrolled alias; never a caller-selected host","required":false},{"name":"artifact","description":"Relative 3MF or G-code under an operator-selected root","required":false}]'
@@ -19,7 +19,7 @@ metadata:
 ## Description
 
 Original local plugin and portable workflow for security-conscious P2S preparation
-and monitoring. This is a **0.1.0 draft, not a full-control printer integration**.
+and monitoring. This is a **0.2.0 draft, not a full-control printer integration**.
 The five MCP tools expose capabilities, enrolled aliases, experimental status,
 bounded artifact inspection, and action previews. Upload, print start, pause,
 resume, cancel, and camera requests return non-executable previews. No write
@@ -30,10 +30,13 @@ adapter, arbitrary G-code, heater control, or motion control is present.
 - Python 3.12+; no runtime dependencies. macOS/Linux for secure file inspection.
 - Read [setup](references/setup.md), [controls](references/controls.md),
   [threat model](references/security.md), [protocol evidence](references/protocols.md),
-  and [acceptance matrix](references/acceptance.md) before printer integration.
+  [qualification bundle](references/qualification.md), and
+  [acceptance matrix](references/acceptance.md) before printer integration.
 - Plugin identity [plugin.json](plugin.json) and local individual-plugin manifest [.codex-plugin/plugin.json](.codex-plugin/plugin.json)
   connects [mcp.json](mcp.json) to [server.py](scripts/server.py), with security
-  logic in [core.py](scripts/core.py). Bundles carry the workflow only.
+  logic in [core.py](scripts/core.py). Pure offline protocol/state/transfer contracts
+  are in [protocol_contracts.py](scripts/protocol_contracts.py), tested against
+  synthetic [protocol fixtures](templates/protocol-fixtures.json). Bundles carry the workflow only.
 - No installation, credential entry, network enrollment, or mode changes are
   implied by source review or offline tests. Obtain specific approval first.
 

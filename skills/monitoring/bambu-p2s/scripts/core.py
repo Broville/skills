@@ -15,7 +15,7 @@ import zipfile
 from dataclasses import dataclass, field
 from pathlib import Path
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 MAX_JSON = 256 * 1024
 MAX_FILE = 128 * 1024 * 1024
 MAX_INFLATED = 512 * 1024 * 1024
@@ -248,6 +248,8 @@ def normalize_status(payload):
         result['hms'] = [{k: v for k, v in item.items() if k in ('attr', 'code')
                           and type(v) is int and 0 <= v <= 2**32 - 1}
                          for item in hms[:32] if isinstance(item, dict)]
+    from protocol_contracts import report_job
+    result.update(report_job(source))
     return result
 
 
@@ -349,6 +351,7 @@ class Service:
         self.devices = devices or {}
         self.artifact_root = artifact_root
         self.demo = demo
+        self.snapshots = {}
 
     def device(self, id):
         text_match(id, ID)
@@ -379,12 +382,19 @@ class Service:
         device = self.device(id)
         if self.demo:
             value = {'print': {'gcode_state': 'RUNNING' if id.endswith('a') else 'IDLE',
-                               'mc_percent': 42 if id.endswith('a') else 0, 'print_error': 0}}
-            return {'device_id': id, 'source': 'demo', 'live_verified': False,
-                    'status': normalize_status(json.dumps(value))}
+                               'mc_percent': 42 if id.endswith('a') else 0, 'print_error': 0,
+                               'job_id': 101 if id.endswith('a') else 0,
+                               'job': {'job_state': 4 if id.endswith('a') else 0}}}
+            status = normalize_status(json.dumps(value))
+            self.snapshots[id] = (status, time.monotonic())
+            return {'device_id': id, 'source': 'demo', 'live_verified': False, 'status': dict(status)}
+        # Invalidate earlier observations before attempting a fresh status read.
+        self.snapshots.pop(id, None)
+        status = monitor(device)
+        self.snapshots[id] = (status, time.monotonic())
         return {'device_id': id, 'source': 'enrolled-lan', 'received_at_unix': int(time.time()),
                 'live_verified': False, 'qualification': 'experimental subscription; firmware unqualified',
-                'status': monitor(device)}
+                'status': dict(status)}
 
     def preview(self, id, action, artifact=None, settings=None):
         device = self.device(id)
@@ -415,7 +425,12 @@ class Service:
         if action == 'start' and inspected['kind'] == '3mf':
             if 'plate' not in settings or settings['plate'] not in inspected['candidate_plates']:
                 raise Refused('Select a candidate sliced plate explicitly.')
-        plan = {'device_id': id, 'action': action, 'artifact': inspected, 'settings': settings,
+        from protocol_contracts import state_gate, upload_contract
+        snapshot, observed = self.snapshots.get(id, (None, None))
+        gate = state_gate(action, snapshot, observed)
+        transfer = upload_contract(inspected['sha256'], inspected['bytes'], inspected['kind']) if inspected else None
+        plan = {'device_id': id, 'action': action, 'artifact': inspected, 'settings': settings, 'state_precondition': gate,
+                'transfer_contract': transfer,
                 'identity_binding': hashlib.sha256((device.serial + device.pin).encode()).hexdigest()
                 if device else 'DEMO-NO-DEVICE'}
         digest = hashlib.sha256(json.dumps(plan, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
