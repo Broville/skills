@@ -44,7 +44,8 @@ def main() -> int:
             workspace = temp_root / agent
             run("--agent", agent, "--workspace", str(workspace))
             installed = workspace / relative_root
-            assert len(list(installed.glob("*/SKILL.md"))) == 85
+            canonical = {path.parent.name for path in REPO_ROOT.glob("skills/*/*/SKILL.md")}
+            assert {path.parent.name for path in installed.glob("*/SKILL.md")} == canonical
             assert (installed / "playwright" / "SKILL.md").is_file()
             assert (installed / "playwright" / "references" / "cli.md").is_file()
             assert (installed / "web-accessibility" / "SKILL.md").is_file()

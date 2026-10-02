@@ -413,6 +413,18 @@
       "category": "Monitoring"
     },
     {
+      "name": "broville-skill-bambu-p2s",
+      "source": {
+        "source": "local",
+        "path": "./skills/monitoring/bambu-p2s"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Monitoring"
+    },
+    {
       "name": "broville-skill-screenshot",
       "source": {
         "source": "local",
