@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "broville-skill-bambu-p2s",
+  "version": "0.2.0",
+  "description": "Prepare and inspect Bambu Lab P2S jobs, validate explicit printer enrollment, report capabilities, and preview operator-approved actions with a local MCP server; use when a user asks about P2S monitoring, printing, or secure printer integration. Live controls are blocked in this draft.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "monitoring",
+    "Monitoring",
+    "bambu-p2s",
+    "individual-skill"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Bambu P2S",
+        "shortDescription": "Monitoring · local MCP",
+        "longDescription": "Monitoring: install only bambu-p2s. Prepare and inspect Bambu Lab P2S jobs, validate explicit printer enrollment, report capabilities, and preview operator-approved actions with a local MCP server; use when a user asks about P2S monitoring, printing, or secure printer integration. Live controls are blocked in this draft. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+        "developerName": "Broville",
+        "category": "Monitoring",
+        "capabilities": [
+          "Read"
+        ]
+      }
+    }
+  }
+}

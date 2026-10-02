@@ -102,7 +102,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
 ## Add as a ChatGPT / Codex Marketplace
 
-This repository exposes **96 plugin choices: 11 category bundles and 85 individual
+This repository exposes **97 plugin choices: 11 category bundles and 86 individual
 skills** through `.agents/plugins/marketplace.json`. Bundles retain their existing
 IDs (`broville-<category>`) and source paths (`./skills/<category>`). Individual
 plugins use `broville-skill-<skill-name>` and point directly to
@@ -111,6 +111,15 @@ manifest `.codex-plugin/plugin.json` with `skills: "./"`. Native recursive
 discovery includes the root `SKILL.md` of an individual plugin and all skill
 directories in a bundle. Each skill and its supporting files have one canonical
 source in this repository.
+
+The individual [Bambu Lab P2S](skills/monitoring/bambu-p2s/SKILL.md) package also
+provides an original local stdio MCP server. It is an offline-first draft with
+experimental read-only monitoring; live controls are blocked. Its `mcp.json`
+is connected only by the individual package's native compatibility manifest.
+The monitoring category bundle includes the skill and files but does not start
+the nested server. Python 3.12+ is required; enrollment and live access need
+separate approval. Existing bundles and installer discovery adapters keep their
+paths and identities.
 
 Every listing carries its category label and searchable category keywords. In
 the current desktop client, a local marketplace is a flat searchable list;
@@ -231,7 +240,7 @@ The checks combine the official Agent Skills validator with repository policy an
 run on Linux, macOS, and Windows in CI. Marketplace validation checks JSON,
 identities, versions, contained paths, listing metadata, and complete skill
 coverage without installing or executing a plugin. Package checks archive and
-extract all 96 choices, verify skill/supporting file bytes, exercise invalid
+extract all 97 choices, verify skill/supporting file bytes, exercise invalid
 catalogs and metadata regeneration, and check distinct paths for overlapping
 bundle/individual copies. They simulate packaging; they do not certify desktop
 runtime loading. Desktop installation and

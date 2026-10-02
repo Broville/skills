@@ -91,6 +91,37 @@ def main() -> int:
             else:
                 raise AssertionError(f"accepted {label}")
 
+        # MCP exposure is individual-only, connected and limited to a contained stdio entrypoint.
+        path.write_text(json.dumps(catalog, indent=2) + "\n")
+        p2s = fixture / "skills/monitoring/bambu-p2s"
+        mcp = p2s / "mcp.json"
+        original_mcp = mcp.read_text()
+        for field, value in (("command", "curl"), ("args", ["../outside.py"]), ("url", "https://example.invalid")):
+            config = json.loads(original_mcp)
+            next(iter(config["mcpServers"].values()))[field] = value
+            mcp.write_text(json.dumps(config))
+            try:
+                with contextlib.redirect_stdout(io.StringIO()):
+                    validate(fixture)
+            except ValueError:
+                pass
+            else:
+                raise AssertionError(f"accepted unsafe MCP {field}")
+        mcp.write_text(original_mcp)
+        portable = p2s / "plugin.json"
+        original_portable = portable.read_text()
+        data = json.loads(original_portable)
+        data["version"] = "9.9.9"
+        portable.write_text(json.dumps(data))
+        try:
+            with contextlib.redirect_stdout(io.StringIO()):
+                validate(fixture)
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("accepted divergent portable identity")
+        portable.write_text(original_portable)
+
         path.write_text(json.dumps(catalog, indent=2) + "\n")
         stale = fixture / catalog["plugins"][1]["source"]["path"] / ".codex-plugin/plugin.json"
         stale.write_text("{}\n")

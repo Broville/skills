@@ -69,8 +69,22 @@ def generated_files(root: Path) -> dict[Path, str]:
                     "capabilities": [],
                 },
             }
+            # Local MCP belongs only to the individual package. Bundles remain skills-only.
+            if (skill.parent / "mcp.json").is_file():
+                manifest["mcpServers"] = "./mcp.json"
+                manifest["interface"]["capabilities"] = ["Read"]
+                manifest["interface"]["shortDescription"] = f"{subtitle_category} · local MCP"
             path = skill.parent / ".codex-plugin/plugin.json"
             files[path] = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
+            if (skill.parent / "mcp.json").is_file():
+                portable = {
+                    "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+                    **{key: manifest[key] for key in (
+                        "name", "version", "description", "author", "repository", "license", "keywords"
+                    )},
+                    "extensions": {"com.openai": {"interface": manifest["interface"]}},
+                }
+                files[skill.parent / "plugin.json"] = json.dumps(portable, indent=2, ensure_ascii=False) + "\n"
             entries.append({
                 "name": plugin_name,
                 "source": {"source": "local", "path": f"./skills/{category}/{name}"},
