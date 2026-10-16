@@ -102,7 +102,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
 ## Add as a ChatGPT / Codex Marketplace
 
-This repository exposes **96 plugin choices: 11 category bundles and 85 individual
+This repository exposes **97 plugin choices: 11 category bundles and 86 individual
 skills** through `.agents/plugins/marketplace.json`. Bundles retain their existing
 IDs (`broville-<category>`) and source paths (`./skills/<category>`). Individual
 plugins use `broville-skill-<skill-name>` and point directly to
@@ -231,7 +231,7 @@ The checks combine the official Agent Skills validator with repository policy an
 run on Linux, macOS, and Windows in CI. Marketplace validation checks JSON,
 identities, versions, contained paths, listing metadata, and complete skill
 coverage without installing or executing a plugin. Package checks archive and
-extract all 96 choices, verify skill/supporting file bytes, exercise invalid
+extract all 97 choices, verify skill/supporting file bytes, exercise invalid
 catalogs and metadata regeneration, and check distinct paths for overlapping
 bundle/individual copies. They simulate packaging; they do not certify desktop
 runtime loading. Desktop installation and
@@ -280,3 +280,9 @@ For human contributors:
 ## License
 
 MIT — see [LICENSE](./LICENSE) for details.
+
+## Security incident audits
+
+Use [security-incident-audit](skills/devops/security-incident-audit/SKILL.md) for a bounded, read-only investigation of suspected account, organization, repository, or automation compromise. It produces accessible green/yellow/red reports with clear next-help prompts and explicit coverage limits. It is provider-neutral, needs no private agent tools, and does not authorize remediation or install itself.
+
+Example request: “Use security-incident-audit to review unexpected activity in my authorized repositories during the period I specify. Ask for missing scope and access decisions first, then complete the read-only audit and explain the results without technical jargon.”

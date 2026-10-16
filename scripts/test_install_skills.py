@@ -44,10 +44,12 @@ def main() -> int:
             workspace = temp_root / agent
             run("--agent", agent, "--workspace", str(workspace))
             installed = workspace / relative_root
-            assert len(list(installed.glob("*/SKILL.md"))) == 85
+            assert len(list(installed.glob("*/SKILL.md"))) == 86
             assert (installed / "playwright" / "SKILL.md").is_file()
             assert (installed / "playwright" / "references" / "cli.md").is_file()
             assert (installed / "web-accessibility" / "SKILL.md").is_file()
+            assert (installed / "security-incident-audit" / "scripts" / "audit_state.py").is_file()
+            assert (installed / "security-incident-audit" / "templates" / "report-template.md").is_file()
             assert not list(installed.glob("*/.codex-plugin"))
 
         explicit = temp_root / "explicit"

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-security-incident-audit",
+  "version": "1.0.0",
+  "description": "Investigate suspected account, organization, repository, or automation compromise with bounded read-only evidence collection and clear reports for nontechnical users. Use for incident audits, not routine vulnerability scanning.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "security-incident-audit",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Security Incident Audit",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only security-incident-audit. Investigate suspected account, organization, repository, or automation compromise with bounded read-only evidence collection and clear reports for nontechnical users. Use for incident audits, not routine vulnerability scanning. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}
