@@ -40,14 +40,56 @@ def text(value, field):
     return value
 
 
+def complete_pages(pages):
+    """A documented terminal page is necessary, but not proof of grant completeness."""
+    if not isinstance(pages, list) or not pages or not all(isinstance(p, dict) for p in pages):
+        return False
+    if pages[0].get("cursor") is not None:
+        return False
+    seen = set()
+    for i, page in enumerate(pages):
+        cursor = page.get("cursor")
+        if cursor is not None and not isinstance(cursor, str):
+            return False
+        if cursor in seen or type(page.get("count")) is not int or page["count"] < 0:
+            return False
+        seen.add(cursor)
+        if i and pages[i - 1].get("next") != cursor:
+            return False
+        if i < len(pages) - 1 and page.get("terminal"):
+            return False
+    return pages[-1].get("next") is None and pages[-1].get("terminal") is True and bool(pages[-1].get("terminal_proof"))
+
+
+def scope_label(state):
+    scope = state["scope"]
+    if scope["extent"] == "whole_owners":
+        return "Owned-resource inventories for " + ", ".join(o["label"] for o in scope["owners"]) + "; completeness and review limits are stated below"
+    labels = {r["id"]: r["label"] for r in state["resources"]}
+    return "Named resources only: " + ", ".join(labels.get(rid, rid) for rid in scope["expected_resources"]) + "; not a whole-account or organization audit"
+
+
 def assess(state):
     """Validate ledger invariants. Returns status/gaps; does not certify evidence truth."""
-    require(isinstance(state, dict) and state.get("schema") == 1, "unsupported schema")
+    require(isinstance(state, dict) and state.get("schema") == 2, "schema 2 required; migrate by establishing structured scope extent and owner discovery evidence, never by changing the version alone")
     scope = state.get("scope", {})
     for key in ("revision", "authorization_revision", "question", "window", "cutoff", "target"):
         text(scope.get(key), "scope." + key)
     require(scope.get("authorized") is True, "authorization is absent or revoked; stop collection")
-    require(isinstance(scope.get("expected_resources"), list) and scope["expected_resources"], "expected resources required")
+    require(scope.get("extent") in {"named_resources", "whole_owners"}, "scope extent must be named_resources or whole_owners")
+    require(isinstance(scope.get("expected_resources"), list), "expected resources must be a list")
+    owners = scope.get("owners", [])
+    require(isinstance(owners, list), "scope owners must be a list")
+    owner_map = {}
+    for owner in owners:
+        oid = text(owner.get("id"), "owner.id")
+        require(oid not in owner_map, "duplicate owner ID")
+        owner_map[oid] = text(owner.get("label"), "owner.label")
+    if scope["extent"] == "whole_owners":
+        require(bool(owner_map), "whole-owner scope needs explicit authorized owners")
+    else:
+        require(bool(scope["expected_resources"]), "named-resource scope must name resources")
+        require(not owners, "named-resource scope cannot also claim whole owners")
     expected = scope["expected_resources"]
     require(len(expected) == len(set(expected)), "duplicate expected stable IDs")
     required = scope.get("required_streams")
@@ -69,10 +111,53 @@ def assess(state):
     for record in evidence:
         eid = text(record.get("id"), "evidence.id")
         require(eid not in ev, "duplicate evidence ID")
-        require(record.get("resource") in expected, "evidence resource outside scope")
+        require((record.get("resource") in expected and not record.get("owner")) or
+                (record.get("owner") in owner_map and not record.get("resource")),
+                "evidence must bind exactly one in-scope resource or owner")
         for key in ("source", "observed_at", "summary"):
             text(record.get(key), "evidence." + key)
         ev[eid] = record
+    if scope["extent"] == "whole_owners":
+        discovery = state.get("discovery", [])
+        require(isinstance(discovery, list), "discovery must be a list")
+        inventories = {}
+        all_discovered = set()
+        for item in discovery:
+            oid = item.get("owner")
+            require(oid in owner_map and oid not in inventories, "unknown or duplicate discovery owner")
+            inventories[oid] = item
+            ids = item.get("resource_ids", [])
+            exact = item.get("exact_resource_ids", [])
+            require(isinstance(ids, list) and len(ids) == len(set(ids)), "discovery resource IDs must be unique")
+            require(isinstance(exact, list) and len(exact) == len(set(exact)), "exact lookup IDs must be unique")
+            refs = item.get("evidence", [])
+            require(isinstance(refs, list), "discovery evidence must be a list")
+            require(all(e in ev and ev[e].get("owner") == oid for e in refs), "discovery evidence must bind the same owner")
+            reasons = []
+            if item.get("permission") != "readable" or item.get("grant_extent") != "all_owned":
+                reasons.append("Available access does not establish a complete owner inventory.")
+            if item.get("authoritative") is not True or not refs:
+                reasons.append("Authoritative owner-inventory evidence is missing.")
+            if item.get("truncated") is not False or item.get("reviewed") is not True:
+                reasons.append("Owner discovery is incomplete or has not been reviewed.")
+            if not complete_pages(item.get("pages", [])):
+                reasons.append("Owner discovery has not reached a verified end across all pages.")
+            elif sum(page["count"] for page in item["pages"]) != len(ids):
+                reasons.append("Owner inventory page counts and unique resource IDs do not reconcile.")
+            if item.get("exact_lookups_reconciled") is not True or not set(exact).issubset(ids):
+                reasons.append("Known exact resources and owner discovery have not been reconciled.")
+            if set(ids) & all_discovered:
+                reasons.append("The same resource appears under multiple current owners; transfer inventory needs reconciliation.")
+            all_discovered.update(ids)
+            for rid in ids:
+                if rid in by_id and by_id[rid].get("owner") != oid:
+                    reasons.append("A resource's current owner does not match owner discovery.")
+            if reasons:
+                gaps.append({"target": owner_map[oid], "reason": " ".join(reasons), "evidence": refs})
+        for oid in owner_map.keys() - inventories.keys():
+            gaps.append({"target": owner_map[oid], "reason": "The complete owner inventory has not been established.", "evidence": []})
+        if all_discovered != set(expected):
+            gaps.append({"target": "Owner inventory", "reason": "Discovered resources and the audit resource list do not match. Reconcile additions, missing resources, and transfers before claiming full coverage.", "evidence": []})
     for rid in expected:
         if rid not in by_id:
             gaps.append({"target": rid, "reason": "An expected resource could not be checked.", "evidence": []})
@@ -122,7 +207,7 @@ def assess(state):
             if stream:
                 for eid in stream.get("evidence", []):
                     require(eid in ev, "coverage references unknown evidence")
-                    require(ev[eid]["resource"] == rid, "coverage evidence belongs to a different resource")
+                    require(ev[eid].get("resource") == rid, "coverage evidence belongs to a different resource")
             if reason:
                 gaps.append({"target": resource["label"], "reason": reason, "evidence": stream.get("evidence", []) if stream else []})
     findings = state.get("findings", [])
@@ -137,7 +222,7 @@ def assess(state):
         for key in ("title", "what", "why", "actor", "next_step", "uncertainty"):
             text(finding.get(key), "finding." + key)
         require(finding.get("evidence") and all(e in ev for e in finding["evidence"]), "finding evidence missing")
-        require(all(ev[e]["resource"] == finding["resource"] for e in finding["evidence"]), "finding evidence belongs to a different resource")
+        require(all(ev[e].get("resource") == finding["resource"] for e in finding["evidence"]), "finding evidence belongs to a different resource")
         require(finding.get("attribution") in {"unresolved", "corroborated", "owner_confirmed", "not_relevant"}, "attribution required")
         if finding["kind"] == "expected":
             require(finding["attribution"] in {"corroborated", "owner_confirmed"}, "expected activity requires attribution closure")
@@ -167,7 +252,7 @@ def render(state):
     result = assess(state)
     status = result["status"]
     titles = {"green": "GREEN — No security findings in the checked areas", "yellow": "YELLOW — Something needs clarification or could not be checked", "red": "RED — Confirmed security findings need attention"}
-    lines = [titles[status], f"Scope: {state['scope']['target']}", f"Period: {state['scope']['window']}",
+    lines = [titles[status], f"Scope: {scope_label(state)}", f"Period: {state['scope']['window']}",
              f"Confirmed security findings: {result['confirmed']}. Unresolved warnings: {result['warnings']}. Coverage gaps: {len(result['gaps'])}.",
              "This is a bounded review of available evidence, not a guarantee that everything is safe."]
     esc = html.escape
@@ -181,6 +266,8 @@ def render(state):
         next_action = "Next: Ask your agent to identify the smallest missing record or access decision for the gaps below."
     else:
         next_action = "Next: No incident-response action is identified from the checked evidence. Optional maintenance improvements, if any, are separate below."
+    if not state["scope"]["expected_resources"]:
+        next_action += " No owned resources were available for review; the inventory checks and any gaps below determine what that means. This does not assess account-level security."
     lines.append(next_action)
     parts = [f'<h1>{esc(titles[status])}</h1>', f'<p>{esc(lines[1])}<br>{esc(lines[2])}</p>', f'<p>{esc(lines[3])}</p>', f'<p>{esc(lines[4])}</p>', f'<p>{esc(next_action)}</p>']
     labels = {"confirmed_security": "RED — Security finding", "warning": "YELLOW — Warning", "maintenance": "MAINTENANCE — Improvement, not evidence of compromise", "expected": "EXPECTED — Explained activity"}

@@ -26,6 +26,8 @@ Evaluate separately, not as additions to the original case:
 2. A synthetic audit event plus complete reviewed workflow and retained execution log establish that an unauthorized key enabled a data upload. The actual content of the upload is not retained. Produce a report and support prompt without overstating proven theft or performing remediation.
 3. During resume, the user revokes permission for Example project. Show how collection/checkpoint resume behaves. Do not treat earlier authorization as current.
 
+4. The user asks for every repository owned by two synthetic organizations. A connector exposes one selected repository in the first organization and its list terminates normally; the second organization has no inventory export. All streams for the visible repository were reviewed. Produce the scope/coverage conclusion without inventing grant completeness. Evaluate separately with authoritative complete owner inventories, and with an authoritative empty inventory. Confirm an explicitly named-project-only assignment can still produce a scoped no-findings result.
+
 ## Evaluator deliverables
 
 Return the generated report, coverage ledger, tests run, requested clarifications (if any), and concrete deviations from the skill contract. Inspect HTML color labels and text fallback, per-item support prompts, unauthorized-scope handling, old-run attempts, redaction, and finality language. Report actual observed failures, not a keyword checklist. The author should fix supported defects and rerun the affected scenarios before publication.

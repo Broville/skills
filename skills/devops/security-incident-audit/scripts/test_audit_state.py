@@ -9,8 +9,8 @@ from audit_state import assess, render, sanitize, save_checkpoint, load_checkpoi
 
 
 def fixture():
-    return {"schema": 1,
-        "scope": {"revision": "scope-v1", "authorization_revision": "grant-v1", "authorized": True,
+    return {"schema": 2,
+        "scope": {"extent": "named_resources", "revision": "scope-v1", "authorization_revision": "grant-v1", "authorized": True,
             "question": "Was the unexpected automation authorized?", "target": "Example workspace",
             "window": "2030-04-01 through 2030-04-02 UTC", "cutoff": "2030-04-03T00:00:00Z",
             "expected_resources": ["provider:repo:101"], "required_streams": ["history", "runs"]},
@@ -20,6 +20,19 @@ def fixture():
                 "retained_attempts_reconciled": True, "evidence": ["E1"]} for name in ["history", "runs"]}}],
         "evidence": [{"id": "E1", "resource": "provider:repo:101", "source": "synthetic export row 1", "observed_at": "2030-04-03T00:00:00Z", "summary": "Reviewed complete synthetic history and retained run attempts."}],
         "findings": [], "limitations": []}
+
+
+def whole_fixture():
+    state = fixture()
+    state["scope"].update(extent="whole_owners", owners=[{"id": "provider:owner:10", "label": "Synthetic owner"}], target="All owned resources")
+    state["resources"][0]["owner"] = "provider:owner:10"
+    state["evidence"].append({"id": "D1", "owner": "provider:owner:10", "source": "synthetic authoritative owner export",
+                              "observed_at": "2030-04-03T00:00:00Z", "summary": "All-owned grant and complete owner inventory verified."})
+    state["discovery"] = [{"owner": "provider:owner:10", "permission": "readable", "grant_extent": "all_owned",
+        "authoritative": True, "reviewed": True, "truncated": False, "resource_ids": ["provider:repo:101"],
+        "exact_resource_ids": ["provider:repo:101"], "exact_lookups_reconciled": True, "evidence": ["D1"],
+        "pages": [{"cursor": None, "next": None, "count": 1, "terminal": True, "terminal_proof": "documented owner endpoint end"}]}]
+    return state
 
 
 def finding(kind="warning", attribution="unresolved"):
@@ -164,6 +177,80 @@ class AuditTests(unittest.TestCase):
         html, plain = render(s)
         self.assertLess(plain.index("RED — Security finding"), plain.index("EXPECTED — Explained activity"))
         self.assertIn("No incident-response action is identified", render(fixture())[1])
+
+    def test_whole_scope_partial_unknown_or_missing_discovery_cannot_green(self):
+        for update in ({"grant_extent": "selected"}, {"grant_extent": "unknown"}, {"permission": "denied"},
+                       {"authoritative": False}, {"evidence": []}, {"truncated": True}, {"reviewed": False}, {"pages": []}):
+            s = whole_fixture(); s["discovery"][0].update(update)
+            self.assertEqual(assess(s)["status"], "yellow", update)
+        s = whole_fixture(); del s["discovery"]
+        self.assertEqual(assess(s)["status"], "yellow")
+        self.assertIn("YELLOW", render(s)[1])
+        self.assertEqual(assess(whole_fixture())["status"], "green")
+
+    def test_free_text_cannot_expand_named_scope_headline(self):
+        s = fixture(); s["scope"]["target"] = "All repositories across every account"
+        self.assertEqual(assess(s)["status"], "green")
+        report = render(s)[1]
+        self.assertIn("Named resources only: Example project", report)
+        self.assertNotIn("Scope: All repositories", report)
+        self.assertIn("not a whole-account", report)
+
+    def test_owner_discovery_exact_lookup_counts_and_evidence_binding(self):
+        for change in ({"exact_resource_ids": ["provider:repo:999"]}, {"exact_lookups_reconciled": False},
+                       {"resource_ids": []}, {"resource_ids": ["provider:repo:101", "provider:repo:999"]}):
+            s = whole_fixture(); s["discovery"][0].update(change)
+            self.assertEqual(assess(s)["status"], "yellow")
+        s = whole_fixture(); s["discovery"][0]["evidence"] = ["E1"]
+        with self.assertRaisesRegex(ValueError, "same owner"): assess(s)
+        s = whole_fixture(); s["resources"][0]["owner"] = "wrong-owner"
+        self.assertEqual(assess(s)["status"], "yellow")
+        s = whole_fixture(); s["discovery"][0]["pages"][0]["count"] = 0
+        self.assertEqual(assess(s)["status"], "yellow")
+
+    def test_multiple_owners_must_each_have_complete_inventory(self):
+        s = whole_fixture(); s["scope"]["owners"].append({"id": "provider:owner:20", "label": "Second synthetic owner"})
+        self.assertEqual(assess(s)["status"], "yellow")
+        s["evidence"].append({"id": "D2", "owner": "provider:owner:20", "source": "synthetic second owner inventory", "observed_at": "2030-04-03T00:00:00Z", "summary": "Authoritative empty inventory."})
+        second = copy.deepcopy(s["discovery"][0]); second.update(owner="provider:owner:20", evidence=["D2"], resource_ids=[], exact_resource_ids=[]); second["pages"][0]["count"] = 0
+        s["discovery"].append(second)
+        self.assertEqual(assess(s)["status"], "green")
+        second["evidence"] = ["D1"]
+        with self.assertRaisesRegex(ValueError, "same owner"): assess(s)
+
+    def test_empty_authoritative_inventory_and_unavailable_empty_differ(self):
+        s = whole_fixture(); s["scope"]["expected_resources"] = []; s["resources"] = []; s["evidence"] = [s["evidence"][1]]
+        s["discovery"][0].update(resource_ids=[], exact_resource_ids=[]); s["discovery"][0]["pages"][0]["count"] = 0
+        self.assertEqual(assess(s)["status"], "green")
+        self.assertIn("does not assess account-level security", render(s)[1])
+        s["discovery"][0]["permission"] = "denied"
+        self.assertEqual(assess(s)["status"], "yellow")
+        s["discovery"] = []
+        self.assertEqual(assess(s)["status"], "yellow")
+
+    def test_schema_migration_and_discovery_change_invalidate_resume(self):
+        s = fixture(); s["schema"] = 1
+        with self.assertRaisesRegex(ValueError, "schema 2"): assess(s)
+        s = fixture(); del s["scope"]["extent"]
+        with self.assertRaisesRegex(ValueError, "scope extent"): assess(s)
+        s = whole_fixture()
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "checkpoint.json"; save_checkpoint(path, s)
+            changed = copy.deepcopy(s["scope"]); changed["owners"].append({"id": "provider:owner:20", "label": "New owner"})
+            with self.assertRaisesRegex(ValueError, "changed"): load_checkpoint(path, changed)
+
+    def test_owner_inventory_pagination_and_transfers(self):
+        s = whole_fixture(); pages = s["discovery"][0]["pages"]
+        pages[0].update(next="next", terminal=False)
+        self.assertEqual(assess(s)["status"], "yellow")
+        pages.append({"cursor": "next", "next": None, "count": 0, "terminal": True, "terminal_proof": "documented end"})
+        self.assertEqual(assess(s)["status"], "green")
+        s["resources"][0]["aliases"].append("former-owner/project")
+        self.assertEqual(assess(s)["status"], "green")
+        s["scope"]["owners"].append({"id": "provider:owner:20", "label": "Former owner"})
+        s["evidence"].append({"id": "D2", "owner": "provider:owner:20", "source": "old owner export", "observed_at": "2030-04-03T00:00:00Z", "summary": "Unreconciled old resource owner."})
+        old = copy.deepcopy(s["discovery"][0]); old.update(owner="provider:owner:20", evidence=["D2"]); s["discovery"].append(old)
+        self.assertEqual(assess(s)["status"], "yellow")
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
