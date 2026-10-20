@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-impeccable",
+  "version": "1.0.0",
+  "description": "Design, critique, audit and polish frontend layouts, typography, color and interactions using Impeccable. Use for website and product UI design quality work.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "creative",
+    "Creative",
+    "impeccable",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Impeccable",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only impeccable. Design, critique, audit and polish frontend layouts, typography, color and interactions using Impeccable. Use for website and product UI design quality work. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}
