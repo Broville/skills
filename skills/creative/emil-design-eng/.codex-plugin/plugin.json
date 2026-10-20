@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-emil-design-eng",
+  "version": "1.0.0",
+  "description": "Implement and review polished frontend interactions and animations. Use when UI motion, easing, timing, hover behavior, or component details need Emil Kowalski's design engineering guidance.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "emil-design-eng",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Emil Design Eng",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only emil-design-eng. Implement and review polished frontend interactions and animations. Use when UI motion, easing, timing, hover behavior, or component details need Emil Kowalski's design engineering guidance. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}
