@@ -51,6 +51,10 @@ def main() -> int:
             unpacked = staging / "unpacked" / entry["name"]
             manifest = json.loads((unpacked / ".codex-plugin/plugin.json").read_text())
             assert manifest["name"] == entry["name"]
+            if (source / "SKILL.md").is_file():
+                parsed = parse_frontmatter(source / "SKILL.md", Validation())
+                assert parsed is not None
+                assert manifest["license"] == parsed[0]["license"]
             # Native compatibility packages use recursive discovery, including root SKILL.md.
             # Installation can rename a plugin root; skill identity comes from frontmatter.
             inventory = skill_inventory(unpacked)
