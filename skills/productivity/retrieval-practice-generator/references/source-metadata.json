@@ -1,0 +1,99 @@
+{
+  "name": "retrieval-practice-generator",
+  "description": "Generate retrieval practice questions at varied difficulty levels for a topic or concept. Use when creating quiz starters, revision activities, or low-stakes testing materials.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "memory-learning-science/retrieval-practice-generator",
+  "skill_name": "Retrieval Practice Question Generator",
+  "domain": "memory-learning-science",
+  "version": "1.0",
+  "evidence_strength": "strong",
+  "evidence_sources": [
+    "Roediger & Butler (2011) — The critical role of retrieval practice in long-term retention",
+    "Karpicke & Roediger (2008) — The critical importance of retrieval for learning",
+    "Rowland (2014) — Meta-analysis: the effect of testing versus restudy on retention (effect size 0.50)",
+    "Agarwal et al. (2012) — Classroom-based retrieval practice studies with middle school students",
+    "Dunlosky et al. (2013) — Practice testing rated as high-utility learning strategy"
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "topic",
+        "type": "string",
+        "description": "The specific concept or skill students need to retrieve"
+      },
+      {
+        "field": "student_level",
+        "type": "string",
+        "description": "Age/year group and approximate prior knowledge level"
+      },
+      {
+        "field": "question_count",
+        "type": "integer",
+        "description": "Number of questions to generate (recommended 6–10)"
+      }
+    ],
+    "optional": [
+      {
+        "field": "student_profiles",
+        "type": "array",
+        "description": "From context engine: individual language levels, prior knowledge gaps"
+      },
+      {
+        "field": "competency_framework",
+        "type": "string",
+        "description": "From context engine: school's assessment framework or curriculum standard"
+      },
+      {
+        "field": "time_since_learning",
+        "type": "string",
+        "description": "How long ago students first encountered this material"
+      },
+      {
+        "field": "known_misconceptions",
+        "type": "array",
+        "description": "Specific misconceptions already observed in this cohort"
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "questions",
+        "type": "array",
+        "description": "List of retrieval questions, each with question text, retrieval type label (free recall / cued recall / recognition), and difficulty estimate"
+      },
+      {
+        "field": "spacing_recommendation",
+        "type": "string",
+        "description": "When to use these questions relative to original learning"
+      },
+      {
+        "field": "answer_notes",
+        "type": "string",
+        "description": "Key points for correct answers and common errors to watch for"
+      },
+      {
+        "field": "teacher_script",
+        "type": "string",
+        "description": "Brief suggested implementation script (how to run the retrieval activity)"
+      }
+    ]
+  },
+  "chains_well_with": [
+    "spaced-practice-scheduler",
+    "formative-assessment-technique-selector",
+    "gap-analysis-from-student-work",
+    "cognitive-load-analyser"
+  ],
+  "teacher_time": "3 minutes",
+  "tags": [
+    "retrieval",
+    "memory",
+    "assessment",
+    "spaced-practice",
+    "testing-effect"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "gap-analysis-from-student-work",
+  "description": "Analyse student work against criteria to identify specific gaps between current performance and learning objectives. Use when reviewing submissions, planning feedback, or diagnosing learning needs.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "curriculum-assessment/gap-analysis-from-student-work",
+  "skill_name": "Gap Analysis from Student Work",
+  "domain": "curriculum-assessment",
+  "version": "1.0",
+  "evidence_strength": "strong",
+  "evidence_sources": [
+    "Black & Wiliam (1998) — Assessment and Classroom Learning",
+    "Hattie & Timperley (2007) — The Power of Feedback",
+    "Sadler (1989) — Formative assessment and the design of instructional systems",
+    "Heritage (2010) — Formative Assessment: making it happen in the classroom",
+    "Wiliam (2011) — Embedded Formative Assessment"
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "student_work_description",
+        "type": "string",
+        "description": "A description or transcript of the student's work — what they produced"
+      },
+      {
+        "field": "assessment_criteria",
+        "type": "string",
+        "description": "The criteria or rubric the work should be assessed against"
+      },
+      {
+        "field": "learning_objective",
+        "type": "string",
+        "description": "What the student was supposed to learn or demonstrate"
+      }
+    ],
+    "optional": [
+      {
+        "field": "student_level",
+        "type": "string",
+        "description": "Age/year group"
+      },
+      {
+        "field": "student_profile",
+        "type": "string",
+        "description": "From context engine: prior attainment, known strengths and gaps"
+      },
+      {
+        "field": "subject_area",
+        "type": "string",
+        "description": "The curriculum subject"
+      },
+      {
+        "field": "task_description",
+        "type": "string",
+        "description": "The task the student was completing"
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "gap_analysis",
+        "type": "object",
+        "description": "Specific gaps identified, classified by type — conceptual, procedural, or communication"
+      },
+      {
+        "field": "strengths",
+        "type": "array",
+        "description": "What the student does well — specific, evidence-based strengths"
+      },
+      {
+        "field": "next_teaching_steps",
+        "type": "array",
+        "description": "Targeted actions to address each gap — not generic advice but specific next steps"
+      },
+      {
+        "field": "feedback_script",
+        "type": "string",
+        "description": "How to communicate the analysis to the student in a way that promotes improvement"
+      }
+    ]
+  },
+  "chains_well_with": [
+    "feedback-quality-analyser",
+    "criterion-referenced-rubric-generator",
+    "error-analysis-protocol",
+    "practice-problem-sequence-designer",
+    "kud-knowledge-type-mapper"
+  ],
+  "teacher_time": "3 minutes",
+  "tags": [
+    "gap-analysis",
+    "student-work",
+    "formative-assessment",
+    "feedback",
+    "diagnostic"
+  ]
+}

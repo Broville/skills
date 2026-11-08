@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-arts-crafts",
+  "version": "1.0.0",
+  "description": "Plan age-calibrated craft projects for kids ages 2-10 — supply list, step-by-step instructions, safety notes, mess level, prep time, variations, cleanup, and learning connections. Use when the educator requests arts crafts.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "arts-crafts",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Arts Crafts",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only arts-crafts. Plan age-calibrated craft projects for kids ages 2-10 — supply list, step-by-step instructions, safety notes, mess level, prep time, variations, cleanup, and learning connections. Use when the educator requests arts crafts. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

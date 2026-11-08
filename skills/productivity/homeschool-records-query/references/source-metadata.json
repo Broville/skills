@@ -1,0 +1,7 @@
+{
+  "name": "hsd-records-read",
+  "description": "Answer questions from homeschool records — the lesson logs under lesson-logs/ and the Homeschool-Dashboard-compatible time and reading-list spreadsheets configured in students.yaml. Use when the user asks what a student last did in a subject, what was covered, whether a topic or book has come up, how a lesson went, hours by date range, or recent reading.",
+  "argument-hint": [
+    "question about logged records"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-source-credibility-evaluation-protocol",
+  "version": "1.0.0",
+  "description": "Design a source evaluation protocol using lateral reading and credibility checks for digital information. Use when students need to evaluate websites, online sources, or social media claims.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "source-credibility-evaluation-protocol",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Source Credibility",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only source-credibility-evaluation-protocol. Design a source evaluation protocol using lateral reading and credibility checks for digital information. Use when students need to evaluate websites, online sources, or social media claims. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

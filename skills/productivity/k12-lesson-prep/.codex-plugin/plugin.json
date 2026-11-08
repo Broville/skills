@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-k12-lesson-prep",
+  "version": "1.0.0",
+  "description": "Prepare to teach an existing K-12 lesson by working its key task and anticipating student reasoning. Use when an educator asks to prepare for or understand a lesson; produce a short teacher-only prep note.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "k12-lesson-prep",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "K12 Lesson Prep",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only k12-lesson-prep. Prepare to teach an existing K-12 lesson by working its key task and anticipating student reasoning. Use when an educator asks to prepare for or understand a lesson; produce a short teacher-only prep note. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

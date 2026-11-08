@@ -1,0 +1,100 @@
+{
+  "name": "source-credibility-evaluation-protocol",
+  "description": "Design a source evaluation protocol using lateral reading and credibility checks for digital information. Use when students need to evaluate websites, online sources, or social media claims.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "literacy-critical-thinking/source-credibility-evaluation-protocol",
+  "skill_name": "Source Credibility Evaluation Protocol",
+  "domain": "literacy-critical-thinking",
+  "version": "1.0",
+  "evidence_strength": "strong",
+  "evidence_sources": [
+    "Wineburg & McGrew (2017) — Lateral reading: reading less and learning more when evaluating digital information",
+    "Wineburg & McGrew (2019) — Lateral reading and the nature of expertise",
+    "Breakstone et al. (2021) — Students' civic online reasoning: a national portrait",
+    "Caulfield (2019) — SIFT: the four moves (Stop, Investigate, Find better coverage, Trace claims)",
+    "Hobbs (2010) — Digital and media literacy: a plan of action"
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "source_type",
+        "type": "string",
+        "description": "The type of source students are evaluating — e.g. website, news article, social media post, Wikipedia article, YouTube video, infographic"
+      },
+      {
+        "field": "evaluation_context",
+        "type": "string",
+        "description": "Why students are evaluating this source — the task or assignment context"
+      },
+      {
+        "field": "student_level",
+        "type": "string",
+        "description": "Age/year group"
+      }
+    ],
+    "optional": [
+      {
+        "field": "specific_source",
+        "type": "string",
+        "description": "A description of the actual source being evaluated — topic, publisher, URL type"
+      },
+      {
+        "field": "student_profiles",
+        "type": "array",
+        "description": "From context engine: digital literacy levels, prior experience with source evaluation"
+      },
+      {
+        "field": "subject_area",
+        "type": "string",
+        "description": "The discipline context — affects what counts as credible evidence"
+      },
+      {
+        "field": "common_mistakes",
+        "type": "array",
+        "description": "Source evaluation errors the teacher has observed in this class"
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "evaluation_protocol",
+        "type": "object",
+        "description": "Step-by-step protocol for evaluating this source type, using lateral reading"
+      },
+      {
+        "field": "teacher_modelling",
+        "type": "string",
+        "description": "Script showing the teacher modelling the protocol with a specific example"
+      },
+      {
+        "field": "red_flags_green_flags",
+        "type": "object",
+        "description": "Source-type-specific indicators of reliability and unreliability"
+      },
+      {
+        "field": "student_checklist",
+        "type": "string",
+        "description": "A concise checklist students can use independently"
+      }
+    ]
+  },
+  "chains_well_with": [
+    "critical-thinking-task-designer",
+    "media-literacy-deconstruction-protocol",
+    "reading-comprehension-strategy-selector",
+    "socratic-questioning-sequence-generator",
+    "ai-hallucination-fact-check-protocol"
+  ],
+  "teacher_time": "3 minutes",
+  "tags": [
+    "source-evaluation",
+    "lateral-reading",
+    "SIFT",
+    "digital-literacy",
+    "critical-thinking"
+  ]
+}

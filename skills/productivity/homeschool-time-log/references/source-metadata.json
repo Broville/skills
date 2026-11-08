@@ -1,0 +1,5 @@
+{
+  "name": "hsd-time-log",
+  "description": "Project lesson logs into Homeschool-Dashboard-compatible time-tracking spreadsheets configured in students.yaml. Use when the user asks to log homeschool dashboard time, update Homeschool-Dashboard records, or catch the spreadsheets up. Writing the lesson logs themselves is a separate skill (lesson-log).",
+  "argument-hint": "[child-name] [since YYYY-MM-DD]"
+}

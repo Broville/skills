@@ -1,0 +1,7 @@
+{
+  "name": "hsd-book-log",
+  "description": "Process Signal messages from book-logging groups, identify books (from title or cover image), look up metadata, and log to Homeschool-Dashboard-compatible reading-list spreadsheets configured in students.yaml.",
+  "argument-hint": [
+    "child-name"
+  ]
+}

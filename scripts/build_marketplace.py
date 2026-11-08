@@ -43,7 +43,7 @@ def generated_files(root: Path) -> dict[Path, str]:
             data, _ = parsed
             name = data["name"]
             plugin_name = f"broville-skill-{name}"
-            display_name = name.replace("-", " ").title()
+            display_name = data["metadata"].get("display-name", name.replace("-", " ").title())
             if name == "stable-diffusion-image-generation":
                 display_name = "Stable Diffusion Images"
             subtitle_category = "Software Dev" if category == "software-dev" else label
@@ -53,7 +53,7 @@ def generated_files(root: Path) -> dict[Path, str]:
                 "description": data["description"],
                 "author": {"name": "Broville", "url": "https://github.com/Broville"},
                 "repository": "https://github.com/Broville/skills",
-                "license": "MIT",
+                "license": data["license"],
                 "keywords": [category, label, name, "individual-skill"],
                 "skills": "./",
                 "interface": {

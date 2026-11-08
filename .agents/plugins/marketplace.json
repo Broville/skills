@@ -461,6 +461,30 @@
       "category": "Productivity"
     },
     {
+      "name": "broville-skill-arts-crafts",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/arts-crafts"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-backwards-design-unit-planner",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/backwards-design-unit-planner"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "broville-skill-bible-study-app-development",
       "source": {
         "source": "local",
@@ -485,10 +509,166 @@
       "category": "Productivity"
     },
     {
+      "name": "broville-skill-coverage-audit",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/coverage-audit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-criterion-referenced-rubric-generator",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/criterion-referenced-rubric-generator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-curriculum-crosswalk",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/curriculum-crosswalk"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-differentiation-adapter",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/differentiation-adapter"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-disciplinary-writing-scaffold",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/disciplinary-writing-scaffold"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-error-analysis-protocol",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/error-analysis-protocol"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-gap-analysis-from-student-work",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/gap-analysis-from-student-work"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-goal-setting-protocol-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/goal-setting-protocol-designer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "broville-skill-helloao-bible-api",
       "source": {
         "source": "local",
         "path": "./skills/productivity/helloao-bible-api"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-homeschool-lesson-log",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/homeschool-lesson-log"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-homeschool-reading-log",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/homeschool-reading-log"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-homeschool-records-query",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/homeschool-records-query"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-homeschool-time-log",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/homeschool-time-log"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-homeschool-weekly-review",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/homeschool-weekly-review"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -521,10 +701,58 @@
       "category": "Productivity"
     },
     {
+      "name": "broville-skill-k12-check-for-understanding",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/k12-check-for-understanding"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-k12-lesson-prep",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/k12-lesson-prep"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "broville-skill-memento-flashcards",
       "source": {
         "source": "local",
         "path": "./skills/productivity/memento-flashcards"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-mixed-age-learning-task-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/mixed-age-learning-task-designer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-outdoor-learning-sequence-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/outdoor-learning-sequence-designer"
       },
       "policy": {
         "installation": "AVAILABLE",
@@ -545,10 +773,166 @@
       "category": "Productivity"
     },
     {
+      "name": "broville-skill-prepared-environment-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/prepared-environment-designer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-progressive-hint-ladder",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/progressive-hint-ladder"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-quiz-generator",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/quiz-generator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-reading-comprehension-strategy-selector",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/reading-comprehension-strategy-selector"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-retrieval-practice-generator",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/retrieval-practice-generator"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-scope-and-sequence-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/scope-and-sequence-designer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "broville-skill-scripture-study-method",
       "source": {
         "source": "local",
         "path": "./skills/productivity/scripture-study-method"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-source-credibility-evaluation-protocol",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/source-credibility-evaluation-protocol"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-spaced-practice-scheduler",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/spaced-practice-scheduler"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-student-feedback-writer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/student-feedback-writer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-three-part-lesson-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/three-part-lesson-designer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-udl-options-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/udl-options-designer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-uninterrupted-work-cycle-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/uninterrupted-work-cycle-designer"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "broville-skill-worked-example-fading-designer",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/worked-example-fading-designer"
       },
       "policy": {
         "installation": "AVAILABLE",

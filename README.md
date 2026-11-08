@@ -102,7 +102,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
 ## Add as a ChatGPT / Codex Marketplace
 
-This repository exposes **97 plugin choices: 11 category bundles and 86 individual
+This repository exposes **129 plugin choices: 11 category bundles and 118 individual
 skills** through `.agents/plugins/marketplace.json`. Bundles retain their existing
 IDs (`broville-<category>`) and source paths (`./skills/<category>`). Individual
 plugins use `broville-skill-<skill-name>` and point directly to
@@ -231,7 +231,7 @@ The checks combine the official Agent Skills validator with repository policy an
 run on Linux, macOS, and Windows in CI. Marketplace validation checks JSON,
 identities, versions, contained paths, listing metadata, and complete skill
 coverage without installing or executing a plugin. Package checks archive and
-extract all 97 choices, verify skill/supporting file bytes, exercise invalid
+extract all 129 choices, verify skill/supporting file bytes, exercise invalid
 catalogs and metadata regeneration, and check distinct paths for overlapping
 bundle/individual copies. They simulate packaging; they do not certify desktop
 runtime loading. Desktop installation and
@@ -279,10 +279,40 @@ For human contributors:
 
 ## License
 
-MIT — see [LICENSE](./LICENSE) for details.
+Original repository material is MIT — see [LICENSE](./LICENSE). Imported packages retain their own licenses, including Apache-2.0 and CC-BY-SA-4.0. See [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md); a bundle does not relicense its included skills.
 
 ## Security incident audits
 
 Use [security-incident-audit](skills/devops/security-incident-audit/SKILL.md) for a bounded, read-only investigation of suspected account, organization, repository, or automation compromise. It produces accessible green/yellow/red reports with clear next-help prompts and explicit coverage limits. It is provider-neutral, needs no private agent tools, and does not authorize remediation or install itself.
 
 Example request: “Use security-incident-audit to review unexpected activity in my authorized repositories during the period I specify. Ask for missing scope and access decisions first, then complete the read-only audit and explain the results without technical jargon.”
+
+
+## Homeschool teaching and administration
+
+The productivity category includes 32 document-only homeschool and education packages.
+They need no new service, executable, hook or messaging account. Install individual
+packages or the productivity bundle; follow each skill’s inputs and verification steps.
+
+| Task | Starting skills |
+|---|---|
+| Plan a year or unit | [Scope and sequence](skills/productivity/scope-and-sequence-designer/SKILL.md), [backwards design](skills/productivity/backwards-design-unit-planner/SKILL.md), [coverage audit](skills/productivity/coverage-audit/SKILL.md), [curriculum crosswalk](skills/productivity/curriculum-crosswalk/SKILL.md) |
+| Prepare and assess lessons | [K–12 preparation](skills/productivity/k12-lesson-prep/SKILL.md), [understanding checks](skills/productivity/k12-check-for-understanding/SKILL.md), [quiz generator](skills/productivity/quiz-generator/SKILL.md), [criterion rubrics](skills/productivity/criterion-referenced-rubric-generator/SKILL.md) |
+| Support individual learners | [Differentiation](skills/productivity/differentiation-adapter/SKILL.md), [UDL options](skills/productivity/udl-options-designer/SKILL.md), [work analysis](skills/productivity/gap-analysis-from-student-work/SKILL.md), [feedback](skills/productivity/student-feedback-writer/SKILL.md), [error analysis](skills/productivity/error-analysis-protocol/SKILL.md) |
+| Build retention and independence | [Retrieval practice](skills/productivity/retrieval-practice-generator/SKILL.md), [spaced practice](skills/productivity/spaced-practice-scheduler/SKILL.md), [worked examples](skills/productivity/worked-example-fading-designer/SKILL.md), [hints](skills/productivity/progressive-hint-ladder/SKILL.md), [goals](skills/productivity/goal-setting-protocol-designer/SKILL.md) |
+| Read, write and evaluate sources | [Comprehension](skills/productivity/reading-comprehension-strategy-selector/SKILL.md), [disciplinary writing](skills/productivity/disciplinary-writing-scaffold/SKILL.md), [source credibility](skills/productivity/source-credibility-evaluation-protocol/SKILL.md) |
+| Teach early years and mixed ages | [Three-part lessons](skills/productivity/three-part-lesson-designer/SKILL.md), [mixed-age tasks](skills/productivity/mixed-age-learning-task-designer/SKILL.md), [prepared environment](skills/productivity/prepared-environment-designer/SKILL.md), [work cycles](skills/productivity/uninterrupted-work-cycle-designer/SKILL.md), [outdoor learning](skills/productivity/outdoor-learning-sequence-designer/SKILL.md), [crafts](skills/productivity/arts-crafts/SKILL.md) |
+| Keep household learning records | [Lesson logs](skills/productivity/homeschool-lesson-log/SKILL.md), [time ledger](skills/productivity/homeschool-time-log/SKILL.md), [reading log](skills/productivity/homeschool-reading-log/SKILL.md), [weekly review](skills/productivity/homeschool-weekly-review/SKILL.md), [record queries](skills/productivity/homeschool-records-query/SKILL.md) |
+
+The records workflows use the household’s existing private files or document tools.
+They preserve hand edits, distinguish plans from completed work, and never infer missing
+hours or grades. They do not certify legal compliance or provide jurisdiction-specific
+filing, transcript-credit rules, diagnosis, automatic scheduling or financial accounting.
+Those tasks require current primary sources and the family’s context. Existing
+[pdf](skills/productivity/pdf/SKILL.md), [memento-flashcards](skills/productivity/memento-flashcards/SKILL.md)
+and [youtube-transcript](skills/productivity/youtube-transcript/SKILL.md) can support suitable learning workflows.
+
+The [research and security report](research/homeschool-skills-research.html),
+[machine-readable intake](research/homeschool-skills-intake.json), and
+[scan policy](research/homeschool-skill-scan-policy.yaml) record the searched sources,
+selection decisions, pinned revisions, package hashes and exact security limits.

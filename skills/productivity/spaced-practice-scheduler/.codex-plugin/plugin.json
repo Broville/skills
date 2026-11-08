@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-spaced-practice-scheduler",
+  "version": "1.0.0",
+  "description": "Design a spaced retrieval schedule for any topic list and timeline. Use when planning units, term sequences, or revision programmes.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "spaced-practice-scheduler",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Spaced Practice Scheduler",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only spaced-practice-scheduler. Design a spaced retrieval schedule for any topic list and timeline. Use when planning units, term sequences, or revision programmes. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

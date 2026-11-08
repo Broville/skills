@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-homeschool-lesson-log",
+  "version": "1.0.0",
+  "description": "Record completed homeschool lessons from parent observations and supplied evidence. Use when a parent asks to log a lesson or document what was actually taught.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "homeschool-lesson-log",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Homeschool Lesson Log",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only homeschool-lesson-log. Record completed homeschool lessons from parent observations and supplied evidence. Use when a parent asks to log a lesson or document what was actually taught. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

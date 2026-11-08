@@ -1,0 +1,93 @@
+{
+  "name": "udl-options-designer",
+  "description": "Generates multiple means of engagement, representation, and action/expression for a given learning goal. Produces specific, practical alternatives — not generic options — and recommends the highest-impact single change.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "inclusive-design/udl-options-designer",
+  "skill_name": "UDL Options Designer",
+  "domain": "inclusive-design",
+  "version": "1.0",
+  "evidence_strength": "moderate",
+  "evidence_sources": [
+    "Rose & Meyer (2002) — Teaching Every Student in the Digital Age: Universal Design for Learning",
+    "CAST (2018) — Universal Design for Learning Guidelines version 2.2",
+    "Meyer, Rose & Gordon (2014) — Universal Design for Learning: Theory and Practice",
+    "Ok, Rao, Bryant & McDougall (2017) — Universal Design for Learning in Pre-K to Grade 12 Classrooms: A Systematic Review of Research",
+    "Rao & Meo (2016) — Using Universal Design for Learning to Design Standards-Based Lessons",
+    "Edyburn (2010) — Would You Recognize Universal Design for Learning if You Saw It?"
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "learning_goal",
+        "type": "string",
+        "description": "The specific learning objective or target. Example: Students will explain how photosynthesis converts light energy into chemical energy."
+      },
+      {
+        "field": "current_approach",
+        "type": "string",
+        "description": "How the teacher currently plans to teach this. Example: Read textbook section, watch video, complete worksheet."
+      }
+    ],
+    "optional": [
+      {
+        "field": "learner_context",
+        "type": "string",
+        "description": "Known student variability — age, language backgrounds, learning profiles, known challenges"
+      },
+      {
+        "field": "available_resources",
+        "type": "string",
+        "description": "Technology, materials, spaces available. Example: Chromebooks 1:1, no printer, shared classroom."
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "engagement_options",
+        "type": "array",
+        "description": "2-3 specific alternatives for Multiple Means of Engagement, with rationale for which learners each supports"
+      },
+      {
+        "field": "representation_options",
+        "type": "array",
+        "description": "2-3 specific alternatives for Multiple Means of Representation, with rationale"
+      },
+      {
+        "field": "action_expression_options",
+        "type": "array",
+        "description": "2-3 specific alternatives for Multiple Means of Action and Expression, with rationale"
+      },
+      {
+        "field": "minimum_viable_udl",
+        "type": "string",
+        "description": "The single highest-impact change if the teacher can only do one thing differently"
+      },
+      {
+        "field": "implementation_notes",
+        "type": "array",
+        "description": "Practical notes on how to offer options without overwhelming students"
+      }
+    ]
+  },
+  "chains_well_with": [
+    "inclusive-design/udl-lesson-auditor",
+    "inclusive-design/udl-barrier-anticipator",
+    "curriculum-assessment/differentiation-adapter",
+    "curriculum-assessment/formative-assessment-technique-selector",
+    "self-regulated-learning/self-regulation-scaffold-generator"
+  ],
+  "teacher_time": "5-10 minutes",
+  "tags": [
+    "UDL",
+    "inclusive-design",
+    "options",
+    "multiple-means",
+    "access",
+    "differentiation",
+    "CAST"
+  ]
+}

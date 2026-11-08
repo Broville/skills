@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-criterion-referenced-rubric-generator",
+  "version": "1.0.0",
+  "description": "Generate a criterion-referenced rubric with descriptive performance levels for a task or objective. Use for marking guides and general curriculum contexts. For Manning programmes where Competent = success, use coherent-rubric-logic-builder instead.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "criterion-referenced-rubric-generator",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Criterion Rubrics",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only criterion-referenced-rubric-generator. Generate a criterion-referenced rubric with descriptive performance levels for a task or objective. Use for marking guides and general curriculum contexts. For Manning programmes where Competent = success, use coherent-rubric-logic-builder instead. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

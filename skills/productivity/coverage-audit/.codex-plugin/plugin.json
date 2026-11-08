@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-coverage-audit",
+  "version": "1.0.0",
+  "description": "Takes a curriculum framework and a statutory or accreditation requirement list; produces a coverage table, gap summary, and CSV showing which framework content covers each requirement and where gaps exist. Use when the educator requests this workflow.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "coverage-audit",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Coverage Audit",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only coverage-audit. Takes a curriculum framework and a statutory or accreditation requirement list; produces a coverage table, gap summary, and CSV showing which framework content covers each requirement and where gaps exist. Use when the educator requests this workflow. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

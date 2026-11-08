@@ -1,0 +1,85 @@
+{
+  "name": "coverage-audit",
+  "description": "Takes a curriculum framework and a statutory or accreditation requirement list; produces a coverage table, gap summary, and CSV showing which framework content covers each requirement and where gaps exist.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "curriculum-alignment/coverage-audit",
+  "skill_name": "Coverage Audit",
+  "domain": "curriculum-alignment",
+  "version": "1.0",
+  "evidence_strength": "moderate",
+  "evidence_sources": [
+    "Webb, N. L. (1997) — Criteria for Alignment of Expectations and Assessments in Mathematics and Science Education, CCSSO Research Monograph No. 6: canonical alignment framework defining coverage dimensions (categorical concurrence, depth-of-knowledge, range, balance) used in this skill's classification of match strength.",
+    "Porter, A. C. et al. (2002) — Measuring the content of instruction: Uses in research and practice, Educational Researcher 31(7), 3–14: curriculum mapping methodology for comparing intended vs enacted curricula across frameworks — the basis for this skill's row-per-requirement approach."
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "framework",
+        "type": "string",
+        "description": "The curriculum framework being audited. Accepts band-tagged JSON from Developmental Band Translator, or plain markdown/text with competencies and learning targets identified."
+      },
+      {
+        "field": "requirements",
+        "type": "string",
+        "description": "The statutory or accreditation requirement list. Accepts markdown, CSV, or plain text. Each requirement should be identifiable by number or label."
+      }
+    ],
+    "optional": [
+      {
+        "field": "framework_name",
+        "type": "string",
+        "description": "Human-readable name of the framework being audited."
+      },
+      {
+        "field": "requirements_source",
+        "type": "string",
+        "description": "Name of the statutory or accreditation body."
+      },
+      {
+        "field": "band_filter",
+        "type": "string",
+        "description": "Restrict audit to specific bands only."
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "coverage_table",
+        "type": "string",
+        "description": "Markdown table — columns are Requirement ID, Requirement text, Covered by (framework LT or competency), Band(s), Evidence strength (direct/partial/indirect/none), Notes."
+      },
+      {
+        "field": "coverage_csv",
+        "type": "string",
+        "description": "Same data as coverage_table in flat CSV format for Google Sheets use."
+      },
+      {
+        "field": "gap_summary",
+        "type": "string",
+        "description": "Prose paragraph summarising requirements with no or only indirect coverage."
+      },
+      {
+        "field": "coverage_statistics",
+        "type": "object",
+        "description": "Counts — total requirements, directly covered, partially covered, not covered."
+      }
+    ]
+  },
+  "chains_well_with": [
+    "curriculum-crosswalk",
+    "developmental-band-translator",
+    "scope-and-sequence-designer"
+  ],
+  "teacher_time": "15 minutes",
+  "tags": [
+    "coverage-audit",
+    "accreditation",
+    "statutory-compliance",
+    "curriculum-alignment",
+    "gap-analysis"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-homeschool-weekly-review",
+  "version": "1.0.0",
+  "description": "Summarize a week of actual homeschool lesson logs for the household adults. Use when a parent requests a weekly learning review or supplies records for a scheduled digest.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "homeschool-weekly-review",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Homeschool Weekly Review",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only homeschool-weekly-review. Summarize a week of actual homeschool lesson logs for the household adults. Use when a parent requests a weekly learning review or supplies records for a scheduled digest. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

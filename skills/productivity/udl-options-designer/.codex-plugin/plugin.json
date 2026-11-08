@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-udl-options-designer",
+  "version": "1.0.0",
+  "description": "Generates multiple means of engagement, representation, and action/expression for a given learning goal. Produces specific, practical alternatives — not generic options — and recommends the highest-impact single change. Use when the educator requests this workflow.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "udl-options-designer",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "UDL Learning Options",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only udl-options-designer. Generates multiple means of engagement, representation, and action/expression for a given learning goal. Produces specific, practical alternatives — not generic options — and recommends the highest-impact single change. Use when the educator requests this workflow. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

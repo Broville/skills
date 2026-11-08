@@ -1,0 +1,103 @@
+{
+  "name": "prepared-environment-designer",
+  "description": "Redesign a classroom as a prepared environment optimised for independent learning, calm transitions, and material access. Use when classroom layout hinders independence or self-directed work.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "montessori-alternative-approaches/prepared-environment-designer",
+  "skill_name": "Prepared Environment Designer",
+  "domain": "montessori-alternative-approaches",
+  "version": "1.0",
+  "evidence_strength": "moderate",
+  "evidence_sources": [
+    "Lillard (2005) — Montessori: The Science Behind the Genius",
+    "Cossentino (2006) — Big work: goodness, volitional action, and the classroom environment in Montessori method",
+    "Barrett et al. (2015) — The impact of classroom design on pupils' learning: final results of a holistic, multi-level analysis (HEAD project)",
+    "Fisher et al. (2014) — Visual environment, attention, and learning in young children: when too much of a good thing may be bad",
+    "Lillard & Else-Quest (2006) — Evaluating Montessori education (Science)"
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "current_environment",
+        "type": "string",
+        "description": "A description of the current classroom or learning space — what it looks like, how it is organised, what materials are available, and what problems exist"
+      },
+      {
+        "field": "improvement_goals",
+        "type": "string",
+        "description": "What the teacher wants to achieve by redesigning the environment — calmer transitions, more independent work, better access to materials, or other specific goals"
+      }
+    ],
+    "optional": [
+      {
+        "field": "student_level",
+        "type": "string",
+        "description": "Age/year group and developmental stage"
+      },
+      {
+        "field": "budget",
+        "type": "string",
+        "description": "Available budget for changes — from zero-cost to significant investment"
+      },
+      {
+        "field": "space_constraints",
+        "type": "string",
+        "description": "Fixed constraints — room size, built-in furniture, windows, doors, shared spaces"
+      },
+      {
+        "field": "curriculum_context",
+        "type": "string",
+        "description": "Whether this is a Montessori school, a conventional school wanting to adopt some principles, or a home learning environment"
+      },
+      {
+        "field": "time_for_implementation",
+        "type": "string",
+        "description": "How quickly the changes need to happen — over a weekend, gradually over a term, or during a school holiday"
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "environment_audit",
+        "type": "object",
+        "description": "Analysis of the current environment against Montessori prepared environment principles — what works and what doesn't"
+      },
+      {
+        "field": "redesign_plan",
+        "type": "object",
+        "description": "The specific changes recommended — organised by priority and cost"
+      },
+      {
+        "field": "implementation_sequence",
+        "type": "array",
+        "description": "The order of changes — what to do first and what can wait"
+      },
+      {
+        "field": "maintenance_protocol",
+        "type": "object",
+        "description": "How to maintain the prepared environment over time — routines, responsibilities, and refresh cycles"
+      }
+    ]
+  },
+  "chains_well_with": [
+    "three-part-lesson-designer",
+    "uninterrupted-work-cycle-designer",
+    "mixed-age-learning-task-designer",
+    "biophilic-learning-environment-designer"
+  ],
+  "teacher_time": "5 minutes",
+  "tags": [
+    "Montessori",
+    "prepared-environment",
+    "classroom-design",
+    "Lillard",
+    "Cossentino",
+    "accessibility",
+    "order",
+    "beauty",
+    "materials"
+  ]
+}
