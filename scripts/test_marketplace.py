@@ -104,7 +104,11 @@ def main() -> int:
         data, body = parsed
         data["license"] = "Apache-2.0"
         data["metadata"]["display-name"] = "Short Test Title"
-        skill.write_text("---\n" + yaml.safe_dump(data, sort_keys=False) + "---\n\n" + body)
+        skill.write_text(
+            "---\n" + yaml.safe_dump(data, sort_keys=False) + "---\n\n" + body
+            + "\nUnicode round-trip: 数学 — café.\n",
+            encoding="utf-8",
+        )
         stale = fixture / catalog["plugins"][1]["source"]["path"] / ".codex-plugin/plugin.json"
         stale.write_text("{}\n")
         command = [sys.executable, str(ROOT / "scripts/build_marketplace.py"), "--repo-root", str(fixture)]
