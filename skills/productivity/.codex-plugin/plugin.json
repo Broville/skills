@@ -1,18 +1,18 @@
 {
   "name": "broville-productivity",
-  "version": "1.1.0",
-  "description": "Documents, transcripts, flashcards, interviews, and Bible study workflows.",
+  "version": "1.2.0",
+  "description": "Homeschool teaching and records, documents, transcripts, flashcards, interviews, and Bible study workflows.",
   "author": {
     "name": "Broville",
     "url": "https://github.com/Broville"
   },
   "repository": "https://github.com/Broville/skills",
-  "license": "MIT",
+  "license": "MIT AND Apache-2.0 AND CC-BY-SA-4.0",
   "skills": "./",
   "interface": {
     "displayName": "Broville Productivity",
     "shortDescription": "Study and productivity",
-    "longDescription": "Documents, transcripts, flashcards, interviews, and Bible study workflows. Read each skill’s prerequisites before use. Related skills may be in another Broville category plugin. Installs the complete category. Choose the bundle or individual skills to avoid overlapping copies.",
+    "longDescription": "Homeschool teaching and records, documents, transcripts, flashcards, interviews, and Bible study workflows. Read each skill’s prerequisites and license before use. Installs the complete category. Choose the bundle or individual skills to avoid overlapping copies.",
     "developerName": "Broville",
     "category": "Productivity",
     "capabilities": []

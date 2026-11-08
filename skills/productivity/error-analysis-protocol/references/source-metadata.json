@@ -1,0 +1,99 @@
+{
+  "name": "error-analysis-protocol",
+  "description": "Design an error analysis protocol to diagnose the root cause of student mistakes and misconceptions. Use when error patterns appear in student work and targeted feedback is needed.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "self-regulated-learning/error-analysis-protocol",
+  "skill_name": "Error Analysis Protocol",
+  "domain": "self-regulated-learning",
+  "version": "1.0",
+  "evidence_strength": "moderate",
+  "evidence_sources": [
+    "Borasi (1994) — Capitalizing on errors as 'springboards for inquiry': a teaching experiment",
+    "Black & Wiliam (1998) — Assessment and classroom learning (formative assessment and error use)",
+    "Metcalfe (2017) — Learning from errors: benefits of errors in the classroom",
+    "Siegler (2002) — Microgenetic studies of self-explanation: how children develop mathematical understanding",
+    "Tulis et al. (2016) — Learning from errors: a model of individual processes"
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "student_work_sample",
+        "type": "string",
+        "description": "Description or transcript of the student work containing errors"
+      },
+      {
+        "field": "task_description",
+        "type": "string",
+        "description": "What the student was asked to do and the learning objective"
+      },
+      {
+        "field": "subject_area",
+        "type": "string",
+        "description": "Subject and year group"
+      }
+    ],
+    "optional": [
+      {
+        "field": "correct_response",
+        "type": "string",
+        "description": "What a correct response would look like for comparison"
+      },
+      {
+        "field": "student_profiles",
+        "type": "array",
+        "description": "From context engine: prior attainment, known learning difficulties, error history"
+      },
+      {
+        "field": "rubric",
+        "type": "string",
+        "description": "From context engine: rubric or success criteria for the task"
+      },
+      {
+        "field": "error_frequency",
+        "type": "string",
+        "description": "Whether this error is a one-off or a recurring pattern"
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "error_classification",
+        "type": "array",
+        "description": "Each error classified as procedural, conceptual, or careless — with evidence for the classification"
+      },
+      {
+        "field": "root_cause_analysis",
+        "type": "string",
+        "description": "Hypothesised cause of each error with diagnostic questions to confirm"
+      },
+      {
+        "field": "targeted_response",
+        "type": "array",
+        "description": "Specific follow-up actions for each error type"
+      },
+      {
+        "field": "student_self_analysis_guide",
+        "type": "string",
+        "description": "Scaffolded prompts for the student to analyse their own errors"
+      }
+    ]
+  },
+  "chains_well_with": [
+    "feedback-quality-analyser",
+    "gap-analysis-from-student-work",
+    "metacognitive-prompt-library",
+    "worked-example-fading-designer"
+  ],
+  "teacher_time": "4 minutes",
+  "tags": [
+    "error-analysis",
+    "formative-assessment",
+    "misconceptions",
+    "diagnosis",
+    "feedback"
+  ]
+}

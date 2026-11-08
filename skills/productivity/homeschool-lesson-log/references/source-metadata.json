@@ -1,0 +1,7 @@
+{
+  "name": "lesson-log",
+  "description": "Record what was actually taught in a homeschool session as a durable lesson log — captured photos, screenshots, and voice notes, their extracted text, video transcripts, and a written account of what was covered and how it went. Use when the user asks to log time, log lessons, log what we did, process lesson messages, or write up a class. This is the primary record; the Homeschool-Dashboard spreadsheet projection is a separate skill (hsd-time-log).",
+  "argument-hint": [
+    "child-name"
+  ]
+}

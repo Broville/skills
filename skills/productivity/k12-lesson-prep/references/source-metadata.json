@@ -1,0 +1,5 @@
+{
+  "name": "k12-lesson-prep",
+  "description": "Helps a teacher prepare to teach an existing K-12 lesson (math / ELA / science / social studies) — a prep partner that thinks through the lesson's key student task with the teacher and leaves a short teacher-only prep note. Triggers on asks to internalize, prepare for, get ready to teach, or understand a lesson, including implicit ones (\"help me get ready for tomorrow's lesson\"), and right after another skill built a lesson, which it can follow. Not for building or adapting a lesson, grading, rubrics, assessment feedback, or generating quizzes or student-facing material, and not for single-fact lookups a sentence would answer (\"what standard is this?\", \"how long is this lesson?\").\n",
+  "license": "Copyright 2026 Anthropic, PBC · Copyright 2026 Learning Commons · SPDX-License-Identifier: Apache-2.0. Complete terms in LICENSE and NOTICE."
+}

@@ -1,0 +1,5 @@
+{
+  "name": "weekly-review",
+  "description": "Write a household digest of a week's lesson logs — highlights and standouts, with extra weight on problems and things that need attention. Chat only; no saved file. Safe for a scheduled weekly cron run. Use when the user asks for a weekly review, how the week went, a week in review, a parent report of the week, or a weekly summary of learning, or when a scheduled job invokes this skill. Do not use for a single-lesson question, hours, books, dashboards, or MindFeast slides.\n",
+  "argument-hint": "[student-name] [from YYYY-MM-DD] [to YYYY-MM-DD]"
+}

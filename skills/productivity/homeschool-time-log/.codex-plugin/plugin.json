@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-homeschool-time-log",
+  "version": "1.0.0",
+  "description": "Append verified session times to a homeschool time ledger while preserving existing rows. Use when a parent asks to catch up time records or project lesson logs into a ledger.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "homeschool-time-log",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Homeschool Time Log",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only homeschool-time-log. Append verified session times to a homeschool time ledger while preserving existing rows. Use when a parent asks to catch up time records or project lesson logs into a ledger. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "backwards-design-unit-planner",
+  "description": "Plan a unit using backwards design from desired outcomes through assessment evidence to learning activities. Use when starting a new unit or redesigning an existing one from standards.",
+  "disable-model-invocation": false,
+  "user-invocable": true,
+  "effort": "medium",
+  "skill_id": "curriculum-assessment/backwards-design-unit-planner",
+  "skill_name": "Backwards Design Unit Planner",
+  "domain": "curriculum-assessment",
+  "version": "1.0",
+  "evidence_strength": "strong",
+  "evidence_sources": [
+    "Wiggins & McTighe (1998, 2005) — Understanding by Design",
+    "Wiggins & McTighe (2011) — The Understanding by Design Guide to Creating High-Quality Units",
+    "Tomlinson & McTighe (2006) — Integrating Differentiated Instruction and Understanding by Design",
+    "Hattie (2009) — Visible Learning: backward design and clarity of learning intentions",
+    "Biggs & Tang (2011) — Teaching for Quality Learning at University: constructive alignment"
+  ],
+  "input_schema": {
+    "required": [
+      {
+        "field": "desired_outcomes",
+        "type": "string",
+        "description": "What students should understand, know, and be able to do by the end of the unit"
+      },
+      {
+        "field": "student_level",
+        "type": "string",
+        "description": "Age/year group"
+      },
+      {
+        "field": "unit_duration",
+        "type": "string",
+        "description": "Number of lessons or weeks"
+      }
+    ],
+    "optional": [
+      {
+        "field": "subject_area",
+        "type": "string",
+        "description": "The curriculum subject"
+      },
+      {
+        "field": "curriculum_framework",
+        "type": "string",
+        "description": "From context engine: specific curriculum standards to address"
+      },
+      {
+        "field": "student_profiles",
+        "type": "array",
+        "description": "From context engine: prior attainment, known gaps, class composition"
+      },
+      {
+        "field": "available_resources",
+        "type": "string",
+        "description": "Key texts, materials, or resources available"
+      }
+    ]
+  },
+  "output_schema": {
+    "type": "object",
+    "fields": [
+      {
+        "field": "stage_1_desired_results",
+        "type": "object",
+        "description": "Enduring understandings, essential questions, knowledge and skills"
+      },
+      {
+        "field": "stage_2_assessment_evidence",
+        "type": "object",
+        "description": "Performance tasks and other evidence that will demonstrate understanding"
+      },
+      {
+        "field": "stage_3_learning_plan",
+        "type": "object",
+        "description": "Sequenced learning activities aligned to stages 1 and 2"
+      },
+      {
+        "field": "alignment_check",
+        "type": "string",
+        "description": "Verification that activities, assessments, and outcomes are aligned"
+      }
+    ]
+  },
+  "chains_well_with": [
+    "competency-unpacker",
+    "criterion-referenced-rubric-generator",
+    "formative-assessment-technique-selector",
+    "explicit-instruction-sequence-builder",
+    "curriculum-knowledge-architecture-designer",
+    "kud-knowledge-type-mapper",
+    "critical-thinking-task-designer",
+    "scope-and-sequence-designer"
+  ],
+  "teacher_time": "5 minutes",
+  "tags": [
+    "UbD",
+    "backwards-design",
+    "unit-planning",
+    "curriculum",
+    "alignment"
+  ]
+}

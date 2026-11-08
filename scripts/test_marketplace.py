@@ -13,6 +13,8 @@ import tempfile
 import zipfile
 from pathlib import Path
 
+import yaml
+
 from validate_marketplace import validate
 from validate_skills import Validation, parse_frontmatter
 
@@ -51,6 +53,10 @@ def main() -> int:
             unpacked = staging / "unpacked" / entry["name"]
             manifest = json.loads((unpacked / ".codex-plugin/plugin.json").read_text())
             assert manifest["name"] == entry["name"]
+            if entry["name"].startswith("broville-skill-"):
+                parsed = parse_frontmatter(unpacked / "SKILL.md", Validation())
+                assert parsed is not None
+                assert manifest["license"] == parsed[0]["license"]
             # Native compatibility packages use recursive discovery, including root SKILL.md.
             # Installation can rename a plugin root; skill identity comes from frontmatter.
             inventory = skill_inventory(unpacked)
@@ -92,12 +98,26 @@ def main() -> int:
                 raise AssertionError(f"accepted {label}")
 
         path.write_text(json.dumps(catalog, indent=2) + "\n")
+        skill = fixture / catalog["plugins"][1]["source"]["path"] / "SKILL.md"
+        parsed = parse_frontmatter(skill, Validation())
+        assert parsed is not None
+        data, body = parsed
+        data["license"] = "Apache-2.0"
+        data["metadata"]["display-name"] = "Short Test Title"
+        skill.write_text(
+            "---\n" + yaml.safe_dump(data, sort_keys=False) + "---\n\n" + body
+            + "\nUnicode round-trip: 数学 — café.\n",
+            encoding="utf-8",
+        )
         stale = fixture / catalog["plugins"][1]["source"]["path"] / ".codex-plugin/plugin.json"
         stale.write_text("{}\n")
         command = [sys.executable, str(ROOT / "scripts/build_marketplace.py"), "--repo-root", str(fixture)]
         assert subprocess.run([*command, "--check"], capture_output=True).returncode == 1
         subprocess.run(command, check=True, capture_output=True)
         subprocess.run([*command, "--check"], check=True, capture_output=True)
+        regenerated = json.loads(stale.read_text())
+        assert regenerated["license"] == "Apache-2.0"
+        assert regenerated["interface"]["displayName"] == "Short Test Title"
 
     assert all((ROOT / path).read_bytes() == data for path, data in originals.items())
     print(f"Package checks passed for {len(inventories)} plugins; overlap paths, regeneration, and invalid catalogs checked.")

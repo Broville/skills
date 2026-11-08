@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-error-analysis-protocol",
+  "version": "1.0.0",
+  "description": "Design an error analysis protocol to diagnose the root cause of student mistakes and misconceptions. Use when error patterns appear in student work and targeted feedback is needed.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "error-analysis-protocol",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Error Analysis Protocol",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only error-analysis-protocol. Design an error analysis protocol to diagnose the root cause of student mistakes and misconceptions. Use when error patterns appear in student work and targeted feedback is needed. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

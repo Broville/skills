@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-gap-analysis-from-student-work",
+  "version": "1.0.0",
+  "description": "Analyse student work against criteria to identify specific gaps between current performance and learning objectives. Use when reviewing submissions, planning feedback, or diagnosing learning needs.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "gap-analysis-from-student-work",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Student Work Gap Analysis",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only gap-analysis-from-student-work. Analyse student work against criteria to identify specific gaps between current performance and learning objectives. Use when reviewing submissions, planning feedback, or diagnosing learning needs. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

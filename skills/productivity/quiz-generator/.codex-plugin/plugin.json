@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-quiz-generator",
+  "version": "1.0.0",
+  "description": "Create quizzes with a stated cognitive-level distribution, misconception-based distractors and reasoned answer keys. Use when an educator asks to draft or revise a quiz or assessment.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "quiz-generator",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Quiz Generator",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only quiz-generator. Create quizzes with a stated cognitive-level distribution, misconception-based distractors and reasoned answer keys. Use when an educator asks to draft or revise a quiz or assessment. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

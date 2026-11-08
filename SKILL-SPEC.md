@@ -36,6 +36,7 @@ The open standard requires every `metadata` value to be a string. Scalar values 
 | `aliases` | No | JSON string array |
 | `source` | No | provenance string |
 | `source-url` | No | source URL string |
+| `display-name` | No | concise individual plugin display name, at most 30 characters |
 | `deprecated` | No | string `"true"` or `"false"` |
 | `replaced-by` | No | successor skill name |
 

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-worked-example-fading-designer",
+  "version": "1.0.0",
+  "description": "Design a worked example fading sequence from fully worked examples through to independent practice. Use when teaching procedures, algorithms, or multi-step processes to novice learners.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "worked-example-fading-designer",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Worked Example Fading",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only worked-example-fading-designer. Design a worked example fading sequence from fully worked examples through to independent practice. Use when teaching procedures, algorithms, or multi-step processes to novice learners. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-differentiation-adapter",
+  "version": "1.0.0",
+  "description": "Adapt a classroom task for specific learner needs while preserving the core learning objective intact. Use when differentiating for SEND, EAL, gifted, ADHD, dyslexia, or anxiety.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "differentiation-adapter",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Differentiation Adapter",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only differentiation-adapter. Adapt a classroom task for specific learner needs while preserving the core learning objective intact. Use when differentiating for SEND, EAL, gifted, ADHD, dyslexia, or anxiety. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

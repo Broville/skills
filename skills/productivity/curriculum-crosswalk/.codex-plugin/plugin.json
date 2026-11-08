@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-curriculum-crosswalk",
+  "version": "1.0.0",
+  "description": "Compares two or more band-tagged frameworks and produces a framework-neutral topic matrix showing coverage and gaps across all inputs, plus an optional reference-centric PLC crosswalk document when a reference framework is supplied.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "curriculum-crosswalk",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Curriculum Crosswalk",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only curriculum-crosswalk. Compares two or more band-tagged frameworks and produces a framework-neutral topic matrix showing coverage and gaps across all inputs, plus an optional reference-centric PLC crosswalk document when a reference framework is supplied. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

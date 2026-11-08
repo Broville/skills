@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-homeschool-records-query",
+  "version": "1.0.0",
+  "description": "Answer read-only questions about homeschool lesson content, time or reading records. Use when a parent asks what was covered, how many hours were recorded, or which books were read.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "homeschool-records-query",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Homeschool Records Query",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only homeschool-records-query. Answer read-only questions about homeschool lesson content, time or reading records. Use when a parent asks what was covered, how many hours were recorded, or which books were read. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

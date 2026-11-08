@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-uninterrupted-work-cycle-designer",
+  "version": "1.0.0",
+  "description": "Design an uninterrupted work cycle with choice-based activities structured within a realistic time block. Use when planning Montessori-style independent work periods or extended choice time.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "uninterrupted-work-cycle-designer",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Uninterrupted Work Cycles",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only uninterrupted-work-cycle-designer. Design an uninterrupted work cycle with choice-based activities structured within a realistic time block. Use when planning Montessori-style independent work periods or extended choice time. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

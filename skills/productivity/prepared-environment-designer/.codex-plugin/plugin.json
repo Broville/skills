@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-prepared-environment-designer",
+  "version": "1.0.0",
+  "description": "Redesign a classroom as a prepared environment optimised for independent learning, calm transitions, and material access. Use when classroom layout hinders independence or self-directed work.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "prepared-environment-designer",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Prepared Environment",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only prepared-environment-designer. Redesign a classroom as a prepared environment optimised for independent learning, calm transitions, and material access. Use when classroom layout hinders independence or self-directed work. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

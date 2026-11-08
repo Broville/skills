@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-reading-comprehension-strategy-selector",
+  "version": "1.0.0",
+  "description": "Select and sequence reading comprehension strategies matched to a specific text's challenges and demands. Use when students struggle with a text or need targeted reading support.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "reading-comprehension-strategy-selector",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Reading Comprehension",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only reading-comprehension-strategy-selector. Select and sequence reading comprehension strategies matched to a specific text's challenges and demands. Use when students struggle with a text or need targeted reading support. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

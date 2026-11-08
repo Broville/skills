@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-backwards-design-unit-planner",
+  "version": "1.0.0",
+  "description": "Plan a unit using backwards design from desired outcomes through assessment evidence to learning activities. Use when starting a new unit or redesigning an existing one from standards.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "backwards-design-unit-planner",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Backwards Design Units",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only backwards-design-unit-planner. Plan a unit using backwards design from desired outcomes through assessment evidence to learning activities. Use when starting a new unit or redesigning an existing one from standards. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

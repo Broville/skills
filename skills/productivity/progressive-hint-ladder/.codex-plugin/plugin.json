@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-progressive-hint-ladder",
+  "version": "1.0.0",
+  "description": "Provide graduated assistance from abstract conceptual nudge to concrete procedural step, with reflection required before each escalation. Teaches help-seeking as a skill and prevents direct-answer shortcuts.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "progressive-hint-ladder",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Progressive Hint Ladder",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only progressive-hint-ladder. Provide graduated assistance from abstract conceptual nudge to concrete procedural step, with reflection required before each escalation. Teaches help-seeking as a skill and prevents direct-answer shortcuts. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

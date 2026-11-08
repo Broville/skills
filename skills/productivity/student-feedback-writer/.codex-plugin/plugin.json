@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-student-feedback-writer",
+  "version": "1.0.0",
+  "description": "Write specific evidence-based feedback using Glow-Grow-Go. Use when an educator provides student work and requests comments, revision guidance or progress-report narratives.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "student-feedback-writer",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Student Feedback",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only student-feedback-writer. Write specific evidence-based feedback using Glow-Grow-Go. Use when an educator provides student work and requests comments, revision guidance or progress-report narratives. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-disciplinary-writing-scaffold",
+  "version": "1.0.0",
+  "description": "Create a writing scaffold teaching the genre conventions specific to an academic discipline. Use when students write lab reports, historical essays, or other discipline-specific text types.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "CC-BY-SA-4.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "disciplinary-writing-scaffold",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Disciplinary Writing",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only disciplinary-writing-scaffold. Create a writing scaffold teaching the genre conventions specific to an academic discipline. Use when students write lab reports, historical essays, or other discipline-specific text types. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-homeschool-reading-log",
+  "version": "1.0.0",
+  "description": "Maintain a private homeschool reading log from supplied book information and reading events. Use when a parent asks to record completed reading or books read aloud.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "homeschool-reading-log",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Homeschool Reading Log",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only homeschool-reading-log. Maintain a private homeschool reading log from supplied book information and reading events. Use when a parent asks to record completed reading or books read aloud. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}
