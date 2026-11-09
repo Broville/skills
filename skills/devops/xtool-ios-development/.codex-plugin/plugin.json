@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-xtool-ios-development",
+  "version": "1.0.0",
+  "description": "Set up, validate, and use xtool for SwiftPM-based iOS development across supported Linux, WSL, and macOS environments. Use when installing xtool, preparing a Darwin Swift SDK, authenticating with Apple Developer Services, building, signing, deploying, or troubleshooting an xtool workflow.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "devops",
+    "DevOps",
+    "xtool-ios-development",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Xtool Ios Development",
+    "shortDescription": "DevOps · single skill",
+    "longDescription": "DevOps: install only xtool-ios-development. Set up, validate, and use xtool for SwiftPM-based iOS development across supported Linux, WSL, and macOS environments. Use when installing xtool, preparing a Darwin Swift SDK, authenticating with Apple Developer Services, building, signing, deploying, or troubleshooting an xtool workflow. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "DevOps",
+    "capabilities": []
+  }
+}
