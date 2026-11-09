@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-card-game-rules-engineering",
+  "version": "1.0.0",
+  "description": "Turn a card-game concept into complete, deterministic, readable rules with explicit state, timing, edge cases, and accessibility safeguards. Use when drafting, auditing, or revising card-game rules.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "card-game-rules-engineering",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Card Game Rules Engineering",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only card-game-rules-engineering. Turn a card-game concept into complete, deterministic, readable rules with explicit state, timing, edge cases, and accessibility safeguards. Use when drafting, auditing, or revising card-game rules. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

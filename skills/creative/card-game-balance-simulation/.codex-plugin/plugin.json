@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-card-game-balance-simulation",
+  "version": "1.0.0",
+  "description": "Analyze card-game probability, economy, variance, and strategic balance with exact calculations and reproducible simulations. Use when tuning decks, effects, resources, odds, or matchup health.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "card-game-balance-simulation",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Card Game Balance Simulation",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only card-game-balance-simulation. Analyze card-game probability, economy, variance, and strategic balance with exact calculations and reproducible simulations. Use when tuning decks, effects, resources, odds, or matchup health. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

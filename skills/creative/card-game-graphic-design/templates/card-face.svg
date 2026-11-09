@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2.75in" height="3.75in" viewBox="0 0 825 1125" role="img" aria-labelledby="title desc">
+  <title id="title">Poker-size card face prototype</title>
+  <desc id="desc">A card prototype with a 3 millimeter bleed and inner safe-area guides.</desc>
+  <!-- Trim is x=37.5..787.5, y=37.5..1087.5 in this 3 mm bleed canvas. -->
+  <rect width="825" height="1125" fill="#efe8d8"/>
+  <rect x="38" y="38" width="749" height="1049" rx="30" fill="#fffaf0" stroke="#1d2528" stroke-width="6"/>
+  <!-- Safe area: approximately 3 mm inside trim. Hide/remove guides for production. -->
+  <rect x="67" y="67" width="691" height="991" rx="20" fill="none" stroke="#b85c38" stroke-width="3" stroke-dasharray="10 8" opacity=".65"/>
+  <g font-family="system-ui, sans-serif" fill="#1d2528">
+    <text x="82" y="126" font-size="42" font-weight="700">CARD TITLE</text>
+    <text x="743" y="126" text-anchor="end" font-size="40" font-weight="700">3</text>
+    <circle cx="412.5" cy="430" r="190" fill="#d7ded1" stroke="#1d2528" stroke-width="6"/>
+    <path d="M412 300l34 96 101 2-80 60 28 98-83-56-83 56 28-98-80-60 101-2z" fill="#b85c38"/>
+    <text x="82" y="720" font-size="28" font-weight="700">ABILITY</text>
+    <text x="82" y="765" font-size="25">Replace this with short rules text.</text>
+    <text x="82" y="802" font-size="25">Keep the action cue readable at table distance.</text>
+    <text x="82" y="1018" font-size="22" fill="#485256">TYPE / FACTION / ICON LABEL</text>
+  </g>
+  <!-- Remove guides and replace placeholder content before print export. -->
+</svg>

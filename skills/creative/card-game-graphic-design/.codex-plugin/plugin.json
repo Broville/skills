@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-card-game-graphic-design",
+  "version": "1.0.0",
+  "description": "Design accessible, print-safe card-game visuals and prototypes in SVG, HTML, and optional raster/image-generation workflows. Use when ideating a deck, card face, symbol system, visual hierarchy, or printable mockup.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "card-game-graphic-design",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Card Game Graphic Design",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only card-game-graphic-design. Design accessible, print-safe card-game visuals and prototypes in SVG, HTML, and optional raster/image-generation workflows. Use when ideating a deck, card face, symbol system, visual hierarchy, or printable mockup. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

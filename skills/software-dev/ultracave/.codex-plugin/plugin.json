@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-ultracave",
+  "version": "1.0.0",
+  "description": "Apply a terse caveman response style only when explicitly invoked, while preserving technical substance and safety-critical wording.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "Apache-2.0",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "ultracave",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Ultracave",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only ultracave. Apply a terse caveman response style only when explicitly invoked, while preserving technical substance and safety-critical wording. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

@@ -29,6 +29,66 @@
       "category": "Creative"
     },
     {
+      "name": "broville-skill-card-game-balance-simulation",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/card-game-balance-simulation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-card-game-concept-loop",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/card-game-concept-loop"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-card-game-graphic-design",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/card-game-graphic-design"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-card-game-playtesting-iteration",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/card-game-playtesting-iteration"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-card-game-rules-engineering",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/card-game-rules-engineering"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
       "name": "broville-skill-design-taste-frontend",
       "source": {
         "source": "local",
@@ -1373,6 +1433,18 @@
       "category": "Software Development"
     },
     {
+      "name": "broville-skill-ponytail",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/ponytail"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
       "name": "broville-skill-react-best-practices",
       "source": {
         "source": "local",
@@ -1497,6 +1569,18 @@
       "source": {
         "source": "local",
         "path": "./skills/software-dev/test-driven-development"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Software Development"
+    },
+    {
+      "name": "broville-skill-ultracave",
+      "source": {
+        "source": "local",
+        "path": "./skills/software-dev/ultracave"
       },
       "policy": {
         "installation": "AVAILABLE",

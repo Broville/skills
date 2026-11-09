@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-card-game-concept-loop",
+  "version": "1.0.0",
+  "description": "Invent an original card game around a focused player promise, repeatable core loop, and testable constraints. Use when a user wants a new card-game concept, pitch, prototype brief, or design space exploration.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "card-game-concept-loop",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Card Game Concept Loop",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only card-game-concept-loop. Invent an original card game around a focused player promise, repeatable core loop, and testable constraints. Use when a user wants a new card-game concept, pitch, prototype brief, or design space exploration. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

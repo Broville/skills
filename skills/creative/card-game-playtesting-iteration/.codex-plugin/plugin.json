@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-card-game-playtesting-iteration",
+  "version": "1.0.0",
+  "description": "Plan ethical, structured card-game playtests and turn observations into prioritized rule changes without confusing player preference with design evidence. Use when testing, diagnosing, or iterating a card-game prototype.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "card-game-playtesting-iteration",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Card Game Playtesting",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only card-game-playtesting-iteration. Plan ethical, structured card-game playtests and turn observations into prioritized rule changes without confusing player preference with design evidence. Use when testing, diagnosing, or iterating a card-game prototype. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}
