@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-gestures",
+  "version": "1.0.0",
+  "description": "Build responsive, interruptible drag, swipe, sheet, and hold interactions that track input directly and settle with appropriate physics.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "gestures",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Gestures",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only gestures. Build responsive, interruptible drag, swipe, sheet, and hold interactions that track input directly and settle with appropriate physics. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

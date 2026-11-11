@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-pick-ui-library",
+  "version": "1.0.0",
+  "description": "Choose a curated frontend library for a UI task after checking the existing project stack. Use when selecting or wiring a UI dependency.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "pick-ui-library",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Pick Ui Library",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only pick-ui-library. Choose a curated frontend library for a UI task after checking the existing project stack. Use when selecting or wiring a UI dependency. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

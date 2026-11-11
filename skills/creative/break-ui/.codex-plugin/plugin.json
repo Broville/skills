@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-break-ui",
+  "version": "1.0.0",
+  "description": "Stress-test a UI with realistic worst-case data and report layout, content, accessibility, and performance failures before proposing fixes.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "break-ui",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Break Ui",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only break-ui. Stress-test a UI with realistic worst-case data and report layout, content, accessibility, and performance failures before proposing fixes. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

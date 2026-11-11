@@ -6,11 +6,29 @@ Retain each package’s provenance and license files when redistributing.
 
 Gareth Manning’s educational content and Broville adaptations of it are CC BY-SA 4.0
 (https://creativecommons.org/licenses/by-sa/4.0/). Anthropic/Learning Commons and Charlotte
-adaptations are Apache-2.0. SkillMedev and Jellypod content is MIT. No source endorses
-these adaptations. Attribution and source revisions are recorded in every package.
+adaptations are Apache-2.0. SkillMedev and Jellypod content is MIT. The creative and
+imported UI/animation skills adapted from Emil Kowalski’s repository are MIT. No source
+endorses these adaptations. Attribution and source revisions are recorded in every package.
 
 | Package | Source | License |
 |---|---|---|
+| [animate](skills/creative/animate/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [animate-expo](skills/creative/animate-expo/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [animation-performance](skills/creative/animation-performance/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [animation-vocabulary](skills/creative/animation-vocabulary/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [apple-design](skills/creative/apple-design/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [ask-sonner](skills/creative/ask-sonner/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [break-ui](skills/creative/break-ui/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [choreograph](skills/creative/choreograph/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [find-animation-opportunities](skills/creative/find-animation-opportunities/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [gestures](skills/creative/gestures/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [improve-animations](skills/creative/improve-animations/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [mobile-native](skills/creative/mobile-native/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [pick-ui-library](skills/creative/pick-ui-library/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [prototype](skills/creative/prototype/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [remove-animations](skills/creative/remove-animations/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [review-animations](skills/creative/review-animations/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
+| [write-swift](skills/software-dev/write-swift/SKILL.md) | [emilkowalski/skills](https://github.com/emilkowalski/skills/tree/715c1807e08c497cfd1dc4feb450a2a3300ef2a9) | MIT |
 | [arts-crafts](skills/productivity/arts-crafts/SKILL.md) | [Jellypod-Inc/school-skills](https://github.com/Jellypod-Inc/school-skills/tree/cd484795e924e454caafd13ddc25c1ec76c48718) | MIT |
 | [backwards-design-unit-planner](skills/productivity/backwards-design-unit-planner/SKILL.md) | [GarethManning/education-agent-skills](https://github.com/GarethManning/education-agent-skills/tree/135d6275e7db0657d70b147f46d3191c5430677d) | CC-BY-SA-4.0 |
 | [coverage-audit](skills/productivity/coverage-audit/SKILL.md) | [GarethManning/education-agent-skills](https://github.com/GarethManning/education-agent-skills/tree/135d6275e7db0657d70b147f46d3191c5430677d) | CC-BY-SA-4.0 |

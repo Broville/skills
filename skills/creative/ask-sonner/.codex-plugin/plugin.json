@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-ask-sonner",
+  "version": "1.0.0",
+  "description": "Configure, style, and troubleshoot the Sonner React toast library, including mounting, toast calls, theming, positioning, and dismissal.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "ask-sonner",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Ask Sonner",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only ask-sonner. Configure, style, and troubleshoot the Sonner React toast library, including mounting, toast calls, theming, positioning, and dismissal. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}
