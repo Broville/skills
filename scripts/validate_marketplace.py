@@ -79,8 +79,31 @@ def validate(repo_root: Path) -> tuple[int, int]:
             raise ValueError(f"{name}: capabilities must be an array")
         if entry["policy"] != {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}:
             raise ValueError(f"{name}: category plugins must remain available for opt-in installation")
-        if any(field in manifest for field in ("apps", "hooks", "mcpServers")):
-            raise ValueError(f"{name}: this catalog only wraps existing skill packages")
+        if any(field in manifest for field in ("apps", "hooks")):
+            raise ValueError(f"{name}: app bindings and hooks are not supported")
+        mcp_path = root / "mcp.json"
+        if "mcpServers" in manifest:
+            if is_bundle or manifest["mcpServers"] != "./mcp.json" or not mcp_path.is_file():
+                raise ValueError(f"{name}: MCP must be a contained individual-package manifest")
+            portable = json.loads((root / "plugin.json").read_text())
+            for key in ("name", "version", "description", "author", "repository", "license", "keywords"):
+                if portable.get(key) != manifest.get(key):
+                    raise ValueError(f"{name}: portable and native identity metadata differ")
+            if portable.get("extensions", {}).get("com.openai", {}).get("interface") != interface:
+                raise ValueError(f"{name}: portable and native presentation differ")
+            config = json.loads(mcp_path.read_text())
+            servers = config.get("mcpServers")
+            if not isinstance(servers, dict) or len(servers) != 1:
+                raise ValueError(f"{name}: expected one local MCP server")
+            server = next(iter(servers.values()))
+            if (server.get("type") != "stdio" or server.get("command") != "python3"
+                    or server.get("cwd") != "${PLUGIN_ROOT}"
+                    or server.get("args") != ["-B", "${PLUGIN_ROOT}/scripts/server.py"]
+                    or set(server) != {"type", "command", "args", "cwd"}
+                    or not (root / "scripts/server.py").is_file()):
+                raise ValueError(f"{name}: unsupported or nonportable local MCP entrypoint")
+        elif mcp_path.is_file() and not is_bundle:
+            raise ValueError(f"{name}: individual MCP manifest is not connected")
         skills_root = contained_directory(root, manifest["skills"])
         if skills_root != root:
             raise ValueError(f"{name}: discovery must stay at the canonical plugin root")
