@@ -102,7 +102,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
 ## Add as a ChatGPT / Codex Marketplace
 
-This repository exposes **146 plugin choices: 11 category bundles and 135 individual
+This repository exposes **154 plugin choices: 11 category bundles and 143 individual
 skills** through `.agents/plugins/marketplace.json`. Bundles retain their existing
 IDs (`broville-<category>`) and source paths (`./skills/<category>`). Individual
 plugins use `broville-skill-<skill-name>` and point directly to
@@ -231,7 +231,7 @@ The checks combine the official Agent Skills validator with repository policy an
 run on Linux, macOS, and Windows in CI. Marketplace validation checks JSON,
 identities, versions, contained paths, listing metadata, and complete skill
 coverage without installing or executing a plugin. Package checks archive and
-extract all 129 choices, verify skill/supporting file bytes, exercise invalid
+extract all 154 choices, verify skill/supporting file bytes, exercise invalid
 catalogs and metadata regeneration, and check distinct paths for overlapping
 bundle/individual copies. They simulate packaging; they do not certify desktop
 runtime loading. Desktop installation and
