@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-strata-api",
+  "version": "1.0.0",
+  "description": "Operate Strata through its live API contract. Use for API discovery, integration, testing, administration, or content operations.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "productivity",
+    "Productivity",
+    "strata-api",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Strata Api",
+    "shortDescription": "Productivity · single skill",
+    "longDescription": "Productivity: install only strata-api. Operate Strata through its live API contract. Use for API discovery, integration, testing, administration, or content operations. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

@@ -1109,6 +1109,18 @@
       "category": "Productivity"
     },
     {
+      "name": "broville-skill-strata-api",
+      "source": {
+        "source": "local",
+        "path": "./skills/productivity/strata-api"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
       "name": "broville-skill-student-feedback-writer",
       "source": {
         "source": "local",
