@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-pyside6-desktop-engineering",
+  "version": "1.0.0",
+  "description": "Build or review production PySide6 and Qt Widgets desktop applications without replacing the product's architecture or design system.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "pyside6-desktop-engineering",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Pyside6 Desktop Engineering",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only pyside6-desktop-engineering. Build or review production PySide6 and Qt Widgets desktop applications without replacing the product's architecture or design system. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

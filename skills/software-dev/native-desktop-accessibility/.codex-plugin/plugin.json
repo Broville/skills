@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-native-desktop-accessibility",
+  "version": "1.0.0",
+  "description": "Build and audit semantic keyboard and assistive-technology behavior in native macOS and Windows desktop interfaces.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "native-desktop-accessibility",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Native Desktop Accessibility",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only native-desktop-accessibility. Build and audit semantic keyboard and assistive-technology behavior in native macOS and Windows desktop interfaces. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

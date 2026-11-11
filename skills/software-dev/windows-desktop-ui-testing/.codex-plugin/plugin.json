@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-windows-desktop-ui-testing",
+  "version": "1.0.0",
+  "description": "Create repeatable Windows UI Automation tests and visual evidence for packaged desktop applications, with an explicit framework-compatibility pilot.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "windows-desktop-ui-testing",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Windows Desktop Ui Testing",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only windows-desktop-ui-testing. Create repeatable Windows UI Automation tests and visual evidence for packaged desktop applications, with an explicit framework-compatibility pilot. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}
