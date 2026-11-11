@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-prototype",
+  "version": "1.0.0",
+  "description": "Build multiple genuinely different UI variants behind an isolated visual picker. Use only when explicitly asked to prototype or explore alternatives.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "prototype",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Prototype",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only prototype. Build multiple genuinely different UI variants behind an isolated visual picker. Use only when explicitly asked to prototype or explore alternatives. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

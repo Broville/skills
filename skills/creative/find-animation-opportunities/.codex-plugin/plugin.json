@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-find-animation-opportunities",
+  "version": "1.0.0",
+  "description": "Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user asks \"what could be animated here?\" or wants to \"make this feel more alive\". For fixing existing animations, use improve-animations or review-animations instead.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "find-animation-opportunities",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Find Animation Opportunities",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only find-animation-opportunities. Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user asks \"what could be animated here?\" or wants to \"make this feel more alive\". For fixing existing animations, use improve-animations or review-animations instead. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

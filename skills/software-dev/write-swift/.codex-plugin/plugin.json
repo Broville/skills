@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-write-swift",
+  "version": "1.0.0",
+  "description": "Write, review, or migrate modern Swift with value semantics, safe concurrency, clear error handling, and measured performance.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "software-dev",
+    "Software Development",
+    "write-swift",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Write Swift",
+    "shortDescription": "Software Dev · single skill",
+    "longDescription": "Software Development: install only write-swift. Write, review, or migrate modern Swift with value semantics, safe concurrency, clear error handling, and measured performance. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Software Development",
+    "capabilities": []
+  }
+}

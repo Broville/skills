@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-review-animations",
+  "version": "1.0.0",
+  "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "review-animations",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Review Animations",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only review-animations. Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}

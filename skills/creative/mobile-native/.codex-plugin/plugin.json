@@ -1,0 +1,26 @@
+{
+  "name": "broville-skill-mobile-native",
+  "version": "1.0.0",
+  "description": "Make a web app feel native on phones through correct viewport, touch, safe-area, scroll, input, and browser-platform behavior.",
+  "author": {
+    "name": "Broville",
+    "url": "https://github.com/Broville"
+  },
+  "repository": "https://github.com/Broville/skills",
+  "license": "MIT",
+  "keywords": [
+    "creative",
+    "Creative",
+    "mobile-native",
+    "individual-skill"
+  ],
+  "skills": "./",
+  "interface": {
+    "displayName": "Mobile Native",
+    "shortDescription": "Creative · single skill",
+    "longDescription": "Creative: install only mobile-native. Make a web app feel native on phones through correct viewport, touch, safe-area, scroll, input, and browser-platform behavior. Read the skill's prerequisites before use. Choose this individual plugin or its category bundle to avoid overlapping copies.",
+    "developerName": "Broville",
+    "category": "Creative",
+    "capabilities": []
+  }
+}
