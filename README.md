@@ -1,6 +1,6 @@
 # Broville Skills
 
-A modular, documented repository of portable [Agent Skills](https://agentskills.io/) for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and other standards-compatible hosts.
+A modular, documented repository of portable [Agent Skills](https://agentskills.io/) with supporting files, plus optional Codex marketplace packaging and scripts for validation and installation. Skills can be installed into project discovery paths for Codex, Claude Code, Gemini CLI, Cursor, OpenCode, GitHub Copilot, and compatible hosts; the marketplace path is specifically for Codex-compatible clients.
 
 ## Purpose
 
@@ -49,12 +49,7 @@ Broville/skills/
 
 ## Skill Lifecycle
 
-1. **Propose** — Open a `[Skill]` issue describing the skill, its trigger, and expected behavior
-2. **Develop** — Create the skill directory under the appropriate category
-3. **Document** — Write the `SKILL.md` with full frontmatter, steps, and pitfalls
-4. **Review** — PR against `main`; at least one approval required
-5. **Publish** — Merge makes the skill available for agents to pull
-6. **Maintain** — Patch when steps become outdated; skills are living docs
+Follow [SOP.md](./SOP.md) for the current issue, branch, review, and release process. In brief: propose a change, update the package and any catalog metadata, validate it, then open a PR against `main`. The repository instructions require an approval before merge. Merging publishes the change to this Git repository; users still need to refresh or reinstall their host copy.
 
 ## SKILL.md Format
 
@@ -102,7 +97,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
 ## Add as a ChatGPT / Codex Marketplace
 
-This repository exposes **157 plugin choices: 11 category bundles and 146 individual
+The generated catalog currently exposes **157 plugin choices: 11 category bundles and 146 individual
 skills** through `.agents/plugins/marketplace.json`. Bundles retain their existing
 IDs (`broville-<category>`) and source paths (`./skills/<category>`). Individual
 plugins use `broville-skill-<skill-name>` and point directly to
@@ -227,8 +222,7 @@ python scripts/build_marketplace.py --check
 python scripts/test_marketplace.py
 ```
 
-The checks combine the official Agent Skills validator with repository policy and
-run on Linux, macOS, and Windows in CI. Marketplace validation checks JSON,
+The CI workflow runs these checks on Linux, macOS, and Windows. They combine the official Agent Skills validator with repository policy. Marketplace validation checks JSON,
 identities, versions, contained paths, listing metadata, and complete skill
 coverage without installing or executing a plugin. Package checks archive and
 extract all 154 choices, verify skill/supporting file bytes, exercise invalid
@@ -239,12 +233,11 @@ runtime behavior require a separate host smoke test.
 
 ## Adding a New Skill
 
-1. Pick the right category directory under `skills/`
-2. Create a directory named after the skill (kebab-case, e.g., `my-new-skill/`)
-3. Add a standard-compatible `SKILL.md` with complete repository metadata and documentation
-4. Add any supporting files in `references/`, `templates/`, `scripts/`, or `assets/`
-5. Run `python scripts/build_marketplace.py`, bump the affected bundle version, and validate
-6. Open a PR against `main`
+1. Read [SOP.md](./SOP.md) and [SKILL-SPEC.md](./SKILL-SPEC.md).
+2. Create a kebab-case directory under the appropriate `skills/` category.
+3. Add `SKILL.md` and any supporting references, templates, scripts, or assets.
+4. Regenerate marketplace metadata with `python scripts/build_marketplace.py`; update the affected category bundle version as required.
+5. Run the validation commands above and open a PR against `main`.
 
 ## Removing a Skill
 
