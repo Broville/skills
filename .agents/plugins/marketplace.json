@@ -137,6 +137,18 @@
       "category": "Creative"
     },
     {
+      "name": "broville-skill-emil-design-eng",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/emil-design-eng"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
       "name": "broville-skill-find-animation-opportunities",
       "source": {
         "source": "local",
@@ -153,6 +165,18 @@
       "source": {
         "source": "local",
         "path": "./skills/creative/gestures"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Creative"
+    },
+    {
+      "name": "broville-skill-impeccable",
+      "source": {
+        "source": "local",
+        "path": "./skills/creative/impeccable"
       },
       "policy": {
         "installation": "AVAILABLE",

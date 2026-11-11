@@ -102,7 +102,7 @@ See [SKILL-SPEC.md](./SKILL-SPEC.md) for the full specification.
 
 ## Add as a ChatGPT / Codex Marketplace
 
-This repository exposes **154 plugin choices: 11 category bundles and 143 individual
+This repository exposes **156 plugin choices: 11 category bundles and 145 individual
 skills** through `.agents/plugins/marketplace.json`. Bundles retain their existing
 IDs (`broville-<category>`) and source paths (`./skills/<category>`). Individual
 plugins use `broville-skill-<skill-name>` and point directly to

@@ -53,7 +53,7 @@ def main() -> int:
             unpacked = staging / "unpacked" / entry["name"]
             manifest = json.loads((unpacked / ".codex-plugin/plugin.json").read_text())
             assert manifest["name"] == entry["name"]
-            if entry["name"].startswith("broville-skill-"):
+            if (source / "SKILL.md").is_file():
                 parsed = parse_frontmatter(unpacked / "SKILL.md", Validation())
                 assert parsed is not None
                 assert manifest["license"] == parsed[0]["license"]
